@@ -1,0 +1,5 @@
+customtkinter
+matplotlib
+requests
+schedule
+sqlalchemy
