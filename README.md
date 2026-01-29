@@ -41,6 +41,7 @@ Führe das Hauptskript aus:
 ```bash
 python main.py
 ```
+Oder nutze die **`run.bat`**, um Abhängigkeiten automatisch zu installieren und die App zu starten.
 
 ## Daten-Migration
 
