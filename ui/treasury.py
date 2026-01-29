@@ -33,26 +33,81 @@ class TreasuryFrame(customtkinter.CTkFrame):
         self.add_frame = customtkinter.CTkFrame(self.left_frame)
         self.add_frame.grid(row=2, column=0, padx=10, pady=10, sticky="ew")
         
-        self.entry_id = customtkinter.CTkEntry(self.add_frame, placeholder_text="ID")
-        self.entry_id.grid(row=0, column=0, padx=5, pady=5)
-        self.entry_name = customtkinter.CTkEntry(self.add_frame, placeholder_text="Name")
-        self.entry_name.grid(row=0, column=1, padx=5, pady=5)
-        self.btn_add = customtkinter.CTkButton(self.add_frame, text="+", width=30, command=self.add_item)
-        self.btn_add.grid(row=0, column=2, padx=5, pady=5)
-
-        # Right Side: Chart
-        self.right_frame = customtkinter.CTkFrame(self)
-        self.right_frame.grid(row=1, column=1, padx=20, pady=20, sticky="nsew")
-        self.right_frame.grid_rowconfigure(0, weight=1)
-        self.right_frame.grid_columnconfigure(0, weight=1)
-
-        self.chart_frame = customtkinter.CTkFrame(self.right_frame, fg_color="transparent")
-        self.chart_frame.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
+        self.entry_search = customtkinter.CTkEntry(self.add_frame, placeholder_text="Item Name suchen...")
+        self.entry_search.grid(row=0, column=0, padx=5, pady=5, sticky="ew")
+        self.add_frame.grid_columnconfigure(0, weight=1)
         
+        self.btn_search = customtkinter.CTkButton(self.add_frame, text="🔍", width=30, command=self.search_item_api)
+        self.btn_search.grid(row=0, column=1, padx=5, pady=5)
+
+        # Search Results (Popup or list below?)
+        # For simplicity, let's add a listbox/scrollframe for results below the search bar
+        self.search_results_frame = customtkinter.CTkScrollableFrame(self.left_frame, height=100)
+        self.search_results_frame.grid(row=3, column=0, padx=10, pady=5, sticky="nsew")
+        
+    def search_item_api(self):
+        query = self.entry_search.get()
+        if not query or len(query) < 2:
+            return
+            
+        # Get Client from App config
+        # We need to access the app's config. Currently passed to App, but TreasuryFrame has only engine.
+        # Let's fix this constructor in app.py or pass config here.
+        # Assuming we update App to pass config or we get it via master.
+        
+        # HACK: Retrieve config from master (App)
+        config = self.master.config
+        from modules.api_client import BlizzardAPIClient
+        
+        if config.get('blizzard_client_id') == "YOUR_CLIENT_ID_HERE":
+             messagebox.showerror("Fehler", "API nicht konfiguriert!")
+             return
+
+        try:
+            client = BlizzardAPIClient(config['blizzard_client_id'], config['blizzard_client_secret'], config.get('region'), config.get('locale'))
+            results = client.search_item(query)
+            
+            # Clear previous results
+            for w in self.search_results_frame.winfo_children():
+                w.destroy()
+                
+            if not results:
+                customtkinter.CTkLabel(self.search_results_frame, text="Keine Treffer").pack()
+                return
+
+            for item in results:
+                btn = customtkinter.CTkButton(self.search_results_frame, text=f"{item['name']} ({item['id']})", 
+                                              anchor="w", fg_color="transparent", border_width=1,
+                                              command=lambda i=item: self.add_item_from_search(i))
+                btn.pack(fill="x", padx=2, pady=2)
+                
+        except Exception as e:
+            print(f"Search Error: {e}")
+
+    def add_item_from_search(self, item_data):
+        session = get_session(self.engine)
+        # Check if exists
+        existing = session.query(Item).get(item_data['id'])
+        if existing:
+             messagebox.showinfo("Info", "Item bereits in der Liste.")
+             session.close()
+             return
+
+        new_item = Item(id=item_data['id'], name=item_data['name'], expansion="Unknown")
+        session.add(new_item)
+        session.commit()
+        session.close()
+        
+        # Clear search
+        self.entry_search.delete(0, "end")
+        for w in self.search_results_frame.winfo_children():
+            w.destroy()
+            
+        # Refresh List
         self.load_items()
-        self.current_item_id = None
 
     def load_items(self):
+        # Clear existing buttons
         for widget in self.item_list_frame.winfo_children():
             widget.destroy()
 
@@ -66,27 +121,7 @@ class TreasuryFrame(customtkinter.CTkFrame):
                                           fg_color="transparent", border_width=1, text_color=("gray10", "gray90"))
             btn.pack(fill="x", padx=5, pady=2)
             
-    def add_item(self):
-        try:
-            item_id = int(self.entry_id.get())
-            name = self.entry_name.get()
-        except ValueError:
-            return
-
-        if not name:
-            return
-
-        session = get_session(self.engine)
-        new_item = Item(id=item_id, name=name, expansion="Unknown")
-        session.add(new_item)
-        session.commit()
-        session.close()
-        
-        self.entry_id.delete(0, "end")
-        self.entry_name.delete(0, "end")
-        self.load_items()
-
-    def show_chart(self, item_id):
+        print(f"Loaded {len(items)} items into list.") # Debug
         self.current_item_id = item_id
         
         # Clear previous chart

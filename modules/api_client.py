@@ -63,11 +63,25 @@ class BlizzardAPIClient:
         params = {'namespace': f'dynamic-{self.region}'}
         response = requests.get(url, headers=headers, params=params)
         if response.status_code == 200:
-            return response.json().get('type', {}).get('name', 'Unknown') + " (" + response.json().get('status', {}).get('type', 'UNKNOWN') + ")"
-            # Actually, standard response has 'status': {'type': 'UP'}
-            # Let's return just 'UP' or 'DOWN'
-            status_data = response.json().get('status', {})
-            return status_data.get('name', status_data.get('type', 'UNKNOWN'))
+            data = response.json()
+            # Simplified parsing based on actual response keys
+            r_name = data.get('name', 'Unknown')
+            # Status is often a generic 'type' in 'status' dict not found in all endpoints?
+            # Based on debug output, we have 'type' at root.
+            r_type = data.get('type', 'UNKNOWN')
+            if isinstance(r_type, dict):
+                 r_type = r_type.get('name', 'UNKNOWN')
+                 
+            # Check for 'status' field if it exists
+            # data.get('status') might be a dict e.g. {'type': 'UP'}
+            r_status = "UNKNOWN"
+            status_field = data.get('status')
+            if isinstance(status_field, dict):
+                r_status = status_field.get('type', 'UNKNOWN')
+            elif isinstance(status_field, str):
+                r_status = status_field
+            
+            return f"{r_name} ({r_type} / {r_status})"
         return "Unknown"
 
     def get_auctions(self, connected_realm_id):
@@ -78,6 +92,31 @@ class BlizzardAPIClient:
         if response.status_code == 200:
             return response.json().get('auctions', [])
         return []
+
+    def search_item(self, item_name):
+        url = f"https://{self.region}.api.blizzard.com/data/wow/search/item"
+        headers = self._get_headers()
+        # Search ONLY in the configured locale to avoid implicit AND issues
+        params = {
+            'namespace': f'static-{self.region}',
+            'locale': self.locale,
+            f'name.{self.locale}': item_name,
+            'orderby': 'id',
+            '_page': 1
+        }
+        response = requests.get(url, headers=headers, params=params)
+        
+        if response.status_code == 200:
+            results = response.json().get('results', [])
+            items = []
+            for res in results:
+                data = res.get('data', {})
+                name = data.get('name', {}).get(self.locale, data.get('name', {}).get('en_US', 'Unknown'))
+                item_id = data.get('id')
+                items.append({'id': item_id, 'name': name})
+            return items
+        return []
+
 
     def get_commodity_auctions(self):
         # Commodity auctions (region-wide like Herbs)

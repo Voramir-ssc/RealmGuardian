@@ -50,3 +50,14 @@ Falls du Daten aus einer alten CSV-Tabelle importieren möchtest:
 python import_data.py "pfad/zu/deiner/tabelle.csv"
 ```
 Erwartete Spalten in der CSV: `Kraut`, `Erweiterung`, `letzter Verkauf`.
+
+## Charakter-Import
+
+Um deine Charaktere aus der Tabelle zu importieren:
+1.  Speichere deine Tabelle als **CSV (Trennzeichen: Semikolon)**.
+2.  Führe das Skript aus:
+    ```bash
+    python import_characters.py "pfad/zu/deine_charaktere.csv"
+    ```
+Das Skript erkennt automatisch "Blöcke" für Realms (z.B. "Dethecus" als Überschriftzeile).
+

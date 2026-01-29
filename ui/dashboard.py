@@ -2,7 +2,10 @@ import customtkinter
 import threading
 from modules.api_client import BlizzardAPIClient
 from database import get_session
-from models.price_data import Item, Price
+from models.price_data import Item, Price, TokenPrice
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import datetime
 
 class DashboardFrame(customtkinter.CTkFrame):
     def __init__(self, master, config, engine):
@@ -10,8 +13,8 @@ class DashboardFrame(customtkinter.CTkFrame):
         self.config = config
         self.engine = engine
         
-        self.grid_columnconfigure(0, weight=1)
-        self.grid_columnconfigure(1, weight=1)
+        self.grid_columnconfigure(0, weight=1, uniform="group1")
+        self.grid_columnconfigure(1, weight=1, uniform="group1")
         self.grid_rowconfigure(2, weight=1) # Alerts area expands
 
         # Header
@@ -22,12 +25,16 @@ class DashboardFrame(customtkinter.CTkFrame):
         self.card_token = self.create_info_card(0, "WoW Token", "Lade...")
         self.card_realm = self.create_info_card(1, f"Realm: {self.config.get('realm_name', 'Unknown')}", "Lade...")
 
+        # Chart Section
+        self.chart_frame = customtkinter.CTkFrame(self, fg_color="transparent")
+        self.chart_frame.grid(row=2, column=0, columnspan=2, padx=20, pady=10, sticky="nsew")
+
         # Alerts Section
         self.lbl_alerts = customtkinter.CTkLabel(self, text="Warnungen", font=customtkinter.CTkFont(size=16, weight="bold"))
-        self.lbl_alerts.grid(row=2, column=0, columnspan=2, padx=20, pady=(20, 10), sticky="w")
+        self.lbl_alerts.grid(row=3, column=0, columnspan=2, padx=20, pady=(20, 10), sticky="w")
 
         self.alerts_frame = customtkinter.CTkScrollableFrame(self)
-        self.alerts_frame.grid(row=3, column=0, columnspan=2, padx=20, pady=(0, 20), sticky="nsew")
+        self.alerts_frame.grid(row=4, column=0, columnspan=2, padx=20, pady=(0, 20), sticky="nsew")
 
         # Initial Load
         self.refresh_data()
@@ -48,6 +55,44 @@ class DashboardFrame(customtkinter.CTkFrame):
         # Run API calls in background
         threading.Thread(target=self._fetch_live_data, daemon=True).start()
         self._check_alerts()
+        self._draw_token_chart()
+
+    def _draw_token_chart(self):
+        # Clear previous
+        for widget in self.chart_frame.winfo_children():
+            widget.destroy()
+
+        session = get_session(self.engine)
+        prices = session.query(TokenPrice).order_by(TokenPrice.timestamp).all()
+        session.close()
+
+        if not prices:
+             return
+
+        dates = [p.timestamp for p in prices]
+        values = [p.price for p in prices]
+
+        # Figure
+        fig = Figure(figsize=(5, 2), dpi=100)
+        ax = fig.add_subplot(111)
+        ax.plot(dates, values, marker='.', color='#FFD700', linestyle='-') # Gold color
+        ax.set_title("WoW Token Verlauf")
+        ax.grid(True, alpha=0.3)
+        
+        # Style
+        fig.patch.set_facecolor('#2b2b2b')
+        ax.set_facecolor('#2b2b2b')
+        ax.spines['bottom'].set_color('white')
+        ax.spines['top'].set_color('white') 
+        ax.spines['right'].set_color('white')
+        ax.spines['left'].set_color('white')
+        ax.tick_params(axis='x', colors='white', labelsize=8)
+        ax.tick_params(axis='y', colors='white', labelsize=8)
+        ax.title.set_color('white')
+        
+        canvas = FigureCanvasTkAgg(fig, master=self.chart_frame)
+        canvas.draw()
+        canvas.get_tk_widget().pack(fill="both", expand=True)
 
     def _fetch_live_data(self):
         if self.config.get('blizzard_client_id') == "YOUR_CLIENT_ID_HERE":

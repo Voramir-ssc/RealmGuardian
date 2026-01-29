@@ -2,7 +2,7 @@ import time
 import threading
 import schedule
 from database import get_session
-from models.price_data import Item, Price
+from models.price_data import Item, Price, TokenPrice
 from modules.api_client import BlizzardAPIClient
 
 class PriceScheduler:
@@ -55,9 +55,24 @@ class PriceScheduler:
         print("Scheduler: Updating prices...")
         try:
             session = get_session(self.engine)
+            client = self.api_client
+
+            # 1. Update Token Price
+            try:
+                token_price = client.get_wow_token_price()
+                if token_price:
+                    # Store in DB
+                    new_token_price = TokenPrice(price=token_price)
+                    session.add(new_token_price)
+                    print(f"Stored Token Price: {token_price}g")
+            except Exception as e:
+                print(f"Error updating Token Price: {e}")
+
+            # 2. Update Items
             items = session.query(Item).all()
             if not items:
                 print("Scheduler: No items to track.")
+                session.commit() # Save token price event if no items
                 session.close()
                 return
 

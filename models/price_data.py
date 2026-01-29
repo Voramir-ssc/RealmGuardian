@@ -28,3 +28,13 @@ class Price(Base):
 
     def __repr__(self):
         return f"<Price(item_id={self.item_id}, price={self.price}, time='{self.timestamp}')>"
+
+class TokenPrice(Base):
+    __tablename__ = 'token_prices'
+
+    id = Column(Integer, primary_key=True)
+    price = Column(Float, nullable=False) # In Gold
+    timestamp = Column(DateTime, default=datetime.datetime.utcnow)
+
+    def __repr__(self):
+        return f"<TokenPrice(price={self.price}, time='{self.timestamp}')>"
