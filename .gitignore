@@ -1,0 +1,11 @@
+# Configuration with secrets
+config.json
+
+# Database
+realm_guardian.db
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.env

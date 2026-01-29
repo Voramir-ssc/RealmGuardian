@@ -18,9 +18,11 @@ Eine eigenständige Desktop-Applikation zur Verwaltung von World of Warcraft Cha
 
 ## Konfiguration
 
-1.  Öffne die Datei `config.json`.
-2.  Trage deine **Blizzard API Credentials** ein (Client ID und Secret erhältst du im [Battle.net Developer Portal](https://develop.battle.net/access/clients)).
+1.  Kopiere `config.example.json` zu `config.json`.
+2.  Trage deine **Blizzard API Credentials** in `config.json` ein (Client ID und Secret erhältst du im [Battle.net Developer Portal](https://develop.battle.net/access/clients)).
 3.  Passe `realm_name`, `region` und `locale` an.
+
+**Hinweis:** Die Datei `config.json` ist im `.gitignore` und wird nicht hochgeladen, um deine Daten zu schützen.
 
 Beispiel `config.json`:
 ```json
