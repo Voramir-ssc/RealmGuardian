@@ -56,30 +56,32 @@ def import_characters(file_path):
                     # Potential Realm or Title
                     candidate = clean_row[0]
                     # Filter out common titles if known, else assume it's a realm
-                    if candidate not in ["Name", "Volk", "Divide and Conquer", "Die Aldor"] and len(candidate) > 2: 
-                        current_realm = candidate
-                        print(f"Detected Realm/Section: {current_realm}")
-                    elif candidate in ["Divide and Conquer", "Die Aldor"]:
-                         current_realm = candidate
-                         print(f"Detected Realm (Exact Match): {current_realm}")
-                    continue
+                if candidate not in ["Name", "Volk", "Divide and Conquer", "Die Aldor"] and len(candidate) > 2: 
+                    current_realm = candidate
+                    print(f"Detected Realm/Section: {current_realm}")
+                elif candidate in ["Divide and Conquer", "Die Aldor"]:
+                     current_realm = candidate
+                     print(f"Detected Realm (Exact Match): {current_realm}")
+                continue
 
-                # Check for Header
-                # Look for "Name" and "Klasse"
-                if "Name" in row and ("Klasse" in row or "Class" in row):
-                    try:
-                        idx_name = row.index("Name")
-                        idx_race = row.index("Volk") if "Volk" in row else -1
-                        idx_class = row.index("Klasse") if "Klasse" in row else -1
-                        idx_prof1 = row.index("Beruf 1") if "Beruf 1" in row else -1
-                        idx_prof2 = row.index("Beruf 2") if "Beruf 2" in row else -1
-                        idx_status = row.index("Status") if "Status" in row else -1
-                        headers_found = True
-                        print(f"Headers found! Indices: Name={idx_name}, Class={idx_class}")
-                        continue # Skip header row
-                    except ValueError:
-                        print("Header parsing error")
-                        pass
+            # Check for Header
+            # Convert row to string logic for easier searching
+            row_str = [str(c).strip() for c in row]
+            
+            if "Name" in row_str and ("Klasse" in row_str or "Class" in row_str):
+                try:
+                    idx_name = row_str.index("Name")
+                    idx_race = row_str.index("Volk") if "Volk" in row_str else -1
+                    idx_class = row_str.index("Klasse") if "Klasse" in row_str else -1
+                    idx_prof1 = row_str.index("Beruf 1") if "Beruf 1" in row_str else -1
+                    idx_prof2 = row_str.index("Beruf 2") if "Beruf 2" in row_str else -1
+                    idx_status = row_str.index("Status") if "Status" in row_str else -1
+                    headers_found = True
+                    print(f"Headers found! Indices: Name={idx_name}, Class={idx_class}")
+                    continue # Skip header row
+                except ValueError:
+                    print("Header parsing error")
+                    pass
                 
                 if headers_found:
                     # Process Data Row

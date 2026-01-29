@@ -39,6 +39,10 @@ class PriceScheduler:
         # Start thread
         self.thread = threading.Thread(target=self._run_loop, daemon=True)
         self.thread.start()
+        
+        # Run initial update immediately (in background to not block UI)
+        threading.Thread(target=self.update_prices, daemon=True).start()
+        
         print("Scheduler started.")
 
     def _run_loop(self):
