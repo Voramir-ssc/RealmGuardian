@@ -226,10 +226,19 @@ class DashboardFrame(customtkinter.CTkFrame):
             
         ax.yaxis.set_major_formatter(ticker.FuncFormatter(format_gold))
         
+        # --- Interactive Features ---
+        from ui.graph_utils import GraphUtils
+        GraphUtils.add_sunday_markers(ax, dates)
+        
         fig.tight_layout()
 
         canvas = FigureCanvasTkAgg(fig, master=self.chart_frame)
         canvas.draw()
+        
+        # Enable Toolbar and Mouse Wheel Zoom
+        GraphUtils.add_toolbar(canvas, self.chart_frame)
+        GraphUtils.enable_zoom(fig, canvas, ax)
+        
         canvas.get_tk_widget().pack(fill="both", expand=True, padx=10, pady=10)
 
     def _check_alerts(self):
