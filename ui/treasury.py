@@ -189,9 +189,22 @@ class TreasuryFrame(customtkinter.CTkFrame):
         ax.tick_params(axis='x', colors='white', labelsize=8)
         ax.tick_params(axis='y', colors='white', labelsize=8)
         
-        ax.xaxis.set_major_formatter(mdates.DateFormatter('%d.%m'))
+        import matplotlib.ticker as ticker
+        
+        # Custom Date Formatting as requested: Day Time Date
+        # e.g. "Mo 14:30 01.02"
+        ax.xaxis.set_major_formatter(mdates.DateFormatter('%a %H:%M %d.%m'))
+             
         ax.xaxis.set_major_locator(mdates.AutoDateLocator())
         fig.autofmt_xdate(rotation=45)
+
+        # Gold Formatter
+        def format_gold(x, pos):
+            if x >= 1_000_000: return f'{x*1e-6:.1f}m'
+            if x >= 1_000: return f'{x*1e-3:.0f}k'
+            return f'{x:.0f}'
+            
+        ax.yaxis.set_major_formatter(ticker.FuncFormatter(format_gold))
 
         canvas = FigureCanvasTkAgg(fig, master=self.chart_frame)
         canvas.draw()

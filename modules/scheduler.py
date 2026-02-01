@@ -17,14 +17,17 @@ class PriceScheduler:
         if self.running:
             return
         
-        # Initialize API Client only if config is valid (check existence of keys logic handled inside or here)
-        if self.config.get('blizzard_client_id') == "YOUR_CLIENT_ID_HERE":
-            print("Scheduler: API Credentials missing. Skipping.")
+        # Initialize API Client only if config is valid
+        client_id = self.config.get('blizzard_client_id')
+        client_secret = self.config.get('blizzard_client_secret')
+        
+        if not client_id or not client_secret or client_id == "YOUR_CLIENT_ID_HERE":
+            print("Scheduler: API Credentials missing or invalid. Skipping API calls.")
             return
 
         self.api_client = BlizzardAPIClient(
-            self.config['blizzard_client_id'],
-            self.config['blizzard_client_secret'],
+            client_id,
+            client_secret,
             self.config.get('region', 'eu'),
             self.config.get('locale', 'de_DE')
         )
