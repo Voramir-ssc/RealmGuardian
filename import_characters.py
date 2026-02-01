@@ -48,20 +48,20 @@ def import_characters(file_path):
                 continue
             
             # Check for Realm keywords (blocks)
-                # If row has mostly empty cells but one text that looks like a Realm
-                # Logic: If row is not the header and not data, maybe it's a Title/Realm
-                clean_row = [c.strip() for c in row if c.strip()]
-                
-                if len(clean_row) == 1:
-                    # Potential Realm or Title
-                    candidate = clean_row[0]
-                    # Filter out common titles if known, else assume it's a realm
+            # If row has mostly empty cells but one text that looks like a Realm
+            # Logic: If row is not the header and not data, maybe it's a Title/Realm
+            clean_row = [c.strip() for c in row if c.strip()]
+            
+            if len(clean_row) == 1:
+                # Potential Realm or Title
+                candidate = clean_row[0]
+                # Filter out common titles if known, else assume it's a realm
                 if candidate not in ["Name", "Volk", "Divide and Conquer", "Die Aldor"] and len(candidate) > 2: 
                     current_realm = candidate
                     print(f"Detected Realm/Section: {current_realm}")
                 elif candidate in ["Divide and Conquer", "Die Aldor"]:
-                     current_realm = candidate
-                     print(f"Detected Realm (Exact Match): {current_realm}")
+                        current_realm = candidate
+                        print(f"Detected Realm (Exact Match): {current_realm}")
                 continue
 
             # Check for Header

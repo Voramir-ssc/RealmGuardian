@@ -16,7 +16,7 @@ class BlizzardAPIClient:
             return self.access_token
 
         url = f"https://{self.region}.battle.net/oauth/token"
-        response = requests.post(url, data={'grant_type': 'client_credentials'}, auth=(self.client_id, self.client_secret))
+        response = requests.post(url, data={'grant_type': 'client_credentials'}, auth=(self.client_id, self.client_secret), timeout=10)
         
         if response.status_code == 200:
             data = response.json()
@@ -36,7 +36,7 @@ class BlizzardAPIClient:
     def get_wow_token_price(self):
         url = f"https://{self.region}.api.blizzard.com/data/wow/token/index"
         headers = self._get_headers()
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, timeout=10)
         if response.status_code == 200:
             return response.json()['price'] / 10000  # Convert to Gold
         return None
@@ -50,7 +50,7 @@ class BlizzardAPIClient:
             '_page': 1,
             'orderby': 'id',
         }
-        response = requests.get(url, headers=headers, params=params)
+        response = requests.get(url, headers=headers, params=params, timeout=10)
         if response.status_code == 200:
             results = response.json()['results']
             if results:
@@ -61,7 +61,7 @@ class BlizzardAPIClient:
         url = f"https://{self.region}.api.blizzard.com/data/wow/realm/{realm_slug}"
         headers = self._get_headers()
         params = {'namespace': f'dynamic-{self.region}'}
-        response = requests.get(url, headers=headers, params=params)
+        response = requests.get(url, headers=headers, params=params, timeout=10)
         if response.status_code == 200:
             data = response.json()
             # Simplified parsing based on actual response keys
@@ -88,7 +88,7 @@ class BlizzardAPIClient:
         # Regular auctions (non-commodity)
         url = f"https://{self.region}.api.blizzard.com/data/wow/connected-realm/{connected_realm_id}/auctions"
         headers = self._get_headers()
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, timeout=10)
         if response.status_code == 200:
             return response.json().get('auctions', [])
         return []
@@ -104,7 +104,7 @@ class BlizzardAPIClient:
             'orderby': 'id',
             '_page': 1
         }
-        response = requests.get(url, headers=headers, params=params)
+        response = requests.get(url, headers=headers, params=params, timeout=10)
         
         if response.status_code == 200:
             results = response.json().get('results', [])
@@ -122,7 +122,7 @@ class BlizzardAPIClient:
         # Commodity auctions (region-wide like Herbs)
         url = f"https://{self.region}.api.blizzard.com/data/wow/auctions/commodities"
         headers = self._get_headers()
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, timeout=10)
         if response.status_code == 200:
             return response.json().get('auctions', [])
         return []

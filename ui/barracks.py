@@ -56,16 +56,51 @@ class BarracksFrame(customtkinter.CTkFrame):
             self.create_character_row(idx, char)
 
     def create_character_row(self, idx, char):
-        row_frame = customtkinter.CTkFrame(self.scroll_frame)
-        row_frame.pack(fill="x", padx=5, pady=5)
+        # Card style frame
+        row_frame = customtkinter.CTkFrame(
+            self.scroll_frame, 
+            fg_color=("white", "gray25") if idx % 2 == 0 else ("gray95", "gray20"),
+            corner_radius=6
+        )
+        row_frame.pack(fill="x", padx=10, pady=5)
 
-        info_text = f"{char.name} ({char.race} {char.character_class}) - {char.realm} [{char.status}]"
-        label = customtkinter.CTkLabel(row_frame, text=info_text, anchor="w")
-        label.pack(side="left", padx=10)
+        # Status Indicator (Color Strip)
+        status_color = "#2ECC71" if char.status == "Aktiv" else "#95A5A6"
+        status_strip = customtkinter.CTkFrame(row_frame, width=5, fg_color=status_color)
+        status_strip.pack(side="left", fill="y", padx=(0, 10))
 
-        delete_btn = customtkinter.CTkButton(row_frame, text="Löschen", width=60, fg_color="red", hover_color="darkred",
-                                             command=lambda c=char: self.delete_character(c.id))
-        delete_btn.pack(side="right", padx=10, pady=5)
+        # Main Info (Name & Race/Class)
+        info_frame = customtkinter.CTkFrame(row_frame, fg_color="transparent")
+        info_frame.pack(side="left", fill="both", expand=True, pady=5)
+        
+        lbl_name = customtkinter.CTkLabel(info_frame, text=char.name, font=customtkinter.CTkFont(size=14, weight="bold"))
+        lbl_name.pack(anchor="w")
+        
+        lbl_details = customtkinter.CTkLabel(
+            info_frame, 
+            text=f"{char.race} {char.character_class} - {char.realm}", 
+            font=customtkinter.CTkFont(size=12),
+            text_color="gray60"
+        )
+        lbl_details.pack(anchor="w")
+
+        # Professions (Right side)
+        prof_text = f"{char.profession_1 or '-'} / {char.profession_2 or '-'}"
+        lbl_prof = customtkinter.CTkLabel(row_frame, text=prof_text, font=customtkinter.CTkFont(size=12), text_color="gray70")
+        lbl_prof.pack(side="right", padx=20)
+
+        # Delete Button
+        delete_btn = customtkinter.CTkButton(
+            row_frame, 
+            text="✕", 
+            width=30, 
+            height=30,
+            fg_color="transparent", 
+            text_color=("red", "#E74C3C"),
+            hover_color=("gray90", "gray30"),
+            command=lambda c=char: self.delete_character(c.id)
+        )
+        delete_btn.pack(side="right", padx=5)
 
     def add_character(self):
         name = self.entry_name.get()

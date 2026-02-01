@@ -44,18 +44,19 @@ class TreasuryFrame(customtkinter.CTkFrame):
         # For simplicity, let's add a listbox/scrollframe for results below the search bar
         self.search_results_frame = customtkinter.CTkScrollableFrame(self.left_frame, height=100)
         self.search_results_frame.grid(row=3, column=0, padx=10, pady=5, sticky="nsew")
+
+        # --- Chart Section (Right Side) ---
+        self.chart_frame = customtkinter.CTkFrame(self, fg_color=("gray95", "gray17"), corner_radius=10)
+        self.chart_frame.grid(row=1, column=1, padx=20, pady=20, sticky="nsew")
         
+        self.load_items()
+
     def search_item_api(self):
         query = self.entry_search.get()
         if not query or len(query) < 2:
             return
             
-        # Get Client from App config
-        # We need to access the app's config. Currently passed to App, but TreasuryFrame has only engine.
-        # Let's fix this constructor in app.py or pass config here.
-        # Assuming we update App to pass config or we get it via master.
-        
-        # HACK: Retrieve config from master (App)
+        # Retrieve config from master (App)
         config = self.master.config
         from modules.api_client import BlizzardAPIClient
         
@@ -116,14 +117,42 @@ class TreasuryFrame(customtkinter.CTkFrame):
         session.close()
 
         for item in items:
-            btn = customtkinter.CTkButton(self.item_list_frame, text=item.name, 
+            row = customtkinter.CTkFrame(self.item_list_frame, fg_color="transparent")
+            row.pack(fill="x", padx=5, pady=2)
+            
+            # Item Button
+            btn = customtkinter.CTkButton(row, text=item.name, 
                                           command=lambda i=item.id: self.show_chart(i),
-                                          fg_color="transparent", border_width=1, text_color=("gray10", "gray90"))
-            btn.pack(fill="x", padx=5, pady=2)
+                                          fg_color="transparent", border_width=1, text_color=("gray10", "gray90"),
+                                          anchor="w")
+            btn.pack(side="left", fill="x", expand=True)
+            
+            # Delete Button
+            del_btn = customtkinter.CTkButton(row, text="🗑", width=30, fg_color="transparent", 
+                                              hover_color="#922B21", text_color="gray60",
+                                              command=lambda i=item.id: self.delete_item(i))
+            del_btn.pack(side="right", padx=(5, 0))
             
         print(f"Loaded {len(items)} items into list.") # Debug
-        self.current_item_id = item_id
+
+    def delete_item(self, item_id):
+        if not messagebox.askyesno("Löschen", "Möchtest du dieses Item wirklich nicht mehr beobachten?\n(Preishistorie wird gelöscht)"):
+            return
+
+        session = get_session(self.engine)
+        item = session.query(Item).get(item_id)
+        if item:
+            session.delete(item)
+            session.commit()
+        session.close()
         
+        # Refresh
+        self.load_items()
+        # Clear chart if deleted item was shown
+        for widget in self.chart_frame.winfo_children():
+            widget.destroy()
+
+    def show_chart(self, item_id):
         # Clear previous chart
         for widget in self.chart_frame.winfo_children():
             widget.destroy()
@@ -134,7 +163,7 @@ class TreasuryFrame(customtkinter.CTkFrame):
         session.close()
 
         if not prices:
-            lbl = customtkinter.CTkLabel(self.chart_frame, text="Keine Daten verfügbar")
+            lbl = customtkinter.CTkLabel(self.chart_frame, text=f"Keine Daten verfügbar für {item.name if item else 'Unknown'}")
             lbl.pack(expand=True)
             return
 
@@ -142,27 +171,28 @@ class TreasuryFrame(customtkinter.CTkFrame):
         values = [p.price for p in prices]
 
         # Matplotlib Figure
-        fig = Figure(figsize=(5, 4), dpi=100)
+        import matplotlib.dates as mdates
+        
+        fig = Figure(figsize=(7, 4), dpi=100)
         ax = fig.add_subplot(111)
-        ax.plot(dates, values, marker='o')
-        ax.set_title(f"Preisverlauf: {item.name}")
-        ax.set_xlabel("Zeit")
-        ax.set_ylabel("Gold")
-        ax.grid(True)
+        ax.plot(dates, values, marker='o', markersize=4, color='#FFC107', linestyle='-')
+        ax.set_title(f"Preisverlauf: {item.name}", color='white')
+        ax.grid(True, linestyle=":", alpha=0.5)
         
         # Dark mode adjustment for matplotlib
         fig.patch.set_facecolor('#2b2b2b') # approximate dark gray
         ax.set_facecolor('#2b2b2b')
-        ax.spines['bottom'].set_color('white')
-        ax.spines['top'].set_color('white') 
-        ax.spines['right'].set_color('white')
-        ax.spines['left'].set_color('white')
-        ax.tick_params(axis='x', colors='white')
-        ax.tick_params(axis='y', colors='white')
-        ax.yaxis.label.set_color('white')
-        ax.xaxis.label.set_color('white')
-        ax.title.set_color('white')
+        ax.spines['bottom'].set_color('#888')
+        ax.spines['top'].set_color('#888') 
+        ax.spines['right'].set_color('#888')
+        ax.spines['left'].set_color('#888')
+        ax.tick_params(axis='x', colors='white', labelsize=8)
+        ax.tick_params(axis='y', colors='white', labelsize=8)
+        
+        ax.xaxis.set_major_formatter(mdates.DateFormatter('%d.%m'))
+        ax.xaxis.set_major_locator(mdates.AutoDateLocator())
+        fig.autofmt_xdate(rotation=45)
 
         canvas = FigureCanvasTkAgg(fig, master=self.chart_frame)
         canvas.draw()
-        canvas.get_tk_widget().pack(side="top", fill="both", expand=True)
+        canvas.get_tk_widget().pack(side="top", fill="both", expand=True, padx=10, pady=10)

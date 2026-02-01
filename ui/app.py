@@ -1,5 +1,9 @@
 import customtkinter
-
+from database import init_db
+from modules.scheduler import PriceScheduler
+from ui.dashboard import DashboardFrame
+from ui.barracks import BarracksFrame
+from ui.treasury import TreasuryFrame
 class App(customtkinter.CTk):
     def __init__(self, config):
         super().__init__()
@@ -37,23 +41,19 @@ class App(customtkinter.CTk):
                                                    anchor="w", command=self.show_treasury)
         self.btn_treasury.grid(row=3, column=0, sticky="ew")
 
-        # Main Content Frames
-        from database import init_db
-        self.engine = init_db() # Ensure DB is ready
+# Main Content Frames
+        # Ensure DB is ready
+        self.engine = init_db() 
         
         # Start Scheduler
-        from modules.scheduler import PriceScheduler
         self.scheduler = PriceScheduler(self.config, self.engine)
         self.scheduler.start()
         
-        from ui.dashboard import DashboardFrame
         self.dashboard_frame = DashboardFrame(self, self.config, self.engine)
         self.dashboard_frame.grid(row=0, column=1, sticky="nsew")
 
-        from ui.barracks import BarracksFrame
         self.barracks_frame = BarracksFrame(self, self.engine)
 
-        from ui.treasury import TreasuryFrame
         self.treasury_frame = TreasuryFrame(self, self.engine)
 
         # Select default
@@ -83,6 +83,8 @@ class App(customtkinter.CTk):
             self.dashboard_frame.grid_forget()
             self.treasury_frame.grid_forget()
             self.barracks_frame.grid(row=0, column=1, sticky="nsew")
+            # Auto-refresh when showing the tab
+            self.barracks_frame.load_characters()
         elif name == "treasury":
             self.dashboard_frame.grid_forget()
             self.barracks_frame.grid_forget()
