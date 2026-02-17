@@ -1,0 +1,7 @@
+customtkinter
+matplotlib
+requests
+schedule
+sqlalchemy
+openpyxl
+pyinstaller

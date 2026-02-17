@@ -1,28 +1,14 @@
 @echo off
-set "VENV_DIR=venv"
+echo Starting RealmGuardian...
 
-echo Prüfe virtuelle Umgebung...
-if not exist "%VENV_DIR%" (
-    echo Erstelle virtuelle Umgebung...
-    python -m venv %VENV_DIR%
-)
+cd %~dp0
 
-echo Aktiviere virtuelle Umgebung...
-call %VENV_DIR%\Scripts\activate
+:: Start Backend
+start "RG Backend" cmd /k "cd backend && venv\Scripts\activate && uvicorn main:app --reload --port 8000"
 
-echo Installiere/Pruefe Abhaengigkeiten...
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-if %errorlevel% neq 0 (
-    echo Fehler beim Installieren der Abhaengigkeiten!
-    pause
-    exit /b
-)
+:: Start Frontend
+start "RG Frontend" cmd /k "cd frontend && npm run dev"
 
-echo Starte Applikation...
-python main.py
-if %errorlevel% neq 0 (
-    echo.
-    echo Ein Fehler ist aufgetreten. Die App wurde beendet.
-    pause
-)
+echo Services started.
+echo Backend: http://localhost:8000
+echo Frontend: http://localhost:5173
