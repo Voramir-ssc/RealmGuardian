@@ -6,13 +6,14 @@ function App() {
   const [tokenData, setTokenData] = useState(null);
   const [tokenHistory, setTokenHistory] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [range, setRange] = useState('24h');
 
   const fetchTokenData = async () => {
     try {
       const latestRes = await fetch('http://localhost:8000/api/token/latest');
       const latest = await latestRes.json();
 
-      const historyRes = await fetch('http://localhost:8000/api/token/history?limit=24');
+      const historyRes = await fetch(`http://localhost:8000/api/token/history?range=${range}`);
       const history = await historyRes.json();
 
       setTokenData(latest);
@@ -25,9 +26,12 @@ function App() {
 
   useEffect(() => {
     fetchTokenData();
+  }, [range]); // Re-fetch when range changes
+
+  useEffect(() => {
     const interval = setInterval(fetchTokenData, 60000); // Poll every minute
     return () => clearInterval(interval);
-  }, []);
+  }, [range]);
 
   return (
     <Layout>
@@ -36,7 +40,12 @@ function App() {
         {loading ? (
           <div className="animate-pulse bg-surface h-48 rounded-2xl border border-white/5"></div>
         ) : (
-          <TokenWidget currentPrice={tokenData?.price || 0} history={tokenHistory} />
+          <TokenWidget
+            currentPrice={tokenData?.price || 0}
+            history={tokenHistory}
+            selectedRange={range}
+            onRangeChange={setRange}
+          />
         )}
 
         {/* Placeholder for Watchlist */}

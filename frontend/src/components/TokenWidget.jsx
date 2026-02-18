@@ -2,15 +2,24 @@ import React from 'react';
 import { AreaChart, Area, ResponsiveContainer, YAxis } from 'recharts';
 import { TrendingUp, TrendingDown, Coins } from 'lucide-react';
 
-const TokenWidget = ({ currentPrice, history }) => {
-    const isUp = history.length > 1 && history[0].price >= history[history.length - 1].price;
+const TokenWidget = ({ currentPrice, history, selectedRange, onRangeChange }) => {
+    const isUp = history.length > 1 && history[0].price <= history[history.length - 1].price; // Compare oldest to newest in current view
     const formattedPrice = (currentPrice / 10000).toLocaleString('de-DE');
 
-    // Prepare data for chart (reverse if history is descending time)
-    const chartData = [...history].reverse().map(entry => ({
+    // Chart Data Preparation
+    const chartData = history.map(entry => ({
         price: entry.price / 10000,
-        time: new Date(entry.last_updated_timestamp * 1000).toLocaleTimeString()
+        time: entry.last_updated_timestamp, // Maintain raw for formatting
+        formattedTime: new Date(entry.last_updated_timestamp * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        formattedDate: new Date(entry.last_updated_timestamp * 1000).toLocaleDateString([], { day: '2-digit', month: '2-digit' })
     }));
+
+    const ranges = [
+        { label: '24H', value: '24h' },
+        { label: '7D', value: '7d' },
+        { label: '1M', value: '1m' },
+        { label: '1Y', value: '1y' }
+    ];
 
     return (
         <div className="bg-surface border border-white/5 rounded-2xl p-6 relative overflow-hidden group hover:border-accent/30 transition-all duration-300">
@@ -27,7 +36,23 @@ const TokenWidget = ({ currentPrice, history }) => {
                 </div>
             </div>
 
-            <div className="h-16 w-full opacity-50 group-hover:opacity-100 transition-opacity duration-500">
+            {/* Range Selector */}
+            <div className="flex gap-1 mb-4 relative z-10">
+                {ranges.map(range => (
+                    <button
+                        key={range.value}
+                        onClick={() => onRangeChange(range.value)}
+                        className={`text-xs px-2 py-1 rounded transition-colors ${selectedRange === range.value
+                                ? 'bg-accent/20 text-accent font-medium'
+                                : 'text-secondary hover:text-white hover:bg-white/5'
+                            }`}
+                    >
+                        {range.label}
+                    </button>
+                ))}
+            </div>
+
+            <div className="h-32 w-full opacity-75 group-hover:opacity-100 transition-opacity duration-500">
                 <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={chartData}>
                         <defs>
@@ -44,12 +69,13 @@ const TokenWidget = ({ currentPrice, history }) => {
                             fillOpacity={1}
                             fill="url(#colorPrice)"
                             strokeWidth={2}
+                            isAnimationActive={false}
                         />
                     </AreaChart>
                 </ResponsiveContainer>
             </div>
 
-            <div className="absolute top-0 right-0 p-3 opacity-10">
+            <div className="absolute top-0 right-0 p-3 opacity-10 pointer-events-none">
                 <Coins size={100} />
             </div>
         </div>
