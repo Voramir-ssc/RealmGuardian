@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './components/Layout';
 import TokenWidget from './components/TokenWidget';
+import GoldWidget from './components/GoldWidget';
 import WatchlistWidget from './components/WatchlistWidget';
 
 function App() {
@@ -10,9 +11,12 @@ function App() {
   const [error, setError] = useState(null);
   const [range, setRange] = useState('24h');
 
+  // Helper to ensure we use the same API URL logic
+  const getApiUrl = () => import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
   const fetchTokenData = async () => {
     try {
-      let apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+      let apiUrl = getApiUrl();
       let latestRes;
       try {
         latestRes = await fetch(`${apiUrl}/api/token/latest`);
@@ -67,7 +71,11 @@ function App() {
             onRangeChange={setRange}
           />
         )}
-        <WatchlistWidget />
+
+        {/* Account / Gold Card */}
+        <GoldWidget apiUrl={import.meta.env.VITE_API_URL || 'http://localhost:8000'} />
+
+        <WatchlistWidget apiUrl={import.meta.env.VITE_API_URL || 'http://localhost:8000'} />
       </div>
     </Layout>
   );

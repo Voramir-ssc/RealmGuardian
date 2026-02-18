@@ -1,6 +1,6 @@
 import React from 'react';
-import { AreaChart, Area, ResponsiveContainer, YAxis, XAxis, Tooltip } from 'recharts';
 import { TrendingUp, TrendingDown, Coins } from 'lucide-react';
+import PriceChart from './PriceChart';
 
 const TokenWidget = ({ currentPrice, lastUpdated, formatted, history, selectedRange, onRangeChange }) => {
     const safeHistory = Array.isArray(history) ? history : [];
@@ -17,8 +17,8 @@ const TokenWidget = ({ currentPrice, lastUpdated, formatted, history, selectedRa
     const ranges = [
         { label: '24H', value: '24h' },
         { label: '7D', value: '7d' },
-        { label: '1M', value: '1m' },
-        { label: '1Y', value: '1y' }
+        { label: '14D', value: '14d' },
+        { label: '30D', value: '30d' }
     ];
 
     return (
@@ -53,48 +53,11 @@ const TokenWidget = ({ currentPrice, lastUpdated, formatted, history, selectedRa
             </div>
 
             <div className="h-32 w-full opacity-75 group-hover:opacity-100 transition-opacity duration-500">
-                <ResponsiveContainer width="100%" height="100%">
-                    <AreaChart data={chartData}>
-                        <defs>
-                            <linearGradient id="colorPrice" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor="#00ced1" stopOpacity={0.3} />
-                                <stop offset="95%" stopColor="#00ced1" stopOpacity={0} />
-                            </linearGradient>
-                        </defs>
-                        <XAxis
-                            dataKey={selectedRange === '24h' ? 'formattedTime' : 'formattedDate'}
-                            stroke="#ffffff33"
-                            tick={{ fill: '#ffffff66', fontSize: 10 }}
-                            tickLine={false}
-                            axisLine={false}
-                            minTickGap={60}
-                        />
-                        <YAxis
-                            domain={['dataMin', 'dataMax']}
-                            stroke="#ffffff33"
-                            tick={{ fill: '#ffffff66', fontSize: 10 }}
-                            tickLine={false}
-                            axisLine={false}
-                            tickFormatter={(value) => `${(value / 1000).toFixed(0)}k`}
-                            width={35}
-                        />
-                        <Tooltip
-                            contentStyle={{ backgroundColor: '#1a1b1e', borderColor: '#ffffff1a', borderRadius: '8px', color: '#fff' }}
-                            itemStyle={{ color: '#00ced1' }}
-                            formatter={(value) => [`${value.toLocaleString('de-DE')}g`, 'Price']}
-                            labelStyle={{ color: '#ffffff99', marginBottom: '4px' }}
-                        />
-                        <Area
-                            type="monotone"
-                            dataKey="price"
-                            stroke="#00ced1"
-                            fillOpacity={1}
-                            fill="url(#colorPrice)"
-                            strokeWidth={2}
-                            isAnimationActive={false}
-                        />
-                    </AreaChart>
-                </ResponsiveContainer>
+                <PriceChart
+                    data={chartData}
+                    selectedRange={selectedRange}
+                    onRangeChange={onRangeChange}
+                />
             </div>
 
             <div className="absolute top-0 right-0 p-3 opacity-10 pointer-events-none">

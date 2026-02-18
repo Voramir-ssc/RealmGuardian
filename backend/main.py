@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI, Depends, HTTPException, Request
 import pydantic
 from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
@@ -8,7 +8,7 @@ from config import config
 from blizzard_api import BlizzardAPI
 import asyncio
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from contextlib import asynccontextmanager
 import backup
 
@@ -31,7 +31,9 @@ async def update_token_price(db: Session):
         data = blizzard_client.get_wow_token_price()
         if data:
             price_copper = data.get("price")
-            last_updated = data.get("last_updated_timestamp")
+            # Blizzard returns milliseconds, we store seconds
+            last_updated_ms = data.get("last_updated_timestamp")
+            last_updated = int(last_updated_ms / 1000)
 
             # Check if this timestamp already exists to avoid duplicates
             existing = db.query(models.WowTokenHistory).filter_by(last_updated_timestamp=last_updated).first()
@@ -130,20 +132,7 @@ async def scheduler():
              except Exception as e:
                  print(f"Backup Error: {e}")
 
-        # Run Backup every ~24 hours (48 * 30min)
-        # For simplicity, we can check the hour or just use a counter.
-        # However, a simpler approach is to run it on startup or specific time.
-        # Let's keep it simple: run backup if hour is 4 AM (server time)
-        now = datetime.now()
-        if now.hour == 4 and now.minute < 30:
-             try:
-                 print("Starting daily backup...")
-                 # Run synchronously to avoid complex async file IO issues, 
-                 # as database copy is fast for SQLite
-                 from backup import perform_backup
-                 perform_backup()
-             except Exception as e:
-                 print(f"Backup Error: {e}")
+
 
 app = FastAPI(title="RealmGuardian API", lifespan=lifespan)
 
@@ -175,55 +164,194 @@ def get_latest_token(db: Session = Depends(get_db)):
         "formatted": f"{latest.price / 10000:,.0f}g"
     }
 
-from datetime import datetime, timedelta
-
 @app.get("/api/token/history")
 def get_token_history(range: str = "24h", db: Session = Depends(get_db)):
     now = datetime.utcnow()
     
+    # Refined Time Ranges & Downsampling
+    # 24h: 20min intervals (raw)
+    # 7d: 1 hour intervals
+    # 14d: 2 hour intervals
+    # 30d: 4 hour intervals
+    
     if range == "24h":
         start_time = now - timedelta(hours=24)
-        interval_seconds = 0 # No aggregation
+        interval_seconds = 0
     elif range == "7d":
         start_time = now - timedelta(days=7)
-        interval_seconds = 3600 # 1 hour
-    elif range == "1m":
+        interval_seconds = 3600
+    elif range == "14d":
+        start_time = now - timedelta(days=14)
+        interval_seconds = 7200
+    elif range == "30d":
         start_time = now - timedelta(days=30)
-        interval_seconds = 14400 # 4 hours
-    elif range == "3m":
-        start_time = now - timedelta(days=90)
-        interval_seconds = 43200 # 12 hours
-    elif range == "1y":
-        start_time = now - timedelta(days=365)
-        interval_seconds = 86400 # 24 hours
+        interval_seconds = 14400
     else:
-        # Default to 24h
+        # Default
         start_time = now - timedelta(hours=24)
         interval_seconds = 0
-
-    # Convert to timestamp for basic filtering
+    
     start_timestamp = start_time.timestamp()
 
-    # Query all data in range
+    # Query
     query = db.query(models.WowTokenHistory)\
         .filter(models.WowTokenHistory.last_updated_timestamp >= start_timestamp)\
         .order_by(models.WowTokenHistory.last_updated_timestamp.asc())
-        
+
     results = query.all()
 
     if interval_seconds == 0 or not results:
         return results
 
-    # Basic Downsampling in Python (Group by interval)
+    # Downsampling
     downsampled = []
     last_bucket = 0
-    
     for entry in results:
-        # Calculate bucket (start of interval)
         bucket = (entry.last_updated_timestamp // interval_seconds) * interval_seconds
-        
         if bucket > last_bucket:
             downsampled.append(entry)
+            last_bucket = bucket
+            
+    return downsampled
+
+
+# --- Auth & Character Endpoints ---
+
+from fastapi.responses import RedirectResponse
+
+from fastapi import FastAPI, Depends, HTTPException, Request
+
+@app.get('/api/auth/login')
+def login(request: Request):
+    # Dynamic redirect URI based on the request host (localhost or tailscale IP)
+    base_url = str(request.base_url).rstrip('/')
+    redirect_uri = f"{base_url}/api/auth/callback"
+    url = blizzard_client.get_authorization_url(redirect_uri)
+    return RedirectResponse(url)
+
+@app.get('/api/auth/callback')
+def auth_callback(code: str, state: str, request: Request, db: Session = Depends(get_db)):
+    base_url = str(request.base_url).rstrip('/')
+    redirect_uri = f"{base_url}/api/auth/callback"
+    user_token = blizzard_client.exchange_code_for_token(code, redirect_uri)
+    
+    if not user_token:
+        raise HTTPException(status_code=400, detail="Failed to retrieve user token")
+
+    # Fetch Profile
+    profile = blizzard_client.get_account_profile(user_token)
+    if not profile or 'wow_accounts' not in profile:
+         # Redirect back with error or just log
+         print("No WoW accounts found.")
+         return RedirectResponse("http://localhost:5173?error=no_accounts")
+
+    # Sync Characters
+    # clear old characters? Or just update/upsert.
+    # For now, let's keep it simple: sync what we find.
+    
+    count = 0
+    timestamp = datetime.utcnow()
+    
+    for account in profile['wow_accounts']:
+        for char in account.get('characters', []):
+            try:
+                # Fetch details (gold) for each character
+                # Note: This is slow. In prod, use background task.
+                # For single user exploring, acceptable for now.
+                char_details = blizzard_client.get_character_profile(user_token, char['realm']['slug'], char['name'])
+                
+                if char_details:
+                    # Check if exists
+                    db_char = db.query(models.Character).filter_by(blizzard_id=char['id']).first()
+                    
+                    gold = int(char_details.get('money', 0)) # copper
+                    
+                    # Store media (icon) - usually another call, but maybe 'character_class' has it?
+                    # Profile API usually returns links to media.
+                    # Simplified: We might skip icon for now or fetch it if needed.
+                    # char_details['media']['href']
+                    
+                    if not db_char:
+                        db_char = models.Character(
+                            blizzard_id=char['id'],
+                            name=char['name'],
+                            realm=char['realm']['name'],
+                            class_name=char['playable_class']['name'],
+                            level=char['level'],
+                            gold=gold,
+                            last_updated=timestamp
+                        )
+                        db.add(db_char)
+                    else:
+                        db_char.name = char['name']
+                        db_char.realm = char['realm']['name']
+                        db_char.level = char['level']
+                        db_char.gold = gold
+                        db_char.last_updated = timestamp
+                    
+                    count += 1
+            except Exception as e:
+                print(f"Failed to sync char {char.get('name')}: {e}")
+                continue
+                
+    db.commit()
+    return RedirectResponse("http://localhost:5173?connected=true")
+
+@app.get('/api/user/characters')
+def get_user_characters(db: Session = Depends(get_db)):
+    chars = db.query(models.Character).order_by(models.Character.level.desc()).all()
+    total_gold = sum(c.gold for c in chars)
+    return {
+        "total_gold": total_gold,
+        "characters": chars
+    }
+
+
+@app.get("/api/items/{item_id}/history")
+def get_item_history(item_id: int, range: str = "14d", db: Session = Depends(get_db)):
+    # Find internal ID first
+    tracked = db.query(models.TrackedItem).filter(models.TrackedItem.item_id == item_id).first()
+    if not tracked:
+         raise HTTPException(status_code=404, detail='Item not tracked')
+         
+    now = datetime.utcnow()
+    
+    if range == "24h":
+        start_time = now - timedelta(hours=24)
+        interval_seconds = 0
+    elif range == "7d":
+        start_time = now - timedelta(days=7)
+        interval_seconds = 3600
+    elif range == "14d":
+        start_time = now - timedelta(days=14)
+        interval_seconds = 7200
+    elif range == "30d":
+        start_time = now - timedelta(days=30)
+        interval_seconds = 14400
+    else:
+        start_time = now - timedelta(days=14)
+        interval_seconds = 7200 # Default to 14d for items
+
+    start_timestamp = start_time.timestamp()
+    
+    query = db.query(models.ItemPriceHistory)\
+        .filter(models.ItemPriceHistory.item_id == tracked.id)\
+        .filter(models.ItemPriceHistory.timestamp >= start_time)\
+        .order_by(models.ItemPriceHistory.timestamp.asc())
+        
+    results = query.all()
+    
+    if interval_seconds == 0 or not results:
+        # Transform for frontend (needs timestamp field similar to token)
+        return [{"price": r.buyout, "last_updated_timestamp": r.timestamp.timestamp()} for r in results]
+
+    downsampled = []
+    last_bucket = 0
+    for entry in results:
+        ts = entry.timestamp.timestamp()
+        bucket = (ts // interval_seconds) * interval_seconds
+        if bucket > last_bucket:
+            downsampled.append({"price": entry.buyout, "last_updated_timestamp": ts})
             last_bucket = bucket
             
     return downsampled
@@ -243,8 +371,18 @@ def trigger_backup():
 class ItemRequest(pydantic.BaseModel):
     item_id: int
 
+from fastapi import BackgroundTasks
+
+async def background_commodity_update():
+    # Helper to run update in background with its own DB session
+    db = next(get_db()) # Assuming get_db provides a SessionLocal equivalent
+    try:
+        await update_commodity_prices(db)
+    finally:
+        db.close()
+
 @app.post('/api/items')
-def add_tracked_item(item_req: ItemRequest, db: Session = Depends(get_db)):
+def add_tracked_item(item_req: ItemRequest, background_tasks: BackgroundTasks, db: Session = Depends(get_db)):
     # Check if already exists
     exists = db.query(models.TrackedItem).filter(models.TrackedItem.item_id == item_req.item_id).first()
     if exists:
@@ -255,17 +393,27 @@ def add_tracked_item(item_req: ItemRequest, db: Session = Depends(get_db)):
     if not details:
         raise HTTPException(status_code=404, detail='Item not found on Blizzard API')
 
+    # Fetch media
+    media = blizzard_client.get_item_media(item_req.item_id)
+    icon_url = None
+    if media and 'assets' in media:
+        icon_url = media['assets'][0]['value']
+    
     # Create Item
     new_item = models.TrackedItem(
         item_id=details['id'],
         name=details['name'],
-        icon_url=details['media']['assets'][0]['value'] if 'media' in details else None,
+        icon_url=icon_url,
         quality=details['quality']['type']
     )
     
     db.add(new_item)
     db.commit()
     db.refresh(new_item)
+    
+    # Trigger immediate price update
+    background_tasks.add_task(background_commodity_update)
+    
     return new_item
 
 @app.get('/api/items')

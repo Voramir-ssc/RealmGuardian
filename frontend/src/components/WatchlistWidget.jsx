@@ -1,23 +1,44 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, X, Search, TrendingUp, TrendingDown, Package } from 'lucide-react';
+import { Plus, X, Search, TrendingUp, TrendingDown, Package, ChevronDown, ChevronUp } from 'lucide-react';
+import PriceChart from './PriceChart';
 
-const WatchlistWidget = () => {
+const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
     const [items, setItems] = useState([]);
     const [newItemId, setNewItemId] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [expandedItem, setExpandedItem] = useState(null);
+    const [itemHistory, setItemHistory] = useState([]);
+    const [historyLoading, setHistoryLoading] = useState(false);
+    const [historyRange, setHistoryRange] = useState('14d');
 
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+    // Dynamic API URL logic similar to App.jsx
+    const getApiUrl = () => {
+        return propApiUrl;
+    };
 
     const fetchItems = async () => {
+        let url = getApiUrl();
         try {
-            const res = await fetch(`${apiUrl}/api/items`);
+            let res;
+            try {
+                res = await fetch(`${url}/api/items`);
+            } catch (e) {
+                console.warn("Watchlist fetch failed, trying localhost fallback...");
+                url = 'http://localhost:8000';
+                res = await fetch(`${url}/api/items`);
+            }
+
             if (res.ok) {
                 const data = await res.json();
                 setItems(data);
+                setError(null);
+            } else {
+                throw new Error(res.statusText);
             }
         } catch (err) {
             console.error("Failed to fetch watchlist", err);
+            setError("Could not load watchlist.");
         }
     };
 
@@ -27,19 +48,77 @@ const WatchlistWidget = () => {
         return () => clearInterval(interval);
     }, []);
 
+    const fetchHistory = async (itemId, range) => {
+        setHistoryLoading(true);
+        let url = getApiUrl();
+        try {
+            let res;
+            try {
+                res = await fetch(`${url}/api/items/${itemId}/history?range=${range}`);
+            } catch (e) {
+                url = 'http://localhost:8000';
+                res = await fetch(`${url}/api/items/${itemId}/history?range=${range}`);
+            }
+
+            if (res.ok) {
+                const data = await res.json();
+                // Map to chart format
+                const chartData = data.map(entry => ({
+                    price: entry.price / 10000,
+                    time: entry.last_updated_timestamp,
+                    formattedTime: new Date(entry.last_updated_timestamp * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                    formattedDate: new Date(entry.last_updated_timestamp * 1000).toLocaleDateString([], { day: '2-digit', month: '2-digit' })
+                }));
+                setItemHistory(chartData);
+            }
+        } catch (err) {
+            console.error("Failed to fetch item history", err);
+        } finally {
+            setHistoryLoading(false);
+        }
+    };
+
+    const toggleExpand = (itemId) => {
+        if (expandedItem === itemId) {
+            setExpandedItem(null);
+            setItemHistory([]);
+        } else {
+            setExpandedItem(itemId);
+            fetchHistory(itemId, historyRange);
+        }
+    };
+
+    const handleRangeChange = (range) => {
+        setHistoryRange(range);
+        if (expandedItem) {
+            fetchHistory(expandedItem, range);
+        }
+    };
+
     const handleAddItem = async (e) => {
         e.preventDefault();
         if (!newItemId) return;
 
         setLoading(true);
         setError(null);
+        let url = getApiUrl();
 
         try {
-            const res = await fetch(`${apiUrl}/api/items`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ item_id: parseInt(newItemId) })
-            });
+            let res;
+            try {
+                res = await fetch(`${url}/api/items`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ item_id: parseInt(newItemId) })
+                });
+            } catch (e) {
+                url = 'http://localhost:8000';
+                res = await fetch(`${url}/api/items`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ item_id: parseInt(newItemId) })
+                });
+            }
 
             if (!res.ok) {
                 const err = await res.json();
@@ -56,13 +135,26 @@ const WatchlistWidget = () => {
     };
 
     const handleDeleteItem = async (itemId) => {
+        let url = getApiUrl();
         try {
-            await fetch(`${apiUrl}/api/items/${itemId}`, { method: 'DELETE' });
+            await fetch(`${url}/api/items/${itemId}`, { method: 'DELETE' });
             fetchItems();
         } catch (err) {
-            console.error("Failed to delete item", err);
+            try {
+                await fetch(`http://localhost:8000/api/items/${itemId}`, { method: 'DELETE' });
+                fetchItems();
+            } catch (e) {
+                console.error("Failed to delete item", err);
+            }
         }
     };
+
+    const ranges = [
+        { label: '24H', value: '24h' },
+        { label: '7D', value: '7d' },
+        { label: '14D', value: '14d' },
+        { label: '30D', value: '30d' }
+    ];
 
     return (
         <div className="bg-surface border border-white/5 rounded-2xl p-6 md:col-span-2">
@@ -108,40 +200,83 @@ const WatchlistWidget = () => {
                     </div>
                 ) : (
                     items.map(item => (
-                        <div key={item.id} className="flex items-center justify-between bg-black/20 border border-white/5 rounded-xl p-3 hover:border-white/10 transition-colors group">
-                            <div className="flex items-center gap-3">
-                                {item.icon_url ? (
-                                    <img src={item.icon_url} alt={item.name} className="w-10 h-10 rounded-lg border border-white/10" />
-                                ) : (
-                                    <div className="w-10 h-10 rounded-lg bg-surface border border-white/10 flex items-center justify-center">
-                                        <Package size={20} className="text-secondary" />
-                                    </div>
-                                )}
-                                <div>
-                                    <div className={`font-medium text-sm ${item.quality === 'EPIC' ? 'text-purple-400' : item.quality === 'RARE' ? 'text-blue-400' : 'text-white'}`}>
-                                        {item.name}
-                                    </div>
-                                    <div className="text-xs text-secondary/50">ID: {item.item_id}</div>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center gap-4">
-                                <div className="text-right">
-                                    <div className="font-bold text-white tracking-tight">
-                                        {item.current_price ? (item.current_price / 10000).toLocaleString('de-DE') : 0}g
-                                    </div>
-                                    <div className="text-[10px] text-secondary/50">
-                                        {item.last_updated ? new Date(item.last_updated).toLocaleTimeString() : 'No Data'}
+                        <div key={item.id} className="bg-black/20 border border-white/5 rounded-xl transition-all hover:border-white/10">
+                            <div className="flex items-center justify-between p-3">
+                                <div className="flex items-center gap-3 flex-1 cursor-pointer" onClick={() => toggleExpand(item.item_id)}>
+                                    {item.icon_url ? (
+                                        <img src={item.icon_url} alt={item.name} className="w-10 h-10 rounded-lg border border-white/10" />
+                                    ) : (
+                                        <div className="w-10 h-10 rounded-lg bg-surface border border-white/10 flex items-center justify-center">
+                                            <Package size={20} className="text-secondary" />
+                                        </div>
+                                    )}
+                                    <div>
+                                        <div className={`font-medium text-sm ${item.quality === 'EPIC' ? 'text-purple-400' : item.quality === 'RARE' ? 'text-blue-400' : 'text-white'}`}>
+                                            {item.name}
+                                        </div>
+                                        <div className="text-xs text-secondary/50 flex items-center gap-2">
+                                            ID: {item.item_id}
+                                            {expandedItem === item.item_id ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
+                                        </div>
                                     </div>
                                 </div>
 
-                                <button
-                                    onClick={() => handleDeleteItem(item.item_id)}
-                                    className="text-secondary/50 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100 p-2"
-                                >
-                                    <X size={16} />
-                                </button>
+                                <div className="flex items-center gap-4">
+                                    <div className="text-right">
+                                        <div className="font-bold text-white tracking-tight">
+                                            {item.current_price ? (item.current_price / 10000).toLocaleString('de-DE') : 0}g
+                                        </div>
+                                        <div className="text-[10px] text-secondary/50">
+                                            {item.last_updated ? new Date(item.last_updated).toLocaleTimeString() : 'No Data'}
+                                        </div>
+                                    </div>
+
+                                    <button
+                                        onClick={() => handleDeleteItem(item.item_id)}
+                                        className="text-secondary/50 hover:text-red-400 transition-colors p-2"
+                                    >
+                                        <X size={16} />
+                                    </button>
+                                </div>
                             </div>
+
+                            {/* Expanded Graph Area */}
+                            {expandedItem === item.item_id && (
+                                <div className="border-t border-white/5 p-4 bg-black/40 rounded-b-xl">
+                                    <div className="flex justify-between items-center mb-4">
+                                        <span className="text-xs text-secondary uppercase tracking-wider font-medium">Price History</span>
+                                        <div className="flex gap-1">
+                                            {ranges.map(range => (
+                                                <button
+                                                    key={range.value}
+                                                    onClick={() => handleRangeChange(range.value)}
+                                                    className={`text-[10px] px-2 py-0.5 rounded transition-colors ${historyRange === range.value
+                                                        ? 'bg-accent/20 text-accent font-medium'
+                                                        : 'text-secondary hover:text-white hover:bg-white/5'
+                                                        }`}
+                                                >
+                                                    {range.label}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <div className="h-48 w-full">
+                                        {historyLoading ? (
+                                            <div className="h-full w-full flex items-center justify-center text-secondary/50 text-xs">Loading...</div>
+                                        ) : itemHistory.length > 0 ? (
+                                            <PriceChart
+                                                data={itemHistory}
+                                                selectedRange={historyRange}
+                                                onRangeChange={() => { }} // Handled by buttons above
+                                                color="#a3b3cc" // Different color for items
+                                            />
+                                        ) : (
+                                            <div className="h-full w-full flex items-center justify-center text-secondary/50 text-xs">No history data available</div>
+                                        )}
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     ))
                 )}

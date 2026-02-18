@@ -33,3 +33,16 @@ class ItemPriceHistory(Base):
     timestamp = Column(DateTime, default=datetime.datetime.utcnow)
 
     item = relationship("TrackedItem", back_populates="price_history")
+
+class Character(Base):
+    __tablename__ = "characters"
+
+    id = Column(Integer, primary_key=True, index=True)
+    blizzard_id = Column(Integer, unique=True, nullable=False)
+    name = Column(String, nullable=False)
+    realm = Column(String, nullable=False)
+    class_name = Column(String, nullable=True)
+    level = Column(Integer, nullable=True)
+    gold = Column(Integer, default=0) # Stored in copper
+    icon_url = Column(String, nullable=True)
+    last_updated = Column(DateTime, default=datetime.datetime.utcnow)

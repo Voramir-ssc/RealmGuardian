@@ -39,7 +39,17 @@ class BlizzardAPI:
 
     def get_item_details(self, item_id):
         token = self.get_token()
-        url = f"https://{self.region}.api.blizzard.com/data/wow/item/{item_id}?namespace=static-{self.region}&locale=en_US" # English for universal names
+        url = f"https://{self.region}.api.blizzard.com/data/wow/item/{item_id}?namespace=static-{self.region}&locale=en_US"
+        headers = {"Authorization": f"Bearer {token}"}
+        
+        response = requests.get(url, headers=headers)
+        if response.status_code == 200:
+            return response.json()
+        return None
+
+    def get_item_media(self, item_id):
+        token = self.get_token()
+        url = f"https://{self.region}.api.blizzard.com/data/wow/media/item/{item_id}?namespace=static-{self.region}"
         headers = {"Authorization": f"Bearer {token}"}
         
         response = requests.get(url, headers=headers)
@@ -49,21 +59,45 @@ class BlizzardAPI:
 
     def get_commodity_price_snapshot(self):
         token = self.get_token()
-        # Fetch the auction house index to get the commodities URL
-        # For connected realms, we usually query by a specific realm ID.
-        # But commodities are region-wide (mostly). 
-        # Actually, commodities are region-wide but accessed via a connected-realm ID.
-        # Let's use a default connected realm for EU (e.g. 1305 for Aegwynn, or just any works for commodities).
-        # Better: Use the Auctions API which separates commodities.
-        
-        # We need a connected realm ID. 
-        # For simplicity, let's use a known big one or try to find one. 
-        # EU-Silvermoon is 1325.
-        connected_realm_id = 1325 
-        
-        url = f"https://{self.region}.api.blizzard.com/data/wow/connected-realm/{connected_realm_id}/auctions/commodities?namespace=dynamic-{self.region}"
+        url = f"https://{self.region}.api.blizzard.com/data/wow/auctions/commodities?namespace=dynamic-{self.region}&locale=en_US"
         headers = {"Authorization": f"Bearer {token}"}
         
+        response = requests.get(url, headers=headers)
+        if response.status_code == 200:
+            return response.json()
+        return None
+
+    # --- OAuth2 & Profile Methods ---
+
+    def get_authorization_url(self, redirect_uri):
+        return f"https://oauth.battle.net/authorize?client_id={self.client_id}&scope=wow.profile&state=random_state&redirect_uri={redirect_uri}&response_type=code"
+
+    def exchange_code_for_token(self, code, redirect_uri):
+        url = "https://oauth.battle.net/token"
+        data = {
+            "grant_type": "authorization_code",
+            "code": code,
+            "redirect_uri": redirect_uri,
+            "client_id": self.client_id,
+            "client_secret": self.client_secret
+        }
+        response = requests.post(url, data=data)
+        if response.status_code == 200:
+            return response.json().get("access_token")
+        return None
+
+    def get_account_profile(self, user_token):
+        url = f"https://{self.region}.api.blizzard.com/profile/user/wow?namespace=profile-{self.region}&locale=en_US"
+        headers = {"Authorization": f"Bearer {user_token}"}
+        response = requests.get(url, headers=headers)
+        if response.status_code == 200:
+            return response.json()
+        return None
+
+    def get_character_profile(self, user_token, realm_slug, char_name):
+        # We need lowercase name and slug for API
+        url = f"https://{self.region}.api.blizzard.com/profile/wow/character/{realm_slug}/{char_name.lower()}?namespace=profile-{self.region}&locale=en_US"
+        headers = {"Authorization": f"Bearer {user_token}"}
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
             return response.json()
