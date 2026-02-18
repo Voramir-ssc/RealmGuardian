@@ -13,11 +13,6 @@ function App() {
   const fetchTokenData = async () => {
     try {
       let apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
-
-      // If we are on the same machine, try localhost first if the IP fails, or just default to localhost for now to fix the immediate issue.
-      // Actually, let's just force localhost for this test if the user is on the server.
-      // But better: try-catch the fetch.
-
       let latestRes;
       try {
         latestRes = await fetch(`${apiUrl}/api/token/latest`);
@@ -44,10 +39,10 @@ function App() {
 
   useEffect(() => {
     fetchTokenData();
-  }, [range]); // Re-fetch when range changes
+  }, [range]);
 
   useEffect(() => {
-    const interval = setInterval(fetchTokenData, 60000); // Poll every minute
+    const interval = setInterval(fetchTokenData, 60000);
     return () => clearInterval(interval);
   }, [range]);
 
@@ -72,14 +67,7 @@ function App() {
             onRangeChange={setRange}
           />
         )}
-
-        {/* Placeholder for Watchlist */}
-        <div className="bg-surface border border-white/5 rounded-2xl p-6 md:col-span-2">
-          <h3 className="text-secondary text-sm font-medium uppercase tracking-wider mb-4">Market Watchlist</h3>
-          <div className="flex flex-col items-center justify-center h-32 text-secondary/50 border-2 border-dashed border-white/5 rounded-xl">
-            <span>No items tracked yet</span>
-          </div>
-        </div>
+        <WatchlistWidget />
       </div>
     </Layout>
   );
