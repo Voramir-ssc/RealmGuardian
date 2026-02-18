@@ -1,15 +1,15 @@
 import React from 'react';
-import { AreaChart, Area, ResponsiveContainer, YAxis } from 'recharts';
+import { AreaChart, Area, ResponsiveContainer, YAxis, XAxis, Tooltip } from 'recharts';
 import { TrendingUp, TrendingDown, Coins } from 'lucide-react';
 
-const TokenWidget = ({ currentPrice, history, selectedRange, onRangeChange }) => {
-    const isUp = history.length > 1 && history[0].price <= history[history.length - 1].price; // Compare oldest to newest in current view
-    const formattedPrice = (currentPrice / 10000).toLocaleString('de-DE');
+const TokenWidget = ({ currentPrice, lastUpdated, formatted, history, selectedRange, onRangeChange }) => {
+    const safeHistory = Array.isArray(history) ? history : [];
+    const isUp = safeHistory.length > 1 && safeHistory[0].price <= safeHistory[safeHistory.length - 1].price;
 
     // Chart Data Preparation
-    const chartData = history.map(entry => ({
+    const chartData = safeHistory.map(entry => ({
         price: entry.price / 10000,
-        time: entry.last_updated_timestamp, // Maintain raw for formatting
+        time: entry.last_updated_timestamp,
         formattedTime: new Date(entry.last_updated_timestamp * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         formattedDate: new Date(entry.last_updated_timestamp * 1000).toLocaleDateString([], { day: '2-digit', month: '2-digit' })
     }));
@@ -27,7 +27,7 @@ const TokenWidget = ({ currentPrice, history, selectedRange, onRangeChange }) =>
                 <div>
                     <h3 className="text-secondary text-sm font-medium uppercase tracking-wider">WoW Token</h3>
                     <div className="flex items-baseline gap-2 mt-1">
-                        <span className="text-3xl font-bold text-white tracking-tight">{formattedPrice}</span>
+                        <span className="text-3xl font-bold text-white tracking-tight">{formatted}</span>
                         <span className="text-accent text-sm font-medium">gold</span>
                     </div>
                 </div>
@@ -43,8 +43,8 @@ const TokenWidget = ({ currentPrice, history, selectedRange, onRangeChange }) =>
                         key={range.value}
                         onClick={() => onRangeChange(range.value)}
                         className={`text-xs px-2 py-1 rounded transition-colors ${selectedRange === range.value
-                                ? 'bg-accent/20 text-accent font-medium'
-                                : 'text-secondary hover:text-white hover:bg-white/5'
+                            ? 'bg-accent/20 text-accent font-medium'
+                            : 'text-secondary hover:text-white hover:bg-white/5'
                             }`}
                     >
                         {range.label}
@@ -61,7 +61,29 @@ const TokenWidget = ({ currentPrice, history, selectedRange, onRangeChange }) =>
                                 <stop offset="95%" stopColor="#00ced1" stopOpacity={0} />
                             </linearGradient>
                         </defs>
-                        <YAxis domain={['dataMin', 'dataMax']} hide />
+                        <XAxis
+                            dataKey={selectedRange === '24h' ? 'formattedTime' : 'formattedDate'}
+                            stroke="#ffffff33"
+                            tick={{ fill: '#ffffff66', fontSize: 10 }}
+                            tickLine={false}
+                            axisLine={false}
+                            minTickGap={60}
+                        />
+                        <YAxis
+                            domain={['dataMin', 'dataMax']}
+                            stroke="#ffffff33"
+                            tick={{ fill: '#ffffff66', fontSize: 10 }}
+                            tickLine={false}
+                            axisLine={false}
+                            tickFormatter={(value) => `${(value / 1000).toFixed(0)}k`}
+                            width={35}
+                        />
+                        <Tooltip
+                            contentStyle={{ backgroundColor: '#1a1b1e', borderColor: '#ffffff1a', borderRadius: '8px', color: '#fff' }}
+                            itemStyle={{ color: '#00ced1' }}
+                            formatter={(value) => [`${value.toLocaleString('de-DE')}g`, 'Price']}
+                            labelStyle={{ color: '#ffffff99', marginBottom: '4px' }}
+                        />
                         <Area
                             type="monotone"
                             dataKey="price"

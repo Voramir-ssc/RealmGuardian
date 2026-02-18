@@ -1,19 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './components/Layout';
 import TokenWidget from './components/TokenWidget';
+import WatchlistWidget from './components/WatchlistWidget';
 
 function App() {
   const [tokenData, setTokenData] = useState(null);
   const [tokenHistory, setTokenHistory] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [range, setRange] = useState('24h');
 
   const fetchTokenData = async () => {
     try {
-      const latestRes = await fetch('http://localhost:8000/api/token/latest');
+      let apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
+      // If we are on the same machine, try localhost first if the IP fails, or just default to localhost for now to fix the immediate issue.
+      // Actually, let's just force localhost for this test if the user is on the server.
+      // But better: try-catch the fetch.
+
+      let latestRes;
+      try {
+        latestRes = await fetch(`${apiUrl}/api/token/latest`);
+      } catch (e) {
+        console.warn("Main API URL failed, trying localhost...");
+        apiUrl = 'http://localhost:8000';
+        latestRes = await fetch(`${apiUrl}/api/token/latest`);
+      }
+
       const latest = await latestRes.json();
 
-      const historyRes = await fetch(`http://localhost:8000/api/token/history?range=${range}`);
+      const historyRes = await fetch(`${apiUrl}/api/token/history?range=${range}`);
       const history = await historyRes.json();
 
       setTokenData(latest);
@@ -21,6 +37,8 @@ function App() {
       setLoading(false);
     } catch (error) {
       console.error("Failed to fetch data", error);
+      setError(error.message);
+      setLoading(false);
     }
   };
 
@@ -35,6 +53,11 @@ function App() {
 
   return (
     <Layout>
+      {error && (
+        <div className="bg-red-500/10 border border-red-500/50 text-red-500 p-4 rounded-xl mb-6">
+          Error loading data: {error}. Check if Backend is running at {import.meta.env.VITE_API_URL || 'localhost:8000'}
+        </div>
+      )}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Token Card */}
         {loading ? (
@@ -42,6 +65,8 @@ function App() {
         ) : (
           <TokenWidget
             currentPrice={tokenData?.price || 0}
+            lastUpdated={tokenData?.last_updated || 0}
+            formatted={tokenData?.formatted || "0g"}
             history={tokenHistory}
             selectedRange={range}
             onRangeChange={setRange}

@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException
+import pydantic
 from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
 import models
@@ -9,6 +10,7 @@ import asyncio
 import time
 from datetime import datetime
 from contextlib import asynccontextmanager
+import backup
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -47,6 +49,50 @@ async def update_token_price(db: Session):
     except Exception as e:
         print(f"Error updating token price: {e}")
 
+async def update_commodity_prices(db: Session):
+    try:
+        print("Updating Commodity Prices...")
+        tracked_items = db.query(models.TrackedItem).all()
+        if not tracked_items:
+            print("No tracked items. Skipping commodity update.")
+            return
+
+        # Fetch snapshot
+        snapshot = blizzard_client.get_commodity_price_snapshot()
+        if not snapshot or 'auctions' not in snapshot:
+            return
+
+        tracked_ids = {item.item_id for item in tracked_items}
+        min_prices = {} 
+
+        print(f"Processing {len(snapshot['auctions'])} auctions for {len(tracked_ids)} tracked items...")
+        
+        for auction in snapshot['auctions']:
+            item_id = auction['item']['id']
+            if item_id in tracked_ids:
+                price = auction.get('unit_price', auction.get('buyout', 0))
+                if price > 0:
+                    if item_id not in min_prices or price < min_prices[item_id]:
+                        min_prices[item_id] = price
+        
+        new_entries = []
+        timestamp = datetime.utcnow()
+        
+        for item in tracked_items:
+            if item.item_id in min_prices:
+                new_entries.append(models.ItemPriceHistory(
+                    item_id=item.id,
+                    buyout=min_prices[item.item_id],
+                    timestamp=timestamp
+                ))
+                print(f"Updated {item.name}: {min_prices[item.item_id] / 10000}g")
+        
+        if new_entries:
+            db.add_all(new_entries)
+            db.commit()
+    except Exception as e:
+        print(f"Error updating commodities: {e}")
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Startup: Start background task loop
@@ -60,6 +106,7 @@ async def scheduler():
             # Create a new session for the background task
             db = next(get_db())
             await update_token_price(db)
+            await update_commodity_prices(db)
         except Exception as e:
             print(f"Scheduler Error: {e}")
         finally:
@@ -68,6 +115,20 @@ async def scheduler():
         
         # Wait for 30 minutes
         await asyncio.sleep(1800)
+
+        # Run Backup every ~24 hours (48 * 30min)
+        # For simplicity, we can check the hour or just use a counter.
+        # However, a simpler approach is to run it on startup or specific time.
+        # Let's keep it simple: run backup if hour is 4 AM (server time)
+        now = datetime.now()
+        if now.hour == 4 and now.minute < 30:
+             try:
+                 print("Starting daily backup...")
+                 # Run synchronously to avoid complex async file IO issues, 
+                 # copying a small DB is fast enough.
+                 backup.create_backup()
+             except Exception as e:
+                 print(f"Backup Error: {e}")
 
         # Run Backup every ~24 hours (48 * 30min)
         # For simplicity, we can check the hour or just use a counter.
@@ -89,7 +150,7 @@ app = FastAPI(title="RealmGuardian API", lifespan=lifespan)
 # Enable CORS for Frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"], # Vite default port
+    allow_origins=["*"], # Allow all for development/tailscale
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -167,3 +228,75 @@ def get_token_history(range: str = "24h", db: Session = Depends(get_db)):
             
     return downsampled
 
+
+@app.post('/api/backup')
+def trigger_backup():
+    success = backup.create_backup()
+    if success:
+        return {'status': 'success', 'message': 'Backup created'}
+    else:
+        raise HTTPException(status_code=500, detail='Backup failed')
+
+
+# --- Item Tracking Endpoints ---
+
+class ItemRequest(pydantic.BaseModel):
+    item_id: int
+
+@app.post('/api/items')
+def add_tracked_item(item_req: ItemRequest, db: Session = Depends(get_db)):
+    # Check if already exists
+    exists = db.query(models.TrackedItem).filter(models.TrackedItem.item_id == item_req.item_id).first()
+    if exists:
+        raise HTTPException(status_code=400, detail='Item already tracked')
+
+    # Fetch details from Blizzard
+    details = blizzard_client.get_item_details(item_req.item_id)
+    if not details:
+        raise HTTPException(status_code=404, detail='Item not found on Blizzard API')
+
+    # Create Item
+    new_item = models.TrackedItem(
+        item_id=details['id'],
+        name=details['name'],
+        icon_url=details['media']['assets'][0]['value'] if 'media' in details else None,
+        quality=details['quality']['type']
+    )
+    
+    db.add(new_item)
+    db.commit()
+    db.refresh(new_item)
+    return new_item
+
+@app.get('/api/items')
+def get_tracked_items(db: Session = Depends(get_db)):
+    items = db.query(models.TrackedItem).all()
+    result = []
+    for item in items:
+        # Get latest price
+        latest = db.query(models.ItemPriceHistory)\
+            .filter(models.ItemPriceHistory.item_id == item.id)\
+            .order_by(models.ItemPriceHistory.timestamp.desc())\
+            .first()
+        
+        item_data = {
+            "id": item.id,
+            "item_id": item.item_id,
+            "name": item.name,
+            "icon_url": item.icon_url,
+            "quality": item.quality,
+            "current_price": latest.buyout if latest else 0,
+            "last_updated": latest.timestamp if latest else None
+        }
+        result.append(item_data)
+    return result
+
+@app.delete('/api/items/{item_id}')
+def delete_tracked_item(item_id: int, db: Session = Depends(get_db)):
+    item = db.query(models.TrackedItem).filter(models.TrackedItem.item_id == item_id).first()
+    if not item:
+        raise HTTPException(status_code=404, detail='Item not found')
+    
+    db.delete(item)
+    db.commit()
+    return {'message': 'Item deleted'}

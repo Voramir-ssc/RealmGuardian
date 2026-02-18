@@ -11,6 +11,7 @@ class Config:
         self.client_id = os.getenv("BLIZZARD_CLIENT_ID", "")
         self.client_secret = os.getenv("BLIZZARD_CLIENT_SECRET", "")
         self.region = os.getenv("BLIZZARD_REGION", "eu")
+        self.load()
 
     def load(self):
         if os.path.exists(CONFIG_FILE):

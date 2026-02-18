@@ -36,3 +36,35 @@ class BlizzardAPI:
         else:
             print(f"Error fetching token price: {response.text}")
             return None
+
+    def get_item_details(self, item_id):
+        token = self.get_token()
+        url = f"https://{self.region}.api.blizzard.com/data/wow/item/{item_id}?namespace=static-{self.region}&locale=en_US" # English for universal names
+        headers = {"Authorization": f"Bearer {token}"}
+        
+        response = requests.get(url, headers=headers)
+        if response.status_code == 200:
+            return response.json()
+        return None
+
+    def get_commodity_price_snapshot(self):
+        token = self.get_token()
+        # Fetch the auction house index to get the commodities URL
+        # For connected realms, we usually query by a specific realm ID.
+        # But commodities are region-wide (mostly). 
+        # Actually, commodities are region-wide but accessed via a connected-realm ID.
+        # Let's use a default connected realm for EU (e.g. 1305 for Aegwynn, or just any works for commodities).
+        # Better: Use the Auctions API which separates commodities.
+        
+        # We need a connected realm ID. 
+        # For simplicity, let's use a known big one or try to find one. 
+        # EU-Silvermoon is 1325.
+        connected_realm_id = 1325 
+        
+        url = f"https://{self.region}.api.blizzard.com/data/wow/connected-realm/{connected_realm_id}/auctions/commodities?namespace=dynamic-{self.region}"
+        headers = {"Authorization": f"Bearer {token}"}
+        
+        response = requests.get(url, headers=headers)
+        if response.status_code == 200:
+            return response.json()
+        return None
