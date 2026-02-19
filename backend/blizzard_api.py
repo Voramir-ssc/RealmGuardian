@@ -101,4 +101,31 @@ class BlizzardAPI:
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
             return response.json()
+        
+        with open("debug_api_error.txt", "w") as f:
+            f.write(f"URL: {url}\nStatus: {response.status_code}\nResponse: {response.text}\n")
+            
+        print(f"Error fetching character profile for {char_name}: {response.status_code} - {response.text}")
+        return None
+
+    def get_protected_character_profile(self, user_token, realm_id, char_id):
+        url = f"https://{self.region}.api.blizzard.com/profile/user/wow/protected-character/{realm_id}-{char_id}?namespace=profile-{self.region}&locale=en_US"
+        headers = {"Authorization": f"Bearer {user_token}"}
+        response = requests.get(url, headers=headers)
+        if response.status_code == 200:
+            return response.json()
+        
+        with open("debug_api_error_protected.txt", "w") as f:
+            f.write(f"URL: {url}\nStatus: {response.status_code}\nResponse: {response.text}\n")
+            
+        print(f"Error fetching protected profile for {char_id}: {response.status_code} - {response.text}")
+        return None
+
+    def get_character_statistics(self, user_token, realm_slug, char_name):
+        # We want "Time Played" which is in achievements/statistics, NOT the combat stats
+        url = f"https://{self.region}.api.blizzard.com/profile/wow/character/{realm_slug}/{char_name.lower()}/achievements/statistics?namespace=profile-{self.region}&locale=en_US"
+        headers = {"Authorization": f"Bearer {user_token}"}
+        response = requests.get(url, headers=headers)
+        if response.status_code == 200:
+            return response.json()
         return None

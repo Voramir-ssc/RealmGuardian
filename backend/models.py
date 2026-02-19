@@ -44,5 +44,6 @@ class Character(Base):
     class_name = Column(String, nullable=True)
     level = Column(Integer, nullable=True)
     gold = Column(Integer, default=0) # Stored in copper
+    played_time = Column(Integer, default=0) # Seconds
     icon_url = Column(String, nullable=True)
     last_updated = Column(DateTime, default=datetime.datetime.utcnow)

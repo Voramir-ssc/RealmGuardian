@@ -1,7 +1,7 @@
 import React from 'react';
 import { LayoutDashboard, Coins, Settings } from 'lucide-react';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, activeTab, onTabChange }) => {
     return (
         <div className="flex h-screen bg-background text-primary overflow-hidden">
             {/* Sidebar */}
@@ -14,10 +14,25 @@ const Layout = ({ children }) => {
                 </div>
 
                 <nav className="flex-1 p-2 gap-1 flex flex-col mt-4">
-                    <NavItem icon={<LayoutDashboard size={20} />} label="Dashboard" active />
-                    <NavItem icon={<Coins size={20} />} label="Auctions" />
+                    <NavItem
+                        icon={<LayoutDashboard size={20} />}
+                        label="Dashboard"
+                        active={activeTab === 'dashboard'}
+                        onClick={() => onTabChange('dashboard')}
+                    />
+                    <NavItem
+                        icon={<Coins size={20} />}
+                        label="Characters"
+                        active={activeTab === 'characters'}
+                        onClick={() => onTabChange('characters')}
+                    />
                     <div className="flex-1" />
-                    <NavItem icon={<Settings size={20} />} label="Settings" />
+                    <NavItem
+                        icon={<Settings size={20} />}
+                        label="Settings"
+                        active={activeTab === 'settings'}
+                        onClick={() => onTabChange('settings')}
+                    />
                 </nav>
             </aside>
 
@@ -50,12 +65,14 @@ const Layout = ({ children }) => {
     );
 };
 
-const NavItem = ({ icon, label, active = false }) => (
-    <button className={`
+const NavItem = ({ icon, label, active = false, onClick }) => (
+    <button
+        onClick={onClick}
+        className={`
     w-full flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-200 group
     ${active
-            ? 'bg-accent/10 text-accent border border-accent/20'
-            : 'text-secondary hover:bg-white/5 hover:text-white'}
+                ? 'bg-accent/10 text-accent border border-accent/20'
+                : 'text-secondary hover:bg-white/5 hover:text-white'}
   `}>
         <div className={`${active ? 'text-accent' : 'text-secondary group-hover:text-white'}`}>
             {icon}

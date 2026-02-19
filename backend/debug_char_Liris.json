@@ -1,0 +1,714 @@
+{
+    "protected": {
+        "_links": {
+            "self": {
+                "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-186257386?namespace=profile-eu"
+            },
+            "user": {
+                "href": "https://eu.api.blizzard.com/profile/user"
+            },
+            "profile": {
+                "href": "https://eu.api.blizzard.com/profile/user/wow?namespace=profile-eu"
+            }
+        },
+        "id": 186257386,
+        "name": "Liris",
+        "money": 5043,
+        "character": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris?namespace=profile-eu"
+            },
+            "name": "Liris",
+            "id": 186257386,
+            "realm": {
+                "key": {
+                    "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+                },
+                "name": "Dethecus",
+                "id": 531,
+                "slug": "dethecus"
+            }
+        },
+        "protected_stats": {
+            "total_number_deaths": 11,
+            "total_gold_gained": 22065043,
+            "total_gold_lost": 22070000,
+            "total_item_value_gained": 9506937,
+            "level_number_deaths": 0,
+            "level_gold_gained": 20000000,
+            "level_gold_lost": 22070000,
+            "level_item_value_gained": 497131
+        },
+        "position": {
+            "zone": {
+                "name": "Valley of Strength",
+                "id": 5170
+            },
+            "map": {
+                "name": "Kalimdor",
+                "id": 1
+            },
+            "x": 1620.2108,
+            "y": -4228.3994,
+            "z": 52.72432,
+            "facing": 3.7997718
+        },
+        "bind_position": {
+            "zone": {
+                "name": "Orgrimmar",
+                "id": 1637
+            },
+            "map": {
+                "name": "Kalimdor",
+                "id": 1
+            },
+            "x": 1564.73,
+            "y": -4215.51,
+            "z": 54.0647,
+            "facing": 3.2868912
+        },
+        "wow_account": 18295276
+    },
+    "public": {
+        "_links": {
+            "self": {
+                "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris?namespace=profile-eu"
+            }
+        },
+        "id": 186257386,
+        "name": "Liris",
+        "gender": {
+            "type": "FEMALE",
+            "name": "Female"
+        },
+        "faction": {
+            "type": "HORDE",
+            "name": "Horde"
+        },
+        "race": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/playable-race/35?namespace=static-12.0.0_65028-eu"
+            },
+            "name": "Vulpera",
+            "id": 35
+        },
+        "character_class": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/playable-class/7?namespace=static-12.0.0_65028-eu"
+            },
+            "name": "Shaman",
+            "id": 7
+        },
+        "active_spec": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/playable-specialization/263?namespace=static-12.0.0_65028-eu"
+            },
+            "name": "Enhancement",
+            "id": 263
+        },
+        "realm": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+            },
+            "name": "Dethecus",
+            "id": 531,
+            "slug": "dethecus"
+        },
+        "guild": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/guild/dethecus/divide-and-conquer?namespace=profile-eu"
+            },
+            "name": "Divide and Conquer",
+            "id": 28057438,
+            "realm": {
+                "key": {
+                    "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+                },
+                "name": "Dethecus",
+                "id": 531,
+                "slug": "dethecus"
+            },
+            "faction": {
+                "type": "HORDE",
+                "name": "Horde"
+            }
+        },
+        "level": 80,
+        "experience": 0,
+        "achievement_points": 20675,
+        "achievements": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris/achievements?namespace=profile-eu"
+        },
+        "titles": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris/titles?namespace=profile-eu"
+        },
+        "pvp_summary": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris/pvp-summary?namespace=profile-eu"
+        },
+        "encounters": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris/encounters?namespace=profile-eu"
+        },
+        "media": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris/character-media?namespace=profile-eu"
+        },
+        "last_login_timestamp": 1769258063000,
+        "average_item_level": 102,
+        "equipped_item_level": 102,
+        "specializations": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris/specializations?namespace=profile-eu"
+        },
+        "statistics": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris/statistics?namespace=profile-eu"
+        },
+        "mythic_keystone_profile": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris/mythic-keystone-profile?namespace=profile-eu"
+        },
+        "equipment": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris/equipment?namespace=profile-eu"
+        },
+        "appearance": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris/appearance?namespace=profile-eu"
+        },
+        "collections": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris/collections?namespace=profile-eu"
+        },
+        "active_title": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/title/45?namespace=static-12.0.0_65028-eu"
+            },
+            "name": "Flame Keeper",
+            "id": 45,
+            "display_string": "Flame Keeper {name}"
+        },
+        "reputations": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris/reputations?namespace=profile-eu"
+        },
+        "quests": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris/quests?namespace=profile-eu"
+        },
+        "achievements_statistics": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris/achievements/statistics?namespace=profile-eu"
+        },
+        "professions": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris/professions?namespace=profile-eu"
+        },
+        "is_remix": false,
+        "name_search": "Liris"
+    },
+    "stats": {
+        "_links": {
+            "self": {
+                "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris/achievements/statistics?namespace=profile-eu"
+            }
+        },
+        "character": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris?namespace=profile-eu"
+            },
+            "name": "Liris",
+            "id": 186257386,
+            "realm": {
+                "key": {
+                    "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+                },
+                "name": "Dethecus",
+                "id": 531,
+                "slug": "dethecus"
+            }
+        },
+        "categories": [
+            {
+                "id": 130,
+                "name": "Character",
+                "statistics": [
+                    {
+                        "id": 14897,
+                        "name": "Item slots equipped with Uncommon items",
+                        "last_updated_timestamp": 1766258315000,
+                        "quantity": 16.0
+                    },
+                    {
+                        "id": 14898,
+                        "name": "Item slots equipped with Rare items",
+                        "last_updated_timestamp": 1762027129000,
+                        "quantity": 13.0
+                    },
+                    {
+                        "id": 14899,
+                        "name": "Item slots equipped with Epic items",
+                        "last_updated_timestamp": 1761772311000,
+                        "quantity": 14.0
+                    },
+                    {
+                        "id": 14901,
+                        "name": "Item slots equipped with Heirloom items",
+                        "last_updated_timestamp": 1761751544000,
+                        "quantity": 2.0
+                    }
+                ]
+            },
+            {
+                "id": 128,
+                "name": "Kills",
+                "sub_categories": [
+                    {
+                        "id": 135,
+                        "name": "Creatures",
+                        "statistics": [
+                            {
+                                "id": 107,
+                                "name": "Creatures killed",
+                                "last_updated_timestamp": 1762030873000,
+                                "quantity": 1794.0
+                            },
+                            {
+                                "id": 1337,
+                                "name": "Different creature types killed",
+                                "last_updated_timestamp": 1762030873000,
+                                "quantity": 9.0
+                            },
+                            {
+                                "id": 1336,
+                                "name": "Creature type killed the most",
+                                "last_updated_timestamp": 1762030873000,
+                                "description": "Humanoid",
+                                "quantity": 647.0
+                            },
+                            {
+                                "id": 108,
+                                "name": "Critters killed",
+                                "last_updated_timestamp": 1762028823000,
+                                "quantity": 9.0
+                            }
+                        ]
+                    },
+                    {
+                        "id": 137,
+                        "name": "Killing Blows",
+                        "statistics": [
+                            {
+                                "id": 1487,
+                                "name": "Total Killing Blows",
+                                "last_updated_timestamp": 1762030052000,
+                                "quantity": 153.0
+                            },
+                            {
+                                "id": 1488,
+                                "name": "World Killing Blows",
+                                "last_updated_timestamp": 1762029579000,
+                                "quantity": 67.0
+                            }
+                        ]
+                    }
+                ],
+                "statistics": [
+                    {
+                        "id": 1197,
+                        "name": "Total kills",
+                        "last_updated_timestamp": 1762030873000,
+                        "quantity": 666.0
+                    },
+                    {
+                        "id": 1198,
+                        "name": "Total kills that grant experience or honor",
+                        "last_updated_timestamp": 1762030873000,
+                        "quantity": 1913.0
+                    }
+                ]
+            },
+            {
+                "id": 122,
+                "name": "Deaths",
+                "statistics": [
+                    {
+                        "id": 60,
+                        "name": "Total deaths",
+                        "last_updated_timestamp": 1762030187000,
+                        "quantity": 11.0
+                    },
+                    {
+                        "id": 14787,
+                        "name": "Total deaths in dungeons",
+                        "last_updated_timestamp": 1761754174000,
+                        "quantity": 1.0
+                    }
+                ]
+            },
+            {
+                "id": 133,
+                "name": "Quests",
+                "statistics": [
+                    {
+                        "id": 98,
+                        "name": "Quests completed",
+                        "last_updated_timestamp": 1769258054000,
+                        "quantity": 376.0
+                    },
+                    {
+                        "id": 95,
+                        "name": "Average quests completed per day",
+                        "last_updated_timestamp": 1769258054000,
+                        "quantity": 4.372093023255814
+                    },
+                    {
+                        "id": 97,
+                        "name": "Daily quests completed",
+                        "last_updated_timestamp": 1762024761000,
+                        "quantity": 4.0
+                    },
+                    {
+                        "id": 759,
+                        "name": "Average daily quests completed per day",
+                        "last_updated_timestamp": 1762024761000,
+                        "quantity": 0.046511627906976744
+                    }
+                ]
+            },
+            {
+                "id": 134,
+                "name": "Travel",
+                "statistics": [
+                    {
+                        "id": 2277,
+                        "name": "Summons accepted",
+                        "last_updated_timestamp": 1761771449000,
+                        "quantity": 1.0
+                    }
+                ]
+            },
+            {
+                "id": 14807,
+                "name": "Dungeons & Raids",
+                "sub_categories": [
+                    {
+                        "id": 15264,
+                        "name": "Legion",
+                        "statistics": [
+                            {
+                                "id": 10878,
+                                "name": "Wrath of Azshara kills (Normal Eye of Azshara)",
+                                "last_updated_timestamp": 1761768742000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10884,
+                                "name": "Dargrul kills (Normal Neltharion's Lair)",
+                                "last_updated_timestamp": 1761767511000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10887,
+                                "name": "Odyn defeats (Normal Halls of Valor)",
+                                "last_updated_timestamp": 1761768384000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 10899,
+                                "name": "Kur'talos Ravencrest defeats (Normal Black Rook Hold)",
+                                "last_updated_timestamp": 1761766813000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10900,
+                                "name": "Kur'talos Ravencrest defeats (Heroic Black Rook Hold)",
+                                "last_updated_timestamp": 1761755581000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10911,
+                                "name": "Nythendra kills (Raid Finder Emerald Nightmare)",
+                                "last_updated_timestamp": 1762025002000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10912,
+                                "name": "Nythendra kills (Normal Emerald Nightmare)",
+                                "last_updated_timestamp": 1762028502000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 10920,
+                                "name": "Elerethe Renferal kills (Raid Finder Emerald Nightmare)",
+                                "last_updated_timestamp": 1762025295000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10921,
+                                "name": "Elerethe Renferal kills (Normal Emerald Nightmare)",
+                                "last_updated_timestamp": 1762028872000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 10924,
+                                "name": "Il'gynoth kills (Raid Finder Emerald Nightmare)",
+                                "last_updated_timestamp": 1762025558000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10925,
+                                "name": "Il'gynoth kills (Normal Emerald Nightmare)",
+                                "last_updated_timestamp": 1762029078000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 10915,
+                                "name": "Ursoc kills (Raid Finder Emerald Nightmare)",
+                                "last_updated_timestamp": 1762026690000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10916,
+                                "name": "Ursoc kills (Normal Emerald Nightmare)",
+                                "last_updated_timestamp": 1762028689000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 10928,
+                                "name": "Dragons of Nightmare kills (Raid Finder Emerald Nightmare)",
+                                "last_updated_timestamp": 1762026802000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10929,
+                                "name": "Dragons of Nightmare kills (Normal Emerald Nightmare)",
+                                "last_updated_timestamp": 1762028775000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 10932,
+                                "name": "Cenarius redemptions (Raid Finder Emerald Nightmare)",
+                                "last_updated_timestamp": 1762026879000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10933,
+                                "name": "Cenarius redemptions (Normal Emerald Nightmare)",
+                                "last_updated_timestamp": 1762029159000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 10936,
+                                "name": "Xavius kills (Raid Finder Emerald Nightmare)",
+                                "last_updated_timestamp": 1762027096000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10937,
+                                "name": "Xavius kills (Normal Emerald Nightmare)",
+                                "last_updated_timestamp": 1762029305000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 11407,
+                                "name": "Odyn defeats (Raid Finder Trial of Valor)",
+                                "last_updated_timestamp": 1762025998000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 11408,
+                                "name": "Odyn defeats (Normal Trial of Valor)",
+                                "last_updated_timestamp": 1761770744000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 11411,
+                                "name": "Guarm kills (Raid Finder Trial of Valor)",
+                                "last_updated_timestamp": 1762026225000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 11412,
+                                "name": "Guarm kills (Normal Trial of Valor)",
+                                "last_updated_timestamp": 1761770879000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 11415,
+                                "name": "Helya kills (Raid Finder Trial of Valor)",
+                                "last_updated_timestamp": 1762026424000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 11416,
+                                "name": "Helya kills (Normal Trial of Valor)",
+                                "last_updated_timestamp": 1761771033000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10940,
+                                "name": "Skorpyron kills (Raid Finder Nighthold)",
+                                "last_updated_timestamp": 1762027364000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10941,
+                                "name": "Skorpyron kills (Normal Nighthold)",
+                                "last_updated_timestamp": 1762030052000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 10944,
+                                "name": "Chronomatic Anomaly kills (Raid Finder Nighthold)",
+                                "last_updated_timestamp": 1762027583000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10945,
+                                "name": "Chronomatic Anomaly kills (Normal Nighthold)",
+                                "last_updated_timestamp": 1762030259000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 10948,
+                                "name": "Trilliax kills (Raid Finder Nighthold)",
+                                "last_updated_timestamp": 1762027830000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10949,
+                                "name": "Trilliax kills (Normal Nighthold)",
+                                "last_updated_timestamp": 1762030388000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 10953,
+                                "name": "Spellblade Aluriel kills (Normal Nighthold)",
+                                "last_updated_timestamp": 1762030566000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 10957,
+                                "name": "Star Augur Etraeus kills (Normal Nighthold)",
+                                "last_updated_timestamp": 1762030814000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 10962,
+                                "name": "High Botanist Tel'arn kills (Normal Nighthold)",
+                                "last_updated_timestamp": 1761772244000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10966,
+                                "name": "Tichondrius kills (Normal Nighthold)",
+                                "last_updated_timestamp": 1762030664000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 10970,
+                                "name": "Krosus kills (Normal Nighthold)",
+                                "last_updated_timestamp": 1761772517000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10974,
+                                "name": "Grand Magistrix Elisande kills (Normal Nighthold)",
+                                "last_updated_timestamp": 1761772770000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10978,
+                                "name": "Gul'dan kills (Normal Nighthold)",
+                                "last_updated_timestamp": 1761773011000,
+                                "quantity": 1.0
+                            }
+                        ]
+                    }
+                ],
+                "statistics": [
+                    {
+                        "id": 932,
+                        "name": "Total 5-player dungeons entered",
+                        "last_updated_timestamp": 1761768479000,
+                        "quantity": 6.0
+                    },
+                    {
+                        "id": 10981,
+                        "name": "Legion dungeons completed (final boss defeated)",
+                        "last_updated_timestamp": 1761768742000,
+                        "quantity": 3.0
+                    },
+                    {
+                        "id": 10982,
+                        "name": "Legion dungeon bosses defeated",
+                        "last_updated_timestamp": 1761768742000,
+                        "quantity": 17.0
+                    },
+                    {
+                        "id": 10983,
+                        "name": "Legion dungeon boss defeated the most",
+                        "last_updated_timestamp": 1761768742000,
+                        "description": "Lord Kur'talos Ravencrest",
+                        "quantity": 1.0
+                    },
+                    {
+                        "id": 10984,
+                        "name": "Legion raids completed (final boss defeated)",
+                        "last_updated_timestamp": 1762029305000,
+                        "quantity": 4.0
+                    },
+                    {
+                        "id": 10985,
+                        "name": "Legion raid bosses defeated",
+                        "last_updated_timestamp": 1762030814000,
+                        "quantity": 40.0
+                    },
+                    {
+                        "id": 10986,
+                        "name": "Legion raid boss defeated the most",
+                        "last_updated_timestamp": 1762030814000,
+                        "description": "Cenarius",
+                        "quantity": 3.0
+                    }
+                ]
+            },
+            {
+                "id": 21,
+                "name": "Player vs. Player",
+                "statistics": [
+                    {
+                        "id": 1501,
+                        "name": "Total deaths from other players",
+                        "last_updated_timestamp": 1762025077000,
+                        "quantity": 1.0
+                    }
+                ]
+            },
+            {
+                "id": 15219,
+                "name": "Pet Battles",
+                "statistics": [
+                    {
+                        "id": 8278,
+                        "name": "Pet Battles won at max level",
+                        "last_updated_timestamp": 1767036480000,
+                        "quantity": 15.0
+                    }
+                ]
+            },
+            {
+                "name": "World Events",
+                "sub_categories": [
+                    {
+                        "id": 15562,
+                        "name": "Legion: Remix",
+                        "statistics": [
+                            {
+                                "id": 60938,
+                                "name": "Demons slain",
+                                "last_updated_timestamp": 1762030664000,
+                                "quantity": 187.0
+                            },
+                            {
+                                "id": 61338,
+                                "name": "Bronze gained across Warband",
+                                "last_updated_timestamp": 1768854360000,
+                                "quantity": 2826889.0
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

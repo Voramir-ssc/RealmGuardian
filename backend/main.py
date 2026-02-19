@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends, HTTPException, Request
+from fastapi import FastAPI, Depends, HTTPException, Request, BackgroundTasks
 import pydantic
 from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
@@ -230,7 +230,7 @@ def login(request: Request):
     return RedirectResponse(url)
 
 @app.get('/api/auth/callback')
-def auth_callback(code: str, state: str, request: Request, db: Session = Depends(get_db)):
+def auth_callback(code: str, state: str, background_tasks: BackgroundTasks, request: Request, db: Session = Depends(get_db)):
     base_url = "http://localhost:8000"
     redirect_uri = f"{base_url}/api/auth/callback"
     user_token = blizzard_client.exchange_code_for_token(code, redirect_uri)
@@ -238,64 +238,112 @@ def auth_callback(code: str, state: str, request: Request, db: Session = Depends
     if not user_token:
         raise HTTPException(status_code=400, detail="Failed to retrieve user token")
 
-    # Fetch Profile
-    profile = blizzard_client.get_account_profile(user_token)
-    if not profile or 'wow_accounts' not in profile:
-         # Redirect back with error or just log
-         print("No WoW accounts found.")
-         return RedirectResponse("http://localhost:5173?error=no_accounts")
+    # Start background sync
+    background_tasks.add_task(sync_user_characters, user_token, db)
+    
+    # Redirect immediately
+    return RedirectResponse("http://localhost:5173?connected=true")
 
-    # Sync Characters
-    # clear old characters? Or just update/upsert.
-    # For now, let's keep it simple: sync what we find.
-    
-    count = 0
-    timestamp = datetime.utcnow()
-    
-    for account in profile['wow_accounts']:
-        for char in account.get('characters', []):
-            try:
-                # Fetch details (gold) for each character
-                # Note: This is slow. In prod, use background task.
-                # For single user exploring, acceptable for now.
-                char_details = blizzard_client.get_character_profile(user_token, char['realm']['slug'], char['name'])
-                
-                if char_details:
-                    # Check if exists
-                    db_char = db.query(models.Character).filter_by(blizzard_id=char['id']).first()
+def sync_user_characters(user_token: str, db: Session):
+    print("Starting background character sync...")
+    try:
+        # Fetch Profile
+        profile = blizzard_client.get_account_profile(user_token)
+        
+        if not profile or 'wow_accounts' not in profile:
+            print("No WoW accounts found in background sync.")
+            return
+
+        # DEBUG: Dump account profile
+        import json
+        with open("debug_account.json", "w") as f:
+            json.dump(profile, f, indent=4)
+
+        timestamp = datetime.utcnow()
+        count = 0
+        
+        for account in profile['wow_accounts']:
+            for char in account.get('characters', []):
+                try:
+                    realm_id = char['realm']['id']
+                    char_id = char['id']
                     
-                    gold = int(char_details.get('money', 0)) # copper
+                    # Fetch Protected Profile (for Gold)
+                    protected_details = blizzard_client.get_protected_character_profile(user_token, realm_id, char_id)
                     
-                    # Store media (icon) - usually another call, but maybe 'character_class' has it?
-                    # Profile API usually returns links to media.
-                    # Simplified: We might skip icon for now or fetch it if needed.
-                    # char_details['media']['href']
+                    # Fetch Public Profile (Fallback)
+                    public_details = blizzard_client.get_character_profile(user_token, char['realm']['slug'], char['name'])
+
+                    # Determine Gold
+                    gold = 0
+                    if protected_details and 'money' in protected_details:
+                        gold = protected_details['money']
+                    elif public_details and 'money' in public_details:
+                        gold = public_details['money']
                     
+                    # Fetch Achievements Statistics for Playtime
+                    stats = blizzard_client.get_character_statistics(user_token, char['realm']['slug'], char['name'])
+                    
+                    # DEBUG: Dump details
+                    with open(f"debug_char_{char['name']}.json", "w") as f:
+                        json.dump({"protected": protected_details, "public": public_details, "stats": stats}, f, indent=4)
+
+                    played_time = 0
+                    # Parse Playtime (Recursive search for "Total time played")
+                    if stats and 'categories' in stats:
+                        def find_played_time(categories):
+                            for cat in categories:
+                                if 'statistics' in cat:
+                                    for stat in cat['statistics']:
+                                        if stat.get('name') == 'Total time played':
+                                            # format is likely milliseconds in 'quantity'
+                                            return stat.get('quantity', 0) / 1000
+                                if 'sub_categories' in cat:
+                                    res = find_played_time(cat['sub_categories'])
+                                    if res: return res
+                            return 0
+                        
+                        played_time = find_played_time(stats['categories'])
+                    
+                    # Update DB
+                    db_char = db.query(models.Character).filter_by(id=char['id']).first()
                     if not db_char:
                         db_char = models.Character(
-                            blizzard_id=char['id'],
+                            id=char['id'],
                             name=char['name'],
                             realm=char['realm']['name'],
-                            class_name=char['playable_class']['name'],
+                            region="eu",
                             level=char['level'],
-                            gold=gold,
+                            gold=int(gold),
+                            played_time=int(played_time),
                             last_updated=timestamp
                         )
+                        if 'playable_class' in char:
+                            db_char.character_class = char['playable_class']['name']
+                            
                         db.add(db_char)
                     else:
                         db_char.name = char['name']
                         db_char.realm = char['realm']['name']
                         db_char.level = char['level']
-                        db_char.gold = gold
+                        db_char.gold = int(gold)
+                        db_char.played_time = int(played_time)
                         db_char.last_updated = timestamp
                     
+                    db.commit() # Commit each char to show progress? Or batch? Commit each is safer for now.
                     count += 1
-            except Exception as e:
-                print(f"Failed to sync char {char.get('name')}: {e}")
-                continue
-                
-    db.commit()
-    return RedirectResponse("http://localhost:5173?connected=true")
+                    print(f"Synced {char['name']}: {gold/10000}g, {played_time/3600}h")
+
+                except Exception as e:
+                    print(f"Failed to sync char {char.get('name')}: {e}")
+                    continue
+        
+        print(f"Background sync complete. Processed {count} characters.")
+        
+    except Exception as e:
+        print(f"Background sync failed: {e}")
+        import traceback
+        traceback.print_exc()
 
 @app.get('/api/user/characters')
 def get_user_characters(db: Session = Depends(get_db)):

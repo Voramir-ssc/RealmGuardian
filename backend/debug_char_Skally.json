@@ -1,0 +1,1615 @@
+{
+    "protected": {
+        "_links": {
+            "self": {
+                "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-49427328?namespace=profile-eu"
+            },
+            "user": {
+                "href": "https://eu.api.blizzard.com/profile/user"
+            },
+            "profile": {
+                "href": "https://eu.api.blizzard.com/profile/user/wow?namespace=profile-eu"
+            }
+        },
+        "id": 49427328,
+        "name": "Skally",
+        "money": 4456,
+        "character": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally?namespace=profile-eu"
+            },
+            "name": "Skally",
+            "id": 49427328,
+            "realm": {
+                "key": {
+                    "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+                },
+                "name": "Dethecus",
+                "id": 531,
+                "slug": "dethecus"
+            }
+        },
+        "protected_stats": {
+            "total_number_deaths": 383,
+            "total_gold_gained": 18505554927,
+            "total_gold_lost": 16742160981,
+            "total_item_value_gained": 631132774,
+            "level_number_deaths": 1,
+            "level_gold_gained": 49929894,
+            "level_gold_lost": 396694245,
+            "level_item_value_gained": 6395694
+        },
+        "position": {
+            "zone": {
+                "name": "Dornogal",
+                "id": 14771
+            },
+            "map": {
+                "name": "Khaz Algar (Surface)",
+                "id": 2552
+            },
+            "x": 2640.9636,
+            "y": -2582.3628,
+            "z": 219.65372,
+            "facing": 5.855955
+        },
+        "bind_position": {
+            "zone": {
+                "name": "Dornogal",
+                "id": 14771
+            },
+            "map": {
+                "name": "Khaz Algar (Surface)",
+                "id": 2552
+            },
+            "x": 2648.3289,
+            "y": -2474.51,
+            "z": 224.21259,
+            "facing": 0.58928716
+        },
+        "wow_account": 18295276
+    },
+    "public": {
+        "_links": {
+            "self": {
+                "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally?namespace=profile-eu"
+            }
+        },
+        "id": 49427328,
+        "name": "Skally",
+        "gender": {
+            "type": "FEMALE",
+            "name": "Female"
+        },
+        "faction": {
+            "type": "HORDE",
+            "name": "Horde"
+        },
+        "race": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
+            },
+            "name": "Blood Elf",
+            "id": 10
+        },
+        "character_class": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/playable-class/4?namespace=static-12.0.1_65617-eu"
+            },
+            "name": "Rogue",
+            "id": 4
+        },
+        "active_spec": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/playable-specialization/261?namespace=static-12.0.1_65617-eu"
+            },
+            "name": "Subtlety",
+            "id": 261
+        },
+        "realm": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+            },
+            "name": "Dethecus",
+            "id": 531,
+            "slug": "dethecus"
+        },
+        "guild": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/guild/dethecus/divide-and-conquer?namespace=profile-eu"
+            },
+            "name": "Divide and Conquer",
+            "id": 28057438,
+            "realm": {
+                "key": {
+                    "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+                },
+                "name": "Dethecus",
+                "id": 531,
+                "slug": "dethecus"
+            },
+            "faction": {
+                "type": "HORDE",
+                "name": "Horde"
+            }
+        },
+        "level": 80,
+        "experience": 0,
+        "achievement_points": 20770,
+        "achievements": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally/achievements?namespace=profile-eu"
+        },
+        "titles": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally/titles?namespace=profile-eu"
+        },
+        "pvp_summary": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally/pvp-summary?namespace=profile-eu"
+        },
+        "encounters": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally/encounters?namespace=profile-eu"
+        },
+        "media": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally/character-media?namespace=profile-eu"
+        },
+        "last_login_timestamp": 1771352204000,
+        "average_item_level": 80,
+        "equipped_item_level": 80,
+        "specializations": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally/specializations?namespace=profile-eu"
+        },
+        "statistics": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally/statistics?namespace=profile-eu"
+        },
+        "mythic_keystone_profile": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally/mythic-keystone-profile?namespace=profile-eu"
+        },
+        "equipment": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally/equipment?namespace=profile-eu"
+        },
+        "appearance": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally/appearance?namespace=profile-eu"
+        },
+        "collections": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally/collections?namespace=profile-eu"
+        },
+        "reputations": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally/reputations?namespace=profile-eu"
+        },
+        "quests": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally/quests?namespace=profile-eu"
+        },
+        "achievements_statistics": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally/achievements/statistics?namespace=profile-eu"
+        },
+        "professions": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally/professions?namespace=profile-eu"
+        },
+        "covenant_progress": {
+            "chosen_covenant": {
+                "key": {
+                    "href": "https://eu.api.blizzard.com/data/wow/covenant/4?namespace=static-12.0.1_65617-eu"
+                },
+                "name": "Necrolord",
+                "id": 4
+            },
+            "renown_level": 15,
+            "soulbinds": {
+                "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally/soulbinds?namespace=profile-eu"
+            }
+        },
+        "is_remix": false,
+        "name_search": "Skally"
+    },
+    "stats": {
+        "_links": {
+            "self": {
+                "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally/achievements/statistics?namespace=profile-eu"
+            }
+        },
+        "character": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally?namespace=profile-eu"
+            },
+            "name": "Skally",
+            "id": 49427328,
+            "realm": {
+                "key": {
+                    "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+                },
+                "name": "Dethecus",
+                "id": 531,
+                "slug": "dethecus"
+            }
+        },
+        "categories": [
+            {
+                "id": 130,
+                "name": "Character",
+                "sub_categories": [
+                    {
+                        "id": 145,
+                        "name": "Consumables",
+                        "statistics": [
+                            {
+                                "id": 344,
+                                "name": "Bandages used",
+                                "last_updated_timestamp": 1311538299000,
+                                "quantity": 24.0
+                            },
+                            {
+                                "id": 1125,
+                                "name": "Bandage used most",
+                                "last_updated_timestamp": 1311538299000,
+                                "description": "Heavy Linen Bandage",
+                                "quantity": 24.0
+                            },
+                            {
+                                "id": 1298,
+                                "name": "Different bandage types used",
+                                "last_updated_timestamp": 1311538299000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 346,
+                                "name": "Beverages consumed",
+                                "last_updated_timestamp": 1733912353000,
+                                "quantity": 90.0
+                            },
+                            {
+                                "id": 1773,
+                                "name": "Beverage consumed most",
+                                "last_updated_timestamp": 1733912353000,
+                                "description": "Thistle Tea",
+                                "quantity": 53.0
+                            },
+                            {
+                                "id": 1774,
+                                "name": "Different beverages consumed",
+                                "last_updated_timestamp": 1733912353000,
+                                "quantity": 13.0
+                            },
+                            {
+                                "id": 347,
+                                "name": "Food eaten",
+                                "last_updated_timestamp": 1499111362000,
+                                "quantity": 24.0
+                            },
+                            {
+                                "id": 1776,
+                                "name": "Food eaten most",
+                                "last_updated_timestamp": 1499111362000,
+                                "description": "Roasted Quail",
+                                "quantity": 4.0
+                            },
+                            {
+                                "id": 1775,
+                                "name": "Different foods eaten",
+                                "last_updated_timestamp": 1499111362000,
+                                "quantity": 16.0
+                            },
+                            {
+                                "id": 812,
+                                "name": "Healthstones used",
+                                "last_updated_timestamp": 1616006655000,
+                                "quantity": 7.0
+                            }
+                        ]
+                    }
+                ],
+                "statistics": [
+                    {
+                        "id": 14897,
+                        "name": "Item slots equipped with Uncommon items",
+                        "last_updated_timestamp": 1498946969000,
+                        "quantity": 17.0
+                    },
+                    {
+                        "id": 14898,
+                        "name": "Item slots equipped with Rare items",
+                        "last_updated_timestamp": 1497141528000,
+                        "quantity": 16.0
+                    },
+                    {
+                        "id": 14899,
+                        "name": "Item slots equipped with Epic items",
+                        "last_updated_timestamp": 1713184162000,
+                        "quantity": 17.0
+                    },
+                    {
+                        "id": 14901,
+                        "name": "Item slots equipped with Heirloom items",
+                        "last_updated_timestamp": 1497386833000,
+                        "quantity": 1.0
+                    }
+                ]
+            },
+            {
+                "id": 128,
+                "name": "Kills",
+                "sub_categories": [
+                    {
+                        "id": 135,
+                        "name": "Creatures",
+                        "statistics": [
+                            {
+                                "id": 107,
+                                "name": "Creatures killed",
+                                "last_updated_timestamp": 1738912049000,
+                                "quantity": 26722.0
+                            },
+                            {
+                                "id": 1337,
+                                "name": "Different creature types killed",
+                                "last_updated_timestamp": 1738912049000,
+                                "quantity": 10.0
+                            },
+                            {
+                                "id": 1336,
+                                "name": "Creature type killed the most",
+                                "last_updated_timestamp": 1738912049000,
+                                "description": "Humanoid",
+                                "quantity": 13229.0
+                            },
+                            {
+                                "id": 108,
+                                "name": "Critters killed",
+                                "last_updated_timestamp": 1733912750000,
+                                "quantity": 452.0
+                            }
+                        ]
+                    },
+                    {
+                        "id": 136,
+                        "name": "Honorable Kills",
+                        "statistics": [
+                            {
+                                "id": 588,
+                                "name": "Total Honorable Kills",
+                                "last_updated_timestamp": 1769296512000,
+                                "quantity": 4325.0
+                            },
+                            {
+                                "id": 381,
+                                "name": "World Honorable Kills",
+                                "last_updated_timestamp": 1388409189000,
+                                "quantity": 4.0
+                            },
+                            {
+                                "id": 382,
+                                "name": "Battleground Honorable Kills",
+                                "last_updated_timestamp": 1769296512000,
+                                "quantity": 1075.0
+                            },
+                            {
+                                "id": 1113,
+                                "name": "Alterac Valley Honorable Kills",
+                                "last_updated_timestamp": 1613683661000,
+                                "quantity": 665.0
+                            },
+                            {
+                                "id": 1114,
+                                "name": "Arathi Basin Honorable Kills",
+                                "last_updated_timestamp": 1616961668000,
+                                "quantity": 778.0
+                            },
+                            {
+                                "id": 1115,
+                                "name": "Warsong Gulch Honorable Kills",
+                                "last_updated_timestamp": 1674686901000,
+                                "quantity": 776.0
+                            },
+                            {
+                                "id": 1112,
+                                "name": "Eye of the Storm Honorable Kills",
+                                "last_updated_timestamp": 1616963908000,
+                                "quantity": 372.0
+                            },
+                            {
+                                "id": 1486,
+                                "name": "Strand of the Ancients Honorable Kills",
+                                "last_updated_timestamp": 1469024009000,
+                                "quantity": 423.0
+                            },
+                            {
+                                "id": 4779,
+                                "name": "Isle of Conquest Honorable Kills",
+                                "last_updated_timestamp": 1609101670000,
+                                "quantity": 114.0
+                            },
+                            {
+                                "id": 5795,
+                                "name": "Twin Peaks Honorable Kills",
+                                "last_updated_timestamp": 1616960129000,
+                                "quantity": 148.0
+                            },
+                            {
+                                "id": 5796,
+                                "name": "The Battle for Gilneas Honorable Kills",
+                                "last_updated_timestamp": 1769296512000,
+                                "quantity": 97.0
+                            },
+                            {
+                                "id": 6737,
+                                "name": "Silvershard Mines Honorable Kills",
+                                "last_updated_timestamp": 1712601646000,
+                                "quantity": 251.0
+                            },
+                            {
+                                "id": 6738,
+                                "name": "Temple of Kotmogu Honorable Kills",
+                                "last_updated_timestamp": 1616936363000,
+                                "quantity": 426.0
+                            },
+                            {
+                                "id": 8376,
+                                "name": "Deepwind Gorge Honorable Kills",
+                                "last_updated_timestamp": 1615588624000,
+                                "quantity": 56.0
+                            },
+                            {
+                                "id": 14822,
+                                "name": "Seething Shore Honorable Kills",
+                                "last_updated_timestamp": 1671477058000,
+                                "quantity": 159.0
+                            }
+                        ]
+                    },
+                    {
+                        "id": 137,
+                        "name": "Killing Blows",
+                        "statistics": [
+                            {
+                                "id": 1487,
+                                "name": "Total Killing Blows",
+                                "last_updated_timestamp": 1738911758000,
+                                "quantity": 16748.0
+                            },
+                            {
+                                "id": 1488,
+                                "name": "World Killing Blows",
+                                "last_updated_timestamp": 1723320686000,
+                                "quantity": 5489.0
+                            },
+                            {
+                                "id": 1491,
+                                "name": "Battleground Killing Blows",
+                                "last_updated_timestamp": 1738911758000,
+                                "quantity": 49.0
+                            },
+                            {
+                                "id": 1495,
+                                "name": "Alterac Valley Killing Blows",
+                                "last_updated_timestamp": 1613683661000,
+                                "quantity": 17.0
+                            },
+                            {
+                                "id": 1496,
+                                "name": "Arathi Basin Killing Blows",
+                                "last_updated_timestamp": 1738911758000,
+                                "quantity": 56.0
+                            },
+                            {
+                                "id": 1497,
+                                "name": "Warsong Gulch Killing Blows",
+                                "last_updated_timestamp": 1616527221000,
+                                "quantity": 128.0
+                            },
+                            {
+                                "id": 1498,
+                                "name": "Eye of the Storm Killing Blows",
+                                "last_updated_timestamp": 1609103196000,
+                                "quantity": 17.0
+                            },
+                            {
+                                "id": 1499,
+                                "name": "Strand of the Ancients Killing Blows",
+                                "last_updated_timestamp": 1469023963000,
+                                "quantity": 30.0
+                            },
+                            {
+                                "id": 5797,
+                                "name": "Twin Peaks Killing Blows",
+                                "last_updated_timestamp": 1616960027000,
+                                "quantity": 15.0
+                            },
+                            {
+                                "id": 5798,
+                                "name": "The Battle for Gilneas Killing Blows",
+                                "last_updated_timestamp": 1602843183000,
+                                "quantity": 12.0
+                            },
+                            {
+                                "id": 7263,
+                                "name": "Silvershard Mines Killing Blows",
+                                "last_updated_timestamp": 1712601119000,
+                                "quantity": 8.0
+                            },
+                            {
+                                "id": 7264,
+                                "name": "Temple of Kotmogu Killing Blows",
+                                "last_updated_timestamp": 1616936253000,
+                                "quantity": 18.0
+                            },
+                            {
+                                "id": 8375,
+                                "name": "Deepwind Gorge Killing Blows",
+                                "last_updated_timestamp": 1613417830000,
+                                "quantity": 3.0
+                            },
+                            {
+                                "id": 14819,
+                                "name": "Seething Shore Killing Blows",
+                                "last_updated_timestamp": 1671476999000,
+                                "quantity": 11.0
+                            }
+                        ]
+                    }
+                ],
+                "statistics": [
+                    {
+                        "id": 1197,
+                        "name": "Total kills",
+                        "last_updated_timestamp": 1769296512000,
+                        "quantity": 4731.0
+                    },
+                    {
+                        "id": 1198,
+                        "name": "Total kills that grant experience or honor",
+                        "last_updated_timestamp": 1769296512000,
+                        "quantity": 21826.0
+                    }
+                ]
+            },
+            {
+                "id": 122,
+                "name": "Deaths",
+                "statistics": [
+                    {
+                        "id": 60,
+                        "name": "Total deaths",
+                        "last_updated_timestamp": 1738911942000,
+                        "quantity": 383.0
+                    },
+                    {
+                        "id": 114,
+                        "name": "Deaths from falling",
+                        "last_updated_timestamp": 1678398376000,
+                        "quantity": 9.0
+                    },
+                    {
+                        "id": 14784,
+                        "name": "Total deaths in raids",
+                        "last_updated_timestamp": 1644398570000,
+                        "quantity": 2.0
+                    },
+                    {
+                        "id": 14785,
+                        "name": "Total deaths in PvP arenas",
+                        "last_updated_timestamp": 1393495077000,
+                        "quantity": 4.0
+                    },
+                    {
+                        "id": 14786,
+                        "name": "Total deaths in PvP battlegrounds",
+                        "last_updated_timestamp": 1738911942000,
+                        "quantity": 100.0
+                    },
+                    {
+                        "id": 14787,
+                        "name": "Total deaths in dungeons",
+                        "last_updated_timestamp": 1616702869000,
+                        "quantity": 15.0
+                    },
+                    {
+                        "id": 798,
+                        "name": "Rebirthed by druids",
+                        "last_updated_timestamp": 1616532689000,
+                        "quantity": 1.0
+                    },
+                    {
+                        "id": 800,
+                        "name": "Redeemed by paladins",
+                        "last_updated_timestamp": 1303013227000,
+                        "quantity": 1.0
+                    }
+                ]
+            },
+            {
+                "id": 133,
+                "name": "Quests",
+                "statistics": [
+                    {
+                        "id": 98,
+                        "name": "Quests completed",
+                        "last_updated_timestamp": 1771351760000,
+                        "quantity": 4043.0
+                    },
+                    {
+                        "id": 95,
+                        "name": "Average quests completed per day",
+                        "last_updated_timestamp": 1771351760000,
+                        "quantity": 0.19720989220038046
+                    },
+                    {
+                        "id": 97,
+                        "name": "Daily quests completed",
+                        "last_updated_timestamp": 1733911446000,
+                        "quantity": 167.0
+                    },
+                    {
+                        "id": 759,
+                        "name": "Average daily quests completed per day",
+                        "last_updated_timestamp": 1733911446000,
+                        "quantity": 0.00814594410028779
+                    },
+                    {
+                        "id": 94,
+                        "name": "Quests abandoned",
+                        "last_updated_timestamp": 1762653970000,
+                        "quantity": 834.0
+                    }
+                ]
+            },
+            {
+                "id": 132,
+                "name": "Skills",
+                "sub_categories": [
+                    {
+                        "id": 178,
+                        "name": "Secondary Skills",
+                        "statistics": [
+                            {
+                                "id": 1524,
+                                "name": "Cooking skill",
+                                "last_updated_timestamp": 1771351760000,
+                                "quantity": 136.0
+                            },
+                            {
+                                "id": 1745,
+                                "name": "Cooking Recipes known",
+                                "last_updated_timestamp": 1771351760000,
+                                "quantity": 50.0
+                            },
+                            {
+                                "id": 281,
+                                "name": "First Aid skill",
+                                "last_updated_timestamp": 1302699918000,
+                                "quantity": 78.0
+                            },
+                            {
+                                "id": 1519,
+                                "name": "Fishing skill",
+                                "last_updated_timestamp": 1771351760000,
+                                "quantity": 29.0
+                            },
+                            {
+                                "id": 1518,
+                                "name": "Fish caught",
+                                "last_updated_timestamp": 1712516995000,
+                                "quantity": 22.0
+                            },
+                            {
+                                "id": 1456,
+                                "name": "Fish and other things caught",
+                                "last_updated_timestamp": 1712516995000,
+                                "quantity": 40.0
+                            }
+                        ]
+                    },
+                    {
+                        "id": 173,
+                        "name": "Professions",
+                        "statistics": [
+                            {
+                                "id": 183,
+                                "name": "Materials produced from disenchanting",
+                                "last_updated_timestamp": 1497180588000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 1544,
+                                "name": "Highest Engineering skill",
+                                "last_updated_timestamp": 1771351760000,
+                                "quantity": 300.0
+                            },
+                            {
+                                "id": 1734,
+                                "name": "Engineering Schematics learned",
+                                "last_updated_timestamp": 1771351760000,
+                                "quantity": 258.0
+                            },
+                            {
+                                "id": 1537,
+                                "name": "Highest Mining skill",
+                                "last_updated_timestamp": 1302903311000,
+                                "quantity": 67.0
+                            },
+                            {
+                                "id": 1541,
+                                "name": "Highest Skinning skill",
+                                "last_updated_timestamp": 1771351760000,
+                                "quantity": 300.0
+                            }
+                        ]
+                    }
+                ],
+                "statistics": [
+                    {
+                        "id": 1199,
+                        "name": "Professions learned",
+                        "last_updated_timestamp": 1771351760000,
+                        "quantity": 3.0
+                    }
+                ]
+            },
+            {
+                "id": 134,
+                "name": "Travel",
+                "statistics": [
+                    {
+                        "id": 349,
+                        "name": "Flight paths taken",
+                        "last_updated_timestamp": 1712563537000,
+                        "quantity": 135.0
+                    },
+                    {
+                        "id": 2277,
+                        "name": "Summons accepted",
+                        "last_updated_timestamp": 1303554432000,
+                        "quantity": 2.0
+                    },
+                    {
+                        "id": 353,
+                        "name": "Number of times hearthed",
+                        "last_updated_timestamp": 1616528125000,
+                        "quantity": 103.0
+                    }
+                ]
+            },
+            {
+                "id": 131,
+                "name": "Social",
+                "statistics": [
+                    {
+                        "id": 1042,
+                        "name": "Number of hugs",
+                        "last_updated_timestamp": 1500035000000,
+                        "quantity": 9.0
+                    },
+                    {
+                        "id": 1066,
+                        "name": "Total times LOL'd",
+                        "last_updated_timestamp": 1500037202000,
+                        "quantity": 12.0
+                    },
+                    {
+                        "id": 1045,
+                        "name": "Total cheers",
+                        "last_updated_timestamp": 1607984770000,
+                        "quantity": 1.0
+                    },
+                    {
+                        "id": 1065,
+                        "name": "Total waves",
+                        "last_updated_timestamp": 1393330888000,
+                        "quantity": 1.0
+                    }
+                ]
+            },
+            {
+                "id": 15533,
+                "name": "Delves",
+                "sub_categories": [
+                    {
+                        "id": 15534,
+                        "name": "The War Within",
+                        "statistics": [
+                            {
+                                "id": 40737,
+                                "name": "Earthcrawl Mines clears",
+                                "last_updated_timestamp": 1725615596000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 40742,
+                                "name": "The Sinkhole clears",
+                                "last_updated_timestamp": 1733401757000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 40745,
+                                "name": "Tak-Rethan Abyss clears",
+                                "last_updated_timestamp": 1733404831000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 40746,
+                                "name": "The Spiral Weave clears",
+                                "last_updated_timestamp": 1733403384000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 40751,
+                                "name": "The War Within delve completed the most",
+                                "last_updated_timestamp": 1733404831000,
+                                "description": "Earthcrawl Mines",
+                                "quantity": 1.0
+                            }
+                        ]
+                    }
+                ],
+                "statistics": [
+                    {
+                        "id": 40759,
+                        "name": "Companion levels obtained",
+                        "last_updated_timestamp": 1725524746000,
+                        "quantity": 1.0
+                    },
+                    {
+                        "id": 40861,
+                        "name": "Mislaid Curiosities looted",
+                        "last_updated_timestamp": 1733403279000,
+                        "quantity": 7.0
+                    },
+                    {
+                        "id": 40764,
+                        "name": "Powers from Strange Disturbances obtained",
+                        "last_updated_timestamp": 1733404672000,
+                        "quantity": 2.0
+                    },
+                    {
+                        "id": 40865,
+                        "name": "Puzzles completed",
+                        "last_updated_timestamp": 1733401298000,
+                        "quantity": 1.0
+                    },
+                    {
+                        "id": 40734,
+                        "name": "Total delves completed",
+                        "last_updated_timestamp": 1733404831000,
+                        "quantity": 4.0
+                    },
+                    {
+                        "id": 40749,
+                        "name": "Restored Coffer Keys obtained",
+                        "last_updated_timestamp": 1733913010000,
+                        "quantity": 3.0
+                    }
+                ]
+            },
+            {
+                "id": 14807,
+                "name": "Dungeons & Raids",
+                "sub_categories": [
+                    {
+                        "id": 14821,
+                        "name": "Classic",
+                        "statistics": [
+                            {
+                                "id": 1094,
+                                "name": "Chief Ukorz Sandscalp kills (Zul'Farrak)",
+                                "last_updated_timestamp": 1303016010000,
+                                "quantity": 5.0
+                            },
+                            {
+                                "id": 1097,
+                                "name": "Rivendare kills (Stratholme)",
+                                "last_updated_timestamp": 1733787578000,
+                                "quantity": 1.0
+                            }
+                        ]
+                    },
+                    {
+                        "id": 14822,
+                        "name": "The Burning Crusade",
+                        "statistics": [
+                            {
+                                "id": 1068,
+                                "name": "Keli'dan the Breaker kills (The Blood Furnace)",
+                                "last_updated_timestamp": 1311524049000,
+                                "quantity": 3.0
+                            },
+                            {
+                                "id": 1069,
+                                "name": "Nexus-Prince Shaffar kills (Mana Tombs)",
+                                "last_updated_timestamp": 1311527828000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 1071,
+                                "name": "Quagmirran kills (Slave Pens)",
+                                "last_updated_timestamp": 1355244261000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 1072,
+                                "name": "Black Stalker kills (Underbog)",
+                                "last_updated_timestamp": 1355242123000,
+                                "quantity": 1.0
+                            }
+                        ]
+                    },
+                    {
+                        "id": 14823,
+                        "name": "Wrath of the Lich King",
+                        "statistics": [
+                            {
+                                "id": 4642,
+                                "name": "Lord Marrowgar kills (Heroic Icecrown 25 player)",
+                                "last_updated_timestamp": 1659569960000,
+                                "quantity": 8.0
+                            },
+                            {
+                                "id": 4656,
+                                "name": "Lady Deathwhisper kills (Heroic Icecrown 25 player)",
+                                "last_updated_timestamp": 1659569998000,
+                                "quantity": 8.0
+                            },
+                            {
+                                "id": 4661,
+                                "name": "Gunship Battle victories (Heroic Icecrown 25 player)",
+                                "last_updated_timestamp": 1659570116000,
+                                "quantity": 8.0
+                            },
+                            {
+                                "id": 4664,
+                                "name": "Deathbringer kills (Heroic Icecrown 25 player)",
+                                "last_updated_timestamp": 1659570265000,
+                                "quantity": 8.0
+                            },
+                            {
+                                "id": 4667,
+                                "name": "Festergut kills (Heroic Icecrown 25 player)",
+                                "last_updated_timestamp": 1659570344000,
+                                "quantity": 8.0
+                            },
+                            {
+                                "id": 4670,
+                                "name": "Rotface kills (Heroic Icecrown 25 player)",
+                                "last_updated_timestamp": 1659570381000,
+                                "quantity": 8.0
+                            },
+                            {
+                                "id": 4673,
+                                "name": "Blood Prince Council kills (Heroic Icecrown 25 player)",
+                                "last_updated_timestamp": 1659570570000,
+                                "quantity": 8.0
+                            },
+                            {
+                                "id": 4679,
+                                "name": "Professor Putricide kills (Heroic Icecrown 25 player)",
+                                "last_updated_timestamp": 1659570447000,
+                                "quantity": 8.0
+                            },
+                            {
+                                "id": 4682,
+                                "name": "Blood Queen Lana'thel kills (Heroic Icecrown 25 player)",
+                                "last_updated_timestamp": 1659570618000,
+                                "quantity": 8.0
+                            },
+                            {
+                                "id": 4685,
+                                "name": "Sindragosa kills (Heroic Icecrown 25 player)",
+                                "last_updated_timestamp": 1659570900000,
+                                "quantity": 8.0
+                            },
+                            {
+                                "id": 4688,
+                                "name": "Victories over the Lich King (Heroic Icecrown 25 player)",
+                                "last_updated_timestamp": 1659571153000,
+                                "quantity": 8.0
+                            }
+                        ]
+                    },
+                    {
+                        "id": 15096,
+                        "name": "Cataclysm",
+                        "statistics": [
+                            {
+                                "id": 5732,
+                                "name": "Erudax kills (Grim Batol)",
+                                "last_updated_timestamp": 1388882652000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 5734,
+                                "name": "Rajh kills (Halls of Origination)",
+                                "last_updated_timestamp": 1388877254000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 5736,
+                                "name": "Siamat kills (Lost City of the Tol'vir)",
+                                "last_updated_timestamp": 1388881498000,
+                                "quantity": 1.0
+                            }
+                        ]
+                    },
+                    {
+                        "id": 15164,
+                        "name": "Mists of Pandaria",
+                        "statistics": [
+                            {
+                                "id": 6775,
+                                "name": "Sha of Doubt kills (Temple of the Jade Serpent)",
+                                "last_updated_timestamp": 1388946924000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 6777,
+                                "name": "Yan-Zhu the Uncasked kills (Stormstout Brewery)",
+                                "last_updated_timestamp": 1393337369000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 6778,
+                                "name": "Xin the Weaponmaster kills (Mogu'shan Palace)",
+                                "last_updated_timestamp": 1393405184000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 6781,
+                                "name": "Taran Zhu redemptions (Shado-Pan Monastery)",
+                                "last_updated_timestamp": 1393330244000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 6983,
+                                "name": "Stone Guard kills (LFR Mogu'shan Vaults)",
+                                "last_updated_timestamp": 1393441506000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 6984,
+                                "name": "Feng the Accursed kills (LFR Mogu'shan Vaults)",
+                                "last_updated_timestamp": 1393441890000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 6985,
+                                "name": "Gara'jal the Spiritbinder kills (LFR Mogu'shan Vaults)",
+                                "last_updated_timestamp": 1393442271000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 8545,
+                                "name": "Trials of Niuzao completed",
+                                "last_updated_timestamp": 1393439341000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 8546,
+                                "name": "Trials of Xuen completed",
+                                "last_updated_timestamp": 1393440852000,
+                                "quantity": 1.0
+                            }
+                        ]
+                    },
+                    {
+                        "id": 15264,
+                        "name": "Legion",
+                        "statistics": [
+                            {
+                                "id": 10879,
+                                "name": "Wrath of Azshara kills (Heroic Eye of Azshara)",
+                                "last_updated_timestamp": 1712567797000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10885,
+                                "name": "Dargrul kills (Heroic Neltharion's Lair)",
+                                "last_updated_timestamp": 1712561088000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10887,
+                                "name": "Odyn defeats (Normal Halls of Valor)",
+                                "last_updated_timestamp": 1473537222000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 10900,
+                                "name": "Kur'talos Ravencrest defeats (Heroic Black Rook Hold)",
+                                "last_updated_timestamp": 1712561794000,
+                                "quantity": 1.0
+                            }
+                        ]
+                    },
+                    {
+                        "id": 15430,
+                        "name": "Shadowlands",
+                        "statistics": [
+                            {
+                                "id": 14390,
+                                "name": "Lord Chamberlain kills (Normal Halls of Atonement)",
+                                "last_updated_timestamp": 1616700153000,
+                                "quantity": 4.0
+                            },
+                            {
+                                "id": 14393,
+                                "name": "Tred'ova kills (Normal Mists of Tirna Scithe)",
+                                "last_updated_timestamp": 1616701194000,
+                                "quantity": 3.0
+                            },
+                            {
+                                "id": 14396,
+                                "name": "Margrave Stradama kills (Normal Plaguefall)",
+                                "last_updated_timestamp": 1616703443000,
+                                "quantity": 5.0
+                            },
+                            {
+                                "id": 14402,
+                                "name": "Nalthor the Rimebinder kills (Normal The Necrotic Wake)",
+                                "last_updated_timestamp": 1616702366000,
+                                "quantity": 3.0
+                            }
+                        ]
+                    },
+                    {
+                        "id": 15520,
+                        "name": "The War Within",
+                        "statistics": [
+                            {
+                                "id": 40716,
+                                "name": "Voidstone Monstrosity kills (Normal The Rookery)",
+                                "last_updated_timestamp": 1725613369000,
+                                "quantity": 1.0
+                            }
+                        ]
+                    }
+                ],
+                "statistics": [
+                    {
+                        "id": 932,
+                        "name": "Total 5-player dungeons entered",
+                        "last_updated_timestamp": 1733911880000,
+                        "quantity": 75.0
+                    },
+                    {
+                        "id": 934,
+                        "name": "Total 25-player raids entered",
+                        "last_updated_timestamp": 1733902189000,
+                        "quantity": 11.0
+                    },
+                    {
+                        "id": 1467,
+                        "name": "Lich King 5-player bosses defeated",
+                        "last_updated_timestamp": 1387983294000,
+                        "quantity": 1.0
+                    },
+                    {
+                        "id": 110,
+                        "name": "Lich King 5-player boss defeated the most",
+                        "last_updated_timestamp": 1387983294000,
+                        "description": "Drakos the Interrogator",
+                        "quantity": 1.0
+                    },
+                    {
+                        "id": 7223,
+                        "name": "Cataclysm dungeons completed (final boss defeated)",
+                        "last_updated_timestamp": 1388882652000,
+                        "quantity": 4.0
+                    },
+                    {
+                        "id": 7240,
+                        "name": "Pandaria dungeons completed (final boss defeated)",
+                        "last_updated_timestamp": 1393330244000,
+                        "quantity": 1.0
+                    },
+                    {
+                        "id": 7242,
+                        "name": "Pandaria dungeon bosses defeated",
+                        "last_updated_timestamp": 1393330244000,
+                        "quantity": 1.0
+                    },
+                    {
+                        "id": 7244,
+                        "name": "Pandaria dungeon boss defeated the most",
+                        "last_updated_timestamp": 1393330244000,
+                        "description": "Taran Zhu",
+                        "quantity": 1.0
+                    },
+                    {
+                        "id": 7245,
+                        "name": "Pandaria raid bosses defeated",
+                        "last_updated_timestamp": 1393442271000,
+                        "quantity": 3.0
+                    },
+                    {
+                        "id": 7247,
+                        "name": "Pandaria raid boss defeated the most",
+                        "last_updated_timestamp": 1393442271000,
+                        "description": "The Stone Guard",
+                        "quantity": 1.0
+                    },
+                    {
+                        "id": 10981,
+                        "name": "Legion dungeons completed (final boss defeated)",
+                        "last_updated_timestamp": 1712567797000,
+                        "quantity": 3.0
+                    },
+                    {
+                        "id": 10982,
+                        "name": "Legion dungeon bosses defeated",
+                        "last_updated_timestamp": 1712567797000,
+                        "quantity": 13.0
+                    },
+                    {
+                        "id": 10983,
+                        "name": "Legion dungeon boss defeated the most",
+                        "last_updated_timestamp": 1712567797000,
+                        "description": "Lord Kur'talos Ravencrest",
+                        "quantity": 1.0
+                    }
+                ]
+            },
+            {
+                "id": 21,
+                "name": "Player vs. Player",
+                "sub_categories": [
+                    {
+                        "id": 152,
+                        "name": "Rated Arenas",
+                        "statistics": [
+                            {
+                                "id": 838,
+                                "name": "Arenas played",
+                                "last_updated_timestamp": 1393495078000,
+                                "quantity": 5.0
+                            },
+                            {
+                                "id": 367,
+                                "name": "2v2 matches",
+                                "last_updated_timestamp": 1393495078000,
+                                "quantity": 5.0
+                            },
+                            {
+                                "id": 103,
+                                "name": "Blade's Edge Arena matches",
+                                "last_updated_timestamp": 1393495078000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 1547,
+                                "name": "Dalaran Sewers matches",
+                                "last_updated_timestamp": 1393494554000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 101,
+                                "name": "Nagrand Arena matches",
+                                "last_updated_timestamp": 1393494194000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 99,
+                                "name": "Ruins of Lordaeron matches",
+                                "last_updated_timestamp": 1393494416000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 370,
+                                "name": "Highest 2v2 personal rating",
+                                "last_updated_timestamp": 1393494198000,
+                                "quantity": 1500.0
+                            },
+                            {
+                                "id": 374,
+                                "name": "Highest 2v2 team rating",
+                                "last_updated_timestamp": 1393494416000,
+                                "quantity": 4294967294.0
+                            }
+                        ]
+                    },
+                    {
+                        "id": 153,
+                        "name": "Battlegrounds",
+                        "statistics": [
+                            {
+                                "id": 839,
+                                "name": "Battlegrounds played",
+                                "last_updated_timestamp": 1769296525000,
+                                "quantity": 126.0
+                            },
+                            {
+                                "id": 840,
+                                "name": "Battlegrounds won",
+                                "last_updated_timestamp": 1769296525000,
+                                "quantity": 52.0
+                            },
+                            {
+                                "id": 53,
+                                "name": "Alterac Valley battles",
+                                "last_updated_timestamp": 1613683757000,
+                                "quantity": 11.0
+                            },
+                            {
+                                "id": 49,
+                                "name": "Alterac Valley victories",
+                                "last_updated_timestamp": 1613683757000,
+                                "quantity": 5.0
+                            },
+                            {
+                                "id": 55,
+                                "name": "Arathi Basin battles",
+                                "last_updated_timestamp": 1738912049000,
+                                "quantity": 21.0
+                            },
+                            {
+                                "id": 51,
+                                "name": "Arathi Basin victories",
+                                "last_updated_timestamp": 1738912049000,
+                                "quantity": 10.0
+                            },
+                            {
+                                "id": 5236,
+                                "name": "Battle for Gilneas battles",
+                                "last_updated_timestamp": 1769296525000,
+                                "quantity": 10.0
+                            },
+                            {
+                                "id": 5237,
+                                "name": "Battle for Gilneas victories",
+                                "last_updated_timestamp": 1769296525000,
+                                "quantity": 3.0
+                            },
+                            {
+                                "id": 54,
+                                "name": "Eye of the Storm battles",
+                                "last_updated_timestamp": 1616964020000,
+                                "quantity": 11.0
+                            },
+                            {
+                                "id": 585,
+                                "name": "Eye of the Storm flags captured",
+                                "last_updated_timestamp": 1393322368000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 50,
+                                "name": "Eye of the Storm victories",
+                                "last_updated_timestamp": 1468958179000,
+                                "quantity": 4.0
+                            },
+                            {
+                                "id": 12710,
+                                "name": "Seething Shore battles",
+                                "last_updated_timestamp": 1671477126000,
+                                "quantity": 7.0
+                            },
+                            {
+                                "id": 12712,
+                                "name": "Seething Shore victories",
+                                "last_updated_timestamp": 1616624808000,
+                                "quantity": 5.0
+                            },
+                            {
+                                "id": 1549,
+                                "name": "Strand of the Ancients battles",
+                                "last_updated_timestamp": 1469024017000,
+                                "quantity": 6.0
+                            },
+                            {
+                                "id": 1550,
+                                "name": "Strand of the Ancients victories",
+                                "last_updated_timestamp": 1388590120000,
+                                "quantity": 3.0
+                            },
+                            {
+                                "id": 5232,
+                                "name": "Twin Peaks battles",
+                                "last_updated_timestamp": 1616960136000,
+                                "quantity": 7.0
+                            },
+                            {
+                                "id": 5233,
+                                "name": "Twin Peaks victories",
+                                "last_updated_timestamp": 1500037216000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 52,
+                                "name": "Warsong Gulch battles",
+                                "last_updated_timestamp": 1678440657000,
+                                "quantity": 21.0
+                            },
+                            {
+                                "id": 105,
+                                "name": "Warsong Gulch victories",
+                                "last_updated_timestamp": 1388361164000,
+                                "quantity": 5.0
+                            },
+                            {
+                                "id": 7829,
+                                "name": "Silvershard Mines battles",
+                                "last_updated_timestamp": 1712601697000,
+                                "quantity": 10.0
+                            },
+                            {
+                                "id": 7830,
+                                "name": "Silvershard Mines victories",
+                                "last_updated_timestamp": 1712601697000,
+                                "quantity": 6.0
+                            },
+                            {
+                                "id": 7825,
+                                "name": "Temple of Kotmogu battles",
+                                "last_updated_timestamp": 1671476335000,
+                                "quantity": 13.0
+                            },
+                            {
+                                "id": 7826,
+                                "name": "Temple of Kotmogu victories",
+                                "last_updated_timestamp": 1616273480000,
+                                "quantity": 6.0
+                            },
+                            {
+                                "id": 4096,
+                                "name": "Isle of Conquest battles",
+                                "last_updated_timestamp": 1609101794000,
+                                "quantity": 4.0
+                            },
+                            {
+                                "id": 4097,
+                                "name": "Isle of Conquest victories",
+                                "last_updated_timestamp": 1393325006000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 8373,
+                                "name": "Deepwind Gorge victories",
+                                "last_updated_timestamp": 1613418159000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 8374,
+                                "name": "Deepwind Gorge battles",
+                                "last_updated_timestamp": 1616008735000,
+                                "quantity": 5.0
+                            },
+                            {
+                                "id": 393,
+                                "name": "Alterac Valley towers defended",
+                                "last_updated_timestamp": 1468961788000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 394,
+                                "name": "Alterac Valley towers captured",
+                                "last_updated_timestamp": 1613683269000,
+                                "quantity": 17.0
+                            },
+                            {
+                                "id": 5235,
+                                "name": "Twin Peaks flags returned",
+                                "last_updated_timestamp": 1616004724000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 586,
+                                "name": "Warsong Gulch flags returned",
+                                "last_updated_timestamp": 1388884121000,
+                                "quantity": 11.0
+                            }
+                        ]
+                    },
+                    {
+                        "id": 154,
+                        "name": "World",
+                        "statistics": [
+                            {
+                                "id": 319,
+                                "name": "Duels won",
+                                "last_updated_timestamp": 1300651050000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 320,
+                                "name": "Duels lost",
+                                "last_updated_timestamp": 1311528006000,
+                                "quantity": 3.0
+                            }
+                        ]
+                    }
+                ],
+                "statistics": [
+                    {
+                        "id": 1501,
+                        "name": "Total deaths from other players",
+                        "last_updated_timestamp": 1678440488000,
+                        "quantity": 291.0
+                    },
+                    {
+                        "id": 318,
+                        "name": "Total deaths from opposite faction",
+                        "last_updated_timestamp": 1678440488000,
+                        "quantity": 245.0
+                    }
+                ]
+            },
+            {
+                "id": 15219,
+                "name": "Pet Battles",
+                "statistics": [
+                    {
+                        "id": 8278,
+                        "name": "Pet Battles won at max level",
+                        "last_updated_timestamp": 1767036480000,
+                        "quantity": 15.0
+                    }
+                ]
+            },
+            {
+                "id": 15176,
+                "name": "Legacy",
+                "statistics": [
+                    {
+                        "id": 17836,
+                        "name": "Flightstones earned",
+                        "last_updated_timestamp": 1723321053000,
+                        "quantity": 2013.0
+                    },
+                    {
+                        "id": 17837,
+                        "name": "Whelpling's Shadowflame Crest Fragments earned",
+                        "last_updated_timestamp": 1684011056000,
+                        "quantity": 29.0
+                    },
+                    {
+                        "id": 19421,
+                        "name": "Whelpling's Dreaming Crests earned",
+                        "last_updated_timestamp": 1713389191000,
+                        "quantity": 42.0
+                    },
+                    {
+                        "id": 19422,
+                        "name": "Drake's Dreaming Crests earned",
+                        "last_updated_timestamp": 1713388756000,
+                        "quantity": 122.0
+                    },
+                    {
+                        "id": 19538,
+                        "name": "Whelpling's Awakened Crests earned",
+                        "last_updated_timestamp": 1723321053000,
+                        "quantity": 105.0
+                    },
+                    {
+                        "id": 19539,
+                        "name": "Drake's Awakened Crests earned",
+                        "last_updated_timestamp": 1723320994000,
+                        "quantity": 30.0
+                    },
+                    {
+                        "id": 20488,
+                        "name": "Valorstones earned",
+                        "last_updated_timestamp": 1738912079000,
+                        "quantity": 483.0
+                    },
+                    {
+                        "id": 20490,
+                        "name": "Carved Harbinger Crests earned",
+                        "last_updated_timestamp": 1733913010000,
+                        "quantity": 55.0
+                    }
+                ]
+            },
+            {
+                "name": "World Events",
+                "sub_categories": [
+                    {
+                        "id": 15562,
+                        "name": "Legion: Remix",
+                        "statistics": [
+                            {
+                                "id": 61338,
+                                "name": "Bronze gained across Warband",
+                                "last_updated_timestamp": 1768854360000,
+                                "quantity": 2826889.0
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

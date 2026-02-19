@@ -1,0 +1,406 @@
+{
+    "protected": {
+        "_links": {
+            "self": {
+                "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-185963099?namespace=profile-eu"
+            },
+            "user": {
+                "href": "https://eu.api.blizzard.com/profile/user"
+            },
+            "profile": {
+                "href": "https://eu.api.blizzard.com/profile/user/wow?namespace=profile-eu"
+            }
+        },
+        "id": 185963099,
+        "name": "Margysia",
+        "money": 6102525,
+        "character": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia?namespace=profile-eu"
+            },
+            "name": "Margysia",
+            "id": 185963099,
+            "realm": {
+                "key": {
+                    "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+                },
+                "name": "Dethecus",
+                "id": 531,
+                "slug": "dethecus"
+            }
+        },
+        "protected_stats": {
+            "total_number_deaths": 0,
+            "total_gold_gained": 63753455,
+            "total_gold_lost": 57760930,
+            "total_item_value_gained": 32232,
+            "level_number_deaths": 0,
+            "level_gold_gained": 63753455,
+            "level_gold_lost": 57760930,
+            "level_item_value_gained": 32232
+        },
+        "position": {
+            "zone": {
+                "name": "Dornogal",
+                "id": 14771
+            },
+            "map": {
+                "name": "Khaz Algar (Surface)",
+                "id": 2552
+            },
+            "x": 2727.8425,
+            "y": -2604.9167,
+            "z": 219.6513,
+            "facing": 0.0423273
+        },
+        "bind_position": {
+            "zone": {
+                "name": "Dornogal",
+                "id": 14771
+            },
+            "map": {
+                "name": "Khaz Algar (Surface)",
+                "id": 2552
+            },
+            "x": 2633.37,
+            "y": -2591.66,
+            "z": 219.659,
+            "facing": 6.266308
+        },
+        "wow_account": 18295276
+    },
+    "public": {
+        "_links": {
+            "self": {
+                "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia?namespace=profile-eu"
+            }
+        },
+        "id": 185963099,
+        "name": "Margysia",
+        "gender": {
+            "type": "FEMALE",
+            "name": "Female"
+        },
+        "faction": {
+            "type": "HORDE",
+            "name": "Horde"
+        },
+        "race": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/playable-race/70?namespace=static-12.0.0_65028-eu"
+            },
+            "name": "Dracthyr",
+            "id": 70
+        },
+        "character_class": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/playable-class/9?namespace=static-12.0.0_65028-eu"
+            },
+            "name": "Warlock",
+            "id": 9
+        },
+        "active_spec": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/playable-specialization/265?namespace=static-12.0.0_65028-eu"
+            },
+            "name": "Affliction",
+            "id": 265
+        },
+        "realm": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+            },
+            "name": "Dethecus",
+            "id": 531,
+            "slug": "dethecus"
+        },
+        "guild": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/guild/dethecus/divide-and-conquer?namespace=profile-eu"
+            },
+            "name": "Divide and Conquer",
+            "id": 28057438,
+            "realm": {
+                "key": {
+                    "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+                },
+                "name": "Dethecus",
+                "id": 531,
+                "slug": "dethecus"
+            },
+            "faction": {
+                "type": "HORDE",
+                "name": "Horde"
+            }
+        },
+        "level": 80,
+        "experience": 0,
+        "achievement_points": 20675,
+        "achievements": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia/achievements?namespace=profile-eu"
+        },
+        "titles": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia/titles?namespace=profile-eu"
+        },
+        "pvp_summary": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia/pvp-summary?namespace=profile-eu"
+        },
+        "encounters": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia/encounters?namespace=profile-eu"
+        },
+        "media": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia/character-media?namespace=profile-eu"
+        },
+        "last_login_timestamp": 1769288098000,
+        "average_item_level": 99,
+        "equipped_item_level": 99,
+        "specializations": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia/specializations?namespace=profile-eu"
+        },
+        "statistics": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia/statistics?namespace=profile-eu"
+        },
+        "mythic_keystone_profile": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia/mythic-keystone-profile?namespace=profile-eu"
+        },
+        "equipment": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia/equipment?namespace=profile-eu"
+        },
+        "appearance": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia/appearance?namespace=profile-eu"
+        },
+        "collections": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia/collections?namespace=profile-eu"
+        },
+        "active_title": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/title/140?namespace=static-12.0.0_65028-eu"
+            },
+            "name": "the Kingslayer",
+            "id": 140,
+            "display_string": "{name} the Kingslayer"
+        },
+        "reputations": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia/reputations?namespace=profile-eu"
+        },
+        "quests": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia/quests?namespace=profile-eu"
+        },
+        "achievements_statistics": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia/achievements/statistics?namespace=profile-eu"
+        },
+        "professions": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia/professions?namespace=profile-eu"
+        },
+        "is_remix": false,
+        "name_search": "Margysia"
+    },
+    "stats": {
+        "_links": {
+            "self": {
+                "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia/achievements/statistics?namespace=profile-eu"
+            }
+        },
+        "character": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia?namespace=profile-eu"
+            },
+            "name": "Margysia",
+            "id": 185963099,
+            "realm": {
+                "key": {
+                    "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+                },
+                "name": "Dethecus",
+                "id": 531,
+                "slug": "dethecus"
+            }
+        },
+        "categories": [
+            {
+                "id": 130,
+                "name": "Character",
+                "statistics": [
+                    {
+                        "id": 14897,
+                        "name": "Item slots equipped with Uncommon items",
+                        "last_updated_timestamp": 1760299347000,
+                        "quantity": 15.0
+                    }
+                ]
+            },
+            {
+                "id": 128,
+                "name": "Kills",
+                "sub_categories": [
+                    {
+                        "id": 135,
+                        "name": "Creatures",
+                        "statistics": [
+                            {
+                                "id": 107,
+                                "name": "Creatures killed",
+                                "last_updated_timestamp": 1769288024000,
+                                "quantity": 32.0
+                            },
+                            {
+                                "id": 1337,
+                                "name": "Different creature types killed",
+                                "last_updated_timestamp": 1769288024000,
+                                "quantity": 4.0
+                            },
+                            {
+                                "id": 1336,
+                                "name": "Creature type killed the most",
+                                "last_updated_timestamp": 1769288024000,
+                                "description": "Humanoid",
+                                "quantity": 26.0
+                            }
+                        ]
+                    },
+                    {
+                        "id": 137,
+                        "name": "Killing Blows",
+                        "statistics": [
+                            {
+                                "id": 1487,
+                                "name": "Total Killing Blows",
+                                "last_updated_timestamp": 1769288024000,
+                                "quantity": 19.0
+                            }
+                        ]
+                    }
+                ],
+                "statistics": [
+                    {
+                        "id": 1197,
+                        "name": "Total kills",
+                        "last_updated_timestamp": 1769288024000,
+                        "quantity": 32.0
+                    },
+                    {
+                        "id": 1198,
+                        "name": "Total kills that grant experience or honor",
+                        "last_updated_timestamp": 1769288024000,
+                        "quantity": 32.0
+                    }
+                ]
+            },
+            {
+                "id": 133,
+                "name": "Quests",
+                "statistics": [
+                    {
+                        "id": 98,
+                        "name": "Quests completed",
+                        "last_updated_timestamp": 1769287173000,
+                        "quantity": 473.0
+                    },
+                    {
+                        "id": 95,
+                        "name": "Average quests completed per day",
+                        "last_updated_timestamp": 1769287173000,
+                        "quantity": 0.0
+                    },
+                    {
+                        "id": 94,
+                        "name": "Quests abandoned",
+                        "last_updated_timestamp": 1769254737000,
+                        "quantity": 3.0
+                    }
+                ]
+            },
+            {
+                "id": 132,
+                "name": "Skills",
+                "sub_categories": [
+                    {
+                        "id": 173,
+                        "name": "Professions",
+                        "statistics": [
+                            {
+                                "id": 1538,
+                                "name": "Highest Herbalism skill",
+                                "last_updated_timestamp": 1769287919000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "id": 1537,
+                                "name": "Highest Mining skill",
+                                "last_updated_timestamp": 1769288033000,
+                                "quantity": 3.0
+                            },
+                            {
+                                "id": 3216,
+                                "name": "Smelting Recipes learned",
+                                "last_updated_timestamp": 1769288033000,
+                                "quantity": 6.0
+                            }
+                        ]
+                    }
+                ],
+                "statistics": [
+                    {
+                        "id": 1199,
+                        "name": "Professions learned",
+                        "last_updated_timestamp": 1769287753000,
+                        "quantity": 2.0
+                    }
+                ]
+            },
+            {
+                "id": 134,
+                "name": "Travel",
+                "statistics": [
+                    {
+                        "id": 353,
+                        "name": "Number of times hearthed",
+                        "last_updated_timestamp": 1769287816000,
+                        "quantity": 1.0
+                    }
+                ]
+            },
+            {
+                "id": 14807,
+                "name": "Dungeons & Raids",
+                "statistics": [
+                    {
+                        "id": 932,
+                        "name": "Total 5-player dungeons entered",
+                        "last_updated_timestamp": 1761290416000,
+                        "quantity": 2.0
+                    }
+                ]
+            },
+            {
+                "id": 15219,
+                "name": "Pet Battles",
+                "statistics": [
+                    {
+                        "id": 8278,
+                        "name": "Pet Battles won at max level",
+                        "last_updated_timestamp": 1767036480000,
+                        "quantity": 15.0
+                    }
+                ]
+            },
+            {
+                "name": "World Events",
+                "sub_categories": [
+                    {
+                        "id": 15562,
+                        "name": "Legion: Remix",
+                        "statistics": [
+                            {
+                                "id": 61338,
+                                "name": "Bronze gained across Warband",
+                                "last_updated_timestamp": 1768854360000,
+                                "quantity": 2826889.0
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
