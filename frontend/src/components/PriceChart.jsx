@@ -1,7 +1,7 @@
 import React from 'react';
 import { AreaChart, Area, ResponsiveContainer, YAxis, XAxis, Tooltip } from 'recharts';
 
-const PriceChart = ({ data, selectedRange, onRangeChange, color = "#00ced1", currencySymbol = "g" }) => {
+const PriceChart = ({ data, selectedRange, color = "#00ced1", currencySymbol = "g" }) => {
     // Determine tick interval based on range (approximate number of ticks)
     // This is handled by recharts somewhat automatically but we can hint it
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { TrendingUp, TrendingDown, Coins } from 'lucide-react';
 import PriceChart from './PriceChart';
 
-const TokenWidget = ({ currentPrice, lastUpdated, formatted, history, selectedRange, onRangeChange }) => {
+const TokenWidget = ({ formatted, history, selectedRange, onRangeChange }) => {
     const safeHistory = Array.isArray(history) ? history : [];
     const isUp = safeHistory.length > 1 && safeHistory[0].price <= safeHistory[safeHistory.length - 1].price;
 

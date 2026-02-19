@@ -14,13 +14,13 @@ function App() {
   // Helper to ensure we use the same API URL logic
   const getApiUrl = () => import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
-  const fetchTokenData = async () => {
+  const fetchTokenData = React.useCallback(async () => {
     try {
       let apiUrl = getApiUrl();
       let latestRes;
       try {
         latestRes = await fetch(`${apiUrl}/api/token/latest`);
-      } catch (e) {
+      } catch {
         console.warn("Main API URL failed, trying localhost...");
         apiUrl = 'http://localhost:8000';
         latestRes = await fetch(`${apiUrl}/api/token/latest`);
@@ -39,16 +39,17 @@ function App() {
       setError(error.message);
       setLoading(false);
     }
-  };
+  }, [range]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchTokenData();
-  }, [range]);
+  }, [fetchTokenData]);
 
   useEffect(() => {
     const interval = setInterval(fetchTokenData, 60000);
     return () => clearInterval(interval);
-  }, [range]);
+  }, [fetchTokenData]);
 
   return (
     <Layout>

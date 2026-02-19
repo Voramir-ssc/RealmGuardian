@@ -4,9 +4,8 @@ import { Coins, User, LogIn, ExternalLink, RefreshCw } from 'lucide-react';
 const GoldWidget = ({ apiUrl }) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
 
-    const fetchData = async () => {
+    const fetchData = React.useCallback(async () => {
         setLoading(true);
         try {
             // Try fetch
@@ -25,7 +24,7 @@ const GoldWidget = ({ apiUrl }) => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [apiUrl]);
 
     useEffect(() => {
         fetchData();
@@ -37,7 +36,7 @@ const GoldWidget = ({ apiUrl }) => {
             window.history.replaceState({}, document.title, "/");
             fetchData();
         }
-    }, []);
+    }, [fetchData]);
 
     const handleLogin = () => {
         window.location.href = `${apiUrl}/api/auth/login`;

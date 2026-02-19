@@ -223,15 +223,15 @@ from fastapi import FastAPI, Depends, HTTPException, Request
 
 @app.get('/api/auth/login')
 def login(request: Request):
-    # Dynamic redirect URI based on the request host (localhost or tailscale IP)
-    base_url = str(request.base_url).rstrip('/')
+    # Hardcoded base URL for local development to ensure consistency
+    base_url = "http://localhost:8000"
     redirect_uri = f"{base_url}/api/auth/callback"
     url = blizzard_client.get_authorization_url(redirect_uri)
     return RedirectResponse(url)
 
 @app.get('/api/auth/callback')
 def auth_callback(code: str, state: str, request: Request, db: Session = Depends(get_db)):
-    base_url = str(request.base_url).rstrip('/')
+    base_url = "http://localhost:8000"
     redirect_uri = f"{base_url}/api/auth/callback"
     user_token = blizzard_client.exchange_code_for_token(code, redirect_uri)
     

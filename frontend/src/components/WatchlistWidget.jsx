@@ -13,17 +13,13 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
     const [historyRange, setHistoryRange] = useState('14d');
 
     // Dynamic API URL logic similar to App.jsx
-    const getApiUrl = () => {
-        return propApiUrl;
-    };
-
-    const fetchItems = async () => {
-        let url = getApiUrl();
+    const fetchItems = React.useCallback(async () => {
+        let url = propApiUrl;
         try {
             let res;
             try {
                 res = await fetch(`${url}/api/items`);
-            } catch (e) {
+            } catch {
                 console.warn("Watchlist fetch failed, trying localhost fallback...");
                 url = 'http://localhost:8000';
                 res = await fetch(`${url}/api/items`);
@@ -40,22 +36,22 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
             console.error("Failed to fetch watchlist", err);
             setError("Could not load watchlist.");
         }
-    };
+    }, [propApiUrl]);
 
     useEffect(() => {
         fetchItems();
         const interval = setInterval(fetchItems, 60000);
         return () => clearInterval(interval);
-    }, []);
+    }, [fetchItems]);
 
-    const fetchHistory = async (itemId, range) => {
+    const fetchHistory = React.useCallback(async (itemId, range) => {
         setHistoryLoading(true);
-        let url = getApiUrl();
+        let url = propApiUrl;
         try {
             let res;
             try {
                 res = await fetch(`${url}/api/items/${itemId}/history?range=${range}`);
-            } catch (e) {
+            } catch {
                 url = 'http://localhost:8000';
                 res = await fetch(`${url}/api/items/${itemId}/history?range=${range}`);
             }
@@ -76,7 +72,7 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
         } finally {
             setHistoryLoading(false);
         }
-    };
+    }, [propApiUrl]);
 
     const toggleExpand = (itemId) => {
         if (expandedItem === itemId) {
@@ -101,7 +97,7 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
 
         setLoading(true);
         setError(null);
-        let url = getApiUrl();
+        let url = propApiUrl;
 
         try {
             let res;
@@ -111,7 +107,7 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ item_id: parseInt(newItemId) })
                 });
-            } catch (e) {
+            } catch {
                 url = 'http://localhost:8000';
                 res = await fetch(`${url}/api/items`, {
                     method: 'POST',
@@ -135,7 +131,7 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
     };
 
     const handleDeleteItem = async (itemId) => {
-        let url = getApiUrl();
+        let url = propApiUrl;
         try {
             await fetch(`${url}/api/items/${itemId}`, { method: 'DELETE' });
             fetchItems();
@@ -143,7 +139,7 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
             try {
                 await fetch(`http://localhost:8000/api/items/${itemId}`, { method: 'DELETE' });
                 fetchItems();
-            } catch (e) {
+            } catch {
                 console.error("Failed to delete item", err);
             }
         }
