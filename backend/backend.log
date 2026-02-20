@@ -2062,3 +2062,7 @@ INFO:     127.0.0.1:41561 - "GET /api/token/latest HTTP/1.1" 200 OK
 INFO:     127.0.0.1:4643 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
 INFO:     127.0.0.1:4650 - "GET /api/items HTTP/1.1" 200 OK
 INFO:     127.0.0.1:24835 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24844 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24846 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51314 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10491 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
