@@ -15,6 +15,7 @@ DO NOT BREAK THIS BASE FUNCTIONALITY.
 from fastapi import FastAPI, Depends, HTTPException, Request, BackgroundTasks
 import pydantic
 from sqlalchemy.orm import Session
+import sqlalchemy
 from fastapi.middleware.cors import CORSMiddleware
 import models
 from database import engine, get_db, SessionLocal
@@ -306,7 +307,7 @@ def sync_user_characters(user_token: str):
     try:
         # Debug: Log start
         with open("debug_sync_start.txt", "w") as f:
-            f.write(f"Sync started at {time.time()}\nToken: {user_token[:10]}...")
+            f.write(f"Sync started at {time.time()}\n")
 
         # Fetch Profile
         profile = blizzard_client.get_account_profile(user_token)
@@ -376,6 +377,29 @@ def sync_user_characters(user_token: str):
                     with open(f"debug_char_{char['name']}.json", "w") as f:
                         json.dump({"protected": protected_details, "public": public_details, "stats": stats}, f, indent=4)
 
+                    # Determine Item Level
+                    item_level = 0
+                    if public_details and 'equipped_item_level' in public_details:
+                        item_level = public_details['equipped_item_level']
+
+                    # Fetch & Parse Equipment
+                    equipment_json = None
+                    try:
+                        raw_equip = blizzard_client.get_character_equipment(user_token, char['realm']['slug'], char['name'])
+                        if raw_equip and 'equipped_items' in raw_equip:
+                            parsed_items = []
+                            for item in raw_equip['equipped_items']:
+                                parsed_items.append({
+                                    "id": item.get('item', {}).get('id'),
+                                    "slot": item.get('slot', {}).get('type'),
+                                    "name": item.get('name', 'Unknown'),
+                                    "quality": item.get('quality', {}).get('type', 'COMMON'),
+                                    "level": item.get('level', {}).get('value', 0)
+                                })
+                            equipment_json = json.dumps(parsed_items)
+                    except Exception as eq_err:
+                        print(f"Failed to fetch equipment for {char['name']}: {eq_err}")
+
                     played_time = 0
                     # Note: Blizzard has completely removed 'Total time played' from the external Web API.
                     # This information is now only available via the in-game Lua API (/played).
@@ -390,6 +414,8 @@ def sync_user_characters(user_token: str):
                             name=char['name'],
                             realm=char['realm']['name'],
                             level=char.get('level', 0),
+                            item_level=item_level,
+                            equipment=equipment_json,
                             gold=int(gold),
                             played_time=int(played_time),
                             last_updated=timestamp
@@ -404,6 +430,8 @@ def sync_user_characters(user_token: str):
                         db_char.name = char['name']
                         db_char.realm = char['realm']['name']
                         db_char.level = char['level']
+                        db_char.item_level = item_level
+                        db_char.equipment = equipment_json
                         db_char.gold = int(gold)
                         db_char.played_time = int(played_time)
                         db_char.last_updated = timestamp
@@ -419,6 +447,26 @@ def sync_user_characters(user_token: str):
                     continue
         
         print(f"Background sync complete. Processed {count} characters.")
+
+        # Aggregate and save total account gold for history
+        total_account_gold = new_db.query(models.Character).with_entities(sqlalchemy.func.sum(models.Character.gold)).scalar() or 0
+        
+        # Get start of current day for the daily snapshot
+        today = datetime.datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
+        
+        gold_snapshot = new_db.query(models.AccountGoldHistory).filter(models.AccountGoldHistory.timestamp >= today).first()
+        if gold_snapshot:
+            gold_snapshot.total_gold = total_account_gold
+            gold_snapshot.timestamp = datetime.datetime.utcnow()
+        else:
+            gold_snapshot = models.AccountGoldHistory(
+                total_gold=total_account_gold,
+                timestamp=datetime.datetime.utcnow()
+            )
+            new_db.add(gold_snapshot)
+        
+        new_db.commit()
+        print(f"Total account gold snapshot updated: {total_account_gold / 10000}g")
         
     except Exception as e:
         print(f"Background sync failed: {e}")
@@ -426,6 +474,15 @@ def sync_user_characters(user_token: str):
         traceback.print_exc()
     finally:
         new_db.close()
+
+@app.get('/api/user/gold-history')
+def get_user_gold_history(db: Session = Depends(get_db)):
+    """
+    Retrieves the chronological history of the user's total account gold.
+    Returns early snapshots for rendering historical charts.
+    """
+    history = db.query(models.AccountGoldHistory).order_by(models.AccountGoldHistory.timestamp.asc()).all()
+    return {"history": history}
 
 @app.get('/api/user/characters')
 def get_user_characters(db: Session = Depends(get_db)):

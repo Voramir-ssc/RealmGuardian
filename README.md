@@ -11,6 +11,11 @@ RealmGuardian is a comprehensive web dashboard and background service designed t
 - ✅ Custom auction house commodity price history tracking.
 - ❌ Account Playtime has been permanently removed as it is no longer provided by the public Blizzard Web API.
 
+## Backlog / Planned Features
+- [ ] **Historische Gold-Charts:** Tägliche Snapshots des Account-übergreifenden Goldes mit visueller Darstellung.
+- [ ] **Item Level (iLvl) & Ausrüstung:** Detaillierte Ansicht der angelegten Ausrüstung und Item-Level pro Charakter.
+- [ ] **Berufe:** Übersicht der Berufe und Skill-Level der Charaktere.
+
 ---
 
 > **Note for AI Agents & Developers:**

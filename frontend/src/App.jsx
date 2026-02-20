@@ -17,6 +17,7 @@ import Layout from './components/Layout';
 import TokenWidget from './components/TokenWidget';
 import GoldWidget from './components/GoldWidget';
 import WatchlistWidget from './components/WatchlistWidget';
+import GoldChartWidget from './components/GoldChartWidget';
 
 import CharacterList from './components/CharacterList';
 import Settings from './components/Settings';
@@ -30,6 +31,7 @@ function App() {
 
   // Character Data State
   const [characterData, setCharacterData] = useState(null);
+  const [accountGoldHistory, setAccountGoldHistory] = useState([]);
   const [charLoading, setCharLoading] = useState(false);
   const [activeTab, setActiveTab] = useState('dashboard');
   const [isSyncing, setIsSyncing] = useState(false);
@@ -76,6 +78,19 @@ function App() {
     }
   }, []);
 
+  const fetchAccountGoldHistory = React.useCallback(async () => {
+    try {
+      const apiUrl = getApiUrl();
+      const res = await fetch(`${apiUrl}/api/user/gold-history`);
+      if (res.ok) {
+        const json = await res.json();
+        setAccountGoldHistory(json.history || []);
+      }
+    } catch (e) {
+      console.error("Failed to fetch gold history", e);
+    }
+  }, []);
+
   const handleLogin = () => {
     console.log("LOGIN BUTTON CLICKED. Redirecting...", activeTab);
     // Force absolute URL to ensure we hit the backend and not the frontend router
@@ -86,7 +101,8 @@ function App() {
   useEffect(() => {
     fetchTokenData();
     fetchCharacterData();
-  }, [fetchTokenData, fetchCharacterData]);
+    fetchAccountGoldHistory();
+  }, [fetchTokenData, fetchCharacterData, fetchAccountGoldHistory]);
 
   useEffect(() => {
     const interval = setInterval(fetchTokenData, 60000);
@@ -165,7 +181,15 @@ function App() {
             loading={charLoading}
           />
 
-          <WatchlistWidget apiUrl={getApiUrl()} />
+          {/* Gold History Card */}
+          <GoldChartWidget
+            history={accountGoldHistory}
+            loading={charLoading}
+          />
+
+          <div className="md:col-span-2 lg:col-span-3">
+            <WatchlistWidget apiUrl={getApiUrl()} />
+          </div>
         </div>
       )}
 

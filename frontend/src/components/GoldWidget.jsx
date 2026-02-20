@@ -12,7 +12,7 @@ const GoldWidget = ({ characters = [], loading, onLogin }) => {
     const totalGold = characters.reduce((acc, char) => acc + (char.gold || 0), 0);
 
     return (
-        <div className="bg-surface border border-white/5 rounded-2xl p-6 md:col-span-2 flex flex-col justify-between">
+        <div className="bg-surface border border-white/5 rounded-2xl p-6 flex flex-col justify-between">
             <div className="flex justify-between items-start mb-6">
                 <div>
                     <h3 className="text-secondary text-sm font-medium uppercase tracking-wider mb-1">Total Wealth</h3>

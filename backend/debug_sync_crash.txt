@@ -1,0 +1,6 @@
+'Session' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 310, in sync_user_characters
+    f.write(f"Sync started at {time.time()}\nToken: {user_token[:10]}...")
+                                                     ~~~~~~~~~~^^^^^
+TypeError: 'Session' object is not subscriptable

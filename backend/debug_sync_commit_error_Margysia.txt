@@ -1,0 +1,7 @@
+(sqlite3.OperationalError) no such column: characters.item_level
+[SQL: SELECT characters.id AS characters_id, characters.blizzard_id AS characters_blizzard_id, characters.name AS characters_name, characters.realm AS characters_realm, characters.class_name AS characters_class_name, characters.level AS characters_level, characters.item_level AS characters_item_level, characters.equipment AS characters_equipment, characters.gold AS characters_gold, characters.played_time AS characters_played_time, characters.icon_url AS characters_icon_url, characters.last_updated AS characters_last_updated 
+FROM characters 
+WHERE characters.blizzard_id = ?
+ LIMIT ? OFFSET ?]
+[parameters: (185963099, 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)

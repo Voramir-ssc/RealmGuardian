@@ -4,10 +4,15 @@
  * Displays a formatted, scrollable grid of synced World of Warcraft characters.
  * Includes character-specific details such as realm, level, gold, and total playtime.
  */
-import React from 'react';
-import { RefreshCw, Shield } from 'lucide-react';
+import React, { useState } from 'react';
+import { RefreshCw, Shield, ChevronDown, ChevronUp } from 'lucide-react';
 
 const CharacterList = ({ characters, loading, onSync, onLogin }) => {
+    const [expandedCharId, setExpandedCharId] = useState(null);
+
+    const toggleExpand = (id) => {
+        setExpandedCharId(expandedCharId === id ? null : id);
+    };
 
     const getClassColor = (className) => {
         const colors = {
@@ -26,6 +31,19 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
             'Warrior': 'text-[#C69B6D]',
         };
         return colors[className] || 'text-white';
+    };
+
+    const getItemQualityColor = (quality) => {
+        const colors = {
+            'POOR': 'text-[#9d9d9d]',
+            'COMMON': 'text-[#ffffff]',
+            'UNCOMMON': 'text-[#1eff00]',
+            'RARE': 'text-[#0070dd]',
+            'EPIC': 'text-[#a335ee]',
+            'LEGENDARY': 'text-[#ff8000]',
+            'ARTIFACT': 'text-[#e6cc80]'
+        };
+        return colors[quality] || 'text-gray-400';
     };
 
     return (
@@ -56,37 +74,88 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                     <table className="w-full text-left">
                         <thead>
                             <tr className="text-secondary text-xs border-b border-white/10">
+                                <th className="pb-3 w-8"></th>
                                 <th className="pb-3 font-medium uppercase tracking-wider pl-4">Character</th>
                                 <th className="pb-3 font-medium uppercase tracking-wider">Realm</th>
-                                <th className="pb-3 font-medium uppercase tracking-wider">Level</th>
+                                <th className="pb-3 font-medium uppercase tracking-wider text-center">Level</th>
+                                <th className="pb-3 font-medium uppercase tracking-wider text-center text-[#ff8000]">iLvl</th>
                                 <th className="pb-3 font-medium uppercase tracking-wider text-right pr-4">Gold</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-white/5">
-                            {characters.map((char) => (
-                                <tr key={char.id} className="group hover:bg-white/5 transition-colors">
-                                    <td className="py-3 pl-4">
-                                        <div className="flex items-center gap-3">
-                                            {char.icon_url ? (
-                                                <img src={char.icon_url} alt="" className="w-8 h-8 rounded bg-black/40" />
-                                            ) : (
-                                                <div className="w-8 h-8 rounded bg-surface border border-white/10 flex items-center justify-center">
-                                                    <span className="text-xs font-bold text-secondary">{char.name[0]}</span>
+                            {characters.map((char) => {
+                                let equipment = [];
+                                try {
+                                    if (char.equipment) {
+                                        equipment = JSON.parse(char.equipment);
+                                    }
+                                } catch (e) {
+                                    console.error("Failed to parse equipment JSON", e);
+                                }
+                                const isExpanded = expandedCharId === char.id;
+
+                                return (
+                                    <React.Fragment key={char.id}>
+                                        <tr
+                                            className="group hover:bg-white/5 transition-colors cursor-pointer"
+                                            onClick={() => toggleExpand(char.id)}
+                                        >
+                                            <td className="py-3 text-secondary/50 pl-2">
+                                                {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                                            </td>
+                                            <td className="py-3 pl-2">
+                                                <div className="flex items-center gap-3">
+                                                    {char.icon_url ? (
+                                                        <img src={char.icon_url} alt="" className="w-8 h-8 rounded bg-black/40" />
+                                                    ) : (
+                                                        <div className="w-8 h-8 rounded bg-surface border border-white/10 flex items-center justify-center">
+                                                            <span className="text-xs font-bold text-secondary">{char.name[0]}</span>
+                                                        </div>
+                                                    )}
+                                                    <div>
+                                                        <div className={`font-medium text-sm ${getClassColor(char.class_name)}`}>{char.name}</div>
+                                                        <div className="text-xs text-secondary/50">{char.class_name}</div>
+                                                    </div>
                                                 </div>
-                                            )}
-                                            <div>
-                                                <div className={`font-medium text-sm ${getClassColor(char.class_name)}`}>{char.name}</div>
-                                                <div className="text-xs text-secondary/50">{char.class_name}</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="py-3 text-sm text-secondary">{char.realm}</td>
-                                    <td className="py-3 text-sm text-white">{char.level}</td>
-                                    <td className="py-3 text-sm font-bold text-white text-right pr-4">
-                                        {(char.gold / 10000).toLocaleString('de-DE')} <span className="text-yellow-500 text-xs font-normal">g</span>
-                                    </td>
-                                </tr>
-                            ))}
+                                            </td>
+                                            <td className="py-3 text-sm text-secondary">{char.realm}</td>
+                                            <td className="py-3 text-sm text-white text-center font-medium">{char.level}</td>
+                                            <td className="py-3 text-sm font-bold text-[#ff8000] text-center">{char.item_level || '-'}</td>
+                                            <td className="py-3 text-sm font-bold text-white text-right pr-4">
+                                                {(char.gold / 10000).toLocaleString('de-DE')} <span className="text-yellow-500 text-xs font-normal">g</span>
+                                            </td>
+                                        </tr>
+
+                                        {/* Equipment Dropdown Row */}
+                                        {isExpanded && (
+                                            <tr className="bg-black/20">
+                                                <td colSpan="6" className="py-4 px-6 border-l-4 border-[#148eff]/50">
+                                                    <div className="mb-2 text-xs uppercase tracking-wider text-secondary font-medium">Equipped Items ({equipment.length})</div>
+                                                    {equipment.length > 0 ? (
+                                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                                                            {equipment.map((item, idx) => (
+                                                                <div key={idx} className="flex justify-between items-center text-xs p-2 rounded bg-surface border border-white/5 hover:border-white/10 transition-colors">
+                                                                    <div className="flex flex-col truncate pr-2">
+                                                                        <span className={`font-medium ${getItemQualityColor(item.quality)} truncate`}>{item.name}</span>
+                                                                        <span className="text-secondary/50 text-[10px] uppercase">
+                                                                            {item.slot ? item.slot.replace(/_/g, ' ') : 'Unknown Slot'}
+                                                                        </span>
+                                                                    </div>
+                                                                    <span className="text-[#ff8000] font-bold shrink-0">{item.level}</span>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    ) : (
+                                                        <div className="text-sm text-secondary/50 italic py-2">
+                                                            No equipment data synced or character is hidden.
+                                                        </div>
+                                                    )}
+                                                </td>
+                                            </tr>
+                                        )}
+                                    </React.Fragment>
+                                );
+                            })}
                         </tbody>
                     </table>
                 )}
