@@ -2040,3 +2040,24 @@ INFO:     127.0.0.1:52514 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
 INFO:     127.0.0.1:2903 - "GET /api/token/latest HTTP/1.1" 200 OK
 INFO:     127.0.0.1:2901 - "GET /api/items HTTP/1.1" 200 OK
 INFO:     127.0.0.1:12195 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+ INFO:     127.0.0.1:41554 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41556 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     127.0.0.1:41558 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [13668]
+INFO:     Started server process [23128]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Fetching WoW Token Price...
+Token price already up to date.
+Updating Commodity Prices...
+Processing 341481 auctions for 2 tracked items...
+Updated Stranglekelp: 15.97g
+Updated Linen Cloth: 0.05g
+INFO:     127.0.0.1:41562 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41561 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4643 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4650 - "GET /api/items HTTP/1.1" 200 OK
