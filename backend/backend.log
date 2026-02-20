@@ -1742,3 +1742,301 @@ INFO:     127.0.0.1:54025 - "GET /api/user/characters HTTP/1.1" 200 OK
 INFO:     127.0.0.1:38566 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
 INFO:     127.0.0.1:60758 - "GET /api/items HTTP/1.1" 200 OK
 INFO:     127.0.0.1:62191 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62196 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62195 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62198 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25502 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1935 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58037 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5491 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5500 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5499 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5502 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5515 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16424 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48126 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63141 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24181 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24180 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24183 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24185 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56975 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56974 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56976 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58728 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14716 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15941 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15945 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15944 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15947 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37682 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23253 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23252 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23251 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23255 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23259 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23258 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23261 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25632 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27793 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32687 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32702 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32701 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32704 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56284 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22788 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22809 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22808 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22811 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15099 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61799 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47469 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47468 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47471 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+ INFO:     127.0.0.1:65211 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24060 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44986 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44985 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44988 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [15012]
+INFO:     Started server process [14860]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Fetching WoW Token Price...
+Token price already up to date.
+Updating Commodity Prices...
+Processing 336709 auctions for 2 tracked items...
+Updated Stranglekelp: 15.98g
+Updated Linen Cloth: 0.05g
+INFO:     127.0.0.1:58717 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30856 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5226 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4189 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24793 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:24793 - "GET /api/auth/callback?code=EUAK7E4FPUZEHHYMIDM7ZISSMUN1AIIEFR&state=settings HTTP/1.1" 307 Temporary Redirect
+Starting background character sync...
+INFO:     127.0.0.1:45826 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45829 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45830 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45834 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45832 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45836 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47540 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56214 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13212 - "GET /api/user/characters HTTP/1.1" 200 OK
+Found 40 characters.
+INFO:     127.0.0.1:13221 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13220 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13223 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+Synced Dorchada: 1763.0168g, 0.0h
+INFO:     127.0.0.1:63377 - "GET /api/user/characters HTTP/1.1" 200 OK
+Synced Marlejin: 23812.0007g, 0.0h
+Synced Pørphyria: 104.9055g, 0.0h
+INFO:     127.0.0.1:62623 - "GET /api/user/characters HTTP/1.1" 200 OK
+Synced Skally: 0.4456g, 0.0h
+INFO:     127.0.0.1:9089 - "GET /api/user/characters HTTP/1.1" 200 OK
+Synced Lenmariel: 327.0408g, 0.0h
+Synced Lenmera: 239.5865g, 0.0h
+INFO:     127.0.0.1:12399 - "GET /api/user/characters HTTP/1.1" 200 OK
+Synced Northael: 9.8355g, 0.0h
+Synced Marlegosa: 92.8399g, 0.0h
+INFO:     127.0.0.1:15897 - "GET /api/user/characters HTTP/1.1" 200 OK
+Synced Venmara: 233.7868g, 0.0h
+INFO:     127.0.0.1:56625 - "GET /api/user/characters HTTP/1.1" 200 OK
+Synced Wollbert: 0.7064g, 0.0h
+Synced Nocmara: 25.0028g, 0.0h
+INFO:     127.0.0.1:37761 - "GET /api/user/characters HTTP/1.1" 200 OK
+Synced Margysia: 610.2525g, 0.0h
+Synced Lasmiranda: 0.9105g, 0.0h
+INFO:     127.0.0.1:49987 - "GET /api/user/characters HTTP/1.1" 200 OK
+Synced Liris: 0.5043g, 0.0h
+Synced Lymandris: 0.8743g, 0.0h
+INFO:     127.0.0.1:57342 - "GET /api/user/characters HTTP/1.1" 200 OK
+Synced Liliaris: 56.4051g, 0.0h
+Synced Vorathiel: 572.3127g, 0.0h
+INFO:     127.0.0.1:13191 - "GET /api/user/characters HTTP/1.1" 200 OK
+Synced Bilanza: 5.9707g, 0.0h
+Error fetching protected profile for 187760949: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Voramir: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Skipping ghost character Voramir
+INFO:     127.0.0.1:6465 - "GET /api/user/characters HTTP/1.1" 200 OK
+Synced Voramir: 2.2412g, 0.0h
+INFO:     127.0.0.1:23341 - "GET /api/user/characters HTTP/1.1" 200 OK
+Synced Lenmera: 0.06g, 0.0h
+Synced Lamiralia: 0.616g, 0.0h
+INFO:     127.0.0.1:62959 - "GET /api/user/characters HTTP/1.1" 200 OK
+Synced Porphyria: 0.1683g, 0.0h
+Synced Milera: 0.7209g, 0.0h
+INFO:     127.0.0.1:53305 - "GET /api/user/characters HTTP/1.1" 200 OK
+Synced Lethria: 0.4937g, 0.0h
+Synced Voradiel: 0.617g, 0.0h
+INFO:     127.0.0.1:54144 - "GET /api/user/characters HTTP/1.1" 200 OK
+Synced Voradoril: 1114.6459g, 0.0h
+Synced Loraliel: 0.0926g, 0.0h
+INFO:     127.0.0.1:5470 - "GET /api/user/characters HTTP/1.1" 200 OK
+Synced Lethru: 2034.4099g, 0.0h
+Synced Leroth: 58.665g, 0.0h
+INFO:     127.0.0.1:50366 - "GET /api/user/characters HTTP/1.1" 200 OK
+Error fetching protected profile for 41191454: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Helgaria: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Skipping ghost character Helgaria
+Error fetching protected profile for 41321545: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Asaral768449: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Skipping ghost character Asaral768449
+Error fetching protected profile for 41489006: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+INFO:     127.0.0.1:49242 - "GET /api/user/characters HTTP/1.1" 200 OK
+Error fetching character profile for Nachts79126E: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Skipping ghost character Nachts79126E
+Error fetching protected profile for 136745005: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Sippu: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Skipping ghost character Sippu
+Error fetching protected profile for 52865885: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Delevar: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Skipping ghost character Delevar
+Error fetching protected profile for 53154705: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+INFO:     127.0.0.1:26380 - "GET /api/user/characters HTTP/1.1" 200 OK
+Error fetching character profile for Weißklaue: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Skipping ghost character Weißklaue
+Error fetching protected profile for 53154777: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Whiteleaf: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Skipping ghost character Whiteleaf
+Error fetching protected profile for 166591205: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Testerasa: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Skipping ghost character Testerasa
+Error fetching protected profile for 131917179: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+INFO:     127.0.0.1:2160 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22901 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15693 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+Error fetching character profile for Kalinora: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Skipping ghost character Kalinora
+Error fetching protected profile for 166591230: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Testerasi: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Skipping ghost character Testerasi
+Background sync complete. Processed 29 characters.
+INFO:     127.0.0.1:15700 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15699 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15702 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47856 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64606 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64791 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36287 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39789 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34068 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55559 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45864 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62000 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20651 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17224 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5770 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1391 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1394 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1395 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1397 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1399 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13727 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13729 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56679 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50149 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28163 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28169 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28168 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28171 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15926 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9744 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25246 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25252 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25251 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25254 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16394 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4836 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61756 - "GET /api/items HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+ INFO:     127.0.0.1:61769 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61768 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61771 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [14860]
+INFO:     Started server process [22076]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Fetching WoW Token Price...
+Token price already up to date.
+Updating Commodity Prices...
+Processing 341481 auctions for 2 tracked items...
+Updated Stranglekelp: 15.97g
+Updated Linen Cloth: 0.05g
+INFO:     127.0.0.1:18762 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18764 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18766 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18769 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18770 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2365 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59166 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59174 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59181 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59183 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50667 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38277 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27272 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27278 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27284 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27286 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'find_time.py'. Reloading...
+ INFO:     127.0.0.1:46342 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47774 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38822 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38832 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38843 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38845 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65436 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36026 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1913 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1917 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1923 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1925 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2471 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61382 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18302 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [22076]
+INFO:     Started server process [13668]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Fetching WoW Token Price...
+Token price already up to date.
+Updating Commodity Prices...
+Processing 341481 auctions for 2 tracked items...
+Updated Stranglekelp: 15.97g
+Updated Linen Cloth: 0.05g
+INFO:     127.0.0.1:18313 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18315 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44779 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17971 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27256 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8200 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8213 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8215 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20066 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20067 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35457 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31089 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31094 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31096 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60861 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50143 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52506 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52512 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52514 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2903 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2901 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12195 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK

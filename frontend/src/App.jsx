@@ -6,9 +6,10 @@
  * the global active tab state, and incorporates an automatic background polling
  * mechanism to refresh the UI seamlessly after a successful Battle.net login.
  * 
- * [2026-02-20T10:35:00] STATUS: WORKING
+ * [2026-02-20T10:35:00] STATUS: WORKING (v.0.4.2)
  * - OAuth Redirect logic verified
  * - Polling waits correctly up to 90s for character background sync to finish
+ * - Removed deprecated playtime rendering
  * DO NOT BREAK THIS BASE FUNCTIONALITY.
  */
 import React, { useState, useEffect } from 'react';
