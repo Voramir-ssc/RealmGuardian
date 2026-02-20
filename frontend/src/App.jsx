@@ -19,21 +19,15 @@ function App() {
   const [charLoading, setCharLoading] = useState(false);
   const [activeTab, setActiveTab] = useState('dashboard');
 
-  // Helper to ensure we use the same API URL logic
-  const getApiUrl = () => import.meta.env.VITE_API_URL || 'http://localhost:8000';
+  // Use relative path for API, handled by Vite proxy in dev (or Nginx in prod)
+  // This allows remote access (e.g. from 100.x.x.x) to work, as the browser talks to Vite, 
+  // and Vite talks to the local backend.
+  const getApiUrl = () => '';
 
   const fetchTokenData = React.useCallback(async () => {
     try {
-      let apiUrl = getApiUrl();
-      let latestRes;
-      try {
-        latestRes = await fetch(`${apiUrl}/api/token/latest`);
-      } catch {
-        console.warn("Main API URL failed, trying localhost...");
-        apiUrl = 'http://localhost:8000';
-        latestRes = await fetch(`${apiUrl}/api/token/latest`);
-      }
-
+      const apiUrl = getApiUrl();
+      const latestRes = await fetch(`${apiUrl}/api/token/latest`);
       const latest = await latestRes.json();
       const historyRes = await fetch(`${apiUrl}/api/token/history?range=${range}`);
       const history = await historyRes.json();
@@ -68,9 +62,9 @@ function App() {
   }, []);
 
   const handleLogin = () => {
-    const url = getApiUrl();
-    console.log("Redirecting to:", `${url}/api/auth/login`);
-    window.location.href = `${url}/api/auth/login`;
+    // Force absolute URL to ensure we hit the backend and not the frontend router
+    // This allows login to work on localhost even if the proxy is misconfigured
+    window.location.href = 'http://localhost:8000/api/auth/login';
   };
 
   useEffect(() => {
@@ -125,7 +119,7 @@ function App() {
             loading={charLoading}
           />
 
-          <WatchlistWidget apiUrl={import.meta.env.VITE_API_URL || 'http://localhost:8000'} />
+          <WatchlistWidget apiUrl={getApiUrl()} />
         </div>
       )}
 

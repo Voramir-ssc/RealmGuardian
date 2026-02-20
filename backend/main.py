@@ -223,6 +223,10 @@ from fastapi import FastAPI, Depends, HTTPException, Request
 
 @app.get('/api/auth/login')
 def login(request: Request):
+    global blizzard_client
+    if not blizzard_client:
+        blizzard_client = BlizzardAPI(config.client_id, config.client_secret, config.region)
+
     # Hardcoded base URL for local development to ensure consistency
     base_url = "http://localhost:8000"
     redirect_uri = f"{base_url}/api/auth/callback"
@@ -231,6 +235,10 @@ def login(request: Request):
 
 @app.get('/api/auth/callback')
 def auth_callback(code: str, state: str, background_tasks: BackgroundTasks, request: Request, db: Session = Depends(get_db)):
+    global blizzard_client
+    if not blizzard_client:
+        blizzard_client = BlizzardAPI(config.client_id, config.client_secret, config.region)
+
     base_url = "http://localhost:8000"
     redirect_uri = f"{base_url}/api/auth/callback"
     user_token = blizzard_client.exchange_code_for_token(code, redirect_uri)
@@ -239,26 +247,53 @@ def auth_callback(code: str, state: str, background_tasks: BackgroundTasks, requ
         raise HTTPException(status_code=400, detail="Failed to retrieve user token")
 
     # Start background sync
-    background_tasks.add_task(sync_user_characters, user_token, db)
+    background_tasks.add_task(sync_user_characters, user_token)
     
     # Redirect immediately
     return RedirectResponse("http://localhost:5173?connected=true")
 
-def sync_user_characters(user_token: str, db: Session):
+def sync_user_characters(user_token: str):
     print("Starting background character sync...")
+    new_db = database.SessionLocal()
     try:
+        # Debug: Log start
+        with open("debug_sync_start.txt", "w") as f:
+            f.write(f"Sync started at {time.time()}\nToken: {user_token[:10]}...")
+
         # Fetch Profile
         profile = blizzard_client.get_account_profile(user_token)
-        
-        if not profile or 'wow_accounts' not in profile:
-            print("No WoW accounts found in background sync.")
+        if not profile:
+            print("Failed to fetch profile.")
+            with open("debug_sync_error.txt", "w") as f:
+                f.write("Failed to fetch profile (None returned)")
             return
 
+        # Fetch Characters
+        chars = profile.get('wow_accounts', [])
+        all_characters = []
+        for account in chars:
+            all_characters.extend(account.get('characters', []))
+
+        print(f"Found {len(all_characters)} characters.")
+        
+        with open("debug_sync_chars.txt", "w") as f:
+            f.write(f"Found {len(all_characters)} characters.\n")
+            import json
+            f.write(json.dumps(all_characters, indent=2))
+            
+    except Exception as e:
+        import traceback
+        err = traceback.format_exc()
+        print(f"Sync Error: {e}")
+        with open("debug_sync_crash.txt", "w") as f:
+            f.write(str(e) + "\n" + err)
         # DEBUG: Dump account profile
         import json
         with open("debug_account.json", "w") as f:
             json.dump(profile, f, indent=4)
+        return # Exit if main profile fetch failed
 
+    try:
         timestamp = datetime.utcnow()
         count = 0
         
@@ -306,10 +341,12 @@ def sync_user_characters(user_token: str, db: Session):
                         played_time = find_played_time(stats['categories'])
                     
                     # Update DB
-                    db_char = db.query(models.Character).filter_by(id=char['id']).first()
+                    # Lookup by Blizzard ID (unique), NOT database ID
+                    db_char = new_db.query(models.Character).filter_by(blizzard_id=char['id']).first()
+                    
                     if not db_char:
                         db_char = models.Character(
-                            id=char['id'],
+                            blizzard_id=char['id'],
                             name=char['name'],
                             realm=char['realm']['name'],
                             region="eu",
@@ -319,9 +356,11 @@ def sync_user_characters(user_token: str, db: Session):
                             last_updated=timestamp
                         )
                         if 'playable_class' in char:
-                            db_char.character_class = char['playable_class']['name']
+                            db_char.class_name = char['playable_class']['name']
+                        else:
+                            db_char.class_name = char.get('character_class', {}).get('name', 'Unknown')
                             
-                        db.add(db_char)
+                        new_db.add(db_char)
                     else:
                         db_char.name = char['name']
                         db_char.realm = char['realm']['name']
@@ -330,12 +369,14 @@ def sync_user_characters(user_token: str, db: Session):
                         db_char.played_time = int(played_time)
                         db_char.last_updated = timestamp
                     
-                    db.commit() # Commit each char to show progress? Or batch? Commit each is safer for now.
+                    new_db.commit()
                     count += 1
                     print(f"Synced {char['name']}: {gold/10000}g, {played_time/3600}h")
 
                 except Exception as e:
                     print(f"Failed to sync char {char.get('name')}: {e}")
+                    with open(f"debug_sync_commit_error_{char.get('name')}.txt", "w") as f:
+                         f.write(str(e))
                     continue
         
         print(f"Background sync complete. Processed {count} characters.")
@@ -344,6 +385,8 @@ def sync_user_characters(user_token: str, db: Session):
         print(f"Background sync failed: {e}")
         import traceback
         traceback.print_exc()
+    finally:
+        new_db.close()
 
 @app.get('/api/user/characters')
 def get_user_characters(db: Session = Depends(get_db)):
@@ -496,3 +539,8 @@ def delete_tracked_item(item_id: int, db: Session = Depends(get_db)):
     db.delete(item)
     db.commit()
     return {'message': 'Item deleted'}
+
+if __name__ == "__main__":
+    import uvicorn
+    # Listen on all interfaces so remote devices can connect
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

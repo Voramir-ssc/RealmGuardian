@@ -1,3 +1,0 @@
-URL: https://eu.api.blizzard.com/profile/wow/character/dethecus/testerasi?namespace=profile-eu&locale=en_US
-Status: 404
-Response: {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}

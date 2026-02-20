@@ -32,14 +32,6 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
         <div className="bg-surface border border-white/5 rounded-2xl p-6">
             <div className="flex justify-between items-center mb-6">
                 <h3 className="text-xl font-medium text-white">Your Characters</h3>
-                <button
-                    onClick={onLogin}
-                    className="text-secondary/50 hover:text-white text-xs flex items-center gap-2 transition-colors bg-white/5 px-3 py-1.5 rounded-lg hover:bg-white/10"
-                    title="Resync data with Blizzard"
-                >
-                    <RefreshCw size={14} className={loading ? "animate-spin" : ""} />
-                    {loading ? 'Syncing...' : 'Sync Data'}
-                </button>
             </div>
 
             <div className="overflow-x-auto">
