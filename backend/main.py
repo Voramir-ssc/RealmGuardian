@@ -1,9 +1,22 @@
+"""
+RealmGuardian Backend API
+This module serves as the primary FastAPI application entry point.
+It handles Blizzard API integrations, user authentication, and data synchronization
+for World of Warcraft tokens, characters, and commodity prices.
+
+[2026-02-20T10:35:00] STATUS: WORKING
+- Battle.net OAuth Login and Return-Redirect redirect successfully
+- Background Character Sync correctly fetches 40 chars and filters 404 ghosts
+- Token and Item tracking fetch accurately
+DO NOT BREAK THIS BASE FUNCTIONALITY.
+"""
+
 from fastapi import FastAPI, Depends, HTTPException, Request, BackgroundTasks
 import pydantic
 from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
 import models
-from database import engine, get_db
+from database import engine, get_db, SessionLocal
 from config import config
 from blizzard_api import BlizzardAPI
 import asyncio
@@ -18,6 +31,10 @@ models.Base.metadata.create_all(bind=engine)
 blizzard_client = None
 
 async def update_token_price(db: Session):
+    """
+    Background Task: Fetches the latest WoW Token price from the Blizzard API.
+    It checks if the timestamp is already in the database and inserts a new record if not.
+    """
     global blizzard_client
     if not config.client_id or not config.client_secret:
         print("Missing Blizzard API credentials.")
@@ -52,6 +69,11 @@ async def update_token_price(db: Session):
         print(f"Error updating token price: {e}")
 
 async def update_commodity_prices(db: Session):
+    """
+    Background Task: Updates prices for all user-tracked commodities.
+    It takes an auction house snapshot from the Blizzard API, extracts the lowest prices
+    for tracked items, and saves them to the price history table.
+    """
     try:
         print("Updating Commodity Prices...")
         tracked_items = db.query(models.TrackedItem).all()
@@ -97,12 +119,20 @@ async def update_commodity_prices(db: Session):
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    """
+    FastAPI Lifespan Manager: Starts the background scheduler as soon as the API starts,
+    and cleans up resources when the API stops.
+    """
     # Startup: Start background task loop
     asyncio.create_task(scheduler())
     yield
     # Shutdown logic if needed
 
 async def scheduler():
+    """
+    Background Scheduler: Runs in an infinite loop while the server is alive.
+    Triggers token and commodity price updates every 30 minutes, and performs a database backup at 4 AM server time.
+    """
     while True:
         try:
             # Create a new session for the background task
@@ -147,6 +177,7 @@ app.add_middleware(
 
 @app.get("/")
 def read_root():
+    """ Health Check Endpoint: Returns the status of the backend server. """
     return {
         "status": "online", 
         "message": "RealmGuardian Backend is running",
@@ -222,7 +253,12 @@ from fastapi.responses import RedirectResponse
 from fastapi import FastAPI, Depends, HTTPException, Request
 
 @app.get('/api/auth/login')
-def login(request: Request):
+def login(request: Request, tab: str = "settings"):
+    """
+    Initiates the Battle.net OAuth2 login flow.
+    Passes the user's active frontend tab in the `state` parameter so they are returned
+    to the correct page after authentication.
+    """
     global blizzard_client
     if not blizzard_client:
         blizzard_client = BlizzardAPI(config.client_id, config.client_secret, config.region)
@@ -230,11 +266,16 @@ def login(request: Request):
     # Hardcoded base URL for local development to ensure consistency
     base_url = "http://localhost:8000"
     redirect_uri = f"{base_url}/api/auth/callback"
-    url = blizzard_client.get_authorization_url(redirect_uri)
+    url = blizzard_client.get_authorization_url(redirect_uri, state=tab)
     return RedirectResponse(url)
 
 @app.get('/api/auth/callback')
 def auth_callback(code: str, state: str, background_tasks: BackgroundTasks, request: Request, db: Session = Depends(get_db)):
+    """
+    OAuth2 Callback Callback Endpoint: Handles the response from Battle.net.
+    Exchanges the authorization code for an access token, triggers a background character sync,
+    and redirects the user back to the React frontend with its active tab restored.
+    """
     global blizzard_client
     if not blizzard_client:
         blizzard_client = BlizzardAPI(config.client_id, config.client_secret, config.region)
@@ -250,11 +291,17 @@ def auth_callback(code: str, state: str, background_tasks: BackgroundTasks, requ
     background_tasks.add_task(sync_user_characters, user_token)
     
     # Redirect immediately
-    return RedirectResponse("http://localhost:5173?connected=true")
+    return RedirectResponse(f"http://localhost:5173?connected=true&tab={state}")
 
 def sync_user_characters(user_token: str):
+    """
+    Background Task: Syncs a user's World of Warcraft characters.
+    Fetches the profile summary, then iterates through all characters to fetch their
+    public/protected profiles (for gold) and achievement statistics (for playtime),
+    updating the local database.
+    """
     print("Starting background character sync...")
-    new_db = database.SessionLocal()
+    new_db = SessionLocal()
     try:
         # Debug: Log start
         with open("debug_sync_start.txt", "w") as f:
@@ -309,6 +356,11 @@ def sync_user_characters(user_token: str):
                     # Fetch Public Profile (Fallback)
                     public_details = blizzard_client.get_character_profile(user_token, char['realm']['slug'], char['name'])
 
+                    # Filter Ghost Characters (Deleted/Transferred) that return 404
+                    if not protected_details and not public_details:
+                        print(f"Skipping ghost character {char['name']}")
+                        continue
+
                     # Determine Gold
                     gold = 0
                     if protected_details and 'money' in protected_details:
@@ -324,21 +376,8 @@ def sync_user_characters(user_token: str):
                         json.dump({"protected": protected_details, "public": public_details, "stats": stats}, f, indent=4)
 
                     played_time = 0
-                    # Parse Playtime (Recursive search for "Total time played")
-                    if stats and 'categories' in stats:
-                        def find_played_time(categories):
-                            for cat in categories:
-                                if 'statistics' in cat:
-                                    for stat in cat['statistics']:
-                                        if stat.get('name') == 'Total time played':
-                                            # format is likely milliseconds in 'quantity'
-                                            return stat.get('quantity', 0) / 1000
-                                if 'sub_categories' in cat:
-                                    res = find_played_time(cat['sub_categories'])
-                                    if res: return res
-                            return 0
-                        
-                        played_time = find_played_time(stats['categories'])
+                    # Note: Blizzard has completely removed 'Total time played' from the external Web API.
+                    # This information is now only available via the in-game Lua API (/played).
                     
                     # Update DB
                     # Lookup by Blizzard ID (unique), NOT database ID
@@ -349,8 +388,7 @@ def sync_user_characters(user_token: str):
                             blizzard_id=char['id'],
                             name=char['name'],
                             realm=char['realm']['name'],
-                            region="eu",
-                            level=char['level'],
+                            level=char.get('level', 0),
                             gold=int(gold),
                             played_time=int(played_time),
                             last_updated=timestamp
@@ -390,6 +428,10 @@ def sync_user_characters(user_token: str):
 
 @app.get('/api/user/characters')
 def get_user_characters(db: Session = Depends(get_db)):
+    """
+    Retrieves the list of locally synced characters for the dashboard and calculates
+    the total combined gold across all characters.
+    """
     chars = db.query(models.Character).order_by(models.Character.level.desc()).all()
     total_gold = sum(c.gold for c in chars)
     return {
@@ -400,6 +442,10 @@ def get_user_characters(db: Session = Depends(get_db)):
 
 @app.get("/api/items/{item_id}/history")
 def get_item_history(item_id: int, range: str = "14d", db: Session = Depends(get_db)):
+    """
+    Retrieves historical price data for a tracked item over a specified time range,
+    downsampling data points to ensure efficient frontend rendering.
+    """
     # Find internal ID first
     tracked = db.query(models.TrackedItem).filter(models.TrackedItem.item_id == item_id).first()
     if not tracked:
@@ -450,6 +496,7 @@ def get_item_history(item_id: int, range: str = "14d", db: Session = Depends(get
 
 @app.post('/api/backup')
 def trigger_backup():
+    """ Trigger a manual SQLite database backup. """
     success = backup.create_backup()
     if success:
         return {'status': 'success', 'message': 'Backup created'}
@@ -474,6 +521,10 @@ async def background_commodity_update():
 
 @app.post('/api/items')
 def add_tracked_item(item_req: ItemRequest, background_tasks: BackgroundTasks, db: Session = Depends(get_db)):
+    """
+    Adds a new World of Warcraft item to the watchlist.
+    Fetches the item's static details and icon from the Blizzard API before saving.
+    """
     # Check if already exists
     exists = db.query(models.TrackedItem).filter(models.TrackedItem.item_id == item_req.item_id).first()
     if exists:
@@ -509,6 +560,7 @@ def add_tracked_item(item_req: ItemRequest, background_tasks: BackgroundTasks, d
 
 @app.get('/api/items')
 def get_tracked_items(db: Session = Depends(get_db)):
+    """ Retrieves all currently tracked items and their latest logged price for the Watchlist. """
     items = db.query(models.TrackedItem).all()
     result = []
     for item in items:
@@ -532,6 +584,7 @@ def get_tracked_items(db: Session = Depends(get_db)):
 
 @app.delete('/api/items/{item_id}')
 def delete_tracked_item(item_id: int, db: Session = Depends(get_db)):
+    """ Removes an item from the watchlist. """
     item = db.query(models.TrackedItem).filter(models.TrackedItem.item_id == item_id).first()
     if not item:
         raise HTTPException(status_code=404, detail='Item not found')

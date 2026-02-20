@@ -1,17 +1,15 @@
+/**
+ * GoldWidget.jsx
+ * 
+ * Dashboard widget displaying total aggregated gold across all synced characters
+ * and a summary of the connected Battle.net account status.
+ */
 import React from 'react';
 import { RefreshCw, Shield } from 'lucide-react';
 
 const GoldWidget = ({ characters = [], loading, onLogin }) => {
     // Calculate totals
     const totalGold = characters.reduce((acc, char) => acc + (char.gold || 0), 0);
-    const totalPlaytimeSeconds = characters.reduce((acc, char) => acc + (char.played_time || 0), 0);
-
-    const formatPlaytime = (seconds) => {
-        if (!seconds) return "N/A";
-        const days = Math.floor(seconds / 86400);
-        const hours = Math.floor((seconds % 86400) / 3600);
-        return `${days}d ${hours}h`;
-    };
 
     return (
         <div className="bg-surface border border-white/5 rounded-2xl p-6 md:col-span-2 flex flex-col justify-between">
@@ -22,10 +20,6 @@ const GoldWidget = ({ characters = [], loading, onLogin }) => {
                     <div className="text-sm text-secondary/50 mt-1">
                         {characters.length > 0 ? `Across ${characters.length} characters` : 'No data'}
                     </div>
-                </div>
-                <div className="text-right">
-                    <h3 className="text-secondary text-xs font-medium uppercase tracking-wider mb-1">Account Playtime</h3>
-                    <div className="text-xl font-bold text-white tracking-tight">{formatPlaytime(totalPlaytimeSeconds)}</div>
                 </div>
             </div>
 

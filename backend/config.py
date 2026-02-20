@@ -1,3 +1,8 @@
+"""
+config.py
+Loads and manages configuration variables from the .env file or config.json.
+Provides centralized access to Battle.net API credentials.
+"""
 from dotenv import load_dotenv
 import os
 import json

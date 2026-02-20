@@ -1,3 +1,9 @@
+/**
+ * TokenWidget.jsx
+ * 
+ * Dashboard widget for displaying the current World of Warcraft token price.
+ * Retrieves data efficiently and includes a sparkline/chart for historical price trends.
+ */
 import React from 'react';
 import { TrendingUp, TrendingDown, Coins } from 'lucide-react';
 import PriceChart from './PriceChart';

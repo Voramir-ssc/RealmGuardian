@@ -1,0 +1,3 @@
+URL: https://eu.api.blizzard.com/profile/user/wow/protected-character/531-166591230?namespace=profile-eu&locale=en_US
+Status: 404
+Response: {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}

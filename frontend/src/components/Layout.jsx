@@ -1,3 +1,9 @@
+/**
+ * Layout.jsx
+ * 
+ * Main layout wrapper for the RealmGuardian application.
+ * Provides the sidebar navigation structure and content area container.
+ */
 import React from 'react';
 import { LayoutDashboard, Coins, Settings } from 'lucide-react';
 

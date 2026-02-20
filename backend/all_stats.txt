@@ -1,0 +1,312 @@
+Bandages used
+Bandage used most
+Different bandage types used
+Health potions consumed
+Health potion used most
+Different health potions used
+Mana potions consumed
+Mana potion used most
+Different mana potions used
+Elixirs consumed
+Elixir consumed most
+Different elixirs used
+Beverages consumed
+Beverage consumed most
+Different beverages consumed
+Food eaten
+Food eaten most
+Different foods eaten
+Healthstones used
+Item slots equipped with Uncommon items
+Item slots equipped with Rare items
+Item slots equipped with Epic items
+Item slots equipped with Heirloom items
+Creatures killed
+Different creature types killed
+Creature type killed the most
+Critters killed
+Total Honorable Kills
+World Honorable Kills
+Battleground Honorable Kills
+2v2 Arena Honorable Kills
+Alterac Valley Honorable Kills
+Arathi Basin Honorable Kills
+Warsong Gulch Honorable Kills
+Eye of the Storm Honorable Kills
+Strand of the Ancients Honorable Kills
+Isle of Conquest Honorable Kills
+Twin Peaks Honorable Kills
+The Battle for Gilneas Honorable Kills
+Silvershard Mines Honorable Kills
+Temple of Kotmogu Honorable Kills
+Deepwind Gorge Honorable Kills
+Total Killing Blows
+World Killing Blows
+Battleground Killing Blows
+2v2 Arena Killing Blows
+Alterac Valley Killing Blows
+Arathi Basin Killing Blows
+Warsong Gulch Killing Blows
+Eye of the Storm Killing Blows
+Strand of the Ancients Killing Blows
+Isle of Conquest Killing Blows
+Twin Peaks Killing Blows
+The Battle for Gilneas Killing Blows
+Silvershard Mines Killing Blows
+Temple of Kotmogu Killing Blows
+Deepwind Gorge Killing Blows
+Total kills
+Total kills that grant experience or honor
+Total deaths
+Deaths from falling
+Deaths from fire and lava
+Total deaths in raids
+Total deaths in PvP arenas
+Total deaths in PvP battlegrounds
+Total deaths in dungeons
+Resurrected by priests
+Rebirthed by druids
+Revived by druids
+Spirit returned to body by shamans
+Redeemed by paladins
+Quests completed
+Average quests completed per day
+Daily quests completed
+Average daily quests completed per day
+Quests abandoned
+Cooking skill
+Cooking Recipes known
+First Aid Manuals learned
+Fishing skill
+Fish caught
+Fish and other things caught
+Highest Enchanting skill
+Materials produced from disenchanting
+Items disenchanted
+Engineering Schematics learned
+Highest Jewelcrafting skill
+Dalaran Jewelcrafter's Tokens gained
+Highest Leatherworking skill
+Leatherworking Patterns learned
+Highest Mining skill
+Smelting Recipes learned
+Highest Skinning skill
+Professions learned
+Flight paths taken
+Summons accepted
+Mage Portals taken
+Mage portal taken most
+Number of times hearthed
+Number of hugs
+Total facepalms
+Total times LOL'd
+Total cheers
+Total waves
+Kriegval's Rest clears
+The Spiral Weave clears
+The War Within delve completed the most
+Mislaid Curiosities looted
+Powers from Strange Disturbances obtained
+Total delves completed
+Restored Coffer Keys obtained
+Lord Godfrey kills (Shadowfang Keep)
+Charlga Razorflank kills (Razorfen Kraul)
+Amnennar the Coldbringer kills (Razorfen Downs)
+High Inquisitor Whitemane kills (Scarlet Monastery)
+Archaedas kills (Uldaman)
+Chief Ukorz Sandscalp kills (Zul'Farrak)
+Shade of Eranikus kills (Sunken Temple)
+Rivendare kills (Stratholme)
+Onyxia kills (Onyxia's Lair)
+Exarch Maladaar kills (Auchenai Crypts)
+Talon King Ikiss kills (Sethekk Halls)
+Warlord Kalithresh kills (The Steamvault)
+Kael'thas Sunstrider kills (Magister's Terrace)
+Ingvar the Plunderer kills (Utgarde Keep)
+Ingvar the Plunderer kills (Heroic Utgarde Keep)
+Keristrasza kills (The Nexus)
+Keristrasza kills (Heroic Nexus)
+Anub'arak kills (Azjol-Nerub)
+Anub'arak kills (Heroic Azjol-Nerub)
+Herald Volazj kills (Ahn'kahet: The Old Kingdom)
+Herald Volazj kills (Heroic Ahn'kahet)
+The Prophet Tharon'ja kills (Drak'Tharon Keep)
+The Prophet Tharon'ja kills (Heroic Drak'Tharon Keep)
+Cyanigosa kills (The Violet Hold)
+Cyanigosa kills (Heroic Violet Hold)
+Gal'darah kills (Gundrak)
+Gal'darah kills (Heroic Gundrak)
+Sjonnir the Ironshaper kills (Halls of Stone)
+Sjonnir the Ironshaper kills (Heroic Halls of Stone)
+Loken kills (Heroic Halls of Lightning)
+Ley-Guardian Eregos kills (Heroic Oculus)
+King Ymiron kills (Utgarde Pinnacle)
+King Ymiron kills (Heroic Utgarde Pinnacle)
+Mal'Ganis defeated (Heroic CoT: Stratholme)
+Gluth kills (Naxxramas 25 player)
+Gothik the Harvester kills (Naxxramas 25 player)
+Grobbulus kills (Naxxramas 25 player)
+Heigan the Unclean kills (Naxxramas 25 player)
+Four Horsemen kills (Naxxramas 25 player)
+Instructor Razuvious kills (Naxxramas 25 player)
+Loatheb kills (Naxxramas 25 player)
+Noth the Plaguebringer kills (Naxxramas 25 player)
+Patchwerk kills (Naxxramas 25 player)
+Thaddius kills (Naxxramas 25 player)
+Sapphiron kills (Naxxramas 25 player)
+Kel'Thuzad kills (Naxxramas 25 player)
+Flame Leviathan kills (Ulduar 10 player)
+Razorscale kills (Ulduar 10 player)
+Ignis the Furnace Master kills (Ulduar 10 player)
+XT-002 Deconstructor kills (Ulduar 10 player)
+Assembly of Iron kills (Ulduar 10 player)
+Kologarn kills (Ulduar 10 player)
+Auriaya kills (Ulduar 10 player)
+Hodir victories (Ulduar 10 player)
+Thorim victories (Ulduar 10 player)
+Freya victories (Ulduar 10 player)
+Mimiron victories (Ulduar 10 player)
+General Vezax kills (Ulduar 10 player)
+Algalon the Observer kills (Ulduar 10 player)
+Flame Leviathan kills (Ulduar 25 player)
+Victories over Hunter Champion (Trial of the Champion)
+Victories over Mage Champion (Trial of the Champion)
+Victories over Rogue Champion (Trial of the Champion)
+Victories over Shaman Champion (Trial of the Champion)
+Victories over Warrior Champion (Trial of the Champion)
+Victories over Argent Confessor Paletress (Trial of the Champion)
+Victories over Eadric the Pure (Trial of the Champion)
+The Black Knight kills (Trial of the Champion)
+Koralon the Flame Watcher kills (Wintergrasp 25 player)
+Bronjahm kills (Forge of Souls)
+Devourer of Souls kills (Forge of Souls)
+Forgemaster Garfrost kills (Pit of Saron)
+Ick and Krick kills (Pit of Saron)
+Scourgelord Tyrannus kills (Pit of Saron)
+Falric kills (Halls of Reflection)
+Marwyn kills (Halls of Reflection)
+Lich King escapes (Halls of Reflection)
+Lord Marrowgar kills (Heroic Icecrown 25 player)
+Lady Deathwhisper kills (Heroic Icecrown 25 player)
+Gunship Battle victories (Heroic Icecrown 25 player)
+Deathbringer kills (Heroic Icecrown 25 player)
+Festergut kills (Heroic Icecrown 25 player)
+Rotface kills (Heroic Icecrown 25 player)
+Blood Prince Council kills (Heroic Icecrown 25 player)
+Professor Putricide kills (Heroic Icecrown 25 player)
+Blood Queen Lana'thel kills (Heroic Icecrown 25 player)
+Sindragosa kills (Heroic Icecrown 25 player)
+Victories over the Lich King (Heroic Icecrown 25 player)
+Toravon the Ice Watcher kills (Wintergrasp 25 player)
+Erudax kills (Grim Batol)
+Sha of Doubt kills (Temple of the Jade Serpent)
+Yan-Zhu the Uncasked kills (Stormstout Brewery)
+Taran Zhu redemptions (Heroic Shado-Pan Monastery)
+Raigonn kills (Heroic Gate of the Setting Sun)
+Flameweaver Koegler kills (Heroic Scarlet Halls)
+Stone Guard kills (LFR Mogu'shan Vaults)
+Feng the Accursed kills (LFR Mogu'shan Vaults)
+Gara'jal the Spiritbinder kills (LFR Mogu'shan Vaults)
+Four Kings kills (LFR Mogu'shan Vaults)
+Elegon kills (LFR Mogu'shan Vaults)
+Will of the Emperor kills (LFR Normal Mogu'shan Vaults)
+Imperial Vizier Zor'lok kills (LFR Heart of Fear)
+Blade Lord Ta'yak kills (LFR Heart of Fear)
+Garalon kills (LFR Heart of Fear)
+Trials of Yu'lon completed
+Gug'rokk kills (Heroic Bloodmaul Slag Mines)
+Skulloc kills (Iron Docks)
+Teron'gor kills (Auchindoun)
+Ner'zhul kills (Heroic Shadowmoon Burial Grounds)
+Shriekwing Kills (Mythic Castle Nathria)
+Chrono-Lord Deios kills (Normal Uldaman: Legacy of Tyr)
+Prioress Murrpray kills (Normal Priory of the Sacred Flame)
+Total 5-player dungeons entered
+Total 10-player raids entered
+Total 25-player raids entered
+Lich King 5-player dungeons completed (final boss defeated)
+Lich King 25-player raids completed (final boss defeated)
+Lich King 5-player bosses defeated
+Lich King 5-player boss defeated the most
+Lich King 10-player bosses defeated
+Lich King 10-player boss defeated the most
+Lich King 25-player bosses defeated
+Lich King 25-player boss defeated the most
+Lich King random Normal dungeons completed
+Lich King random Heroic dungeons completed
+Cataclysm dungeons completed (final boss defeated)
+Pandaria dungeons completed (final boss defeated)
+Pandaria dungeon bosses defeated
+Pandaria dungeon boss defeated the most
+Pandaria raids completed (final boss defeated)
+Pandaria raid bosses defeated
+Pandaria raid boss defeated the most
+Draenor dungeons completed (final boss defeated)
+Draenor dungeon bosses defeated
+Draenor dungeon boss defeated the most
+Arenas won
+Arenas played
+2v2 matches
+2v2 victories
+Blade's Edge Arena matches
+Blade's Edge Arena victories
+Nagrand Arena matches
+Nagrand Arena victories
+Ring of Valor matches
+Ruins of Lordaeron matches
+Ruins of Lordaeron victories
+Tol'viron Arena matches
+Tiger's Peak matches
+Highest 2v2 personal rating
+Highest 2v2 team rating
+Battlegrounds played
+Battlegrounds won
+Alterac Valley battles
+Alterac Valley victories
+Arathi Basin battles
+Arathi Basin victories
+Battle for Gilneas battles
+Eye of the Storm battles
+Eye of the Storm flags captured
+Eye of the Storm victories
+Strand of the Ancients battles
+Strand of the Ancients victories
+Twin Peaks battles
+Twin Peaks victories
+Warsong Gulch battles
+Warsong Gulch victories
+Silvershard Mines battles
+Silvershard Mines victories
+Temple of Kotmogu battles
+Temple of Kotmogu victories
+Isle of Conquest battles
+Isle of Conquest victories
+Deepwind Gorge victories
+Deepwind Gorge battles
+Twin Peaks flags returned
+Warsong Gulch flags returned
+Duels won
+Duels lost
+Total deaths from other players
+Total deaths from opposite faction
+Vanity pets owned
+Pet Battles won at max level
+Emblems of Heroism acquired
+Emblems of Valor acquired
+Emblems of Conquest acquired
+Emblems of Triumph acquired
+Emblems of Frost acquired
+Flightstones earned
+Whelpling's Shadowflame Crest Fragments earned
+Drake's Shadowflame Crest Fragments earned
+Whelpling's Dreaming Crests earned
+Drake's Dreaming Crests earned
+Whelpling's Awakened Crests earned
+Drake's Awakened Crests earned
+Valorstones earned
+Weathered Harbinger Crests earned
+Carved Harbinger Crests earned
+Weathered Undermine Crests earned
+Runed Undermine Crests earned
+Weathered Ethereal Crests earned
+Bronze gained across Warband

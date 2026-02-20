@@ -1,13 +1,13 @@
+/**
+ * CharacterList.jsx
+ * 
+ * Displays a formatted, scrollable grid of synced World of Warcraft characters.
+ * Includes character-specific details such as realm, level, gold, and total playtime.
+ */
 import React from 'react';
 import { RefreshCw, Shield } from 'lucide-react';
 
 const CharacterList = ({ characters, loading, onSync, onLogin }) => {
-    const formatPlaytime = (seconds) => {
-        if (!seconds) return "N/A";
-        const days = Math.floor(seconds / 86400);
-        const hours = Math.floor((seconds % 86400) / 3600);
-        return `${days}d ${hours}h`;
-    };
 
     const getClassColor = (className) => {
         const colors = {
@@ -35,7 +35,13 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
             </div>
 
             <div className="overflow-x-auto">
-                {characters.length === 0 ? (
+                {loading && characters.length === 0 ? (
+                    <div className="text-center py-12 border-2 border-dashed border-white/5 rounded-xl">
+                        <RefreshCw size={32} className="animate-spin text-[#148eff] mx-auto mb-4" />
+                        <p className="mb-2 text-white font-medium">Syncing characters from Battle.net...</p>
+                        <p className="text-sm text-secondary/50">This may take a few seconds.</p>
+                    </div>
+                ) : characters.length === 0 ? (
                     <div className="text-center py-12 text-secondary/50 border-2 border-dashed border-white/5 rounded-xl">
                         <p className="mb-4">No characters found.</p>
                         <button
@@ -53,7 +59,6 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                                 <th className="pb-3 font-medium uppercase tracking-wider pl-4">Character</th>
                                 <th className="pb-3 font-medium uppercase tracking-wider">Realm</th>
                                 <th className="pb-3 font-medium uppercase tracking-wider">Level</th>
-                                <th className="pb-3 font-medium uppercase tracking-wider">Playtime</th>
                                 <th className="pb-3 font-medium uppercase tracking-wider text-right pr-4">Gold</th>
                             </tr>
                         </thead>
@@ -77,7 +82,6 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                                     </td>
                                     <td className="py-3 text-sm text-secondary">{char.realm}</td>
                                     <td className="py-3 text-sm text-white">{char.level}</td>
-                                    <td className="py-3 text-sm text-secondary font-mono">{formatPlaytime(char.played_time)}</td>
                                     <td className="py-3 text-sm font-bold text-white text-right pr-4">
                                         {(char.gold / 10000).toLocaleString('de-DE')} <span className="text-yellow-500 text-xs font-normal">g</span>
                                     </td>

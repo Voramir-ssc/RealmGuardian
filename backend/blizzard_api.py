@@ -1,3 +1,8 @@
+"""
+blizzard_api.py
+A wrapper for the Battle.net/Blizzard API.
+Handles OAuth2 token exchange, character profile fetching, and auction house data retrieval.
+"""
 import requests
 import time
 from datetime import datetime
@@ -69,8 +74,8 @@ class BlizzardAPI:
 
     # --- OAuth2 & Profile Methods ---
 
-    def get_authorization_url(self, redirect_uri):
-        return f"https://oauth.battle.net/authorize?client_id={self.client_id}&scope=wow.profile&state=random_state&redirect_uri={redirect_uri}&response_type=code"
+    def get_authorization_url(self, redirect_uri, state="random_state"):
+        return f"https://oauth.battle.net/authorize?client_id={self.client_id}&scope=wow.profile&state={state}&redirect_uri={redirect_uri}&response_type=code"
 
     def exchange_code_for_token(self, code, redirect_uri):
         url = "https://oauth.battle.net/token"

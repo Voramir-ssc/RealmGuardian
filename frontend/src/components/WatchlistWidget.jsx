@@ -1,3 +1,9 @@
+/**
+ * WatchlistWidget.jsx
+ * 
+ * Dashboard widget for tracking user-selected auction house commodities.
+ * Allows adding new items via Blizzard ID and displays their current minimum buyout prices.
+ */
 import React, { useState, useEffect } from 'react';
 import { Plus, X, Search, TrendingUp, TrendingDown, Package, ChevronDown, ChevronUp } from 'lucide-react';
 import PriceChart from './PriceChart';

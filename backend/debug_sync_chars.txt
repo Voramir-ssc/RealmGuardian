@@ -1,0 +1,1643 @@
+Found 40 characters.
+[
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/dorchada?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-39251857?namespace=profile-eu"
+    },
+    "name": "Dorchada",
+    "id": 39251857,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/3?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Hunter",
+      "id": 3
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/5?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Undead",
+      "id": 5
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/marlejin?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-42015965?namespace=profile-eu"
+    },
+    "name": "Marlejin",
+    "id": 42015965,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/11?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Druid",
+      "id": 11
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/8?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Troll",
+      "id": 8
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/p%C3%B8rphyria?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-44673538?namespace=profile-eu"
+    },
+    "name": "P\u00f8rphyria",
+    "id": 44673538,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/6?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Death Knight",
+      "id": 6
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/27?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Nightborne",
+      "id": 27
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/skally?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-49427328?namespace=profile-eu"
+    },
+    "name": "Skally",
+    "id": 49427328,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/4?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Rogue",
+      "id": 4
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Blood Elf",
+      "id": 10
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/lenmariel?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-57784812?namespace=profile-eu"
+    },
+    "name": "Lenmariel",
+    "id": 57784812,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/2?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Paladin",
+      "id": 2
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Blood Elf",
+      "id": 10
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/lenmera?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-131619318?namespace=profile-eu"
+    },
+    "name": "Lenmera",
+    "id": 131619318,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/8?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Mage",
+      "id": 8
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/5?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Undead",
+      "id": 5
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/northael?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-167132890?namespace=profile-eu"
+    },
+    "name": "Northael",
+    "id": 167132890,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/12?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Demon Hunter",
+      "id": 12
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Blood Elf",
+      "id": 10
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/marlegosa?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-178169120?namespace=profile-eu"
+    },
+    "name": "Marlegosa",
+    "id": 178169120,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/13?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Evoker",
+      "id": 13
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/70?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Dracthyr",
+      "id": 70
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/venmara?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-179432221?namespace=profile-eu"
+    },
+    "name": "Venmara",
+    "id": 179432221,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/10?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Monk",
+      "id": 10
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/5?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Undead",
+      "id": 5
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/wollbert?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-185866016?namespace=profile-eu"
+    },
+    "name": "Wollbert",
+    "id": 185866016,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/11?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Druid",
+      "id": 11
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/28?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Highmountain Tauren",
+      "id": 28
+    },
+    "gender": {
+      "type": "MALE",
+      "name": "Male"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/nocmara?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-185962936?namespace=profile-eu"
+    },
+    "name": "Nocmara",
+    "id": 185962936,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/1?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Warrior",
+      "id": 1
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Blood Elf",
+      "id": 10
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-185963099?namespace=profile-eu"
+    },
+    "name": "Margysia",
+    "id": 185963099,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/9?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Warlock",
+      "id": 9
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/70?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Dracthyr",
+      "id": 70
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/lasmiranda?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-186194170?namespace=profile-eu"
+    },
+    "name": "Lasmiranda",
+    "id": 186194170,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/5?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Priest",
+      "id": 5
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/27?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Nightborne",
+      "id": 27
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liris?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-186257386?namespace=profile-eu"
+    },
+    "name": "Liris",
+    "id": 186257386,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/7?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Shaman",
+      "id": 7
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/35?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Vulpera",
+      "id": 35
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/lymandris?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-186338726?namespace=profile-eu"
+    },
+    "name": "Lymandris",
+    "id": 186338726,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/8?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Mage",
+      "id": 8
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/27?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Nightborne",
+      "id": 27
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/liliaris?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-186531811?namespace=profile-eu"
+    },
+    "name": "Liliaris",
+    "id": 186531811,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/12?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Demon Hunter",
+      "id": 12
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Blood Elf",
+      "id": 10
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/vorathiel?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-186871714?namespace=profile-eu"
+    },
+    "name": "Vorathiel",
+    "id": 186871714,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/11?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Druid",
+      "id": 11
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/4?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Night Elf",
+      "id": 4
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "ALLIANCE",
+      "name": "Alliance"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/bilanza?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-187682394?namespace=profile-eu"
+    },
+    "name": "Bilanza",
+    "id": 187682394,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/8?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Mage",
+      "id": 8
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/9?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Goblin",
+      "id": 9
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 12
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/voramir?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-187760949?namespace=profile-eu"
+    },
+    "name": "Voramir",
+    "id": 187760949,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/11?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Druid",
+      "id": 11
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/31?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Zandalari Troll",
+      "id": 31
+    },
+    "gender": {
+      "type": "MALE",
+      "name": "Male"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 10
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/voramir?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/1618-194947144?namespace=profile-eu"
+    },
+    "name": "Voramir",
+    "id": 194947144,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/1618?namespace=dynamic-eu"
+      },
+      "name": "Die Aldor",
+      "id": 1618,
+      "slug": "die-aldor"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/2?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Paladin",
+      "id": 2
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/84?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Earthen",
+      "id": 84
+    },
+    "gender": {
+      "type": "MALE",
+      "name": "Male"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 10
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/lenmera?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/1618-194962488?namespace=profile-eu"
+    },
+    "name": "Lenmera",
+    "id": 194962488,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/1618?namespace=dynamic-eu"
+      },
+      "name": "Die Aldor",
+      "id": 1618,
+      "slug": "die-aldor"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/3?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Hunter",
+      "id": 3
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Blood Elf",
+      "id": 10
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/lamiralia?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/1618-195013503?namespace=profile-eu"
+    },
+    "name": "Lamiralia",
+    "id": 195013503,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/1618?namespace=dynamic-eu"
+      },
+      "name": "Die Aldor",
+      "id": 1618,
+      "slug": "die-aldor"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/8?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Mage",
+      "id": 8
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/70?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Dracthyr",
+      "id": 70
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/porphyria?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/1618-195047406?namespace=profile-eu"
+    },
+    "name": "Porphyria",
+    "id": 195047406,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/1618?namespace=dynamic-eu"
+      },
+      "name": "Die Aldor",
+      "id": 1618,
+      "slug": "die-aldor"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/2?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Paladin",
+      "id": 2
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Blood Elf",
+      "id": 10
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/milera?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/1618-195054422?namespace=profile-eu"
+    },
+    "name": "Milera",
+    "id": 195054422,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/1618?namespace=dynamic-eu"
+      },
+      "name": "Die Aldor",
+      "id": 1618,
+      "slug": "die-aldor"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/4?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Rogue",
+      "id": 4
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/35?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Vulpera",
+      "id": 35
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/lethria?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/1618-195054727?namespace=profile-eu"
+    },
+    "name": "Lethria",
+    "id": 195054727,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/1618?namespace=dynamic-eu"
+      },
+      "name": "Die Aldor",
+      "id": 1618,
+      "slug": "die-aldor"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/6?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Death Knight",
+      "id": 6
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/5?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Undead",
+      "id": 5
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/voradiel?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/1618-195087399?namespace=profile-eu"
+    },
+    "name": "Voradiel",
+    "id": 195087399,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/1618?namespace=dynamic-eu"
+      },
+      "name": "Die Aldor",
+      "id": 1618,
+      "slug": "die-aldor"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/12?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Demon Hunter",
+      "id": 12
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Blood Elf",
+      "id": 10
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/voradoril?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/1618-195111206?namespace=profile-eu"
+    },
+    "name": "Voradoril",
+    "id": 195111206,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/1618?namespace=dynamic-eu"
+      },
+      "name": "Die Aldor",
+      "id": 1618,
+      "slug": "die-aldor"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/9?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Warlock",
+      "id": 9
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/27?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Nightborne",
+      "id": 27
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 14
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/loraliel?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/1618-195284933?namespace=profile-eu"
+    },
+    "name": "Loraliel",
+    "id": 195284933,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/1618?namespace=dynamic-eu"
+      },
+      "name": "Die Aldor",
+      "id": 1618,
+      "slug": "die-aldor"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/5?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Priest",
+      "id": 5
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Blood Elf",
+      "id": 10
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/lethru?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/1618-195393587?namespace=profile-eu"
+    },
+    "name": "Lethru",
+    "id": 195393587,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/1618?namespace=dynamic-eu"
+      },
+      "name": "Die Aldor",
+      "id": 1618,
+      "slug": "die-aldor"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/1?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Warrior",
+      "id": 1
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/84?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Earthen",
+      "id": 84
+    },
+    "gender": {
+      "type": "MALE",
+      "name": "Male"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/leroth?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/1618-195423914?namespace=profile-eu"
+    },
+    "name": "Leroth",
+    "id": 195423914,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/1618?namespace=dynamic-eu"
+      },
+      "name": "Die Aldor",
+      "id": 1618,
+      "slug": "die-aldor"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/7?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Shaman",
+      "id": 7
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/84?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Earthen",
+      "id": 84
+    },
+    "gender": {
+      "type": "MALE",
+      "name": "Male"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/helgaria?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-41191454?namespace=profile-eu"
+    },
+    "name": "Helgaria",
+    "id": 41191454,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/4?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Rogue",
+      "id": 4
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/5?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Undead",
+      "id": 5
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 25
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/asaral768449?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-41321545?namespace=profile-eu"
+    },
+    "name": "Asaral768449",
+    "id": 41321545,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/11?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Druid",
+      "id": 11
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/6?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Tauren",
+      "id": 6
+    },
+    "gender": {
+      "type": "MALE",
+      "name": "Male"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 2
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/nachts79126e?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-41489006?namespace=profile-eu"
+    },
+    "name": "Nachts79126E",
+    "id": 41489006,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/8?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Mage",
+      "id": 8
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/5?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Undead",
+      "id": 5
+    },
+    "gender": {
+      "type": "MALE",
+      "name": "Male"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 4
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dun-morogh/sippu?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/600-136745005?namespace=profile-eu"
+    },
+    "name": "Sippu",
+    "id": 136745005,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/600?namespace=dynamic-eu"
+      },
+      "name": "Dun Morogh",
+      "id": 600,
+      "slug": "dun-morogh"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/4?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Rogue",
+      "id": 4
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/5?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Undead",
+      "id": 5
+    },
+    "gender": {
+      "type": "MALE",
+      "name": "Male"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 1
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/delevar?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-52865885?namespace=profile-eu"
+    },
+    "name": "Delevar",
+    "id": 52865885,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/2?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Paladin",
+      "id": 2
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Blood Elf",
+      "id": 10
+    },
+    "gender": {
+      "type": "MALE",
+      "name": "Male"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 32
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/wei%C3%9Fklaue?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-53154705?namespace=profile-eu"
+    },
+    "name": "Wei\u00dfklaue",
+    "id": 53154705,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/11?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Druid",
+      "id": 11
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/22?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Worgen",
+      "id": 22
+    },
+    "gender": {
+      "type": "MALE",
+      "name": "Male"
+    },
+    "faction": {
+      "type": "ALLIANCE",
+      "name": "Alliance"
+    },
+    "level": 2
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/whiteleaf?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-53154777?namespace=profile-eu"
+    },
+    "name": "Whiteleaf",
+    "id": 53154777,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/11?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Druid",
+      "id": 11
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/8?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Troll",
+      "id": 8
+    },
+    "gender": {
+      "type": "MALE",
+      "name": "Male"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 27
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/testerasa?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-166591205?namespace=profile-eu"
+    },
+    "name": "Testerasa",
+    "id": 166591205,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/4?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Rogue",
+      "id": 4
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/35?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Vulpera",
+      "id": 35
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 10
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/kalinora?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-131917179?namespace=profile-eu"
+    },
+    "name": "Kalinora",
+    "id": 131917179,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/2?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Paladin",
+      "id": 2
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Blood Elf",
+      "id": 10
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 10
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/testerasi?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/531-166591230?namespace=profile-eu"
+    },
+    "name": "Testerasi",
+    "id": 166591230,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/531?namespace=dynamic-eu"
+      },
+      "name": "Dethecus",
+      "id": 531,
+      "slug": "dethecus"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/4?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Rogue",
+      "id": 4
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/35?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Vulpera",
+      "id": 35
+    },
+    "gender": {
+      "type": "FEMALE",
+      "name": "Female"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 10
+  }
+]

@@ -1,3 +1,9 @@
+/**
+ * Settings.jsx
+ * 
+ * Renders the Battle.net integration controls and application settings.
+ * Displays connection status and handles manual/automatic sync triggers.
+ */
 import React from 'react';
 import { Shield, RefreshCw, LogOut } from 'lucide-react';
 
@@ -27,12 +33,18 @@ const Settings = ({ onLogin, characters, loading }) => {
                 <div className="flex flex-col gap-3">
                     <button
                         onClick={onLogin}
-                        className="w-full bg-[#148eff] hover:bg-[#0074e0] text-white px-4 py-3 rounded-xl font-medium transition-all shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2"
+                        disabled={loading}
+                        className="w-full bg-[#148eff] hover:bg-[#0074e0] text-white px-4 py-3 rounded-xl font-medium transition-all shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                        {characters.length > 0 ? (
+                        {loading && characters.length === 0 ? (
+                            <>
+                                <RefreshCw size={18} className="animate-spin" />
+                                Syncing from Battle.net...
+                            </>
+                        ) : characters.length > 0 ? (
                             <>
                                 <RefreshCw size={18} className={loading ? "animate-spin" : ""} />
-                                Sync Data from Battle.net
+                                {loading ? "Syncing..." : "Sync Data from Battle.net"}
                             </>
                         ) : (
                             <>

@@ -1,3 +1,16 @@
+/**
+ * App.jsx
+ * 
+ * Main application component for RealmGuardian.
+ * Orchestrates API communication for WoW tokens and user characters, manages
+ * the global active tab state, and incorporates an automatic background polling
+ * mechanism to refresh the UI seamlessly after a successful Battle.net login.
+ * 
+ * [2026-02-20T10:35:00] STATUS: WORKING
+ * - OAuth Redirect logic verified
+ * - Polling waits correctly up to 90s for character background sync to finish
+ * DO NOT BREAK THIS BASE FUNCTIONALITY.
+ */
 import React, { useState, useEffect } from 'react';
 import Layout from './components/Layout';
 import TokenWidget from './components/TokenWidget';
@@ -18,6 +31,7 @@ function App() {
   const [characterData, setCharacterData] = useState(null);
   const [charLoading, setCharLoading] = useState(false);
   const [activeTab, setActiveTab] = useState('dashboard');
+  const [isSyncing, setIsSyncing] = useState(false);
 
   // Use relative path for API, handled by Vite proxy in dev (or Nginx in prod)
   // This allows remote access (e.g. from 100.x.x.x) to work, as the browser talks to Vite, 
@@ -62,9 +76,10 @@ function App() {
   }, []);
 
   const handleLogin = () => {
+    console.log("LOGIN BUTTON CLICKED. Redirecting...", activeTab);
     // Force absolute URL to ensure we hit the backend and not the frontend router
     // This allows login to work on localhost even if the proxy is misconfigured
-    window.location.href = 'http://localhost:8000/api/auth/login';
+    window.location.href = `http://localhost:8000/api/auth/login?tab=${activeTab}`;
   };
 
   useEffect(() => {
@@ -81,11 +96,41 @@ function App() {
     // Check for connected param to trigger immediate refresh
     const params = new URLSearchParams(window.location.search);
     if (params.get('connected')) {
+      const tab = params.get('tab');
+      if (tab) {
+        setActiveTab(tab);
+      }
       // Clean URL
       window.history.replaceState({}, document.title, "/");
+      setIsSyncing(true);
       fetchCharacterData();
     }
   }, [fetchCharacterData]);
+
+  // Polling mechanism for background sync
+  useEffect(() => {
+    let pollInterval;
+    let timeoutId;
+
+    if (isSyncing) {
+      // Poll every 3 seconds
+      pollInterval = setInterval(() => {
+        fetchCharacterData();
+      }, 3000);
+
+      // Stop polling after 90 seconds to ensure all characters are fetched
+      timeoutId = setTimeout(() => {
+        setIsSyncing(false);
+      }, 90000);
+    }
+
+    return () => {
+      clearInterval(pollInterval);
+      clearTimeout(timeoutId);
+    };
+  }, [isSyncing, fetchCharacterData]);
+
+  // Sync state will stop naturally after 90s, no early bailout.
 
   const characters = characterData?.characters || [];
 
@@ -135,7 +180,7 @@ function App() {
         <Settings
           onLogin={handleLogin}
           characters={characters}
-          loading={charLoading}
+          loading={charLoading || isSyncing}
         />
       )}
     </Layout>

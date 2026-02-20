@@ -1,0 +1,1744 @@
+INFO:     Will watch for changes in these directories: ['C:\\Users\\Stefan\\Desktop\\GitRepositories\\RealmGuardian\\backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [13484] using StatReload
+INFO:     Started server process [16648]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Fetching WoW Token Price...
+Token price already up to date.
+Updating Commodity Prices...
+Processing 338812 auctions for 2 tracked items...
+Updated Stranglekelp: 15.5g
+Updated Linen Cloth: 0.06g
+Fetching WoW Token Price...
+Updated Token Price: 402177.0g
+Updating Commodity Prices...
+Processing 338812 auctions for 2 tracked items...
+Updated Stranglekelp: 15.5g
+Updated Linen Cloth: 0.06g
+Fetching WoW Token Price...
+Token price already up to date.
+Updating Commodity Prices...
+Processing 336011 auctions for 2 tracked items...
+Updated Stranglekelp: 15.95g
+Updated Linen Cloth: 0.05g
+Fetching WoW Token Price...
+Updated Token Price: 396910.0g
+Updating Commodity Prices...
+Processing 336011 auctions for 2 tracked items...
+Updated Stranglekelp: 15.95g
+Updated Linen Cloth: 0.05g
+INFO:     127.0.0.1:15856 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15858 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15857 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26295 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26297 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26299 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26296 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31037 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31043 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31042 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31041 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31046 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31047 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31049 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31051 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31053 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59377 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59378 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59376 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59382 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59381 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59384 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64913 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64915 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54746 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54746 - "GET /api/auth/callback?code=EUWKVWO9PGPOUCBRLLQFJ93XI2EJVZSLEF&state=settings HTTP/1.1" 307 Temporary Redirect
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 87, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 106, in app
+    await response(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\responses.py", line 167, in __call__
+    await self.background()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 36, in __call__
+    await task()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 23, in __call__
+    await run_in_threadpool(self.func, *self.args, **self.kwargs)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 298, in sync_user_characters
+    new_db = database.SessionLocal()
+             ^^^^^^^^
+NameError: name 'database' is not defined
+Starting background character sync...
+INFO:     127.0.0.1:24537 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24541 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24540 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24543 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24547 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24546 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10219 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10221 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3820 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32308 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53809 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23920 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44459 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60226 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17529 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5479 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32952 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51804 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46415 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29162 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15550 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15805 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15804 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15807 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52411 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8362 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4616 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4640 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4639 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4642 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57347 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11310 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59069 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45666 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:13844 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:13852 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13851 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13854 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31596 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51113 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62660 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50711 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50710 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50713 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32689 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52013 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59380 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47259 - "GET /api/auth/login HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:47259 - "GET /api/auth/callback?code=EUCZ4FHSEUJMC854RJLT426IKXNCSURBPM&state=settings HTTP/1.1" 307 Temporary Redirect
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 87, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 106, in app
+    await response(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\responses.py", line 167, in __call__
+    await self.background()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 36, in __call__
+    await task()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 23, in __call__
+    await run_in_threadpool(self.func, *self.args, **self.kwargs)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 298, in sync_user_characters
+    new_db = database.SessionLocal()
+             ^^^^^^^^
+NameError: name 'database' is not defined
+Starting background character sync...
+INFO:     127.0.0.1:21012 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21014 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21017 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21018 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21020 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21002 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21004 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36620 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50341 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55485 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49959 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37870 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22254 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21200 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21202 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21210 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21209 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21207 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21206 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41062 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52981 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2544 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2546 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2543 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2541 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2545 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2542 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56236 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7415 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58050 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58050 - "GET /api/auth/callback?code=EUUHHQTU06WL9XR30KOITG0EZEJQM9ECND&state=settings HTTP/1.1" 307 Temporary Redirect
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 87, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 106, in app
+    await response(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\responses.py", line 167, in __call__
+    await self.background()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 36, in __call__
+    await task()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 23, in __call__
+    await run_in_threadpool(self.func, *self.args, **self.kwargs)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 298, in sync_user_characters
+    new_db = database.SessionLocal()
+             ^^^^^^^^
+NameError: name 'database' is not defined
+Starting background character sync...
+INFO:     127.0.0.1:55385 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55386 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55384 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55388 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27106 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27109 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27110 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40654 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38496 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20135 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46844 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46848 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46847 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46850 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22871 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20808 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19853 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42309 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42310 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42308 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42314 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42315 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42316 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23267 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54666 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54670 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54673 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54674 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54678 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54680 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54677 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54682 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54684 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31934 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31938 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31936 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31944 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31943 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31940 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52813 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2176 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14669 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:14669 - "GET /api/auth/callback?code=EUVYUTNSGE78BOBXCOQFKNX5DXFN8W2HLM&state=settings HTTP/1.1" 307 Temporary Redirect
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 87, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 106, in app
+    await response(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\responses.py", line 167, in __call__
+    await self.background()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 36, in __call__
+    await task()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 23, in __call__
+    await run_in_threadpool(self.func, *self.args, **self.kwargs)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 298, in sync_user_characters
+    new_db = database.SessionLocal()
+             ^^^^^^^^
+NameError: name 'database' is not defined
+Starting background character sync...
+INFO:     127.0.0.1:38720 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38719 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38716 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38724 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38725 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38726 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31463 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62021 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22599 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25404 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30350 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16693 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19783 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51541 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53906 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16793 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64687 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48275 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64820 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35861 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33599 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35122 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35120 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35124 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32524 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11945 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41252 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36332 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:36332 - "GET /api/auth/callback?code=EUTJMGAK275DBVDDLJR816ODJDIHUDEPYC&state=settings HTTP/1.1" 307 Temporary Redirect
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 87, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 106, in app
+    await response(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\responses.py", line 167, in __call__
+    await self.background()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 36, in __call__
+    await task()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 23, in __call__
+    await run_in_threadpool(self.func, *self.args, **self.kwargs)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 298, in sync_user_characters
+    new_db = database.SessionLocal()
+             ^^^^^^^^
+NameError: name 'database' is not defined
+Starting background character sync...
+INFO:     127.0.0.1:22827 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22826 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22829 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22834 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22835 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22832 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52785 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56852 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20796 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25937 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42009 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42893 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11049 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38585 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17625 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:17625 - "GET /api/auth/callback?code=EUDZQIEO5G1QXF7C3VSFU6HESADWHND4LS&state=settings HTTP/1.1" 307 Temporary Redirect
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 87, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 106, in app
+    await response(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\responses.py", line 167, in __call__
+    await self.background()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 36, in __call__
+    await task()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 23, in __call__
+    await run_in_threadpool(self.func, *self.args, **self.kwargs)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 298, in sync_user_characters
+    new_db = database.SessionLocal()
+             ^^^^^^^^
+NameError: name 'database' is not defined
+Starting background character sync...
+INFO:     127.0.0.1:5985 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5987 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5989 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41236 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41235 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3095 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47485 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34772 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14317 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38169 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61861 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47867 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:47867 - "GET /api/auth/callback?code=EUWX1T6TGDGCAWURB39AMRRM2ZHVGPSCRY&state=settings HTTP/1.1" 307 Temporary Redirect
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 87, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 106, in app
+    await response(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\responses.py", line 167, in __call__
+    await self.background()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 36, in __call__
+    await task()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 23, in __call__
+    await run_in_threadpool(self.func, *self.args, **self.kwargs)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 298, in sync_user_characters
+    new_db = database.SessionLocal()
+             ^^^^^^^^
+NameError: name 'database' is not defined
+Starting background character sync...
+INFO:     127.0.0.1:14856 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14860 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14859 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14862 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14865 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14866 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47538 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25769 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64782 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59568 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60671 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31458 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29006 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12804 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12803 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12806 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56354 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17936 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15677 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30731 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2438 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21370 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17684 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:17684 - "GET /api/auth/callback?code=EUJEO25RPLY8MU3GVTHJ8ONSJ8RVGAOGQ7&state=settings HTTP/1.1" 307 Temporary Redirect
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 87, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 106, in app
+    await response(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\responses.py", line 167, in __call__
+    await self.background()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 36, in __call__
+    await task()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 23, in __call__
+    await run_in_threadpool(self.func, *self.args, **self.kwargs)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 298, in sync_user_characters
+    new_db = database.SessionLocal()
+             ^^^^^^^^
+NameError: name 'database' is not defined
+Starting background character sync...
+INFO:     127.0.0.1:40689 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40691 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40693 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25042 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34878 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40695 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58458 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29145 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59597 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14677 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7261 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:7261 - "GET /api/auth/callback?code=EUB51ZH4RQ5KH1JB7SVMHNIUNZLJRI826D&state=settings HTTP/1.1" 307 Temporary Redirect
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 87, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 106, in app
+    await response(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\responses.py", line 167, in __call__
+    await self.background()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 36, in __call__
+    await task()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 23, in __call__
+    await run_in_threadpool(self.func, *self.args, **self.kwargs)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 298, in sync_user_characters
+    new_db = database.SessionLocal()
+             ^^^^^^^^
+NameError: name 'database' is not defined
+Starting background character sync...
+INFO:     127.0.0.1:48281 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48280 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48285 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48287 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48286 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48289 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18984 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18985 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61070 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59538 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14545 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13082 - "GET /api/user/characters HTTP/1.1" 200 OK
+Fetching WoW Token Price...
+Token price already up to date.
+Updating Commodity Prices...
+Processing 336709 auctions for 2 tracked items...
+Updated Stranglekelp: 15.98g
+Updated Linen Cloth: 0.05g
+INFO:     127.0.0.1:26828 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23482 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:23482 - "GET /api/auth/callback?code=EUOGEKVMDZYMGL9WN3ORYGR36JBPWUESGO&state=settings HTTP/1.1" 307 Temporary Redirect
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 87, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 106, in app
+    await response(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\responses.py", line 167, in __call__
+    await self.background()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 36, in __call__
+    await task()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 23, in __call__
+    await run_in_threadpool(self.func, *self.args, **self.kwargs)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 298, in sync_user_characters
+    new_db = database.SessionLocal()
+             ^^^^^^^^
+NameError: name 'database' is not defined
+Starting background character sync...
+INFO:     127.0.0.1:7322 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7324 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7327 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7328 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7330 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7332 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24305 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58440 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32733 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43130 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:43130 - "GET /api/auth/callback?code=EUFSVE3R6MYCQ8XXXPHEJL566K4TFF9ZND&state=settings HTTP/1.1" 307 Temporary Redirect
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 87, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 106, in app
+    await response(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\responses.py", line 167, in __call__
+    await self.background()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 36, in __call__
+    await task()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 23, in __call__
+    await run_in_threadpool(self.func, *self.args, **self.kwargs)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 298, in sync_user_characters
+    new_db = database.SessionLocal()
+             ^^^^^^^^
+NameError: name 'database' is not defined
+Starting background character sync...
+INFO:     127.0.0.1:38868 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38870 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38872 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38876 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38875 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38878 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24534 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58207 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52624 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11013 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37276 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31654 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57547 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36509 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:36509 - "GET /api/auth/callback?code=EUXI7Y0VSFI3QMFF39384FZVGIVNRGGWQP&state=settings HTTP/1.1" 307 Temporary Redirect
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 87, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 106, in app
+    await response(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\responses.py", line 167, in __call__
+    await self.background()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 36, in __call__
+    await task()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 23, in __call__
+    await run_in_threadpool(self.func, *self.args, **self.kwargs)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 298, in sync_user_characters
+    new_db = database.SessionLocal()
+             ^^^^^^^^
+NameError: name 'database' is not defined
+Starting background character sync...
+INFO:     127.0.0.1:5591 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5593 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5597 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5599 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5598 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55293 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55295 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36804 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10795 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52198 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52198 - "GET /api/auth/callback?code=EUHGFYSGFYHFBPHS8STZHPQC8QEURU4JGK&state=settings HTTP/1.1" 307 Temporary Redirect
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 87, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 106, in app
+    await response(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\responses.py", line 167, in __call__
+    await self.background()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 36, in __call__
+    await task()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 23, in __call__
+    await run_in_threadpool(self.func, *self.args, **self.kwargs)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 298, in sync_user_characters
+    new_db = database.SessionLocal()
+             ^^^^^^^^
+NameError: name 'database' is not defined
+Starting background character sync...
+INFO:     127.0.0.1:29708 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29710 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29707 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29712 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29714 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29716 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21525 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28453 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1817 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2090 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2089 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2092 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32896 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8809 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19346 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64182 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34982 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21688 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10162 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13519 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42169 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51168 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1937 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25544 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9340 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9339 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9342 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25695 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25697 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51634 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51633 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51636 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64721 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35558 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35563 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35562 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35565 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6674 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11045 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62336 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62335 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62338 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29433 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52153 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42542 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42541 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42544 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56964 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37990 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41281 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41280 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41283 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1881 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1880 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1883 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11768 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5827 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27689 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27688 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27691 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30000 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29998 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29999 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30004 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30005 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30006 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30008 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30010 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48114 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60299 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62899 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62898 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62896 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24355 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24358 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24359 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11884 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11886 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15756 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15758 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15755 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15760 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4401 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4402 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4404 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21094 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37840 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37839 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37838 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4515 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20815 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20816 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20818 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46752 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24832 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24833 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24831 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24838 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24837 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61234 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61236 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21575 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40523 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40521 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40525 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40527 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40529 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37651 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37649 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49468 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62893 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62893 - "GET /api/auth/callback?code=EUMQFSFQGYESQOOEQL3LN2TEGWUPZ9T6FU&state=settings HTTP/1.1" 307 Temporary Redirect
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 87, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 106, in app
+    await response(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\responses.py", line 167, in __call__
+    await self.background()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 36, in __call__
+    await task()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\background.py", line 23, in __call__
+    await run_in_threadpool(self.func, *self.args, **self.kwargs)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 298, in sync_user_characters
+    new_db = database.SessionLocal()
+             ^^^^^^^^
+NameError: name 'database' is not defined
+Starting background character sync...
+INFO:     127.0.0.1:20377 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20376 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20379 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20381 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20383 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40984 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40986 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15160 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15159 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30621 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37068 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11712 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34323 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32781 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10574 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25562 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17033 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63379 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15205 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15210 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15209 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15212 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30034 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30038 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30037 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30040 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3101 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3102 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24207 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11074 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38017 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38015 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38019 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20712 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42906 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+ INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [16648]
+INFO:     Started server process [21864]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Fetching WoW Token Price...
+Token price already up to date.
+Updating Commodity Prices...
+Processing 336709 auctions for 2 tracked items...
+Updated Stranglekelp: 15.98g
+Updated Linen Cloth: 0.05g
+INFO:     127.0.0.1:1902 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1901 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1904 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58721 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41764 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31603 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31602 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31605 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16849 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63475 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63495 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63493 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63497 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50136 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49707 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49742 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49741 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49744 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30343 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16662 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61009 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61008 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61011 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3214 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26018 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43271 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43270 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43273 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21016 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58450 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58468 - "GET /api/auth/login HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58489 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58488 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58491 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40423 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21774 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54966 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54965 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54968 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15429 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59132 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28920 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28919 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28922 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12066 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59192 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3718 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3717 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3720 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42482 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5253 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5283 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5282 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5285 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24311 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22926 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57708 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57707 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57709 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57712 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57715 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57713 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30398 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1950 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53817 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53816 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53815 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30896 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30897 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30898 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30900 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27362 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27373 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27374 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27372 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27377 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27379 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27380 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27382 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27384 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17803 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:17803 - "GET /api/auth/callback?code=EU8WRMS8KQMEFMBWG2OWME4HVBSU4QXSJY&state=settings HTTP/1.1" 307 Temporary Redirect
+Starting background character sync...
+INFO:     127.0.0.1:13608 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13605 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13609 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13612 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13614 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18432 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18437 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32157 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40495 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+Found 40 characters.
+Failed to sync char Dorchada: 'region' is an invalid keyword argument for Character
+INFO:     127.0.0.1:61359 - "GET /api/user/characters HTTP/1.1" 200 OK
+Failed to sync char Marlejin: 'region' is an invalid keyword argument for Character
+Failed to sync char Pørphyria: 'region' is an invalid keyword argument for Character
+INFO:     127.0.0.1:63621 - "GET /api/user/characters HTTP/1.1" 200 OK
+Failed to sync char Skally: 'region' is an invalid keyword argument for Character
+INFO:     127.0.0.1:12838 - "GET /api/user/characters HTTP/1.1" 200 OK
+Failed to sync char Lenmariel: 'region' is an invalid keyword argument for Character
+Failed to sync char Lenmera: 'region' is an invalid keyword argument for Character
+INFO:     127.0.0.1:38080 - "GET /api/user/characters HTTP/1.1" 200 OK
+Failed to sync char Northael: 'region' is an invalid keyword argument for Character
+Failed to sync char Marlegosa: 'region' is an invalid keyword argument for Character
+INFO:     127.0.0.1:60240 - "GET /api/user/characters HTTP/1.1" 200 OK
+Failed to sync char Venmara: 'region' is an invalid keyword argument for Character
+Failed to sync char Wollbert: 'region' is an invalid keyword argument for Character
+INFO:     127.0.0.1:41977 - "GET /api/user/characters HTTP/1.1" 200 OK
+Failed to sync char Nocmara: 'region' is an invalid keyword argument for Character
+Failed to sync char Margysia: 'region' is an invalid keyword argument for Character
+INFO:     127.0.0.1:33321 - "GET /api/user/characters HTTP/1.1" 200 OK
+Failed to sync char Lasmiranda: 'region' is an invalid keyword argument for Character
+INFO:     127.0.0.1:9306 - "GET /api/user/characters HTTP/1.1" 200 OK
+Failed to sync char Liris: 'region' is an invalid keyword argument for Character
+Failed to sync char Lymandris: 'region' is an invalid keyword argument for Character
+INFO:     127.0.0.1:2138 - "GET /api/user/characters HTTP/1.1" 200 OK
+Failed to sync char Liliaris: 'region' is an invalid keyword argument for Character
+Failed to sync char Vorathiel: 'region' is an invalid keyword argument for Character
+INFO:     127.0.0.1:43378 - "GET /api/user/characters HTTP/1.1" 200 OK
+Failed to sync char Bilanza: 'region' is an invalid keyword argument for Character
+Error fetching protected profile for 187760949: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Voramir: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Failed to sync char Voramir: 'region' is an invalid keyword argument for Character
+Failed to sync char Voramir: 'region' is an invalid keyword argument for Character
+Failed to sync char Lenmera: 'region' is an invalid keyword argument for Character
+INFO:     127.0.0.1:23195 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1880 - "GET /api/items HTTP/1.1" 200 OK
+Failed to sync char Lamiralia: 'region' is an invalid keyword argument for Character
+Failed to sync char Porphyria: 'region' is an invalid keyword argument for Character
+INFO:     127.0.0.1:26042 - "GET /api/items/3820/history?range=14d HTTP/1.1" 200 OK
+Failed to sync char Milera: 'region' is an invalid keyword argument for Character
+Failed to sync char Lethria: 'region' is an invalid keyword argument for Character
+Failed to sync char Voradiel: 'region' is an invalid keyword argument for Character
+Failed to sync char Voradoril: 'region' is an invalid keyword argument for Character
+Failed to sync char Loraliel: 'region' is an invalid keyword argument for Character
+Failed to sync char Lethru: 'region' is an invalid keyword argument for Character
+Failed to sync char Leroth: 'region' is an invalid keyword argument for Character
+Error fetching protected profile for 41191454: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Helgaria: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Failed to sync char Helgaria: 'region' is an invalid keyword argument for Character
+Error fetching protected profile for 41321545: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Asaral768449: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Failed to sync char Asaral768449: 'region' is an invalid keyword argument for Character
+Error fetching protected profile for 41489006: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Nachts79126E: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Failed to sync char Nachts79126E: 'region' is an invalid keyword argument for Character
+INFO:     127.0.0.1:26077 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26076 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26079 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+Error fetching protected profile for 136745005: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Sippu: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Failed to sync char Sippu: 'region' is an invalid keyword argument for Character
+Error fetching protected profile for 52865885: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Delevar: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Failed to sync char Delevar: 'region' is an invalid keyword argument for Character
+Error fetching protected profile for 53154705: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Weißklaue: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Failed to sync char Weißklaue: 'region' is an invalid keyword argument for Character
+Error fetching protected profile for 53154777: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+INFO:     127.0.0.1:4783 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7206 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+Error fetching character profile for Whiteleaf: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Failed to sync char Whiteleaf: 'region' is an invalid keyword argument for Character
+Error fetching protected profile for 166591205: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Testerasa: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Failed to sync char Testerasa: 'region' is an invalid keyword argument for Character
+Error fetching protected profile for 131917179: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Kalinora: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Failed to sync char Kalinora: 'region' is an invalid keyword argument for Character
+Error fetching protected profile for 166591230: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Testerasi: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Failed to sync char Testerasi: 'region' is an invalid keyword argument for Character
+Background sync complete. Processed 0 characters.
+INFO:     127.0.0.1:47973 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47995 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47993 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47997 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41933 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49355 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51239 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51251 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51250 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51253 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38938 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53000 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29670 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56273 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56272 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56275 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13088 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5145 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31896 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31905 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31904 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31907 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23347 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21572 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+ INFO:     127.0.0.1:2507 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2524 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2523 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2526 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [21864]
+INFO:     Started server process [15012]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Fetching WoW Token Price...
+Token price already up to date.
+Updating Commodity Prices...
+Processing 336709 auctions for 2 tracked items...
+Updated Stranglekelp: 15.98g
+Updated Linen Cloth: 0.05g
+INFO:     127.0.0.1:52825 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31942 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19055 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40537 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40539 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40542 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40544 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40547 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56766 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56764 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56769 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56770 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56765 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56772 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56774 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56776 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16670 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16669 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16667 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16666 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16671 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16668 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16465 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25311 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42374 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42371 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42373 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42372 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42370 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42375 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1730 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17674 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35660 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35667 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35666 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35670 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35669 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35668 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62918 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46491 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63163 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63161 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63164 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63170 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63169 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63168 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27861 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27863 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10138 - "GET /api/auth/login?tab=settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:10138 - "GET /api/auth/callback?code=EUYKMQQUDYFV6ZBXXHCHY0K5AX8VV1TEQ6&state=settings HTTP/1.1" 307 Temporary Redirect
+Starting background character sync...
+INFO:     127.0.0.1:64440 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64439 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64436 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64442 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64445 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64446 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50796 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50794 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47901 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+Found 40 characters.
+Synced Dorchada: 1763.0168g, 0.0h
+INFO:     127.0.0.1:1231 - "GET /api/user/characters HTTP/1.1" 200 OK
+Synced Marlejin: 23812.0007g, 0.0h
+Synced Pørphyria: 104.9055g, 0.0h
+Synced Skally: 0.4456g, 0.0h
+INFO:     127.0.0.1:8732 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39154 - "GET /api/items HTTP/1.1" 200 OK
+Synced Lenmariel: 327.0408g, 0.0h
+Synced Lenmera: 239.5865g, 0.0h
+INFO:     127.0.0.1:7800 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8354 - "GET /api/items HTTP/1.1" 200 OK
+Synced Northael: 9.8355g, 0.0h
+Synced Marlegosa: 92.8399g, 0.0h
+Synced Venmara: 233.7868g, 0.0h
+INFO:     127.0.0.1:27913 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49199 - "GET /api/items HTTP/1.1" 200 OK
+Synced Wollbert: 0.7064g, 0.0h
+Synced Nocmara: 25.0028g, 0.0h
+Synced Margysia: 610.2525g, 0.0h
+Synced Lasmiranda: 0.9105g, 0.0h
+INFO:     127.0.0.1:9470 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31795 - "GET /api/items HTTP/1.1" 200 OK
+Synced Liris: 0.5043g, 0.0h
+Synced Lymandris: 0.8743g, 0.0h
+Synced Liliaris: 56.4051g, 0.0h
+Synced Vorathiel: 572.3127g, 0.0h
+Synced Bilanza: 5.9707g, 0.0h
+Error fetching protected profile for 187760949: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Voramir: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Synced Voramir: 0.0g, 0.0h
+Synced Voramir: 2.2412g, 0.0h
+Synced Lenmera: 0.06g, 0.0h
+Synced Lamiralia: 0.616g, 0.0h
+Synced Porphyria: 0.1683g, 0.0h
+Synced Milera: 0.7209g, 0.0h
+Synced Lethria: 0.4937g, 0.0h
+Synced Voradiel: 0.617g, 0.0h
+Synced Voradoril: 1114.6459g, 0.0h
+INFO:     127.0.0.1:63480 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63478 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63482 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+Synced Loraliel: 0.0926g, 0.0h
+Synced Lethru: 2034.4099g, 0.0h
+Synced Leroth: 58.665g, 0.0h
+Error fetching protected profile for 41191454: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Helgaria: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Synced Helgaria: 0.0g, 0.0h
+Error fetching protected profile for 41321545: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Asaral768449: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Synced Asaral768449: 0.0g, 0.0h
+Error fetching protected profile for 41489006: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Nachts79126E: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Synced Nachts79126E: 0.0g, 0.0h
+Error fetching protected profile for 136745005: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Sippu: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Synced Sippu: 0.0g, 0.0h
+Error fetching protected profile for 52865885: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Delevar: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Synced Delevar: 0.0g, 0.0h
+Error fetching protected profile for 53154705: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Weißklaue: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Synced Weißklaue: 0.0g, 0.0h
+Error fetching protected profile for 53154777: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Whiteleaf: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+INFO:     127.0.0.1:45456 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12492 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+Synced Whiteleaf: 0.0g, 0.0h
+Error fetching protected profile for 166591205: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Testerasa: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Synced Testerasa: 0.0g, 0.0h
+Error fetching protected profile for 131917179: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Kalinora: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Synced Kalinora: 0.0g, 0.0h
+Error fetching protected profile for 166591230: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Error fetching character profile for Testerasi: 404 - {"code":404,"type":"BLZWEBAPI00000404","detail":"Not Found"}
+Synced Testerasi: 0.0g, 0.0h
+Background sync complete. Processed 40 characters.
+INFO:     127.0.0.1:41186 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48477 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54497 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45728 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45727 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45730 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38186 - "GET /api/token/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38190 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38188 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54025 - "GET /api/user/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38566 - "GET /api/token/history?range=24h HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60758 - "GET /api/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62191 - "GET /api/items HTTP/1.1" 200 OK

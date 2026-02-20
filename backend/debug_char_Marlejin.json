@@ -13,7 +13,7 @@
         },
         "id": 42015965,
         "name": "Marlejin",
-        "money": 237591690,
+        "money": 238120007,
         "character": {
             "key": {
                 "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/marlejin?namespace=profile-eu"
@@ -31,27 +31,27 @@
         },
         "protected_stats": {
             "total_number_deaths": 774,
-            "total_gold_gained": 13109962945,
-            "total_gold_lost": 12868318220,
-            "total_item_value_gained": 283078280,
+            "total_gold_gained": 13110521262,
+            "total_gold_lost": 12868348220,
+            "total_item_value_gained": 283082780,
             "level_number_deaths": 15,
-            "level_gold_gained": 12101022733,
-            "level_gold_lost": 11927708859,
-            "level_item_value_gained": 180354078
+            "level_gold_gained": 12101581050,
+            "level_gold_lost": 11927738859,
+            "level_item_value_gained": 180358578
         },
         "position": {
             "zone": {
-                "name": "Isle of Dorn",
-                "id": 14717
+                "name": "Orgrimmar",
+                "id": 1637
             },
             "map": {
-                "name": "Khaz Algar (Surface)",
-                "id": 2552
+                "name": "Kalimdor",
+                "id": 1
             },
-            "x": 2317.618,
-            "y": -1773.6337,
-            "z": 72.32501,
-            "facing": 3.3289533
+            "x": 1443.2672,
+            "y": -4426.8022,
+            "z": 25.4536,
+            "facing": 6.2629123
         },
         "bind_position": {
             "zone": {
@@ -101,10 +101,10 @@
         },
         "active_spec": {
             "key": {
-                "href": "https://eu.api.blizzard.com/data/wow/playable-specialization/105?namespace=static-12.0.1_65617-eu"
+                "href": "https://eu.api.blizzard.com/data/wow/playable-specialization/104?namespace=static-12.0.1_65617-eu"
             },
-            "name": "Restoration",
-            "id": 105
+            "name": "Guardian",
+            "id": 104
         },
         "realm": {
             "key": {
@@ -151,7 +151,7 @@
         "media": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/marlejin/character-media?namespace=profile-eu"
         },
-        "last_login_timestamp": 1771490853000,
+        "last_login_timestamp": 1771520146000,
         "average_item_level": 144,
         "equipped_item_level": 144,
         "specializations": {
@@ -385,21 +385,21 @@
                             {
                                 "id": 107,
                                 "name": "Creatures killed",
-                                "last_updated_timestamp": 1771350286000,
-                                "quantity": 48049.0
+                                "last_updated_timestamp": 1771520125000,
+                                "quantity": 48052.0
                             },
                             {
                                 "id": 1337,
                                 "name": "Different creature types killed",
-                                "last_updated_timestamp": 1771350286000,
+                                "last_updated_timestamp": 1771520125000,
                                 "quantity": 10.0
                             },
                             {
                                 "id": 1336,
                                 "name": "Creature type killed the most",
-                                "last_updated_timestamp": 1771350286000,
+                                "last_updated_timestamp": 1771520125000,
                                 "description": "Humanoid",
-                                "quantity": 21198.0
+                                "quantity": 21201.0
                             },
                             {
                                 "id": 108,
@@ -606,14 +606,14 @@
                     {
                         "id": 1197,
                         "name": "Total kills",
-                        "last_updated_timestamp": 1771350286000,
-                        "quantity": 7179.0
+                        "last_updated_timestamp": 1771520125000,
+                        "quantity": 7182.0
                     },
                     {
                         "id": 1198,
                         "name": "Total kills that grant experience or honor",
-                        "last_updated_timestamp": 1771350286000,
-                        "quantity": 34970.0
+                        "last_updated_timestamp": 1771520125000,
+                        "quantity": 34973.0
                     }
                 ]
             },
@@ -714,14 +714,14 @@
                     {
                         "id": 98,
                         "name": "Quests completed",
-                        "last_updated_timestamp": 1771490692000,
+                        "last_updated_timestamp": 1771519105000,
                         "quantity": 3299.0
                     },
                     {
                         "id": 95,
                         "name": "Average quests completed per day",
-                        "last_updated_timestamp": 1771490692000,
-                        "quantity": 0.6004732435384056
+                        "last_updated_timestamp": 1771519105000,
+                        "quantity": 0.6003639672429482
                     },
                     {
                         "id": 97,
@@ -733,13 +733,13 @@
                         "id": 759,
                         "name": "Average daily quests completed per day",
                         "last_updated_timestamp": 1764922137000,
-                        "quantity": 0.009646887513651257
+                        "quantity": 0.009645131938125568
                     },
                     {
                         "id": 94,
                         "name": "Quests abandoned",
-                        "last_updated_timestamp": 1771007855000,
-                        "quantity": 300.0
+                        "last_updated_timestamp": 1771519944000,
+                        "quantity": 303.0
                     }
                 ]
             },
@@ -760,7 +760,7 @@
                             {
                                 "id": 1745,
                                 "name": "Cooking Recipes known",
-                                "last_updated_timestamp": 1771490692000,
+                                "last_updated_timestamp": 1771519105000,
                                 "quantity": 25.0
                             },
                             {
@@ -772,7 +772,7 @@
                             {
                                 "id": 1519,
                                 "name": "Fishing skill",
-                                "last_updated_timestamp": 1771490692000,
+                                "last_updated_timestamp": 1771519105000,
                                 "quantity": 171.0
                             },
                             {
@@ -820,7 +820,7 @@
                             {
                                 "id": 1538,
                                 "name": "Highest Herbalism skill",
-                                "last_updated_timestamp": 1771490692000,
+                                "last_updated_timestamp": 1771519105000,
                                 "quantity": 300.0
                             },
                             {
@@ -832,7 +832,7 @@
                             {
                                 "id": 1735,
                                 "name": "Inscriptions learned",
-                                "last_updated_timestamp": 1771490692000,
+                                "last_updated_timestamp": 1771519105000,
                                 "quantity": 81.0
                             },
                             {
@@ -860,7 +860,7 @@
                     {
                         "id": 1199,
                         "name": "Professions learned",
-                        "last_updated_timestamp": 1771490692000,
+                        "last_updated_timestamp": 1771519105000,
                         "quantity": 7.0
                     }
                 ]
@@ -1784,8 +1784,8 @@
                     {
                         "id": 932,
                         "name": "Total 5-player dungeons entered",
-                        "last_updated_timestamp": 1771350215000,
-                        "quantity": 286.0
+                        "last_updated_timestamp": 1771520082000,
+                        "quantity": 287.0
                     },
                     {
                         "id": 933,

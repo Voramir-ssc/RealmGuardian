@@ -1,3 +1,8 @@
+"""
+models.py
+Defines the SQLAlchemy ORM models representing the database schema.
+Includes models for WoW Tokens, Characters, Tracked Items, and Price History.
+"""
 from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from database import Base
