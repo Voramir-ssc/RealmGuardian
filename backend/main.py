@@ -430,6 +430,7 @@ def sync_user_characters(user_token: str):
                         db_char.name = char['name']
                         db_char.realm = char['realm']['name']
                         db_char.level = char['level']
+                        print(f"Updating existing character {char['name']} with ilvl {item_level}")
                         db_char.item_level = item_level
                         db_char.equipment = equipment_json
                         db_char.gold = int(gold)
