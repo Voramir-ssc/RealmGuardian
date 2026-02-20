@@ -6,9 +6,10 @@
  * the global active tab state, and incorporates an automatic background polling
  * mechanism to refresh the UI seamlessly after a successful Battle.net login.
  * 
- * [2026-02-20T10:35:00] STATUS: WORKING (v.0.4.2)
+ * [2026-02-20T11:50:00] STATUS: WORKING (v.0.4.4)
  * - OAuth Redirect logic verified
  * - Polling waits correctly up to 90s for character background sync to finish
+ * - CharacterList properly parses and renders equipment JSON and item level
  * - Removed deprecated playtime rendering
  * DO NOT BREAK THIS BASE FUNCTIONALITY.
  */

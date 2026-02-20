@@ -4,10 +4,11 @@ This module serves as the primary FastAPI application entry point.
 It handles Blizzard API integrations, user authentication, and data synchronization
 for World of Warcraft tokens, characters, and commodity prices.
 
-[2026-02-20T10:35:00] STATUS: WORKING (v.0.4.2)
+[2026-02-20T11:50:00] STATUS: WORKING (v.0.4.4)
 - Battle.net OAuth Login and Return-Redirect redirect successfully
-- Background Character Sync correctly fetches 40 chars and filters 404 ghosts
-- Token and Item tracking fetch accurately
+- Background Character Sync correctly fetches item level, gold, names, and equipment (JSON)
+- Clean database schema reset via SQLAlchemy applied
+- Token and Item tracking fetch accurately, history restored
 - Playtime metrics successfully removed as unsupported by Blizzard Web API
 DO NOT BREAK THIS BASE FUNCTIONALITY.
 """
