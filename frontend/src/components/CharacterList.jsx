@@ -94,6 +94,15 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                                 }
                                 const isExpanded = expandedCharId === char.id;
 
+                                let professions = [];
+                                try {
+                                    if (char.professions) {
+                                        professions = JSON.parse(char.professions);
+                                    }
+                                } catch (e) {
+                                    console.error("Failed to parse professions JSON", e);
+                                }
+
                                 return (
                                     <React.Fragment key={char.id}>
                                         <tr
