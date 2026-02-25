@@ -126,30 +126,65 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                                             </td>
                                         </tr>
 
-                                        {/* Equipment Dropdown Row */}
+                                        {/* Dropdown Row */}
                                         {isExpanded && (
                                             <tr className="bg-black/20">
                                                 <td colSpan="6" className="py-4 px-6 border-l-4 border-[#148eff]/50">
-                                                    <div className="mb-2 text-xs uppercase tracking-wider text-secondary font-medium">Equipped Items ({equipment.length})</div>
-                                                    {equipment.length > 0 ? (
-                                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-                                                            {equipment.map((item, idx) => (
-                                                                <div key={idx} className="flex justify-between items-center text-xs p-2 rounded bg-surface border border-white/5 hover:border-white/10 transition-colors">
-                                                                    <div className="flex flex-col truncate pr-2">
-                                                                        <span className={`font-medium ${getItemQualityColor(item.quality)} truncate`}>{item.name}</span>
-                                                                        <span className="text-secondary/50 text-[10px] uppercase">
-                                                                            {item.slot ? item.slot.replace(/_/g, ' ') : 'Unknown Slot'}
-                                                                        </span>
+
+                                                    {/* Professions Section */}
+                                                    <div className="mb-4">
+                                                        <div className="mb-2 text-xs uppercase tracking-wider text-secondary font-medium">Professions</div>
+                                                        {professions.length > 0 ? (
+                                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                                {professions.map((prof, idx) => {
+                                                                    const percentage = prof.max_skill_points ? Math.min(100, (prof.skill_points / prof.max_skill_points) * 100) : 0;
+                                                                    return (
+                                                                        <div key={idx} className="p-3 rounded-lg bg-surface border border-white/5 flex flex-col gap-2">
+                                                                            <div className="flex justify-between items-center text-sm font-medium text-white">
+                                                                                <span>{prof.name}</span>
+                                                                                <span className="text-secondary/80 text-xs">{prof.skill_points} / {prof.max_skill_points}</span>
+                                                                            </div>
+                                                                            <div className="w-full bg-black/40 h-1.5 rounded-full overflow-hidden">
+                                                                                <div
+                                                                                    className="bg-[#148eff] h-full rounded-full transition-all duration-1000"
+                                                                                    style={{ width: `${percentage}%` }}
+                                                                                />
+                                                                            </div>
+                                                                        </div>
+                                                                    );
+                                                                })}
+                                                            </div>
+                                                        ) : (
+                                                            <div className="text-sm text-secondary/50 italic py-2">
+                                                                No professions data synced.
+                                                            </div>
+                                                        )}
+                                                    </div>
+
+                                                    {/* Equipment Section */}
+                                                    <div>
+                                                        <div className="mb-2 text-xs uppercase tracking-wider text-secondary font-medium">Equipped Items ({equipment.length})</div>
+                                                        {equipment.length > 0 ? (
+                                                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                                                                {equipment.map((item, idx) => (
+                                                                    <div key={idx} className="flex justify-between items-center text-xs p-2 rounded bg-surface border border-white/5 hover:border-white/10 transition-colors">
+                                                                        <div className="flex flex-col truncate pr-2">
+                                                                            <span className={`font-medium ${getItemQualityColor(item.quality)} truncate`}>{item.name}</span>
+                                                                            <span className="text-secondary/50 text-[10px] uppercase">
+                                                                                {item.slot ? item.slot.replace(/_/g, ' ') : 'Unknown Slot'}
+                                                                            </span>
+                                                                        </div>
+                                                                        <span className="text-[#ff8000] font-bold shrink-0">{item.level}</span>
                                                                     </div>
-                                                                    <span className="text-[#ff8000] font-bold shrink-0">{item.level}</span>
-                                                                </div>
-                                                            ))}
-                                                        </div>
-                                                    ) : (
-                                                        <div className="text-sm text-secondary/50 italic py-2">
-                                                            No equipment data synced or character is hidden.
-                                                        </div>
-                                                    )}
+                                                                ))}
+                                                            </div>
+                                                        ) : (
+                                                            <div className="text-sm text-secondary/50 italic py-2">
+                                                                No equipment data synced or character is hidden.
+                                                            </div>
+                                                        )}
+                                                    </div>
+
                                                 </td>
                                             </tr>
                                         )}

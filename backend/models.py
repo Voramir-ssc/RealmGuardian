@@ -50,6 +50,7 @@ class Character(Base):
     level = Column(Integer, nullable=True)
     item_level = Column(Integer, default=0)
     equipment = Column(String, nullable=True) # Will store compressed JSON
+    professions = Column(String, nullable=True) # Will store compressed JSON for professions
     gold = Column(Integer, default=0) # Stored in copper
     played_time = Column(Integer, default=0) # Seconds
     icon_url = Column(String, nullable=True)

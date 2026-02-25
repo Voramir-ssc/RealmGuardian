@@ -6,10 +6,11 @@
  * the global active tab state, and incorporates an automatic background polling
  * mechanism to refresh the UI seamlessly after a successful Battle.net login.
  * 
- * [2026-02-20T11:50:00] STATUS: WORKING (v.0.4.4)
+ * [2026-02-23T07:50:00] STATUS: WORKING (v.0.5.1)
  * - OAuth Redirect logic verified
  * - Polling waits correctly up to 90s for character background sync to finish
  * - CharacterList properly parses and renders equipment JSON and item level
+ * - CharacterList properly parses and renders profession JSON and skill points
  * - Removed deprecated playtime rendering
  * DO NOT BREAK THIS BASE FUNCTIONALITY.
  */
@@ -134,6 +135,7 @@ function App() {
       // Poll every 3 seconds
       pollInterval = setInterval(() => {
         fetchCharacterData();
+        fetchAccountGoldHistory();
       }, 3000);
 
       // Stop polling after 90 seconds to ensure all characters are fetched
@@ -146,7 +148,7 @@ function App() {
       clearInterval(pollInterval);
       clearTimeout(timeoutId);
     };
-  }, [isSyncing, fetchCharacterData]);
+  }, [isSyncing, fetchCharacterData, fetchAccountGoldHistory]);
 
   // Sync state will stop naturally after 90s, no early bailout.
 

@@ -67,7 +67,7 @@ const GoldChartWidget = ({ history = [], loading }) => {
                                 tick={{ fill: 'rgba(255,255,255,0.4)', fontSize: 12 }}
                                 tickFormatter={(value) => `${(value / 1000).toFixed(0)}k`}
                                 dx={-10}
-                                domain={['dataMin - 5000', 'dataMax + 5000']}
+                                domain={['dataMin - 15000', 'dataMax + 15000']}
                             />
                             <Tooltip content={<CustomTooltip />} />
                             <Area

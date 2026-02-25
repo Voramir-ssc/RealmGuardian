@@ -13,7 +13,7 @@
         },
         "id": 42015965,
         "name": "Marlejin",
-        "money": 238120007,
+        "money": 2073154920,
         "character": {
             "key": {
                 "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/marlejin?namespace=profile-eu"
@@ -31,27 +31,27 @@
         },
         "protected_stats": {
             "total_number_deaths": 774,
-            "total_gold_gained": 13110521262,
-            "total_gold_lost": 12868348220,
-            "total_item_value_gained": 283082780,
+            "total_gold_gained": 18943476344,
+            "total_gold_lost": 16866268389,
+            "total_item_value_gained": 284311794,
             "level_number_deaths": 15,
-            "level_gold_gained": 12101581050,
-            "level_gold_lost": 11927738859,
-            "level_item_value_gained": 180358578
+            "level_gold_gained": 17934536132,
+            "level_gold_lost": 15925659028,
+            "level_item_value_gained": 181587592
         },
         "position": {
             "zone": {
-                "name": "Orgrimmar",
-                "id": 1637
+                "name": "Valley of Strength",
+                "id": 5170
             },
             "map": {
                 "name": "Kalimdor",
                 "id": 1
             },
-            "x": 1443.2672,
-            "y": -4426.8022,
-            "z": 25.4536,
-            "facing": 6.2629123
+            "x": 1752.9807,
+            "y": -4390.439,
+            "z": 133.14407,
+            "facing": 2.9664576
         },
         "bind_position": {
             "zone": {
@@ -135,7 +135,7 @@
         },
         "level": 80,
         "experience": 0,
-        "achievement_points": 20770,
+        "achievement_points": 20775,
         "achievements": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/marlejin/achievements?namespace=profile-eu"
         },
@@ -151,7 +151,7 @@
         "media": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/marlejin/character-media?namespace=profile-eu"
         },
-        "last_login_timestamp": 1771520146000,
+        "last_login_timestamp": 1771876261000,
         "average_item_level": 144,
         "equipped_item_level": 144,
         "specializations": {
@@ -385,27 +385,27 @@
                             {
                                 "id": 107,
                                 "name": "Creatures killed",
-                                "last_updated_timestamp": 1771520125000,
-                                "quantity": 48052.0
+                                "last_updated_timestamp": 1771875351000,
+                                "quantity": 48500.0
                             },
                             {
                                 "id": 1337,
                                 "name": "Different creature types killed",
-                                "last_updated_timestamp": 1771520125000,
+                                "last_updated_timestamp": 1771875351000,
                                 "quantity": 10.0
                             },
                             {
                                 "id": 1336,
                                 "name": "Creature type killed the most",
-                                "last_updated_timestamp": 1771520125000,
+                                "last_updated_timestamp": 1771875351000,
                                 "description": "Humanoid",
-                                "quantity": 21201.0
+                                "quantity": 21421.0
                             },
                             {
                                 "id": 108,
                                 "name": "Critters killed",
-                                "last_updated_timestamp": 1771075288000,
-                                "quantity": 1962.0
+                                "last_updated_timestamp": 1771875267000,
+                                "quantity": 1982.0
                             }
                         ]
                     },
@@ -416,8 +416,8 @@
                             {
                                 "id": 588,
                                 "name": "Total Honorable Kills",
-                                "last_updated_timestamp": 1770664444000,
-                                "quantity": 6592.0
+                                "last_updated_timestamp": 1771873952000,
+                                "quantity": 6648.0
                             },
                             {
                                 "id": 381,
@@ -428,8 +428,8 @@
                             {
                                 "id": 382,
                                 "name": "Battleground Honorable Kills",
-                                "last_updated_timestamp": 1769812238000,
-                                "quantity": 298.0
+                                "last_updated_timestamp": 1771873952000,
+                                "quantity": 354.0
                             },
                             {
                                 "id": 1111,
@@ -494,8 +494,8 @@
                             {
                                 "id": 6737,
                                 "name": "Silvershard Mines Honorable Kills",
-                                "last_updated_timestamp": 1769811190000,
-                                "quantity": 224.0
+                                "last_updated_timestamp": 1771873952000,
+                                "quantity": 280.0
                             },
                             {
                                 "id": 8376,
@@ -518,8 +518,8 @@
                             {
                                 "id": 1487,
                                 "name": "Total Killing Blows",
-                                "last_updated_timestamp": 1771277023000,
-                                "quantity": 18624.0
+                                "last_updated_timestamp": 1771875342000,
+                                "quantity": 18786.0
                             },
                             {
                                 "id": 1488,
@@ -530,8 +530,8 @@
                             {
                                 "id": 1491,
                                 "name": "Battleground Killing Blows",
-                                "last_updated_timestamp": 1769812083000,
-                                "quantity": 11.0
+                                "last_updated_timestamp": 1771873779000,
+                                "quantity": 12.0
                             },
                             {
                                 "id": 1492,
@@ -596,8 +596,8 @@
                             {
                                 "id": 7263,
                                 "name": "Silvershard Mines Killing Blows",
-                                "last_updated_timestamp": 1769811089000,
-                                "quantity": 8.0
+                                "last_updated_timestamp": 1771873779000,
+                                "quantity": 9.0
                             }
                         ]
                     }
@@ -606,14 +606,14 @@
                     {
                         "id": 1197,
                         "name": "Total kills",
-                        "last_updated_timestamp": 1771520125000,
-                        "quantity": 7182.0
+                        "last_updated_timestamp": 1771875351000,
+                        "quantity": 7089.0
                     },
                     {
                         "id": 1198,
                         "name": "Total kills that grant experience or honor",
-                        "last_updated_timestamp": 1771520125000,
-                        "quantity": 34973.0
+                        "last_updated_timestamp": 1771875351000,
+                        "quantity": 35206.0
                     }
                 ]
             },
@@ -714,14 +714,14 @@
                     {
                         "id": 98,
                         "name": "Quests completed",
-                        "last_updated_timestamp": 1771519105000,
-                        "quantity": 3299.0
+                        "last_updated_timestamp": 1771871837000,
+                        "quantity": 3298.0
                     },
                     {
                         "id": 95,
                         "name": "Average quests completed per day",
-                        "last_updated_timestamp": 1771519105000,
-                        "quantity": 0.6003639672429482
+                        "last_updated_timestamp": 1771871837000,
+                        "quantity": 0.5997454082560466
                     },
                     {
                         "id": 97,
@@ -733,7 +733,7 @@
                         "id": 759,
                         "name": "Average daily quests completed per day",
                         "last_updated_timestamp": 1764922137000,
-                        "quantity": 0.009645131938125568
+                        "quantity": 0.009638116021094744
                     },
                     {
                         "id": 94,
@@ -760,7 +760,7 @@
                             {
                                 "id": 1745,
                                 "name": "Cooking Recipes known",
-                                "last_updated_timestamp": 1771519105000,
+                                "last_updated_timestamp": 1771871837000,
                                 "quantity": 25.0
                             },
                             {
@@ -772,7 +772,7 @@
                             {
                                 "id": 1519,
                                 "name": "Fishing skill",
-                                "last_updated_timestamp": 1771519105000,
+                                "last_updated_timestamp": 1771871837000,
                                 "quantity": 171.0
                             },
                             {
@@ -820,7 +820,7 @@
                             {
                                 "id": 1538,
                                 "name": "Highest Herbalism skill",
-                                "last_updated_timestamp": 1771519105000,
+                                "last_updated_timestamp": 1771871837000,
                                 "quantity": 300.0
                             },
                             {
@@ -832,7 +832,7 @@
                             {
                                 "id": 1735,
                                 "name": "Inscriptions learned",
-                                "last_updated_timestamp": 1771519105000,
+                                "last_updated_timestamp": 1771871837000,
                                 "quantity": 81.0
                             },
                             {
@@ -860,7 +860,7 @@
                     {
                         "id": 1199,
                         "name": "Professions learned",
-                        "last_updated_timestamp": 1771519105000,
+                        "last_updated_timestamp": 1771871837000,
                         "quantity": 7.0
                     }
                 ]
@@ -891,8 +891,8 @@
                     {
                         "id": 353,
                         "name": "Number of times hearthed",
-                        "last_updated_timestamp": 1771277412000,
-                        "quantity": 175.0
+                        "last_updated_timestamp": 1771863869000,
+                        "quantity": 176.0
                     }
                 ]
             },
@@ -1003,8 +1003,8 @@
                             {
                                 "id": 41103,
                                 "name": "Sidestreet Sluice clears",
-                                "last_updated_timestamp": 1767387772000,
-                                "quantity": 1.0
+                                "last_updated_timestamp": 1771863830000,
+                                "quantity": 2.0
                             },
                             {
                                 "id": 42700,
@@ -1015,7 +1015,7 @@
                             {
                                 "id": 40751,
                                 "name": "The War Within delve completed the most",
-                                "last_updated_timestamp": 1769286302000,
+                                "last_updated_timestamp": 1771863830000,
                                 "description": "Fungal Folly",
                                 "quantity": 21.0
                             }
@@ -1050,14 +1050,14 @@
                     {
                         "id": 40773,
                         "name": "Tier 8 delves completed",
-                        "last_updated_timestamp": 1769286302000,
-                        "quantity": 1.0
+                        "last_updated_timestamp": 1771863830000,
+                        "quantity": 2.0
                     },
                     {
                         "id": 40734,
                         "name": "Total delves completed",
-                        "last_updated_timestamp": 1769286302000,
-                        "quantity": 60.0
+                        "last_updated_timestamp": 1771863830000,
+                        "quantity": 61.0
                     },
                     {
                         "id": 40749,
@@ -1784,8 +1784,8 @@
                     {
                         "id": 932,
                         "name": "Total 5-player dungeons entered",
-                        "last_updated_timestamp": 1771520082000,
-                        "quantity": 287.0
+                        "last_updated_timestamp": 1771874040000,
+                        "quantity": 288.0
                     },
                     {
                         "id": 933,
@@ -1846,8 +1846,8 @@
                     {
                         "id": 7223,
                         "name": "Cataclysm dungeons completed (final boss defeated)",
-                        "last_updated_timestamp": 1767648540000,
-                        "quantity": 4.0
+                        "last_updated_timestamp": 1771875351000,
+                        "quantity": 5.0
                     },
                     {
                         "id": 7240,
@@ -2076,14 +2076,14 @@
                             {
                                 "id": 839,
                                 "name": "Battlegrounds played",
-                                "last_updated_timestamp": 1769812254000,
-                                "quantity": 214.0
+                                "last_updated_timestamp": 1771873953000,
+                                "quantity": 215.0
                             },
                             {
                                 "id": 840,
                                 "name": "Battlegrounds won",
-                                "last_updated_timestamp": 1769812254000,
-                                "quantity": 149.0
+                                "last_updated_timestamp": 1771873953000,
+                                "quantity": 150.0
                             },
                             {
                                 "id": 53,
@@ -2178,14 +2178,14 @@
                             {
                                 "id": 7829,
                                 "name": "Silvershard Mines battles",
-                                "last_updated_timestamp": 1769811194000,
-                                "quantity": 5.0
+                                "last_updated_timestamp": 1771873953000,
+                                "quantity": 6.0
                             },
                             {
                                 "id": 7830,
                                 "name": "Silvershard Mines victories",
-                                "last_updated_timestamp": 1769811194000,
-                                "quantity": 5.0
+                                "last_updated_timestamp": 1771873953000,
+                                "quantity": 6.0
                             },
                             {
                                 "id": 4096,
@@ -2278,8 +2278,8 @@
                     {
                         "id": 20488,
                         "name": "Valorstones earned",
-                        "last_updated_timestamp": 1771117395000,
-                        "quantity": 7194.0
+                        "last_updated_timestamp": 1771875359000,
+                        "quantity": 7214.0
                     },
                     {
                         "id": 41786,
@@ -2290,20 +2290,20 @@
                     {
                         "id": 60975,
                         "name": "Weathered Ethereal Crests earned",
-                        "last_updated_timestamp": 1771277265000,
-                        "quantity": 1812.0
+                        "last_updated_timestamp": 1771875359000,
+                        "quantity": 1817.0
                     },
                     {
                         "id": 60976,
                         "name": "Carved Ethereal Crests earned",
-                        "last_updated_timestamp": 1770511983000,
-                        "quantity": 600.0
+                        "last_updated_timestamp": 1771863850000,
+                        "quantity": 609.0
                     },
                     {
                         "id": 60977,
                         "name": "Runed Ethereal Crests earned",
-                        "last_updated_timestamp": 1770512041000,
-                        "quantity": 463.0
+                        "last_updated_timestamp": 1771863850000,
+                        "quantity": 471.0
                     },
                     {
                         "id": 60978,

@@ -18,6 +18,7 @@ import pydantic
 from sqlalchemy.orm import Session
 import sqlalchemy
 from fastapi.middleware.cors import CORSMiddleware
+import json
 import models
 from database import engine, get_db, SessionLocal
 from config import config
@@ -400,6 +401,22 @@ def sync_user_characters(user_token: str):
                             equipment_json = json.dumps(parsed_items)
                     except Exception as eq_err:
                         print(f"Failed to fetch equipment for {char['name']}: {eq_err}")
+                        
+                    # Fetch & Parse Professions
+                    professions_json = None
+                    try:
+                        raw_professions = blizzard_client.get_character_professions(user_token, char['realm']['slug'], char['name'])
+                        if raw_professions and 'primaries' in raw_professions:
+                            parsed_professions = []
+                            for prof in raw_professions['primaries']:
+                                parsed_professions.append({
+                                    "name": prof.get('profession', {}).get('name', 'Unknown'),
+                                    "skill_points": prof.get('tiers', [{}])[0].get('skill_points', 0), # Simplified to first expansion tier
+                                    "max_skill_points": prof.get('tiers', [{}])[0].get('max_skill_points', 0)
+                                })
+                            professions_json = json.dumps(parsed_professions)
+                    except Exception as prof_err:
+                        print(f"Failed to fetch professions for {char['name']}: {prof_err}")
 
                     played_time = 0
                     # Note: Blizzard has completely removed 'Total time played' from the external Web API.
@@ -417,6 +434,7 @@ def sync_user_characters(user_token: str):
                             level=char.get('level', 0),
                             item_level=item_level,
                             equipment=equipment_json,
+                            professions=professions_json,
                             gold=int(gold),
                             played_time=int(played_time),
                             last_updated=timestamp
@@ -431,9 +449,10 @@ def sync_user_characters(user_token: str):
                         db_char.name = char['name']
                         db_char.realm = char['realm']['name']
                         db_char.level = char['level']
-                        print(f"Updating existing character {char['name']} with ilvl {item_level}")
+                        print(f"Updating existing character {char['name']} with ilvl {item_level} & professions")
                         db_char.item_level = item_level
                         db_char.equipment = equipment_json
+                        db_char.professions = professions_json
                         db_char.gold = int(gold)
                         db_char.played_time = int(played_time)
                         db_char.last_updated = timestamp
@@ -454,16 +473,16 @@ def sync_user_characters(user_token: str):
         total_account_gold = new_db.query(models.Character).with_entities(sqlalchemy.func.sum(models.Character.gold)).scalar() or 0
         
         # Get start of current day for the daily snapshot
-        today = datetime.datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
+        today = datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
         
         gold_snapshot = new_db.query(models.AccountGoldHistory).filter(models.AccountGoldHistory.timestamp >= today).first()
         if gold_snapshot:
             gold_snapshot.total_gold = total_account_gold
-            gold_snapshot.timestamp = datetime.datetime.utcnow()
+            gold_snapshot.timestamp = datetime.utcnow()
         else:
             gold_snapshot = models.AccountGoldHistory(
                 total_gold=total_account_gold,
-                timestamp=datetime.datetime.utcnow()
+                timestamp=datetime.utcnow()
             )
             new_db.add(gold_snapshot)
         
@@ -657,3 +676,12 @@ if __name__ == "__main__":
     import uvicorn
     # Listen on all interfaces so remote devices can connect
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+
+
+import traceback
+from fastapi.responses import JSONResponse
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    with open('debug_sync_crash.txt', 'w') as err_f:
+        err_f.write(traceback.format_exc())
+    return JSONResponse(status_code=500, content={'message': 'Internal Server Error'})

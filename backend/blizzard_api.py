@@ -142,3 +142,11 @@ class BlizzardAPI:
         if response.status_code == 200:
             return response.json()
         return None
+
+    def get_character_professions(self, user_token, realm_slug, char_name):
+        url = f"https://{self.region}.api.blizzard.com/profile/wow/character/{realm_slug}/{char_name.lower()}/professions?namespace=profile-{self.region}&locale=en_US"
+        headers = {"Authorization": f"Bearer {user_token}"}
+        response = requests.get(url, headers=headers)
+        if response.status_code == 200:
+            return response.json()
+        return None

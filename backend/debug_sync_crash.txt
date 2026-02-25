@@ -1,6 +1,97 @@
-'Session' object is not subscriptable
 Traceback (most recent call last):
-  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 310, in sync_user_characters
-    f.write(f"Sync started at {time.time()}\nToken: {user_token[:10]}...")
-                                                     ~~~~~~~~~~^^^^^
-TypeError: 'Session' object is not subscriptable
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: characters.professions
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 87, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 105, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 424, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\fastapi\routing.py", line 314, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 514, in get_user_characters
+    chars = db.query(models.Character).order_by(models.Character.level.desc()).all()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2704, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2857, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: characters.professions
+[SQL: SELECT characters.id AS characters_id, characters.blizzard_id AS characters_blizzard_id, characters.name AS characters_name, characters.realm AS characters_realm, characters.class_name AS characters_class_name, characters.level AS characters_level, characters.item_level AS characters_item_level, characters.equipment AS characters_equipment, characters.professions AS characters_professions, characters.gold AS characters_gold, characters.played_time AS characters_played_time, characters.icon_url AS characters_icon_url, characters.last_updated AS characters_last_updated 
+FROM characters ORDER BY characters.level DESC]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
