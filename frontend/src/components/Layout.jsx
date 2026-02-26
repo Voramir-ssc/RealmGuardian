@@ -5,7 +5,7 @@
  * Provides the sidebar navigation structure and content area container.
  */
 import React from 'react';
-import { LayoutDashboard, Coins, Settings } from 'lucide-react';
+import { LayoutDashboard, Coins, Settings, Hammer } from 'lucide-react';
 
 const Layout = ({ children, activeTab, onTabChange }) => {
     return (
@@ -31,6 +31,12 @@ const Layout = ({ children, activeTab, onTabChange }) => {
                         label="Characters"
                         active={activeTab === 'characters'}
                         onClick={() => onTabChange('characters')}
+                    />
+                    <NavItem
+                        icon={<Hammer size={20} />}
+                        label="Crafting"
+                        active={activeTab === 'crafting'}
+                        onClick={() => onTabChange('crafting')}
                     />
                     <div className="flex-1" />
                     <NavItem

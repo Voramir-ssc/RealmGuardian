@@ -672,6 +672,167 @@ def delete_tracked_item(item_id: int, db: Session = Depends(get_db)):
     db.commit()
     return {'message': 'Item deleted'}
 
+# --- Crafting / Recipe Endpoints ---
+
+class RecipeRequestBase(pydantic.BaseModel):
+    recipe_id: int
+
+@app.get('/api/recipes/search')
+def search_recipes(query: str):
+    if not blizzard_client:
+        raise HTTPException(status_code=500, detail="Blizzard client not initialized")
+    res = blizzard_client.search_recipe(query)
+    if not res:
+        return []
+        
+    results = []
+    for item in res.get('results', []):
+        data = item.get('data', {})
+        results.append({
+            "id": data.get('id'),
+            "name": data.get('name', {}).get('en_US', 'Unknown Recipe')
+        })
+    return results
+
+@app.post('/api/recipes')
+def add_recipe(req: RecipeRequestBase, background_tasks: BackgroundTasks, db: Session = Depends(get_db)):
+    # Check if exists
+    exists = db.query(models.Recipe).filter(models.Recipe.recipe_id == req.recipe_id).first()
+    if exists:
+        raise HTTPException(status_code=400, detail="Recipe already tracked")
+
+    recipe_data = blizzard_client.get_recipe(req.recipe_id)
+    if not recipe_data:
+        raise HTTPException(status_code=404, detail="Recipe not found on Blizzard API")
+
+    # Add crafted item
+    crafted_item = recipe_data.get('crafted_item', {})
+    crafted_item_id = crafted_item.get('id', 0)
+    crafted_qty = recipe_data.get('crafted_quantity', {}).get('value', 1)
+    
+    icon_url = None
+    if crafted_item_id > 0:
+        media = blizzard_client.get_item_media(crafted_item_id)
+        icon_url = media['assets'][0]['value'] if media and 'assets' in media else None
+    
+    new_recipe = models.Recipe(
+        recipe_id=req.recipe_id,
+        name=recipe_data.get('name', 'Unknown Recipe'),
+        crafted_item_id=crafted_item_id,
+        crafted_quantity=crafted_qty,
+        icon_url=icon_url
+    )
+    db.add(new_recipe)
+    db.commit()
+    db.refresh(new_recipe)
+
+    # Process reagents
+    reagents = recipe_data.get('reagents', [])
+    for reagent in reagents:
+        r_item = reagent.get('reagent', {})
+        r_id = r_item.get('id', 0)
+        new_reagent = models.RecipeReagent(
+            recipe_id=new_recipe.id,
+            item_id=r_id,
+            name=r_item.get('name', 'Unknown Reagent'),
+            quantity=reagent.get('quantity', 1)
+        )
+        db.add(new_reagent)
+        
+        # Automatically add to TrackedItem if not present (so we get price updates)
+        existing_tracked = db.query(models.TrackedItem).filter(models.TrackedItem.item_id == r_id).first()
+        if not existing_tracked and r_id > 0:
+            details = blizzard_client.get_item_details(r_id)
+            if details:
+                r_media = blizzard_client.get_item_media(r_id)
+                r_icon_url = r_media['assets'][0]['value'] if r_media and 'assets' in r_media else None
+                new_tracked = models.TrackedItem(
+                    item_id=details['id'],
+                    name=details['name'],
+                    icon_url=r_icon_url,
+                    quality=details.get('quality', {}).get('type', 'COMMON')
+                )
+                db.add(new_tracked)
+
+    # Also automatically track the crafted item if not tracked
+    if crafted_item_id > 0:
+        existing_tracked = db.query(models.TrackedItem).filter(models.TrackedItem.item_id == crafted_item_id).first()
+        if not existing_tracked:
+            details = blizzard_client.get_item_details(crafted_item_id)
+            if details:
+                new_tracked = models.TrackedItem(
+                    item_id=details['id'],
+                    name=details['name'],
+                    icon_url=icon_url,
+                    quality=details.get('quality', {}).get('type', 'COMMON')
+                )
+                db.add(new_tracked)
+
+    db.commit()
+    background_tasks.add_task(background_commodity_update)
+    return new_recipe
+
+@app.get('/api/recipes')
+def get_recipes(db: Session = Depends(get_db)):
+    recipes = db.query(models.Recipe).all()
+    results = []
+    
+    for r in recipes:
+        # Get target item price
+        target_tracked = db.query(models.TrackedItem).filter(models.TrackedItem.item_id == r.crafted_item_id).first()
+        target_price = 0
+        if target_tracked:
+             latest = db.query(models.ItemPriceHistory).filter(models.ItemPriceHistory.item_id == target_tracked.id).order_by(models.ItemPriceHistory.timestamp.desc()).first()
+             if latest:
+                 target_price = latest.buyout
+
+        # Calculate reagents cost
+        total_cost = 0
+        reagents_data = []
+        for reg in r.reagents:
+            reg_price = 0
+            reg_tracked = db.query(models.TrackedItem).filter(models.TrackedItem.item_id == reg.item_id).first()
+            if reg_tracked:
+                 latest = db.query(models.ItemPriceHistory).filter(models.ItemPriceHistory.item_id == reg_tracked.id).order_by(models.ItemPriceHistory.timestamp.desc()).first()
+                 if latest:
+                     reg_price = latest.buyout
+            
+            cost = reg_price * reg.quantity
+            total_cost += cost
+            reagents_data.append({
+                "item_id": reg.item_id,
+                "name": reg.name,
+                "quantity": reg.quantity,
+                "unit_price": reg_price,
+                "total_price": cost
+            })
+            
+        profit = (target_price * r.crafted_quantity) - total_cost
+
+        results.append({
+            "id": r.id,
+            "recipe_id": r.recipe_id,
+            "name": r.name,
+            "crafted_item_id": r.crafted_item_id,
+            "crafted_quantity": r.crafted_quantity,
+            "icon_url": r.icon_url,
+            "target_price": target_price,
+            "revenue": target_price * r.crafted_quantity,
+            "total_cost": total_cost,
+            "profit": profit,
+            "reagents": reagents_data
+        })
+    return results
+
+@app.delete('/api/recipes/{id}')
+def delete_recipe(id: int, db: Session = Depends(get_db)):
+    recipe = db.query(models.Recipe).filter(models.Recipe.id == id).first()
+    if not recipe:
+         raise HTTPException(status_code=404, detail="Recipe not found")
+    db.delete(recipe)
+    db.commit()
+    return {"message": "Recipe deleted"}
+
 if __name__ == "__main__":
     import uvicorn
     # Listen on all interfaces so remote devices can connect

@@ -68,6 +68,27 @@ class BlizzardAPI:
         headers = {"Authorization": f"Bearer {token}"}
         
         response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers)
+        if response.status_code == 200:
+            return response.json()
+        return None
+
+    def search_recipe(self, query):
+        token = self.get_token()
+        url = f"https://{self.region}.api.blizzard.com/data/wow/search/recipe?name.en_US={query}&namespace=static-{self.region}&orderby=id&_page=1"
+        headers = {"Authorization": f"Bearer {token}"}
+        
+        response = requests.get(url, headers=headers)
+        if response.status_code == 200:
+            return response.json()
+        return None
+
+    def get_recipe(self, recipe_id):
+        token = self.get_token()
+        url = f"https://{self.region}.api.blizzard.com/data/wow/recipe/{recipe_id}?namespace=static-{self.region}&locale=en_US"
+        headers = {"Authorization": f"Bearer {token}"}
+        
+        response = requests.get(url, headers=headers)
         if response.status_code == 200:
             return response.json()
         return None

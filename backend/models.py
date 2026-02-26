@@ -62,3 +62,26 @@ class AccountGoldHistory(Base):
     id = Column(Integer, primary_key=True, index=True)
     total_gold = Column(Integer, nullable=False) # Stored in copper
     timestamp = Column(DateTime, default=datetime.datetime.utcnow)
+
+class Recipe(Base):
+    __tablename__ = "recipes"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    recipe_id = Column(Integer, unique=True, nullable=False) # Blizzard Recipe/Spell ID
+    name = Column(String, nullable=False)
+    crafted_item_id = Column(Integer, nullable=False)
+    crafted_quantity = Column(Integer, default=1)
+    icon_url = Column(String, nullable=True)
+    
+    reagents = relationship("RecipeReagent", back_populates="recipe", cascade="all, delete-orphan")
+
+class RecipeReagent(Base):
+    __tablename__ = "recipe_reagents"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    recipe_id = Column(Integer, ForeignKey("recipes.id"))
+    item_id = Column(Integer, nullable=False)
+    name = Column(String, nullable=False)
+    quantity = Column(Integer, nullable=False)
+    
+    recipe = relationship("Recipe", back_populates="reagents")

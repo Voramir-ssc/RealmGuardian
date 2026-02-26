@@ -20,6 +20,7 @@ import TokenWidget from './components/TokenWidget';
 import GoldWidget from './components/GoldWidget';
 import WatchlistWidget from './components/WatchlistWidget';
 import GoldChartWidget from './components/GoldChartWidget';
+import CraftingWidget from './components/CraftingWidget';
 
 import CharacterList from './components/CharacterList';
 import Settings from './components/Settings';
@@ -202,6 +203,10 @@ function App() {
           loading={charLoading}
           onLogin={handleLogin}
         />
+      )}
+
+      {activeTab === 'crafting' && (
+        <CraftingWidget apiUrl={getApiUrl()} />
       )}
 
       {activeTab === 'settings' && (
