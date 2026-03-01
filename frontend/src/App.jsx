@@ -97,8 +97,8 @@ function App() {
   const handleLogin = () => {
     console.log("LOGIN BUTTON CLICKED. Redirecting...", activeTab);
     // Force absolute URL to ensure we hit the backend and not the frontend router
-    // This allows login to work on localhost even if the proxy is misconfigured
-    window.location.href = `http://localhost:8000/api/auth/login?tab=${activeTab}`;
+    // This allows login to work on the local network by using the detected hostname
+    window.location.href = `http://${window.location.hostname}:8000/api/auth/login?tab=${activeTab}`;
   };
 
   useEffect(() => {
@@ -159,7 +159,7 @@ function App() {
     <Layout activeTab={activeTab} onTabChange={setActiveTab}>
       {error && (
         <div className="bg-red-500/10 border border-red-500/50 text-red-500 p-4 rounded-xl mb-6">
-          Error loading data: {error}. Check if Backend is running at {import.meta.env.VITE_API_URL || 'localhost:8000'}
+          Error loading data: {error}. Check if Backend is running at {import.meta.env.VITE_API_URL || `${window.location.hostname}:8000`}
         </div>
       )}
 

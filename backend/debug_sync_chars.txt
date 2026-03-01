@@ -244,7 +244,7 @@ Found 40 characters.
       "type": "HORDE",
       "name": "Horde"
     },
-    "level": 80
+    "level": 87
   },
   {
     "character": {

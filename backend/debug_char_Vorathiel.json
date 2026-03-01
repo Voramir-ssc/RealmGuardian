@@ -13,7 +13,7 @@
         },
         "id": 186871714,
         "name": "Vorathiel",
-        "money": 5723127,
+        "money": 5754027,
         "character": {
             "key": {
                 "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/vorathiel?namespace=profile-eu"
@@ -31,27 +31,27 @@
         },
         "protected_stats": {
             "total_number_deaths": 0,
-            "total_gold_gained": 559737059,
+            "total_gold_gained": 559767959,
             "total_gold_lost": 554013932,
             "total_item_value_gained": 15916285,
             "level_number_deaths": 0,
-            "level_gold_gained": 559047499,
+            "level_gold_gained": 559078399,
             "level_gold_lost": 554013932,
             "level_item_value_gained": 15147917
         },
         "position": {
             "zone": {
-                "name": "Trade District",
-                "id": 5148
+                "name": "The Canals",
+                "id": 5390
             },
             "map": {
                 "name": "Eastern Kingdoms",
                 "id": 0
             },
-            "x": -8870.214,
-            "y": 646.75146,
-            "z": 95.978165,
-            "facing": 6.0271316
+            "x": -8729.727,
+            "y": 519.5408,
+            "z": 97.7375,
+            "facing": 2.0907779
         },
         "bind_position": {
             "zone": {
@@ -135,7 +135,7 @@
         },
         "level": 80,
         "experience": 0,
-        "achievement_points": 20605,
+        "achievement_points": 20610,
         "achievements": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/vorathiel/achievements?namespace=profile-eu"
         },
@@ -151,7 +151,7 @@
         "media": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/vorathiel/character-media?namespace=profile-eu"
         },
-        "last_login_timestamp": 1771279098000,
+        "last_login_timestamp": 1772097483000,
         "average_item_level": 102,
         "equipped_item_level": 102,
         "specializations": {
@@ -333,14 +333,14 @@
                     {
                         "id": 98,
                         "name": "Quests completed",
-                        "last_updated_timestamp": 1771278567000,
-                        "quantity": 898.0
+                        "last_updated_timestamp": 1772097420000,
+                        "quantity": 945.0
                     },
                     {
                         "id": 95,
                         "name": "Average quests completed per day",
-                        "last_updated_timestamp": 1771278567000,
-                        "quantity": 14.253968253968255
+                        "last_updated_timestamp": 1772097420000,
+                        "quantity": 12.945205479452055
                     },
                     {
                         "id": 97,
@@ -352,13 +352,13 @@
                         "id": 759,
                         "name": "Average daily quests completed per day",
                         "last_updated_timestamp": 1765783326000,
-                        "quantity": 0.015873015873015872
+                        "quantity": 0.0136986301369863
                     },
                     {
                         "id": 94,
                         "name": "Quests abandoned",
-                        "last_updated_timestamp": 1771278574000,
-                        "quantity": 8.0
+                        "last_updated_timestamp": 1772097403000,
+                        "quantity": 9.0
                     }
                 ]
             },
@@ -373,19 +373,19 @@
                             {
                                 "id": 1527,
                                 "name": "Highest Alchemy skill",
-                                "last_updated_timestamp": 1771278567000,
+                                "last_updated_timestamp": 1772097377000,
                                 "quantity": 300.0
                             },
                             {
                                 "id": 1729,
                                 "name": "Alchemy Recipes learned",
-                                "last_updated_timestamp": 1771278567000,
+                                "last_updated_timestamp": 1772097377000,
                                 "quantity": 111.0
                             },
                             {
                                 "id": 1538,
                                 "name": "Highest Herbalism skill",
-                                "last_updated_timestamp": 1771278567000,
+                                "last_updated_timestamp": 1772097377000,
                                 "quantity": 212.0
                             }
                         ]
@@ -395,7 +395,7 @@
                     {
                         "id": 1199,
                         "name": "Professions learned",
-                        "last_updated_timestamp": 1771278567000,
+                        "last_updated_timestamp": 1772097377000,
                         "quantity": 2.0
                     }
                 ]

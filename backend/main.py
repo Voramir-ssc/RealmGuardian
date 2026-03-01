@@ -28,6 +28,10 @@ import time
 from datetime import datetime, timedelta
 from contextlib import asynccontextmanager
 import backup
+import auto_restore
+
+# Attempt auto-restore before SQLAlchemy tries to bind/create tables
+auto_restore.check_and_restore()
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -267,8 +271,9 @@ def login(request: Request, tab: str = "settings"):
     if not blizzard_client:
         blizzard_client = BlizzardAPI(config.client_id, config.client_secret, config.region)
 
-    # Hardcoded base URL for local development to ensure consistency
-    base_url = "http://localhost:8000"
+    # Dynamically define base URL from request host to allow local network logins
+    host = request.headers.get("host", "localhost:8000")
+    base_url = f"http://{host}"
     redirect_uri = f"{base_url}/api/auth/callback"
     url = blizzard_client.get_authorization_url(redirect_uri, state=tab)
     return RedirectResponse(url)
@@ -284,7 +289,8 @@ def auth_callback(code: str, state: str, background_tasks: BackgroundTasks, requ
     if not blizzard_client:
         blizzard_client = BlizzardAPI(config.client_id, config.client_secret, config.region)
 
-    base_url = "http://localhost:8000"
+    host = request.headers.get("host", "localhost:8000")
+    base_url = f"http://{host}"
     redirect_uri = f"{base_url}/api/auth/callback"
     user_token = blizzard_client.exchange_code_for_token(code, redirect_uri)
     
@@ -294,8 +300,10 @@ def auth_callback(code: str, state: str, background_tasks: BackgroundTasks, requ
     # Start background sync
     background_tasks.add_task(sync_user_characters, user_token)
     
-    # Redirect immediately
-    return RedirectResponse(f"http://localhost:5173?connected=true&tab={state}")
+    # Redirect immediately to dynamic frontend host
+    host = request.headers.get("host", "localhost")
+    hostname = host.split(":")[0]
+    return RedirectResponse(f"http://{hostname}:5173?connected=true&tab={state}")
 
 def sync_user_characters(user_token: str):
     """
@@ -366,7 +374,8 @@ def sync_user_characters(user_token: str):
                         continue
 
                     # Determine Gold
-                    gold = 0
+                    # Only update gold if we successfully retrieved it from the API to avoid wiping data on 404s
+                    gold = None
                     if protected_details and 'money' in protected_details:
                         gold = protected_details['money']
                     elif public_details and 'money' in public_details:
@@ -435,7 +444,7 @@ def sync_user_characters(user_token: str):
                             item_level=item_level,
                             equipment=equipment_json,
                             professions=professions_json,
-                            gold=int(gold),
+                            gold=int(gold) if gold is not None else 0,
                             played_time=int(played_time),
                             last_updated=timestamp
                         )
@@ -453,7 +462,8 @@ def sync_user_characters(user_token: str):
                         db_char.item_level = item_level
                         db_char.equipment = equipment_json
                         db_char.professions = professions_json
-                        db_char.gold = int(gold)
+                        if gold is not None:
+                            db_char.gold = int(gold)
                         db_char.played_time = int(played_time)
                         db_char.last_updated = timestamp
                     

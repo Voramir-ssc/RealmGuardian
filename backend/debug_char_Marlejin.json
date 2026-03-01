@@ -13,7 +13,7 @@
         },
         "id": 42015965,
         "name": "Marlejin",
-        "money": 2073154920,
+        "money": 2095095404,
         "character": {
             "key": {
                 "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/marlejin?namespace=profile-eu"
@@ -31,27 +31,27 @@
         },
         "protected_stats": {
             "total_number_deaths": 774,
-            "total_gold_gained": 18943476344,
-            "total_gold_lost": 16866268389,
-            "total_item_value_gained": 284311794,
+            "total_gold_gained": 18966095537,
+            "total_gold_lost": 16866947098,
+            "total_item_value_gained": 287450387,
             "level_number_deaths": 15,
-            "level_gold_gained": 17934536132,
-            "level_gold_lost": 15925659028,
-            "level_item_value_gained": 181587592
+            "level_gold_gained": 17957155325,
+            "level_gold_lost": 15926337737,
+            "level_item_value_gained": 184726185
         },
         "position": {
             "zone": {
-                "name": "Valley of Strength",
-                "id": 5170
+                "name": "Dornogal",
+                "id": 14771
             },
             "map": {
-                "name": "Kalimdor",
-                "id": 1
+                "name": "Khaz Algar (Surface)",
+                "id": 2552
             },
-            "x": 1752.9807,
-            "y": -4390.439,
-            "z": 133.14407,
-            "facing": 2.9664576
+            "x": 2656.6455,
+            "y": -2590.3357,
+            "z": 219.6518,
+            "facing": 1.5111237
         },
         "bind_position": {
             "zone": {
@@ -135,7 +135,7 @@
         },
         "level": 80,
         "experience": 0,
-        "achievement_points": 20775,
+        "achievement_points": 20850,
         "achievements": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/marlejin/achievements?namespace=profile-eu"
         },
@@ -151,7 +151,7 @@
         "media": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/marlejin/character-media?namespace=profile-eu"
         },
-        "last_login_timestamp": 1771876261000,
+        "last_login_timestamp": 1772288969000,
         "average_item_level": 144,
         "equipped_item_level": 144,
         "specializations": {
@@ -385,27 +385,27 @@
                             {
                                 "id": 107,
                                 "name": "Creatures killed",
-                                "last_updated_timestamp": 1771875351000,
-                                "quantity": 48500.0
+                                "last_updated_timestamp": 1772092605000,
+                                "quantity": 48810.0
                             },
                             {
                                 "id": 1337,
                                 "name": "Different creature types killed",
-                                "last_updated_timestamp": 1771875351000,
+                                "last_updated_timestamp": 1772092605000,
                                 "quantity": 10.0
                             },
                             {
                                 "id": 1336,
                                 "name": "Creature type killed the most",
-                                "last_updated_timestamp": 1771875351000,
+                                "last_updated_timestamp": 1772092605000,
                                 "description": "Humanoid",
-                                "quantity": 21421.0
+                                "quantity": 21558.0
                             },
                             {
                                 "id": 108,
                                 "name": "Critters killed",
-                                "last_updated_timestamp": 1771875267000,
-                                "quantity": 1982.0
+                                "last_updated_timestamp": 1772092420000,
+                                "quantity": 2042.0
                             }
                         ]
                     },
@@ -518,8 +518,8 @@
                             {
                                 "id": 1487,
                                 "name": "Total Killing Blows",
-                                "last_updated_timestamp": 1771875342000,
-                                "quantity": 18786.0
+                                "last_updated_timestamp": 1772092503000,
+                                "quantity": 19054.0
                             },
                             {
                                 "id": 1488,
@@ -606,14 +606,14 @@
                     {
                         "id": 1197,
                         "name": "Total kills",
-                        "last_updated_timestamp": 1771875351000,
-                        "quantity": 7089.0
+                        "last_updated_timestamp": 1772092605000,
+                        "quantity": 6812.0
                     },
                     {
                         "id": 1198,
                         "name": "Total kills that grant experience or honor",
-                        "last_updated_timestamp": 1771875351000,
-                        "quantity": 35206.0
+                        "last_updated_timestamp": 1772092605000,
+                        "quantity": 35478.0
                     }
                 ]
             },
@@ -714,14 +714,14 @@
                     {
                         "id": 98,
                         "name": "Quests completed",
-                        "last_updated_timestamp": 1771871837000,
-                        "quantity": 3298.0
+                        "last_updated_timestamp": 1772288895000,
+                        "quantity": 3303.0
                     },
                     {
                         "id": 95,
                         "name": "Average quests completed per day",
-                        "last_updated_timestamp": 1771871837000,
-                        "quantity": 0.5997454082560466
+                        "last_updated_timestamp": 1772288895000,
+                        "quantity": 0.6002180628747956
                     },
                     {
                         "id": 97,
@@ -733,7 +733,7 @@
                         "id": 759,
                         "name": "Average daily quests completed per day",
                         "last_updated_timestamp": 1764922137000,
-                        "quantity": 0.009638116021094744
+                        "quantity": 0.009631110303470834
                     },
                     {
                         "id": 94,
@@ -760,7 +760,7 @@
                             {
                                 "id": 1745,
                                 "name": "Cooking Recipes known",
-                                "last_updated_timestamp": 1771871837000,
+                                "last_updated_timestamp": 1772288895000,
                                 "quantity": 25.0
                             },
                             {
@@ -772,7 +772,7 @@
                             {
                                 "id": 1519,
                                 "name": "Fishing skill",
-                                "last_updated_timestamp": 1771871837000,
+                                "last_updated_timestamp": 1772288895000,
                                 "quantity": 171.0
                             },
                             {
@@ -820,7 +820,7 @@
                             {
                                 "id": 1538,
                                 "name": "Highest Herbalism skill",
-                                "last_updated_timestamp": 1771871837000,
+                                "last_updated_timestamp": 1772288895000,
                                 "quantity": 300.0
                             },
                             {
@@ -832,7 +832,7 @@
                             {
                                 "id": 1735,
                                 "name": "Inscriptions learned",
-                                "last_updated_timestamp": 1771871837000,
+                                "last_updated_timestamp": 1772288895000,
                                 "quantity": 81.0
                             },
                             {
@@ -860,7 +860,7 @@
                     {
                         "id": 1199,
                         "name": "Professions learned",
-                        "last_updated_timestamp": 1771871837000,
+                        "last_updated_timestamp": 1772288895000,
                         "quantity": 7.0
                     }
                 ]
@@ -891,8 +891,8 @@
                     {
                         "id": 353,
                         "name": "Number of times hearthed",
-                        "last_updated_timestamp": 1771863869000,
-                        "quantity": 176.0
+                        "last_updated_timestamp": 1772091419000,
+                        "quantity": 178.0
                     }
                 ]
             },
@@ -915,8 +915,8 @@
                     {
                         "id": 1045,
                         "name": "Total cheers",
-                        "last_updated_timestamp": 1766272446000,
-                        "quantity": 10.0
+                        "last_updated_timestamp": 1771960295000,
+                        "quantity": 11.0
                     },
                     {
                         "id": 1065,
@@ -961,8 +961,8 @@
                             {
                                 "id": 40740,
                                 "name": "Nightfall Sanctum clears",
-                                "last_updated_timestamp": 1766270168000,
-                                "quantity": 3.0
+                                "last_updated_timestamp": 1772091290000,
+                                "quantity": 4.0
                             },
                             {
                                 "id": 40741,
@@ -973,8 +973,8 @@
                             {
                                 "id": 40742,
                                 "name": "The Sinkhole clears",
-                                "last_updated_timestamp": 1767389592000,
-                                "quantity": 8.0
+                                "last_updated_timestamp": 1772090726000,
+                                "quantity": 10.0
                             },
                             {
                                 "id": 40744,
@@ -1015,7 +1015,7 @@
                             {
                                 "id": 40751,
                                 "name": "The War Within delve completed the most",
-                                "last_updated_timestamp": 1771863830000,
+                                "last_updated_timestamp": 1772091290000,
                                 "description": "Fungal Folly",
                                 "quantity": 21.0
                             }
@@ -1032,8 +1032,8 @@
                     {
                         "id": 40861,
                         "name": "Mislaid Curiosities looted",
-                        "last_updated_timestamp": 1769286220000,
-                        "quantity": 178.0
+                        "last_updated_timestamp": 1772091050000,
+                        "quantity": 179.0
                     },
                     {
                         "id": 40764,
@@ -1048,16 +1048,22 @@
                         "quantity": 8.0
                     },
                     {
+                        "id": 40766,
+                        "name": "Tier 1 delves completed",
+                        "last_updated_timestamp": 1772090726000,
+                        "quantity": 2.0
+                    },
+                    {
                         "id": 40773,
                         "name": "Tier 8 delves completed",
-                        "last_updated_timestamp": 1771863830000,
-                        "quantity": 2.0
+                        "last_updated_timestamp": 1772091290000,
+                        "quantity": 3.0
                     },
                     {
                         "id": 40734,
                         "name": "Total delves completed",
-                        "last_updated_timestamp": 1771863830000,
-                        "quantity": 61.0
+                        "last_updated_timestamp": 1772091290000,
+                        "quantity": 64.0
                     },
                     {
                         "id": 40749,
@@ -1750,8 +1756,8 @@
                             {
                                 "id": 20485,
                                 "name": "Ki'katal the Harvester kills (Normal Ara-Kara, City of Echoes)",
-                                "last_updated_timestamp": 1726358602000,
-                                "quantity": 1.0
+                                "last_updated_timestamp": 1772092605000,
+                                "quantity": 2.0
                             },
                             {
                                 "id": 40706,
@@ -1784,8 +1790,8 @@
                     {
                         "id": 932,
                         "name": "Total 5-player dungeons entered",
-                        "last_updated_timestamp": 1771874040000,
-                        "quantity": 288.0
+                        "last_updated_timestamp": 1772091691000,
+                        "quantity": 289.0
                     },
                     {
                         "id": 933,
@@ -2278,8 +2284,8 @@
                     {
                         "id": 20488,
                         "name": "Valorstones earned",
-                        "last_updated_timestamp": 1771875359000,
-                        "quantity": 7214.0
+                        "last_updated_timestamp": 1772092607000,
+                        "quantity": 7285.0
                     },
                     {
                         "id": 41786,
@@ -2290,20 +2296,20 @@
                     {
                         "id": 60975,
                         "name": "Weathered Ethereal Crests earned",
-                        "last_updated_timestamp": 1771875359000,
-                        "quantity": 1817.0
+                        "last_updated_timestamp": 1772090746000,
+                        "quantity": 1833.0
                     },
                     {
                         "id": 60976,
                         "name": "Carved Ethereal Crests earned",
-                        "last_updated_timestamp": 1771863850000,
-                        "quantity": 609.0
+                        "last_updated_timestamp": 1772091309000,
+                        "quantity": 615.0
                     },
                     {
                         "id": 60977,
                         "name": "Runed Ethereal Crests earned",
-                        "last_updated_timestamp": 1771863850000,
-                        "quantity": 471.0
+                        "last_updated_timestamp": 1772091597000,
+                        "quantity": 489.0
                     },
                     {
                         "id": 60978,

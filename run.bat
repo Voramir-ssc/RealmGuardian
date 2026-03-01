@@ -7,7 +7,7 @@ set "PATH=C:\Program Files\Python311;C:\Program Files\Python311\Scripts;C:\Progr
 :: Environment configured via PATH above
 
 :: Start Backend
-start "RG Backend" cmd /k "cd backend && venv\Scripts\activate && uvicorn main:app --reload --port 8000"
+start "RG Backend" cmd /k "cd backend && venv\Scripts\activate && uvicorn main:app --reload --host 0.0.0.0 --port 8000"
 
 :: Start Frontend
 start "RG Frontend" cmd /k "cd frontend && npm run dev"

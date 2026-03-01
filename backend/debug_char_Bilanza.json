@@ -48,10 +48,10 @@
                 "name": "Kalimdor",
                 "id": 1
             },
-            "x": 6690.199,
-            "y": -4659.965,
-            "z": 722.2686,
-            "facing": 3.8455071
+            "x": 6692.3594,
+            "y": -4662.6895,
+            "z": 721.5843,
+            "facing": 4.6904936
         },
         "bind_position": {
             "zone": {
@@ -87,21 +87,21 @@
         },
         "race": {
             "key": {
-                "href": "https://eu.api.blizzard.com/data/wow/playable-race/9?namespace=static-12.0.0_65028-eu"
+                "href": "https://eu.api.blizzard.com/data/wow/playable-race/9?namespace=static-12.0.1_65617-eu"
             },
             "name": "Goblin",
             "id": 9
         },
         "character_class": {
             "key": {
-                "href": "https://eu.api.blizzard.com/data/wow/playable-class/8?namespace=static-12.0.0_65028-eu"
+                "href": "https://eu.api.blizzard.com/data/wow/playable-class/8?namespace=static-12.0.1_65617-eu"
             },
             "name": "Mage",
             "id": 8
         },
         "active_spec": {
             "key": {
-                "href": "https://eu.api.blizzard.com/data/wow/playable-specialization/64?namespace=static-12.0.0_65028-eu"
+                "href": "https://eu.api.blizzard.com/data/wow/playable-specialization/64?namespace=static-12.0.1_65617-eu"
             },
             "name": "Frost",
             "id": 64
@@ -115,8 +115,8 @@
             "slug": "dethecus"
         },
         "level": 12,
-        "experience": 9960,
-        "achievement_points": 20770,
+        "experience": 11107,
+        "achievement_points": 20775,
         "achievements": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/bilanza/achievements?namespace=profile-eu"
         },
@@ -132,7 +132,7 @@
         "media": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/bilanza/character-media?namespace=profile-eu"
         },
-        "last_login_timestamp": 1770673780000,
+        "last_login_timestamp": 1772089474000,
         "average_item_level": 8,
         "equipped_item_level": 8,
         "specializations": {
@@ -317,13 +317,13 @@
                     {
                         "id": 98,
                         "name": "Quests completed",
-                        "last_updated_timestamp": 1770673343000,
-                        "quantity": 412.0
+                        "last_updated_timestamp": 1772089456000,
+                        "quantity": 414.0
                     },
                     {
                         "id": 95,
                         "name": "Average quests completed per day",
-                        "last_updated_timestamp": 1770673343000,
+                        "last_updated_timestamp": 1772089456000,
                         "quantity": 0.0
                     },
                     {

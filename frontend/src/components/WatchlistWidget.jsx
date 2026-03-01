@@ -26,14 +26,16 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
             try {
                 res = await fetch(`${url}/api/items`);
             } catch {
-                console.warn("Watchlist fetch failed, trying localhost fallback...");
-                url = 'http://localhost:8000';
+                console.warn("Watchlist fetch failed, trying local network fallback...");
+                url = `http://${window.location.hostname}:8000`;
                 res = await fetch(`${url}/api/items`);
             }
 
             if (res.ok) {
                 const data = await res.json();
-                setItems(data);
+                // Sort by price descending
+                const sortedData = data.sort((a, b) => (b.current_price || 0) - (a.current_price || 0));
+                setItems(sortedData);
                 setError(null);
             } else {
                 throw new Error(res.statusText);
@@ -58,7 +60,7 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
             try {
                 res = await fetch(`${url}/api/items/${itemId}/history?range=${range}`);
             } catch {
-                url = 'http://localhost:8000';
+                url = `http://${window.location.hostname}:8000`;
                 res = await fetch(`${url}/api/items/${itemId}/history?range=${range}`);
             }
 
@@ -114,7 +116,7 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
                     body: JSON.stringify({ item_id: parseInt(newItemId) })
                 });
             } catch {
-                url = 'http://localhost:8000';
+                url = `http://${window.location.hostname}:8000`;
                 res = await fetch(`${url}/api/items`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -123,8 +125,15 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
             }
 
             if (!res.ok) {
-                const err = await res.json();
-                throw new Error(err.detail || 'Failed to add item');
+                let errMsg = 'Failed to add item';
+                try {
+                    const err = await res.json();
+                    errMsg = err.detail || errMsg;
+                } catch (e) {
+                    // Fallback if the response is not valid JSON (e.g. proxy HTML error page)
+                    errMsg = 'Server returned an invalid response. Ensure backend is running.';
+                }
+                throw new Error(errMsg);
             }
 
             setNewItemId('');
@@ -143,7 +152,7 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
             fetchItems();
         } catch (err) {
             try {
-                await fetch(`http://localhost:8000/api/items/${itemId}`, { method: 'DELETE' });
+                await fetch(`http://${window.location.hostname}:8000/api/items/${itemId}`, { method: 'DELETE' });
                 fetchItems();
             } catch {
                 console.error("Failed to delete item", err);
