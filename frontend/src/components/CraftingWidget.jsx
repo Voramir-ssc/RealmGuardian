@@ -24,33 +24,25 @@ export default function CraftingWidget({ apiUrl }) {
         }
     };
 
-    const handleSearch = async (e) => {
+    // Search functionality removed as API does not support recipe search.
+
+    const addRecipe = async (e) => {
         e.preventDefault();
-        if (!searchQuery.trim()) return;
-
-        setIsSearching(true);
-        try {
-            const res = await fetch(`${apiUrl}/api/recipes/search?query=${encodeURIComponent(searchQuery)}`);
-            const data = await res.json();
-            setSearchResults(data);
-        } catch (error) {
-            console.error("Search failed", error);
-        } finally {
-            setIsSearching(false);
+        const itemId = parseInt(searchQuery, 10);
+        if (!itemId || isNaN(itemId)) {
+            alert("Please enter a valid Item ID.");
+            return;
         }
-    };
 
-    const addRecipe = async (recipeId) => {
         try {
             setIsLoading(true);
             const res = await fetch(`${apiUrl}/api/recipes`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ recipe_id: recipeId })
+                body: JSON.stringify({ crafted_item_id: itemId })
             });
             if (res.ok) {
                 setSearchQuery('');
-                setSearchResults([]);
                 await fetchRecipes();
             } else {
                 const err = await res.json();
@@ -94,13 +86,13 @@ export default function CraftingWidget({ apiUrl }) {
                     <p className="text-sm text-white/50">Track margins based on live AH prices.</p>
                 </div>
 
-                {/* Search Bar */}
-                <form onSubmit={handleSearch} className="flex gap-2 w-full md:w-auto relative">
+                {/* Add Recipe Bar */}
+                <form onSubmit={addRecipe} className="flex gap-2 w-full md:w-auto relative">
                     <div className="relative flex-1 md:w-64">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+                        <Plus className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
                         <input
-                            type="text"
-                            placeholder="Search recipe..."
+                            type="number"
+                            placeholder="Enter Item ID of crafted item..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             className="w-full bg-white/5 border border-white/10 rounded-lg pl-9 pr-4 py-2 text-sm text-white placeholder-white/40 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
@@ -108,30 +100,11 @@ export default function CraftingWidget({ apiUrl }) {
                     </div>
                     <button
                         type="submit"
-                        disabled={isSearching}
-                        className="bg-brand-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-primary/90 transition-colors disabled:opacity-50 flexitems-center justify-center gap-2"
+                        disabled={isLoading}
+                        className="bg-brand-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-primary/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
                     >
-                        {isSearching ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Search'}
+                        {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Add'}
                     </button>
-
-                    {/* Search Dropdown */}
-                    {searchResults.length > 0 && (
-                        <div className="absolute top-full left-0 right-0 mt-2 bg-surface border border-white/10 rounded-xl shadow-2xl z-50 max-h-64 overflow-y-auto">
-                            {searchResults.map((res) => (
-                                <div key={res.id} className="flex items-center justify-between p-3 hover:bg-white/5 transition-colors border-b border-white/5 last:border-0">
-                                    <span className="text-sm font-medium text-white/90">{res.name}</span>
-                                    <button
-                                        type="button"
-                                        onClick={() => addRecipe(res.id)}
-                                        className="p-1.5 hover:bg-brand-primary/20 text-brand-primary rounded-lg transition-colors"
-                                        title="Add Recipe"
-                                    >
-                                        <Plus className="w-4 h-4" />
-                                    </button>
-                                </div>
-                            ))}
-                        </div>
-                    )}
                 </form>
             </div>
 
@@ -144,7 +117,7 @@ export default function CraftingWidget({ apiUrl }) {
                     <div className="h-48 flex flex-col items-center justify-center text-white/40">
                         <TrendingUp className="w-12 h-12 mb-3 opacity-50" />
                         <p className="text-sm">No recipes tracked yet.</p>
-                        <p className="text-xs mt-1">Search via the Blizzard API above to add one.</p>
+                        <p className="text-xs mt-1">Enter a Blizzard Item ID above to track its profitability.</p>
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -179,21 +152,65 @@ export default function CraftingWidget({ apiUrl }) {
                                 </div>
 
                                 {/* Reagents */}
-                                <div className="p-4 flex-1">
+                                <div className="p-4 flex-1 flex flex-col">
                                     <h4 className="text-[10px] items-center gap-1 text-white/50 uppercase tracking-widest font-semibold mb-3 flex">
                                         Reagents <ArrowRight className="w-3 h-3" />
                                     </h4>
-                                    <div className="space-y-2">
+                                    <div className="space-y-2 flex-1">
                                         {recipe.reagents.map(reg => (
-                                            <div key={reg.item_id} className="flex justify-between items-center text-xs">
+                                            <div key={reg.item_id} className="flex justify-between items-center text-xs group/reg">
                                                 <span className="text-white/70 truncate mr-2" title={reg.name}>
                                                     {reg.quantity}x {reg.name}
                                                 </span>
-                                                <span className="text-white/50 shrink-0 tabular-nums">
-                                                    {formatGold(reg.total_price)}
-                                                </span>
+                                                <div className="flex items-center gap-2">
+                                                    <span className="text-white/50 shrink-0 tabular-nums">
+                                                        {formatGold(reg.total_price)}
+                                                    </span>
+                                                    <button
+                                                        onClick={async () => {
+                                                            try {
+                                                                const res = await fetch(`${apiUrl}/api/recipes/${recipe.id}/reagents/${reg.item_id}`, { method: 'DELETE' });
+                                                                if (res.ok) fetchRecipes();
+                                                            } catch (e) { console.error(e); }
+                                                        }}
+                                                        className="opacity-0 group-hover/reg:opacity-100 text-red-400 hover:text-red-300 transition-opacity"
+                                                        title="Remove Reagent"
+                                                    >
+                                                        <Trash2 className="w-3 h-3" />
+                                                    </button>
+                                                </div>
                                             </div>
                                         ))}
+
+                                        {/* Add Reagent Form */}
+                                        <form
+                                            className="mt-3 flex gap-1.5 items-center bg-black/20 p-1.5 rounded-lg border border-white/5"
+                                            onSubmit={async (e) => {
+                                                e.preventDefault();
+                                                const form = e.target;
+                                                const itemId = parseInt(form.itemId.value, 10);
+                                                const qty = parseInt(form.qty.value, 10);
+                                                if (!itemId || !qty) return;
+
+                                                try {
+                                                    const res = await fetch(`${apiUrl}/api/recipes/${recipe.id}/reagents`, {
+                                                        method: 'POST',
+                                                        headers: { 'Content-Type': 'application/json' },
+                                                        body: JSON.stringify({ item_id: itemId, quantity: qty })
+                                                    });
+                                                    if (res.ok) {
+                                                        form.reset();
+                                                        fetchRecipes();
+                                                    }
+                                                } catch (err) { console.error(err); }
+                                            }}
+                                        >
+                                            <input type="number" name="qty" placeholder="Qty" required min="1" className="w-12 bg-white/5 border border-white/10 rounded-md px-2 py-1 text-[10px] text-white focus:outline-none" />
+                                            <input type="number" name="itemId" placeholder="Item ID" required className="flex-1 min-w-0 bg-white/5 border border-white/10 rounded-md px-2 py-1 text-[10px] text-white focus:outline-none" />
+                                            <button type="submit" className="p-1 bg-brand-primary text-white rounded-md hover:bg-brand-primary/90">
+                                                <Plus className="w-3 h-3" />
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
 

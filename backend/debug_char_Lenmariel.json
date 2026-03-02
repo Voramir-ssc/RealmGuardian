@@ -13,7 +13,7 @@
         },
         "id": 57784812,
         "name": "Lenmariel",
-        "money": 3270408,
+        "money": 7361859,
         "character": {
             "key": {
                 "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/lenmariel?namespace=profile-eu"
@@ -31,27 +31,27 @@
         },
         "protected_stats": {
             "total_number_deaths": 191,
-            "total_gold_gained": 11056324550,
-            "total_gold_lost": 10989578535,
-            "total_item_value_gained": 458974415,
+            "total_gold_gained": 11063697299,
+            "total_gold_lost": 10992859833,
+            "total_item_value_gained": 459438767,
             "level_number_deaths": 21,
-            "level_gold_gained": 1532073622,
-            "level_gold_lost": 1599432845,
-            "level_item_value_gained": 160322048
+            "level_gold_gained": 1539446371,
+            "level_gold_lost": 1602714143,
+            "level_item_value_gained": 160786400
         },
         "position": {
             "zone": {
-                "name": "Dornogal",
-                "id": 14771
+                "name": "The Bazaar",
+                "id": 16079
             },
             "map": {
-                "name": "Khaz Algar (Surface)",
-                "id": 2552
+                "name": "Eastern Kingdoms",
+                "id": 0
             },
-            "x": 2671.0242,
-            "y": -2595.8142,
-            "z": 219.6514,
-            "facing": 3.0875516
+            "x": 8776.539,
+            "y": -4557.94,
+            "z": 25.460255,
+            "facing": 4.629981
         },
         "bind_position": {
             "zone": {
@@ -101,10 +101,10 @@
         },
         "active_spec": {
             "key": {
-                "href": "https://eu.api.blizzard.com/data/wow/playable-specialization/65?namespace=static-12.0.1_65617-eu"
+                "href": "https://eu.api.blizzard.com/data/wow/playable-specialization/66?namespace=static-12.0.1_65617-eu"
             },
-            "name": "Holy",
-            "id": 65
+            "name": "Protection",
+            "id": 66
         },
         "realm": {
             "key": {
@@ -134,8 +134,8 @@
             }
         },
         "level": 80,
-        "experience": 0,
-        "achievement_points": 20770,
+        "experience": 202423,
+        "achievement_points": 20975,
         "achievements": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/lenmariel/achievements?namespace=profile-eu"
         },
@@ -151,7 +151,7 @@
         "media": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/lenmariel/character-media?namespace=profile-eu"
         },
-        "last_login_timestamp": 1771350609000,
+        "last_login_timestamp": 1772378875000,
         "average_item_level": 134,
         "equipped_item_level": 134,
         "specializations": {
@@ -361,21 +361,21 @@
                             {
                                 "id": 107,
                                 "name": "Creatures killed",
-                                "last_updated_timestamp": 1771350542000,
-                                "quantity": 37915.0
+                                "last_updated_timestamp": 1772378652000,
+                                "quantity": 37975.0
                             },
                             {
                                 "id": 1337,
                                 "name": "Different creature types killed",
-                                "last_updated_timestamp": 1771350542000,
+                                "last_updated_timestamp": 1772378652000,
                                 "quantity": 10.0
                             },
                             {
                                 "id": 1336,
                                 "name": "Creature type killed the most",
-                                "last_updated_timestamp": 1771350542000,
+                                "last_updated_timestamp": 1772378652000,
                                 "description": "Humanoid",
-                                "quantity": 17891.0
+                                "quantity": 17905.0
                             },
                             {
                                 "id": 108,
@@ -458,8 +458,8 @@
                             {
                                 "id": 1487,
                                 "name": "Total Killing Blows",
-                                "last_updated_timestamp": 1766891380000,
-                                "quantity": 18660.0
+                                "last_updated_timestamp": 1772378624000,
+                                "quantity": 18742.0
                             },
                             {
                                 "id": 1488,
@@ -522,14 +522,14 @@
                     {
                         "id": 1197,
                         "name": "Total kills",
-                        "last_updated_timestamp": 1771350542000,
-                        "quantity": 1593.0
+                        "last_updated_timestamp": 1772378682000,
+                        "quantity": 1697.0
                     },
                     {
                         "id": 1198,
                         "name": "Total kills that grant experience or honor",
-                        "last_updated_timestamp": 1771350542000,
-                        "quantity": 28840.0
+                        "last_updated_timestamp": 1772378682000,
+                        "quantity": 28904.0
                     }
                 ]
             },
@@ -624,14 +624,14 @@
                     {
                         "id": 98,
                         "name": "Quests completed",
-                        "last_updated_timestamp": 1771350379000,
-                        "quantity": 2952.0
+                        "last_updated_timestamp": 1772378772000,
+                        "quantity": 3072.0
                     },
                     {
                         "id": 95,
                         "name": "Average quests completed per day",
-                        "last_updated_timestamp": 1771350379000,
-                        "quantity": 0.14399297595239258
+                        "last_updated_timestamp": 1772378772000,
+                        "quantity": 0.1497586896114659
                     },
                     {
                         "id": 97,
@@ -643,13 +643,13 @@
                         "id": 759,
                         "name": "Average daily quests completed per day",
                         "last_updated_timestamp": 1754509460000,
-                        "quantity": 0.004585142188185942
+                        "quantity": 0.004582459903475845
                     },
                     {
                         "id": 94,
                         "name": "Quests abandoned",
-                        "last_updated_timestamp": 1771008404000,
-                        "quantity": 557.0
+                        "last_updated_timestamp": 1772376348000,
+                        "quantity": 565.0
                     }
                 ]
             },
@@ -664,19 +664,19 @@
                             {
                                 "id": 1524,
                                 "name": "Cooking skill",
-                                "last_updated_timestamp": 1771350379000,
+                                "last_updated_timestamp": 1772376295000,
                                 "quantity": 300.0
                             },
                             {
                                 "id": 1745,
                                 "name": "Cooking Recipes known",
-                                "last_updated_timestamp": 1771350379000,
+                                "last_updated_timestamp": 1772376295000,
                                 "quantity": 94.0
                             },
                             {
                                 "id": 1519,
                                 "name": "Fishing skill",
-                                "last_updated_timestamp": 1771350379000,
+                                "last_updated_timestamp": 1772376295000,
                                 "quantity": 138.0
                             },
                             {
@@ -700,14 +700,14 @@
                             {
                                 "id": 1532,
                                 "name": "Highest Blacksmithing skill",
-                                "last_updated_timestamp": 1771350379000,
+                                "last_updated_timestamp": 1772376295000,
                                 "quantity": 300.0
                             },
                             {
                                 "id": 1730,
                                 "name": "Blacksmithing Plans learned",
-                                "last_updated_timestamp": 1771350379000,
-                                "quantity": 351.0
+                                "last_updated_timestamp": 1772378854000,
+                                "quantity": 363.0
                             },
                             {
                                 "id": 183,
@@ -724,14 +724,14 @@
                             {
                                 "id": 1537,
                                 "name": "Highest Mining skill",
-                                "last_updated_timestamp": 1771350379000,
+                                "last_updated_timestamp": 1772376295000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 3216,
                                 "name": "Smelting Recipes learned",
-                                "last_updated_timestamp": 1771350379000,
-                                "quantity": 3.0
+                                "last_updated_timestamp": 1772378864000,
+                                "quantity": 12.0
                             },
                             {
                                 "id": 16745,
@@ -752,7 +752,7 @@
                     {
                         "id": 1199,
                         "name": "Professions learned",
-                        "last_updated_timestamp": 1771350379000,
+                        "last_updated_timestamp": 1772376295000,
                         "quantity": 2.0
                     }
                 ]
@@ -2108,6 +2108,12 @@
                         "id": 15562,
                         "name": "Legion: Remix",
                         "statistics": [
+                            {
+                                "id": 60938,
+                                "name": "Demons slain",
+                                "last_updated_timestamp": 1772377793000,
+                                "quantity": 1.0
+                            },
                             {
                                 "id": 61338,
                                 "name": "Bronze gained across Warband",

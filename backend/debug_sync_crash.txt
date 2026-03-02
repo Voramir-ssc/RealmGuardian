@@ -3,7 +3,7 @@ Traceback (most recent call last):
     self.dialect.do_execute(
   File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
     cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such column: characters.professions
+sqlite3.IntegrityError: NOT NULL constraint failed: recipes.recipe_id
 
 The above exception was the direct cause of the following exception:
 
@@ -53,24 +53,39 @@ Traceback (most recent call last):
   File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
     result = context.run(func, *args)
              ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 514, in get_user_characters
-    chars = db.query(models.Character).order_by(models.Character.level.desc()).all()
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2704, in all
-    return self._iter().all()  # type: ignore
-           ^^^^^^^^^^^^
-  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2857, in _iter
-    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
-                                                  ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
-    return self._execute_internal(
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2249, in _execute_internal
-    result: Result[Any] = compile_state_cls.orm_execute_statement(
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
-    result = conn.execute(
-             ^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 725, in add_recipe
+    db.commit()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1311, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1286, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4331, in flush
+    self._flush(objects)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4466, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4427, in _flush
+    flush_context.execute()
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
   File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
     return meth(
            ^^^^^
@@ -91,7 +106,7 @@ Traceback (most recent call last):
     self.dialect.do_execute(
   File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
     cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: characters.professions
-[SQL: SELECT characters.id AS characters_id, characters.blizzard_id AS characters_blizzard_id, characters.name AS characters_name, characters.realm AS characters_realm, characters.class_name AS characters_class_name, characters.level AS characters_level, characters.item_level AS characters_item_level, characters.equipment AS characters_equipment, characters.professions AS characters_professions, characters.gold AS characters_gold, characters.played_time AS characters_played_time, characters.icon_url AS characters_icon_url, characters.last_updated AS characters_last_updated 
-FROM characters ORDER BY characters.level DESC]
-(Background on this error at: https://sqlalche.me/e/20/e3q8)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: recipes.recipe_id
+[SQL: INSERT INTO recipes (recipe_id, name, crafted_item_id, crafted_quantity, icon_url) VALUES (?, ?, ?, ?, ?)]
+[parameters: (None, "Thunderbrew's Boot Flask", 744, 1, 'https://render.worldofwarcraft.com/eu/icons/56/inv_drink_01.jpg')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)

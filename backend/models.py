@@ -67,9 +67,10 @@ class Recipe(Base):
     __tablename__ = "recipes"
     
     id = Column(Integer, primary_key=True, index=True)
-    recipe_id = Column(Integer, unique=True, nullable=False) # Blizzard Recipe/Spell ID
+    # Removing unique=True from recipe_id since we will allow custom recipes
+    recipe_id = Column(Integer, nullable=True) # Optional Blizzard Recipe/Spell ID
     name = Column(String, nullable=False)
-    crafted_item_id = Column(Integer, nullable=False)
+    crafted_item_id = Column(Integer, nullable=False, unique=True) # A crafted item can only have one recipe
     crafted_quantity = Column(Integer, default=1)
     icon_url = Column(String, nullable=True)
     
