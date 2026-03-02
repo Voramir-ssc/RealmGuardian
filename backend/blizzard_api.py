@@ -73,9 +73,10 @@ class BlizzardAPI:
             return response.json()
         return None
 
-    def search_recipe(self, query):
+    def search_items_by_name(self, query):
         token = self.get_token()
-        url = f"https://{self.region}.api.blizzard.com/data/wow/search/recipe?name.en_US={query}&namespace=static-{self.region}&orderby=id&_page=1"
+        # Using name.de_DE to search by German name
+        url = f"https://{self.region}.api.blizzard.com/data/wow/search/item?name.de_DE={query}&namespace=static-{self.region}&orderby=id&_page=1"
         headers = {"Authorization": f"Bearer {token}"}
         
         response = requests.get(url, headers=headers)

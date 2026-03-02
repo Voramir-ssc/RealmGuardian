@@ -10,7 +10,7 @@ def test_recipe_search():
     print(f"Token: {token[:10]}...")
     
     # Let's search items instead, as the recipe search might require specific parameters or be deprecated
-    url = f"https://{b.region}.api.blizzard.com/data/wow/search/item?name.en_US=flask&namespace=static-{b.region}&orderby=id&_page=1"
+    url = f"https://{b.region}.api.blizzard.com/data/wow/search/item?name.de_DE=Friedensblume&namespace=static-{b.region}&orderby=id&_page=1"
     headers = {"Authorization": f"Bearer {token}"}
     
     print(f"GET {url}")

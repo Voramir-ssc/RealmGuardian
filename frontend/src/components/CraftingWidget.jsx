@@ -1,5 +1,101 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Search, Loader2, Plus, Trash2, ArrowRight, TrendingUp, TrendingDown } from 'lucide-react';
+
+// Reusable Async Search Component for Items
+function ItemSearchAsync({ apiUrl, placeholder, onSelect, className }) {
+    const [query, setQuery] = useState('');
+    const [results, setResults] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const wrapperRef = useRef(null);
+
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
+    useEffect(() => {
+        if (!query || query.length < 3) {
+            setResults([]);
+            setIsOpen(false);
+            return;
+        }
+
+        const fetchResults = async () => {
+            setIsLoading(true);
+            try {
+                const res = await fetch(`${apiUrl}/api/items/search?q=${encodeURIComponent(query)}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    setResults(data);
+                    setIsOpen(true);
+                }
+            } catch (err) {
+                console.error("Search failed", err);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        const timeoutId = setTimeout(fetchResults, 500); // 500ms debounce
+        return () => clearTimeout(timeoutId);
+    }, [query, apiUrl]);
+
+    return (
+        <div ref={wrapperRef} className={`relative ${className}`}>
+            <div className="relative">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+                <input
+                    type="text"
+                    placeholder={placeholder}
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    onFocus={() => { if (results.length > 0) setIsOpen(true); }}
+                    className="w-full bg-white/5 border border-white/10 rounded-lg pl-9 pr-8 py-2 text-sm text-white placeholder-white/40 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
+                />
+                {isLoading && (
+                    <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                        <Loader2 className="w-4 h-4 text-brand-primary animate-spin" />
+                    </div>
+                )}
+            </div>
+
+            {isOpen && results.length > 0 && (
+                <div className="absolute z-50 w-full mt-1 bg-[#1a1c23] border border-white/10 rounded-lg shadow-xl overflow-hidden max-h-60 overflow-y-auto">
+                    {results.map((item) => (
+                        <button
+                            key={item.id}
+                            type="button"
+                            onClick={() => {
+                                onSelect(item.id);
+                                setQuery('');
+                                setIsOpen(false);
+                            }}
+                            className="w-full flex items-center gap-3 px-3 py-2 text-left hover:bg-white/5 transition-colors border-b border-white/5 last:border-0"
+                        >
+                            {item.icon_url ? (
+                                <img src={item.icon_url} alt="" className="w-8 h-8 rounded border border-white/10 object-cover" />
+                            ) : (
+                                <div className="w-8 h-8 rounded bg-white/10 border border-white/10 flex items-center justify-center">
+                                    <span className="text-[10px] text-white/40">?</span>
+                                </div>
+                            )}
+                            <div className="flex-1 min-w-0">
+                                <span className="block text-sm text-white/90 truncate">{item.name}</span>
+                                <span className="block text-[10px] text-white/40">ID: {item.id}</span>
+                            </div>
+                        </button>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+}
 
 export default function CraftingWidget({ apiUrl }) {
     const [recipes, setRecipes] = useState([]);
@@ -26,13 +122,8 @@ export default function CraftingWidget({ apiUrl }) {
 
     // Search functionality removed as API does not support recipe search.
 
-    const addRecipe = async (e) => {
-        e.preventDefault();
-        const itemId = parseInt(searchQuery, 10);
-        if (!itemId || isNaN(itemId)) {
-            alert("Please enter a valid Item ID.");
-            return;
-        }
+    const handleAddRecipeSelect = async (itemId) => {
+        if (!itemId) return;
 
         try {
             setIsLoading(true);
@@ -42,15 +133,15 @@ export default function CraftingWidget({ apiUrl }) {
                 body: JSON.stringify({ crafted_item_id: itemId })
             });
             if (res.ok) {
-                setSearchQuery('');
                 await fetchRecipes();
             } else {
                 const err = await res.json();
-                alert(`Error: ${err.detail}`);
+                alert(`Fehler: ${err.detail}`);
                 setIsLoading(false);
             }
         } catch (error) {
             console.error("Failed to add recipe", error);
+            alert("Netzwerkfehler beim Hinzufügen.");
             setIsLoading(false);
         }
     };
@@ -87,25 +178,15 @@ export default function CraftingWidget({ apiUrl }) {
                 </div>
 
                 {/* Add Recipe Bar */}
-                <form onSubmit={addRecipe} className="flex gap-2 w-full md:w-auto relative">
-                    <div className="relative flex-1 md:w-64">
-                        <Plus className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
-                        <input
-                            type="number"
-                            placeholder="Enter Item ID of crafted item..."
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full bg-white/5 border border-white/10 rounded-lg pl-9 pr-4 py-2 text-sm text-white placeholder-white/40 focus:outline-none focus:border-brand-primary/50 focus:ring-1 focus:ring-brand-primary/50 transition-all"
+                <div className="flex gap-2 w-full md:w-auto relative">
+                    <div className="relative flex-1 md:w-72">
+                        <ItemSearchAsync
+                            apiUrl={apiUrl}
+                            placeholder="Rezept / Endprodukt suchen (z.B. Friedensblume)..."
+                            onSelect={handleAddRecipeSelect}
                         />
                     </div>
-                    <button
-                        type="submit"
-                        disabled={isLoading}
-                        className="bg-brand-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-primary/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
-                    >
-                        {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Add'}
-                    </button>
-                </form>
+                </div>
             </div>
 
             <div className="p-6 flex-1 overflow-auto">
@@ -183,34 +264,36 @@ export default function CraftingWidget({ apiUrl }) {
                                         ))}
 
                                         {/* Add Reagent Form */}
-                                        <form
-                                            className="mt-3 flex gap-1.5 items-center bg-black/20 p-1.5 rounded-lg border border-white/5"
-                                            onSubmit={async (e) => {
-                                                e.preventDefault();
-                                                const form = e.target;
-                                                const itemId = parseInt(form.itemId.value, 10);
-                                                const qty = parseInt(form.qty.value, 10);
-                                                if (!itemId || !qty) return;
+                                        <div className="mt-3 flex gap-1.5 items-center bg-black/20 p-1.5 rounded-lg border border-white/5">
+                                            <input id={`qty-${recipe.id}`} type="number" placeholder="Menge" min="1" defaultValue="1" className="w-16 bg-white/5 border border-white/10 rounded-md px-2 py-1.5 text-xs text-white focus:outline-none" />
+                                            <ItemSearchAsync
+                                                apiUrl={apiUrl}
+                                                placeholder="Reagenz suchen..."
+                                                className="flex-1 min-w-0"
+                                                onSelect={async (itemId) => {
+                                                    const qtyInput = document.getElementById(`qty-${recipe.id}`);
+                                                    const qty = parseInt(qtyInput.value, 10) || 1;
 
-                                                try {
-                                                    const res = await fetch(`${apiUrl}/api/recipes/${recipe.id}/reagents`, {
-                                                        method: 'POST',
-                                                        headers: { 'Content-Type': 'application/json' },
-                                                        body: JSON.stringify({ item_id: itemId, quantity: qty })
-                                                    });
-                                                    if (res.ok) {
-                                                        form.reset();
-                                                        fetchRecipes();
+                                                    try {
+                                                        const res = await fetch(`${apiUrl}/api/recipes/${recipe.id}/reagents`, {
+                                                            method: 'POST',
+                                                            headers: { 'Content-Type': 'application/json' },
+                                                            body: JSON.stringify({ item_id: itemId, quantity: qty })
+                                                        });
+                                                        if (res.ok) {
+                                                            qtyInput.value = "1";
+                                                            fetchRecipes();
+                                                        } else {
+                                                            const errData = await res.json();
+                                                            alert(`Fehler: ${errData.detail || 'Konnte Reagenz nicht hinzufügen.'}`);
+                                                        }
+                                                    } catch (err) {
+                                                        console.error(err);
+                                                        alert("Netzwerkfehler beim Hinzufügen.");
                                                     }
-                                                } catch (err) { console.error(err); }
-                                            }}
-                                        >
-                                            <input type="number" name="qty" placeholder="Qty" required min="1" className="w-12 bg-white/5 border border-white/10 rounded-md px-2 py-1 text-[10px] text-white focus:outline-none" />
-                                            <input type="number" name="itemId" placeholder="Item ID" required className="flex-1 min-w-0 bg-white/5 border border-white/10 rounded-md px-2 py-1 text-[10px] text-white focus:outline-none" />
-                                            <button type="submit" className="p-1 bg-brand-primary text-white rounded-md hover:bg-brand-primary/90">
-                                                <Plus className="w-3 h-3" />
-                                            </button>
-                                        </form>
+                                                }}
+                                            />
+                                        </div>
                                     </div>
                                 </div>
 

@@ -595,6 +595,48 @@ def trigger_backup():
 
 # --- Item Tracking Endpoints ---
 
+@app.get('/api/items/search')
+def search_items(q: str):
+    """
+    Searches for items by German name using the Blizzard API.
+    Returns a list of items with id, name, and icon.
+    """
+    if not q or len(q) < 3:
+        return []
+
+    search_results = blizzard_client.search_items_by_name(q)
+    if not search_results or "results" not in search_results:
+        return []
+
+    items = []
+    for entry in search_results["results"]:
+        data = entry.get("data", {})
+        item_id = data.get("id")
+        
+        # Extract German name if available
+        name_dict = data.get("name", {})
+        name = name_dict.get("de_DE") or name_dict.get("en_US") or "Unknown Item"
+        
+        if not item_id:
+            continue
+
+        # Get icon for this item
+        media = blizzard_client.get_item_media(item_id)
+        icon_url = None
+        if media and 'assets' in media:
+            for asset in media['assets']:
+                if asset['key'] == 'icon':
+                    icon_url = asset['value']
+                    break
+
+        items.append({
+            "id": item_id,
+            "name": name,
+            "icon_url": icon_url
+        })
+
+    return items
+
 class ItemRequest(pydantic.BaseModel):
     item_id: int
 
