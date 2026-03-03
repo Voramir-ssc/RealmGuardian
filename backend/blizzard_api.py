@@ -44,7 +44,7 @@ class BlizzardAPI:
 
     def get_item_details(self, item_id):
         token = self.get_token()
-        url = f"https://{self.region}.api.blizzard.com/data/wow/item/{item_id}?namespace=static-{self.region}&locale=en_US"
+        url = f"https://{self.region}.api.blizzard.com/data/wow/item/{item_id}?namespace=static-{self.region}&locale=de_DE"
         headers = {"Authorization": f"Bearer {token}"}
         
         response = requests.get(url, headers=headers)
@@ -64,7 +64,7 @@ class BlizzardAPI:
 
     def get_commodity_price_snapshot(self):
         token = self.get_token()
-        url = f"https://{self.region}.api.blizzard.com/data/wow/auctions/commodities?namespace=dynamic-{self.region}&locale=en_US"
+        url = f"https://{self.region}.api.blizzard.com/data/wow/auctions/commodities?namespace=dynamic-{self.region}&locale=de_DE"
         headers = {"Authorization": f"Bearer {token}"}
         
         response = requests.get(url, headers=headers)
@@ -86,7 +86,7 @@ class BlizzardAPI:
 
     def get_recipe(self, recipe_id):
         token = self.get_token()
-        url = f"https://{self.region}.api.blizzard.com/data/wow/recipe/{recipe_id}?namespace=static-{self.region}&locale=en_US"
+        url = f"https://{self.region}.api.blizzard.com/data/wow/recipe/{recipe_id}?namespace=static-{self.region}&locale=de_DE"
         headers = {"Authorization": f"Bearer {token}"}
         
         response = requests.get(url, headers=headers)
@@ -110,11 +110,11 @@ class BlizzardAPI:
         }
         response = requests.post(url, data=data)
         if response.status_code == 200:
-            return response.json().get("access_token")
+            return response.json()
         return None
 
     def get_account_profile(self, user_token):
-        url = f"https://{self.region}.api.blizzard.com/profile/user/wow?namespace=profile-{self.region}&locale=en_US"
+        url = f"https://{self.region}.api.blizzard.com/profile/user/wow?namespace=profile-{self.region}&locale=de_DE"
         headers = {"Authorization": f"Bearer {user_token}"}
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
@@ -123,7 +123,7 @@ class BlizzardAPI:
 
     def get_character_profile(self, user_token, realm_slug, char_name):
         # We need lowercase name and slug for API
-        url = f"https://{self.region}.api.blizzard.com/profile/wow/character/{realm_slug}/{char_name.lower()}?namespace=profile-{self.region}&locale=en_US"
+        url = f"https://{self.region}.api.blizzard.com/profile/wow/character/{realm_slug}/{char_name.lower()}?namespace=profile-{self.region}&locale=de_DE"
         headers = {"Authorization": f"Bearer {user_token}"}
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
@@ -136,7 +136,7 @@ class BlizzardAPI:
         return None
 
     def get_protected_character_profile(self, user_token, realm_id, char_id):
-        url = f"https://{self.region}.api.blizzard.com/profile/user/wow/protected-character/{realm_id}-{char_id}?namespace=profile-{self.region}&locale=en_US"
+        url = f"https://{self.region}.api.blizzard.com/profile/user/wow/protected-character/{realm_id}-{char_id}?namespace=profile-{self.region}&locale=de_DE"
         headers = {"Authorization": f"Bearer {user_token}"}
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
@@ -150,7 +150,7 @@ class BlizzardAPI:
 
     def get_character_statistics(self, user_token, realm_slug, char_name):
         # We want "Time Played" which is in achievements/statistics, NOT the combat stats
-        url = f"https://{self.region}.api.blizzard.com/profile/wow/character/{realm_slug}/{char_name.lower()}/achievements/statistics?namespace=profile-{self.region}&locale=en_US"
+        url = f"https://{self.region}.api.blizzard.com/profile/wow/character/{realm_slug}/{char_name.lower()}/achievements/statistics?namespace=profile-{self.region}&locale=de_DE"
         headers = {"Authorization": f"Bearer {user_token}"}
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
@@ -158,7 +158,7 @@ class BlizzardAPI:
         return None
 
     def get_character_equipment(self, user_token, realm_slug, char_name):
-        url = f"https://{self.region}.api.blizzard.com/profile/wow/character/{realm_slug}/{char_name.lower()}/equipment?namespace=profile-{self.region}&locale=en_US"
+        url = f"https://{self.region}.api.blizzard.com/profile/wow/character/{realm_slug}/{char_name.lower()}/equipment?namespace=profile-{self.region}&locale=de_DE"
         headers = {"Authorization": f"Bearer {user_token}"}
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
@@ -166,7 +166,7 @@ class BlizzardAPI:
         return None
 
     def get_character_professions(self, user_token, realm_slug, char_name):
-        url = f"https://{self.region}.api.blizzard.com/profile/wow/character/{realm_slug}/{char_name.lower()}/professions?namespace=profile-{self.region}&locale=en_US"
+        url = f"https://{self.region}.api.blizzard.com/profile/wow/character/{realm_slug}/{char_name.lower()}/professions?namespace=profile-{self.region}&locale=de_DE"
         headers = {"Authorization": f"Bearer {user_token}"}
         response = requests.get(url, headers=headers)
         if response.status_code == 200:

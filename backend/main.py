@@ -147,6 +147,19 @@ async def scheduler():
             db = next(get_db())
             await update_token_price(db)
             await update_commodity_prices(db)
+
+            # Trigger automatic character sync if a valid token exists
+            token_entry = db.query(models.UserAccessToken).first()
+            if token_entry:
+                if time.time() < token_entry.expires_at:
+                    print("Running automatic background character sync...")
+                    import threading
+                    threading.Thread(target=sync_user_characters, args=(token_entry.access_token,)).start()
+                else:
+                    print("Skipping automatic character sync: Token expired.")
+                    db.delete(token_entry)
+                    db.commit()
+
         except Exception as e:
             print(f"Scheduler Error: {e}")
         finally:
@@ -292,10 +305,22 @@ def auth_callback(code: str, state: str, background_tasks: BackgroundTasks, requ
     host = request.headers.get("host", "localhost:8000")
     base_url = f"http://{host}"
     redirect_uri = f"{base_url}/api/auth/callback"
-    user_token = blizzard_client.exchange_code_for_token(code, redirect_uri)
+    token_data = blizzard_client.exchange_code_for_token(code, redirect_uri)
     
-    if not user_token:
+    if not token_data or "access_token" not in token_data:
         raise HTTPException(status_code=400, detail="Failed to retrieve user token")
+
+    user_token = token_data["access_token"]
+    expires_in = token_data.get("expires_in", 86400)
+
+    # Save token for automatic background sync
+    db.query(models.UserAccessToken).delete()
+    new_token = models.UserAccessToken(
+        access_token=user_token, 
+        expires_at=int(time.time() + expires_in)
+    )
+    db.add(new_token)
+    db.commit()
 
     # Start background sync
     background_tasks.add_task(sync_user_characters, user_token)

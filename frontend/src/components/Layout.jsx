@@ -8,6 +8,16 @@ import React from 'react';
 import { LayoutDashboard, Coins, Settings, Hammer } from 'lucide-react';
 
 const Layout = ({ children, activeTab, onTabChange }) => {
+    const getTabTitle = (tab) => {
+        switch (tab) {
+            case 'dashboard': return 'Dashboard';
+            case 'characters': return 'Charaktere';
+            case 'crafting': return 'Handwerk';
+            case 'settings': return 'Einstellungen';
+            default: return 'Dashboard';
+        }
+    };
+
     return (
         <div className="flex h-screen bg-background text-primary overflow-hidden">
             {/* Sidebar */}
@@ -28,20 +38,20 @@ const Layout = ({ children, activeTab, onTabChange }) => {
                     />
                     <NavItem
                         icon={<Coins size={20} />}
-                        label="Characters"
+                        label="Charaktere"
                         active={activeTab === 'characters'}
                         onClick={() => onTabChange('characters')}
                     />
                     <NavItem
                         icon={<Hammer size={20} />}
-                        label="Crafting"
+                        label="Handwerk"
                         active={activeTab === 'crafting'}
                         onClick={() => onTabChange('crafting')}
                     />
                     <div className="flex-1" />
                     <NavItem
                         icon={<Settings size={20} />}
-                        label="Settings"
+                        label="Einstellungen"
                         active={activeTab === 'settings'}
                         onClick={() => onTabChange('settings')}
                     />
@@ -52,11 +62,11 @@ const Layout = ({ children, activeTab, onTabChange }) => {
             <main className="flex-1 flex flex-col overflow-hidden relative">
                 {/* Header */}
                 <header className="h-16 border-b border-white/5 flex items-center justify-between px-6 bg-surface/50 backdrop-blur-sm z-10">
-                    <h1 className="text-xl font-medium text-white/90">Dashboard</h1>
+                    <h1 className="text-xl font-medium text-white/90">{getTabTitle(activeTab)}</h1>
                     <div className="flex items-center gap-4">
                         <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/5">
                             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                            <span className="text-xs text-secondary font-mono">SYSTEM ONLINE</span>
+                            <span className="text-xs text-secondary font-mono">SYSTEM BEREIT</span>
                         </div>
                     </div>
                 </header>

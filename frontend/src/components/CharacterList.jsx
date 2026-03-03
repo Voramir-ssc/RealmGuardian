@@ -49,25 +49,25 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
     return (
         <div className="bg-surface border border-white/5 rounded-2xl p-6">
             <div className="flex justify-between items-center mb-6">
-                <h3 className="text-xl font-medium text-white">Your Characters</h3>
+                <h3 className="text-xl font-medium text-white">Deine Charaktere</h3>
             </div>
 
             <div className="overflow-x-auto">
                 {loading && characters.length === 0 ? (
                     <div className="text-center py-12 border-2 border-dashed border-white/5 rounded-xl">
                         <RefreshCw size={32} className="animate-spin text-[#148eff] mx-auto mb-4" />
-                        <p className="mb-2 text-white font-medium">Syncing characters from Battle.net...</p>
-                        <p className="text-sm text-secondary/50">This may take a few seconds.</p>
+                        <p className="mb-2 text-white font-medium">Synchronisiere Charaktere von Battle.net...</p>
+                        <p className="text-sm text-secondary/50">Dies kann einige Sekunden dauern.</p>
                     </div>
                 ) : characters.length === 0 ? (
                     <div className="text-center py-12 text-secondary/50 border-2 border-dashed border-white/5 rounded-xl">
-                        <p className="mb-4">No characters found.</p>
+                        <p className="mb-4">Keine Charaktere gefunden.</p>
                         <button
                             onClick={onLogin}
                             className="bg-[#148eff] hover:bg-[#0074e0] text-white px-6 py-2.5 rounded-lg font-medium transition-all shadow-lg shadow-blue-500/20 flex items-center gap-2 mx-auto"
                         >
                             <Shield size={18} />
-                            Connect Battle.net
+                            Mit Battle.net verbinden
                         </button>
                     </div>
                 ) : (
@@ -75,9 +75,9 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                         <thead>
                             <tr className="text-secondary text-xs border-b border-white/10">
                                 <th className="pb-3 w-8"></th>
-                                <th className="pb-3 font-medium uppercase tracking-wider pl-4">Character</th>
+                                <th className="pb-3 font-medium uppercase tracking-wider pl-4">Charakter</th>
                                 <th className="pb-3 font-medium uppercase tracking-wider">Realm</th>
-                                <th className="pb-3 font-medium uppercase tracking-wider text-center">Level</th>
+                                <th className="pb-3 font-medium uppercase tracking-wider text-center">Stufe</th>
                                 <th className="pb-3 font-medium uppercase tracking-wider text-center text-[#ff8000]">iLvl</th>
                                 <th className="pb-3 font-medium uppercase tracking-wider text-right pr-4">Gold</th>
                             </tr>
@@ -142,7 +142,7 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
 
                                                     {/* Professions Section */}
                                                     <div className="mb-4">
-                                                        <div className="mb-2 text-xs uppercase tracking-wider text-secondary font-medium">Professions</div>
+                                                        <div className="mb-2 text-xs uppercase tracking-wider text-secondary font-medium">Berufe</div>
                                                         {professions.length > 0 ? (
                                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                                 {professions.map((prof, idx) => {
@@ -165,14 +165,14 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                                                             </div>
                                                         ) : (
                                                             <div className="text-sm text-secondary/50 italic py-2">
-                                                                No professions data synced.
+                                                                Keine Berufsdaten synchronisiert.
                                                             </div>
                                                         )}
                                                     </div>
 
                                                     {/* Equipment Section */}
                                                     <div>
-                                                        <div className="mb-2 text-xs uppercase tracking-wider text-secondary font-medium">Equipped Items ({equipment.length})</div>
+                                                        <div className="mb-2 text-xs uppercase tracking-wider text-secondary font-medium">Angelegte Ausrüstung ({equipment.length})</div>
                                                         {equipment.length > 0 ? (
                                                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                                                                 {equipment.map((item, idx) => (
@@ -180,7 +180,7 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                                                                         <div className="flex flex-col truncate pr-2">
                                                                             <span className={`font-medium ${getItemQualityColor(item.quality)} truncate`}>{item.name}</span>
                                                                             <span className="text-secondary/50 text-[10px] uppercase">
-                                                                                {item.slot ? item.slot.replace(/_/g, ' ') : 'Unknown Slot'}
+                                                                                {item.slot ? item.slot.replace(/_/g, ' ') : 'Unbekannter Platz'}
                                                                             </span>
                                                                         </div>
                                                                         <span className="text-[#ff8000] font-bold shrink-0">{item.level}</span>
@@ -189,7 +189,7 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                                                             </div>
                                                         ) : (
                                                             <div className="text-sm text-secondary/50 italic py-2">
-                                                                No equipment data synced or character is hidden.
+                                                                Keine Ausrüstungsdaten synchronisiert oder Charakter ist versteckt.
                                                             </div>
                                                         )}
                                                     </div>

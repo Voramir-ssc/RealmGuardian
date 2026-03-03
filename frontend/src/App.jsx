@@ -17,9 +17,8 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './components/Layout';
 import TokenWidget from './components/TokenWidget';
-import GoldWidget from './components/GoldWidget';
+import GoldOverviewWidget from './components/GoldOverviewWidget';
 import WatchlistWidget from './components/WatchlistWidget';
-import GoldChartWidget from './components/GoldChartWidget';
 import CraftingWidget from './components/CraftingWidget';
 
 import CharacterList from './components/CharacterList';
@@ -159,12 +158,12 @@ function App() {
     <Layout activeTab={activeTab} onTabChange={setActiveTab}>
       {error && (
         <div className="bg-red-500/10 border border-red-500/50 text-red-500 p-4 rounded-xl mb-6">
-          Error loading data: {error}. Check if Backend is running at {import.meta.env.VITE_API_URL || `${window.location.hostname}:8000`}
+          Fehler beim Laden der Daten: {error}. Bitte überpfrüfen, ob das Backend unter {import.meta.env.VITE_API_URL || `${window.location.hostname}:8000`} erreichbar ist.
         </div>
       )}
 
       {activeTab === 'dashboard' && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Token Card */}
           {loading ? (
             <div className="animate-pulse bg-surface h-48 rounded-2xl border border-white/5"></div>
@@ -179,19 +178,14 @@ function App() {
             />
           )}
 
-          {/* Account / Gold Card */}
-          <GoldWidget
+          {/* Combined Account Gold & History Card */}
+          <GoldOverviewWidget
             characters={characters}
-            loading={charLoading}
-          />
-
-          {/* Gold History Card */}
-          <GoldChartWidget
             history={accountGoldHistory}
             loading={charLoading}
           />
 
-          <div className="md:col-span-2 lg:col-span-3">
+          <div className="md:col-span-2">
             <WatchlistWidget apiUrl={getApiUrl()} />
           </div>
         </div>

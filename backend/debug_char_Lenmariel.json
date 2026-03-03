@@ -13,7 +13,7 @@
         },
         "id": 57784812,
         "name": "Lenmariel",
-        "money": 7361859,
+        "money": 45698908,
         "character": {
             "key": {
                 "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/lenmariel?namespace=profile-eu"
@@ -31,41 +31,41 @@
         },
         "protected_stats": {
             "total_number_deaths": 191,
-            "total_gold_gained": 11063697299,
-            "total_gold_lost": 10992859833,
-            "total_item_value_gained": 459438767,
-            "level_number_deaths": 21,
-            "level_gold_gained": 1539446371,
-            "level_gold_lost": 1602714143,
-            "level_item_value_gained": 160786400
+            "total_gold_gained": 11102801429,
+            "total_gold_lost": 10993626914,
+            "total_item_value_gained": 465012430,
+            "level_number_deaths": 0,
+            "level_gold_gained": 2065398,
+            "level_gold_lost": 0,
+            "level_item_value_gained": 60354
         },
         "position": {
             "zone": {
-                "name": "The Bazaar",
-                "id": 16079
+                "name": "Amani'Zar Village",
+                "id": 16183
             },
             "map": {
                 "name": "Eastern Kingdoms",
                 "id": 0
             },
-            "x": 8776.539,
-            "y": -4557.94,
-            "z": 25.460255,
-            "facing": 4.629981
+            "x": 4421.176,
+            "y": -7716.1504,
+            "z": 195.70152,
+            "facing": 2.2760513
         },
         "bind_position": {
             "zone": {
-                "name": "Dornogal",
-                "id": 14771
+                "name": "Amani'Zar Village",
+                "id": 16183
             },
             "map": {
-                "name": "Khaz Algar (Surface)",
-                "id": 2552
+                "name": "Eastern Kingdoms",
+                "id": 0
             },
-            "x": 2646.6348,
-            "y": -2474.0918,
-            "z": 224.21428,
-            "facing": 0.59741783
+            "x": 4418.9136,
+            "y": -7710.3403,
+            "z": 195.7014,
+            "facing": 0.32506418
         },
         "wow_account": 18295276
     },
@@ -133,9 +133,9 @@
                 "name": "Horde"
             }
         },
-        "level": 80,
-        "experience": 202423,
-        "achievement_points": 20975,
+        "level": 83,
+        "experience": 59828,
+        "achievement_points": 20985,
         "achievements": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/lenmariel/achievements?namespace=profile-eu"
         },
@@ -151,9 +151,9 @@
         "media": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/lenmariel/character-media?namespace=profile-eu"
         },
-        "last_login_timestamp": 1772378875000,
-        "average_item_level": 134,
-        "equipped_item_level": 134,
+        "last_login_timestamp": 1772487037000,
+        "average_item_level": 139,
+        "equipped_item_level": 139,
         "specializations": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/lenmariel/specializations?namespace=profile-eu"
         },
@@ -361,27 +361,27 @@
                             {
                                 "id": 107,
                                 "name": "Creatures killed",
-                                "last_updated_timestamp": 1772378652000,
-                                "quantity": 37975.0
+                                "last_updated_timestamp": 1772486956000,
+                                "quantity": 38399.0
                             },
                             {
                                 "id": 1337,
                                 "name": "Different creature types killed",
-                                "last_updated_timestamp": 1772378652000,
+                                "last_updated_timestamp": 1772486956000,
                                 "quantity": 10.0
                             },
                             {
                                 "id": 1336,
                                 "name": "Creature type killed the most",
-                                "last_updated_timestamp": 1772378652000,
+                                "last_updated_timestamp": 1772486956000,
                                 "description": "Humanoid",
-                                "quantity": 17905.0
+                                "quantity": 18053.0
                             },
                             {
                                 "id": 108,
                                 "name": "Critters killed",
-                                "last_updated_timestamp": 1771350504000,
-                                "quantity": 2095.0
+                                "last_updated_timestamp": 1772485528000,
+                                "quantity": 2123.0
                             }
                         ]
                     },
@@ -458,14 +458,14 @@
                             {
                                 "id": 1487,
                                 "name": "Total Killing Blows",
-                                "last_updated_timestamp": 1772378624000,
-                                "quantity": 18742.0
+                                "last_updated_timestamp": 1772486956000,
+                                "quantity": 19059.0
                             },
                             {
                                 "id": 1488,
                                 "name": "World Killing Blows",
-                                "last_updated_timestamp": 1756322444000,
-                                "quantity": 5860.0
+                                "last_updated_timestamp": 1772486956000,
+                                "quantity": 6089.0
                             },
                             {
                                 "id": 1491,
@@ -522,14 +522,14 @@
                     {
                         "id": 1197,
                         "name": "Total kills",
-                        "last_updated_timestamp": 1772378682000,
-                        "quantity": 1697.0
+                        "last_updated_timestamp": 1772486956000,
+                        "quantity": 1026.0
                     },
                     {
                         "id": 1198,
                         "name": "Total kills that grant experience or honor",
-                        "last_updated_timestamp": 1772378682000,
-                        "quantity": 28904.0
+                        "last_updated_timestamp": 1772486956000,
+                        "quantity": 29328.0
                     }
                 ]
             },
@@ -624,14 +624,14 @@
                     {
                         "id": 98,
                         "name": "Quests completed",
-                        "last_updated_timestamp": 1772378772000,
-                        "quantity": 3072.0
+                        "last_updated_timestamp": 1772486969000,
+                        "quantity": 3136.0
                     },
                     {
                         "id": 95,
                         "name": "Average quests completed per day",
-                        "last_updated_timestamp": 1772378772000,
-                        "quantity": 0.1497586896114659
+                        "last_updated_timestamp": 1772486969000,
+                        "quantity": 0.15287120990543043
                     },
                     {
                         "id": 97,
@@ -643,7 +643,7 @@
                         "id": 759,
                         "name": "Average daily quests completed per day",
                         "last_updated_timestamp": 1754509460000,
-                        "quantity": 0.004582459903475845
+                        "quantity": 0.0045822365214000195
                     },
                     {
                         "id": 94,
@@ -664,19 +664,19 @@
                             {
                                 "id": 1524,
                                 "name": "Cooking skill",
-                                "last_updated_timestamp": 1772376295000,
+                                "last_updated_timestamp": 1772478481000,
                                 "quantity": 300.0
                             },
                             {
                                 "id": 1745,
                                 "name": "Cooking Recipes known",
-                                "last_updated_timestamp": 1772376295000,
+                                "last_updated_timestamp": 1772478481000,
                                 "quantity": 94.0
                             },
                             {
                                 "id": 1519,
                                 "name": "Fishing skill",
-                                "last_updated_timestamp": 1772376295000,
+                                "last_updated_timestamp": 1772478481000,
                                 "quantity": 138.0
                             },
                             {
@@ -700,13 +700,13 @@
                             {
                                 "id": 1532,
                                 "name": "Highest Blacksmithing skill",
-                                "last_updated_timestamp": 1772376295000,
+                                "last_updated_timestamp": 1772478481000,
                                 "quantity": 300.0
                             },
                             {
                                 "id": 1730,
                                 "name": "Blacksmithing Plans learned",
-                                "last_updated_timestamp": 1772378854000,
+                                "last_updated_timestamp": 1772478481000,
                                 "quantity": 363.0
                             },
                             {
@@ -724,14 +724,14 @@
                             {
                                 "id": 1537,
                                 "name": "Highest Mining skill",
-                                "last_updated_timestamp": 1772376295000,
-                                "quantity": 1.0
+                                "last_updated_timestamp": 1772486708000,
+                                "quantity": 32.0
                             },
                             {
                                 "id": 3216,
                                 "name": "Smelting Recipes learned",
-                                "last_updated_timestamp": 1772378864000,
-                                "quantity": 12.0
+                                "last_updated_timestamp": 1772486558000,
+                                "quantity": 22.0
                             },
                             {
                                 "id": 16745,
@@ -752,7 +752,7 @@
                     {
                         "id": 1199,
                         "name": "Professions learned",
-                        "last_updated_timestamp": 1772376295000,
+                        "last_updated_timestamp": 1772478481000,
                         "quantity": 2.0
                     }
                 ]
@@ -899,6 +899,25 @@
                                 "quantity": 16.0
                             }
                         ]
+                    },
+                    {
+                        "id": 15572,
+                        "name": "Midnight",
+                        "statistics": [
+                            {
+                                "id": 61774,
+                                "name": "The Shadow Enclave clears",
+                                "last_updated_timestamp": 1772481476000,
+                                "quantity": 1.0
+                            },
+                            {
+                                "id": 61791,
+                                "name": "Midnight delve completed the most",
+                                "last_updated_timestamp": 1772481476000,
+                                "description": "The Shadow Enclave",
+                                "quantity": 1.0
+                            }
+                        ]
                     }
                 ],
                 "statistics": [
@@ -927,10 +946,16 @@
                         "quantity": 11.0
                     },
                     {
+                        "id": 40766,
+                        "name": "Tier 1 delves completed",
+                        "last_updated_timestamp": 1772481476000,
+                        "quantity": 1.0
+                    },
+                    {
                         "id": 40734,
                         "name": "Total delves completed",
-                        "last_updated_timestamp": 1762445158000,
-                        "quantity": 52.0
+                        "last_updated_timestamp": 1772481476000,
+                        "quantity": 53.0
                     },
                     {
                         "id": 40749,
@@ -1717,14 +1742,26 @@
                                 "quantity": 1.0
                             }
                         ]
+                    },
+                    {
+                        "id": 15542,
+                        "name": "Midnight",
+                        "statistics": [
+                            {
+                                "id": 61653,
+                                "name": "Rak'tul, Vessel of Souls kills (Normal Maisara Caverns)",
+                                "last_updated_timestamp": 1772485060000,
+                                "quantity": 1.0
+                            }
+                        ]
                     }
                 ],
                 "statistics": [
                     {
                         "id": 932,
                         "name": "Total 5-player dungeons entered",
-                        "last_updated_timestamp": 1771350483000,
-                        "quantity": 225.0
+                        "last_updated_timestamp": 1772483543000,
+                        "quantity": 226.0
                     },
                     {
                         "id": 933,
@@ -2015,6 +2052,12 @@
                 "id": 15219,
                 "name": "Pet Battles",
                 "statistics": [
+                    {
+                        "id": 338,
+                        "name": "Vanity pets owned",
+                        "last_updated_timestamp": 1772486859000,
+                        "quantity": 1.0
+                    },
                     {
                         "id": 8278,
                         "name": "Pet Battles won at max level",

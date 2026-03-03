@@ -22,19 +22,19 @@ const TokenWidget = ({ formatted, history, selectedRange, onRangeChange }) => {
 
     const ranges = [
         { label: '24H', value: '24h' },
-        { label: '7D', value: '7d' },
-        { label: '14D', value: '14d' },
-        { label: '30D', value: '30d' }
+        { label: '7T', value: '7d' },
+        { label: '14T', value: '14d' },
+        { label: '30T', value: '30d' }
     ];
 
     return (
         <div className="bg-surface border border-white/5 rounded-2xl p-6 relative overflow-hidden group hover:border-accent/30 transition-all duration-300">
             <div className="flex justify-between items-start mb-4 relative z-10">
                 <div>
-                    <h3 className="text-secondary text-sm font-medium uppercase tracking-wider">WoW Token</h3>
+                    <h3 className="text-secondary text-sm font-medium uppercase tracking-wider">WoW-Marke</h3>
                     <div className="flex items-baseline gap-2 mt-1">
                         <span className="text-3xl font-bold text-white tracking-tight">{formatted}</span>
-                        <span className="text-accent text-sm font-medium">gold</span>
+                        <span className="text-accent text-sm font-medium">Gold</span>
                     </div>
                 </div>
                 <div className={`p-2 rounded-lg ${isUp ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400'}`}>

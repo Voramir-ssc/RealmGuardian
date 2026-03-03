@@ -13,7 +13,7 @@
         },
         "id": 39251857,
         "name": "Dorchada",
-        "money": 17630168,
+        "money": 24775374,
         "character": {
             "key": {
                 "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/dorchada?namespace=profile-eu"
@@ -31,27 +31,27 @@
         },
         "protected_stats": {
             "total_number_deaths": 812,
-            "total_gold_gained": 1081184573,
-            "total_gold_lost": 1052911718,
-            "total_item_value_gained": 174188994,
+            "total_gold_gained": 1088530753,
+            "total_gold_lost": 1053112692,
+            "total_item_value_gained": 174738709,
             "level_number_deaths": 0,
-            "level_gold_gained": 122617767,
-            "level_gold_lost": 439183004,
-            "level_item_value_gained": 5695819
+            "level_gold_gained": 129963947,
+            "level_gold_lost": 439383978,
+            "level_item_value_gained": 6245534
         },
         "position": {
             "zone": {
-                "name": "Orgrimmar",
-                "id": 1637
+                "name": "Sanctum of Light",
+                "id": 16333
             },
             "map": {
-                "name": "Kalimdor",
-                "id": 1
+                "name": "Eastern Kingdoms",
+                "id": 0
             },
-            "x": 1749.9146,
-            "y": -4345.476,
-            "z": 101.61698,
-            "facing": 1.9054204
+            "x": 8536.36,
+            "y": -4640.526,
+            "z": 33.20027,
+            "facing": 4.2819777
         },
         "bind_position": {
             "zone": {
@@ -134,8 +134,8 @@
             }
         },
         "level": 80,
-        "experience": 0,
-        "achievement_points": 20770,
+        "experience": 202771,
+        "achievement_points": 20975,
         "achievements": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/dorchada/achievements?namespace=profile-eu"
         },
@@ -154,9 +154,9 @@
         "hunter_pets": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/dorchada/hunter-pets?namespace=profile-eu"
         },
-        "last_login_timestamp": 1771351099000,
-        "average_item_level": 86,
-        "equipped_item_level": 86,
+        "last_login_timestamp": 1772470961000,
+        "average_item_level": 99,
+        "equipped_item_level": 99,
         "specializations": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/dorchada/specializations?namespace=profile-eu"
         },
@@ -402,21 +402,21 @@
                             {
                                 "id": 107,
                                 "name": "Creatures killed",
-                                "last_updated_timestamp": 1771351069000,
-                                "quantity": 47413.0
+                                "last_updated_timestamp": 1772470796000,
+                                "quantity": 47482.0
                             },
                             {
                                 "id": 1337,
                                 "name": "Different creature types killed",
-                                "last_updated_timestamp": 1771351069000,
+                                "last_updated_timestamp": 1772470796000,
                                 "quantity": 10.0
                             },
                             {
                                 "id": 1336,
                                 "name": "Creature type killed the most",
-                                "last_updated_timestamp": 1771351069000,
+                                "last_updated_timestamp": 1772470796000,
                                 "description": "Humanoid",
-                                "quantity": 20248.0
+                                "quantity": 20263.0
                             },
                             {
                                 "id": 108,
@@ -529,8 +529,8 @@
                             {
                                 "id": 1487,
                                 "name": "Total Killing Blows",
-                                "last_updated_timestamp": 1767043878000,
-                                "quantity": 28124.0
+                                "last_updated_timestamp": 1772470857000,
+                                "quantity": 28203.0
                             },
                             {
                                 "id": 1488,
@@ -623,14 +623,14 @@
                     {
                         "id": 1197,
                         "name": "Total kills",
-                        "last_updated_timestamp": 1771351069000,
-                        "quantity": 6803.0
+                        "last_updated_timestamp": 1772470857000,
+                        "quantity": 6932.0
                     },
                     {
                         "id": 1198,
                         "name": "Total kills that grant experience or honor",
-                        "last_updated_timestamp": 1771351069000,
-                        "quantity": 33045.0
+                        "last_updated_timestamp": 1772470857000,
+                        "quantity": 33120.0
                     }
                 ]
             },
@@ -719,14 +719,14 @@
                     {
                         "id": 98,
                         "name": "Quests completed",
-                        "last_updated_timestamp": 1771350964000,
-                        "quantity": 3467.0
+                        "last_updated_timestamp": 1772470928000,
+                        "quantity": 3493.0
                     },
                     {
                         "id": 95,
                         "name": "Average quests completed per day",
-                        "last_updated_timestamp": 1771350964000,
-                        "quantity": 0.5591935483870968
+                        "last_updated_timestamp": 1772470928000,
+                        "quantity": 0.562208272976018
                     },
                     {
                         "id": 97,
@@ -738,7 +738,7 @@
                         "id": 759,
                         "name": "Average daily quests completed per day",
                         "last_updated_timestamp": 1734080692000,
-                        "quantity": 0.017258064516129032
+                        "quantity": 0.017221953967487526
                     },
                     {
                         "id": 94,
@@ -759,13 +759,13 @@
                             {
                                 "id": 1524,
                                 "name": "Cooking skill",
-                                "last_updated_timestamp": 1771350628000,
+                                "last_updated_timestamp": 1772468142000,
                                 "quantity": 300.0
                             },
                             {
                                 "id": 1745,
                                 "name": "Cooking Recipes known",
-                                "last_updated_timestamp": 1771350628000,
+                                "last_updated_timestamp": 1772468142000,
                                 "quantity": 80.0
                             },
                             {
@@ -777,7 +777,7 @@
                             {
                                 "id": 1519,
                                 "name": "Fishing skill",
-                                "last_updated_timestamp": 1771350628000,
+                                "last_updated_timestamp": 1772468142000,
                                 "quantity": 142.0
                             },
                             {
@@ -843,7 +843,7 @@
                             {
                                 "id": 1740,
                                 "name": "Leatherworking Patterns learned",
-                                "last_updated_timestamp": 1771350628000,
+                                "last_updated_timestamp": 1772468142000,
                                 "quantity": 73.0
                             },
                             {
@@ -2319,6 +2319,12 @@
                         "id": 15562,
                         "name": "Legion: Remix",
                         "statistics": [
+                            {
+                                "id": 60938,
+                                "name": "Demons slain",
+                                "last_updated_timestamp": 1772469410000,
+                                "quantity": 1.0
+                            },
                             {
                                 "id": 61338,
                                 "name": "Bronze gained across Warband",

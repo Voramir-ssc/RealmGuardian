@@ -173,8 +173,8 @@ export default function CraftingWidget({ apiUrl }) {
         <div className="bg-surface rounded-2xl border border-white/5 overflow-hidden flex flex-col h-full">
             <div className="p-6 border-b border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h2 className="text-xl font-bold font-display tracking-tight text-white mb-1">Crafting Profit Calculator</h2>
-                    <p className="text-sm text-white/50">Track margins based on live AH prices.</p>
+                    <h2 className="text-xl font-bold font-display tracking-tight text-white mb-1">Handwerks-Profitrechner</h2>
+                    <p className="text-sm text-white/50">Marge basierend auf Live-AH-Preisen verfolgen.</p>
                 </div>
 
                 {/* Add Recipe Bar */}
@@ -197,8 +197,8 @@ export default function CraftingWidget({ apiUrl }) {
                 ) : recipes.length === 0 ? (
                     <div className="h-48 flex flex-col items-center justify-center text-white/40">
                         <TrendingUp className="w-12 h-12 mb-3 opacity-50" />
-                        <p className="text-sm">No recipes tracked yet.</p>
-                        <p className="text-xs mt-1">Enter a Blizzard Item ID above to track its profitability.</p>
+                        <p className="text-sm">Noch keine Rezepte verfolgt.</p>
+                        <p className="text-xs mt-1">Rezept oder Endprodukt oben suchen, um den Profit zu verfolgen.</p>
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -227,7 +227,7 @@ export default function CraftingWidget({ apiUrl }) {
                                         </h3>
                                         <div className="flex items-center gap-1.5 mt-1">
                                             <span className="text-xs font-medium text-brand-primary">{formatGold(recipe.target_price)}</span>
-                                            <span className="text-[10px] text-white/40 uppercase tracking-wide px-1.5 py-0.5 rounded-sm bg-white/5 border border-white/10">Yield: {recipe.crafted_quantity}</span>
+                                            <span className="text-[10px] text-white/40 uppercase tracking-wide px-1.5 py-0.5 rounded-sm bg-white/5 border border-white/10">Ausbeute: {recipe.crafted_quantity}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -235,7 +235,7 @@ export default function CraftingWidget({ apiUrl }) {
                                 {/* Reagents */}
                                 <div className="p-4 flex-1 flex flex-col">
                                     <h4 className="text-[10px] items-center gap-1 text-white/50 uppercase tracking-widest font-semibold mb-3 flex">
-                                        Reagents <ArrowRight className="w-3 h-3" />
+                                        Reagenzien <ArrowRight className="w-3 h-3" />
                                     </h4>
                                     <div className="space-y-2 flex-1">
                                         {recipe.reagents.map(reg => (
@@ -255,7 +255,7 @@ export default function CraftingWidget({ apiUrl }) {
                                                             } catch (e) { console.error(e); }
                                                         }}
                                                         className="opacity-0 group-hover/reg:opacity-100 text-red-400 hover:text-red-300 transition-opacity"
-                                                        title="Remove Reagent"
+                                                        title="Reagenz entfernen"
                                                     >
                                                         <Trash2 className="w-3 h-3" />
                                                     </button>
@@ -300,11 +300,11 @@ export default function CraftingWidget({ apiUrl }) {
                                 {/* Profit Footer */}
                                 <div className="p-4 border-t border-white/5 bg-black/20 flex justify-between items-center">
                                     <div className="flex flex-col">
-                                        <span className="text-[10px] text-white/40 uppercase tracking-widest font-semibold">Total Cost</span>
+                                        <span className="text-[10px] text-white/40 uppercase tracking-widest font-semibold">Gesamtkosten</span>
                                         <span className="text-sm font-medium text-white/70">{formatGold(recipe.total_cost)}</span>
                                     </div>
                                     <div className="flex flex-col items-end">
-                                        <span className="text-[10px] text-white/40 uppercase tracking-widest font-semibold">Margin</span>
+                                        <span className="text-[10px] text-white/40 uppercase tracking-widest font-semibold">Marge</span>
                                         <div className={`flex items-center gap-1 text-lg font-bold ${recipe.profit > 0 ? 'text-green-400' : 'text-red-400'}`}>
                                             {recipe.profit > 0 ? <TrendingUp className="w-4 h-4" /> : <TrendingDown className="w-4 h-4" />}
                                             {formatGold(recipe.profit)}

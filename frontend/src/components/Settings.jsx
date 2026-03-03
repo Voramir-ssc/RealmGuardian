@@ -19,11 +19,11 @@ const Settings = ({ onLogin, characters, loading }) => {
                 <div className="bg-surface-dark border border-white/5 rounded-xl p-4 mb-6">
                     <div className="flex justify-between items-center">
                         <div>
-                            <p className="text-white font-medium">Connection Status</p>
+                            <p className="text-white font-medium">Verbindungsstatus</p>
                             <p className="text-sm text-secondary mt-1">
                                 {characters.length > 0
-                                    ? `Connected (${characters.length} characters synced)`
-                                    : 'Not connected'}
+                                    ? `Verbunden (${characters.length} Charaktere synchronisiert)`
+                                    : 'Nicht verbunden'}
                             </p>
                         </div>
                         <div className={`w-3 h-3 rounded-full ${characters.length > 0 ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.4)]' : 'bg-red-500'}`} />
@@ -39,42 +39,42 @@ const Settings = ({ onLogin, characters, loading }) => {
                         {loading && characters.length === 0 ? (
                             <>
                                 <RefreshCw size={18} className="animate-spin" />
-                                Syncing from Battle.net...
+                                Synchronisiere von Battle.net...
                             </>
                         ) : characters.length > 0 ? (
                             <>
                                 <RefreshCw size={18} className={loading ? "animate-spin" : ""} />
-                                {loading ? "Syncing..." : "Sync Data from Battle.net"}
+                                {loading ? "Synchronisiere..." : "Daten von Battle.net synchronisieren"}
                             </>
                         ) : (
                             <>
                                 <Shield size={18} />
-                                Connect Battle.net Account
+                                Battle.net Account verbinden
                             </>
                         )}
                     </button>
 
                     {characters.length > 0 && (
                         <p className="text-center text-xs text-secondary/50 mt-2">
-                            Last sync: Just now (Auto-syncs every minute)
+                            Letzte Synchronisierung: Gerade eben (Automatisch jede Minute)
                         </p>
                     )}
                 </div>
             </div>
 
             <div className="bg-surface border border-white/5 rounded-2xl p-6 opacity-50 pointer-events-none grayscale">
-                <h2 className="text-xl font-medium text-white mb-4">Application Settings</h2>
+                <h2 className="text-xl font-medium text-white mb-4">Anwendungseinstellungen</h2>
                 <div className="space-y-4">
                     <div className="flex justify-between items-center p-3 bg-surface-dark rounded-lg border border-white/5">
-                        <span className="text-secondary">Dark Mode</span>
+                        <span className="text-secondary">Dunkelmodus</span>
                         <div className="w-10 h-5 bg-primary/20 rounded-full relative"><div className="absolute right-1 top-1 w-3 h-3 bg-primary rounded-full" /></div>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-surface-dark rounded-lg border border-white/5">
-                        <span className="text-secondary">Notifications</span>
+                        <span className="text-secondary">Benachrichtigungen</span>
                         <div className="w-10 h-5 bg-white/10 rounded-full relative"><div className="absolute left-1 top-1 w-3 h-3 bg-white/50 rounded-full" /></div>
                     </div>
                 </div>
-                <p className="text-center text-xs text-secondary/30 mt-4">Coming Soon</p>
+                <p className="text-center text-xs text-secondary/30 mt-4">Demnächst verfügbar</p>
             </div>
         </div>
     );

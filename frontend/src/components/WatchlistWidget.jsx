@@ -162,16 +162,16 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
 
     const ranges = [
         { label: '24H', value: '24h' },
-        { label: '7D', value: '7d' },
-        { label: '14D', value: '14d' },
-        { label: '30D', value: '30d' }
+        { label: '7T', value: '7d' },
+        { label: '14T', value: '14d' },
+        { label: '30T', value: '30d' }
     ];
 
     return (
         <div className="bg-surface border border-white/5 rounded-2xl p-6 md:col-span-2">
             <div className="flex justify-between items-center mb-6">
-                <h3 className="text-secondary text-sm font-medium uppercase tracking-wider">Commodity Watchlist</h3>
-                <span className="text-xs text-secondary/50">Region Wide Prices</span>
+                <h3 className="text-secondary text-sm font-medium uppercase tracking-wider">Beobachtungsliste</h3>
+                <span className="text-xs text-secondary/50">Regionale Preise</span>
             </div>
 
             {/* Add Item Form */}
@@ -180,7 +180,7 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-secondary/50" size={16} />
                     <input
                         type="number"
-                        placeholder="Enter WoW Item ID (e.g. 190321)"
+                        placeholder="WoW Item ID eingeben (z.B. 190321)"
                         value={newItemId}
                         onChange={(e) => setNewItemId(e.target.value)}
                         className="w-full bg-black/20 border border-white/10 rounded-lg pl-10 pr-4 py-2 text-sm text-white focus:outline-none focus:border-accent/50 transition-colors"
@@ -192,7 +192,7 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
                     className="bg-accent/10 hover:bg-accent/20 text-accent border border-accent/20 rounded-lg px-4 py-2 flex items-center gap-2 transition-all disabled:opacity-50"
                 >
                     <Plus size={16} />
-                    <span className="text-sm font-medium">track</span>
+                    <span className="text-sm font-medium">Beobachten</span>
                 </button>
             </form>
 
@@ -207,7 +207,7 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
                 {items.length === 0 ? (
                     <div className="flex flex-col items-center justify-center h-32 text-secondary/50 border-2 border-dashed border-white/5 rounded-xl">
                         <Package size={24} className="mb-2 opacity-50" />
-                        <span className="text-sm">No items tracked yet</span>
+                        <span className="text-sm">Noch keine Items beobachtet</span>
                     </div>
                 ) : (
                     items.map(item => (
@@ -238,7 +238,7 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
                                             {item.current_price ? (item.current_price / 10000).toLocaleString('de-DE') : 0}g
                                         </div>
                                         <div className="text-[10px] text-secondary/50">
-                                            {item.last_updated ? new Date(item.last_updated).toLocaleTimeString() : 'No Data'}
+                                            {item.last_updated ? new Date(item.last_updated).toLocaleTimeString() : 'Keine Daten'}
                                         </div>
                                     </div>
 
@@ -255,7 +255,7 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
                             {expandedItem === item.item_id && (
                                 <div className="border-t border-white/5 p-4 bg-black/40 rounded-b-xl">
                                     <div className="flex justify-between items-center mb-4">
-                                        <span className="text-xs text-secondary uppercase tracking-wider font-medium">Price History</span>
+                                        <span className="text-xs text-secondary uppercase tracking-wider font-medium">Preisverlauf</span>
                                         <div className="flex gap-1">
                                             {ranges.map(range => (
                                                 <button
@@ -274,7 +274,7 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
 
                                     <div className="h-48 w-full">
                                         {historyLoading ? (
-                                            <div className="h-full w-full flex items-center justify-center text-secondary/50 text-xs">Loading...</div>
+                                            <div className="h-full w-full flex items-center justify-center text-secondary/50 text-xs">Lädt...</div>
                                         ) : itemHistory.length > 0 ? (
                                             <PriceChart
                                                 data={itemHistory}
@@ -283,7 +283,7 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
                                                 color="#a3b3cc" // Different color for items
                                             />
                                         ) : (
-                                            <div className="h-full w-full flex items-center justify-center text-secondary/50 text-xs">No history data available</div>
+                                            <div className="h-full w-full flex items-center justify-center text-secondary/50 text-xs">Keine Verlaufsdaten verfügbar</div>
                                         )}
                                     </div>
                                 </div>

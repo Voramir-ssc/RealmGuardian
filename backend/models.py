@@ -86,3 +86,10 @@ class RecipeReagent(Base):
     quantity = Column(Integer, nullable=False)
     
     recipe = relationship("Recipe", back_populates="reagents")
+
+class UserAccessToken(Base):
+    __tablename__ = "user_access_tokens"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    access_token = Column(String, nullable=False)
+    expires_at = Column(Integer, nullable=False)
