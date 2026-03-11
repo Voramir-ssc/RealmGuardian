@@ -46,6 +46,91 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
         return colors[quality] || 'text-gray-400';
     };
 
+    // Sort characters: Pin Voramir on Die Aldor to the top.
+    const sortedCharacters = [...characters].sort((a, b) => {
+        const isAVoramir = a.name.toLowerCase() === 'voramir' && a.realm.toLowerCase() === 'die aldor';
+        const isBVoramir = b.name.toLowerCase() === 'voramir' && b.realm.toLowerCase() === 'die aldor';
+        if (isAVoramir && !isBVoramir) return -1;
+        if (!isAVoramir && isBVoramir) return 1;
+        // Fallback to existing order (typically level desc, which is done by the backend)
+        return 0;
+    });
+
+    // Helper component for professions to manage their own selected tier state
+    const ProfessionCard = ({ profession }) => {
+        // Support old format (just an object with skill_points) or new format (array of tiers)
+        const hasTiers = profession.tiers && profession.tiers.length > 0;
+        
+        // Define expansion chronological weights to sort them correctly
+        const expansionWeights = {
+            'midnight': 110,
+            'khaz algar': 100,
+            'dragon isles': 90,
+            'shadowlands': 80,
+            'zandalari': 70,
+            'kul tiran': 70,
+            'legion': 60,
+            'draenor': 50,
+            'pandaria': 40,
+            'cataclysm': 30,
+            'northrend': 20,
+            'outland': 10,
+            'classic': 0
+        };
+
+        const getTierWeight = (tierName) => {
+            const lowerName = (tierName || '').toLowerCase();
+            for (const [key, weight] of Object.entries(expansionWeights)) {
+                if (lowerName.includes(key)) return weight;
+            }
+            return -1; // Unknown expansion
+        };
+
+        // Sort tiers so the highest weight (newest) is at index 0
+        const sortedTiers = hasTiers 
+            ? [...profession.tiers].sort((a, b) => getTierWeight(b.name) - getTierWeight(a.name)) 
+            : [];
+
+        const [selectedTierIdx, setSelectedTierIdx] = useState(0);
+
+        const currentTier = hasTiers ? sortedTiers[selectedTierIdx] : profession;
+        const skillPoints = currentTier.skill_points || 0;
+        const maxSkillPoints = currentTier.max_skill_points || 0;
+        const percentage = maxSkillPoints ? Math.min(100, (skillPoints / maxSkillPoints) * 100) : 0;
+
+        return (
+            <div className="p-3 rounded-lg bg-surface border border-white/5 flex flex-col gap-2">
+                <div className="flex justify-between items-start">
+                    <div className="flex flex-col">
+                        <span className="text-sm font-medium text-white">{profession.name}</span>
+                        {hasTiers && sortedTiers.length > 1 && (
+                            <select 
+                                className="mt-1 bg-black/40 text-xs text-secondary border border-white/10 rounded px-1 py-0.5 outline-none focus:border-[#148eff]"
+                                value={selectedTierIdx}
+                                onChange={(e) => setSelectedTierIdx(Number(e.target.value))}
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                {sortedTiers.map((t, i) => (
+                                    <option key={i} value={i}>{t.name}</option>
+                                ))}
+                            </select>
+                        )}
+                        {hasTiers && sortedTiers.length === 1 && (
+                            <span className="text-[10px] text-secondary/50 mt-0.5">{sortedTiers[0].name}</span>
+                        )}
+                    </div>
+                    <span className="text-secondary/80 text-xs pt-0.5">{skillPoints} / {maxSkillPoints}</span>
+                </div>
+                <div className="w-full bg-black/40 h-1.5 rounded-full overflow-hidden mt-1">
+                    <div
+                        className="bg-[#148eff] h-full rounded-full transition-all duration-1000"
+                        style={{ width: `${percentage}%` }}
+                    />
+                </div>
+            </div>
+        );
+    };
+
     return (
         <div className="bg-surface border border-white/5 rounded-2xl p-6">
             <div className="flex justify-between items-center mb-6">
@@ -83,7 +168,7 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-white/5">
-                            {characters.map((char) => {
+                            {sortedCharacters.map((char) => {
                                 let equipment = [];
                                 try {
                                     if (char.equipment) {
@@ -106,7 +191,7 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                                 return (
                                     <React.Fragment key={char.id}>
                                         <tr
-                                            className="group hover:bg-white/5 transition-colors cursor-pointer"
+                                            className={`group hover:bg-white/5 transition-colors cursor-pointer ${char.name.toLowerCase() === 'voramir' && char.realm.toLowerCase() === 'die aldor' ? 'bg-white/[0.02]' : ''}`}
                                             onClick={() => toggleExpand(char.id)}
                                         >
                                             <td className="py-3 text-secondary/50 pl-2">
@@ -122,7 +207,12 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                                                         </div>
                                                     )}
                                                     <div>
-                                                        <div className={`font-medium text-sm ${getClassColor(char.class_name)}`}>{char.name}</div>
+                                                        <div className={`font-medium text-sm ${getClassColor(char.class_name)}`}>
+                                                            {char.name}
+                                                            {char.name.toLowerCase() === 'voramir' && char.realm.toLowerCase() === 'die aldor' && (
+                                                                <span className="ml-2 text-[10px] bg-yellow-500/20 text-yellow-500 px-1.5 py-0.5 rounded-full uppercase tracking-wider font-bold">Main</span>
+                                                            )}
+                                                        </div>
                                                         <div className="text-xs text-secondary/50">{char.class_name}</div>
                                                     </div>
                                                 </div>
@@ -145,23 +235,9 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                                                         <div className="mb-2 text-xs uppercase tracking-wider text-secondary font-medium">Berufe</div>
                                                         {professions.length > 0 ? (
                                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                                {professions.map((prof, idx) => {
-                                                                    const percentage = prof.max_skill_points ? Math.min(100, (prof.skill_points / prof.max_skill_points) * 100) : 0;
-                                                                    return (
-                                                                        <div key={idx} className="p-3 rounded-lg bg-surface border border-white/5 flex flex-col gap-2">
-                                                                            <div className="flex justify-between items-center text-sm font-medium text-white">
-                                                                                <span>{prof.name}</span>
-                                                                                <span className="text-secondary/80 text-xs">{prof.skill_points} / {prof.max_skill_points}</span>
-                                                                            </div>
-                                                                            <div className="w-full bg-black/40 h-1.5 rounded-full overflow-hidden">
-                                                                                <div
-                                                                                    className="bg-[#148eff] h-full rounded-full transition-all duration-1000"
-                                                                                    style={{ width: `${percentage}%` }}
-                                                                                />
-                                                                            </div>
-                                                                        </div>
-                                                                    );
-                                                                })}
+                                                                {professions.map((prof, idx) => (
+                                                                    <ProfessionCard key={idx} profession={prof} />
+                                                                ))}
                                                             </div>
                                                         ) : (
                                                             <div className="text-sm text-secondary/50 italic py-2">

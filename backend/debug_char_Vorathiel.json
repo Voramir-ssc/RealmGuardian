@@ -41,11 +41,11 @@
         },
         "position": {
             "zone": {
-                "name": "The Canals",
+                "name": "Die Kan\u00e4le",
                 "id": 5390
             },
             "map": {
-                "name": "Eastern Kingdoms",
+                "name": "Die \u00d6stlichen K\u00f6nigreiche",
                 "id": 0
             },
             "x": -8729.727,
@@ -55,11 +55,11 @@
         },
         "bind_position": {
             "zone": {
-                "name": "Trade District",
+                "name": "Der Handelsdistrikt",
                 "id": 5148
             },
             "map": {
-                "name": "Eastern Kingdoms",
+                "name": "Die \u00d6stlichen K\u00f6nigreiche",
                 "id": 0
             },
             "x": -8865.628,
@@ -79,31 +79,31 @@
         "name": "Vorathiel",
         "gender": {
             "type": "FEMALE",
-            "name": "Female"
+            "name": "Weiblich"
         },
         "faction": {
             "type": "ALLIANCE",
-            "name": "Alliance"
+            "name": "Allianz"
         },
         "race": {
             "key": {
                 "href": "https://eu.api.blizzard.com/data/wow/playable-race/4?namespace=static-12.0.1_65617-eu"
             },
-            "name": "Night Elf",
+            "name": "Nachtelf",
             "id": 4
         },
         "character_class": {
             "key": {
                 "href": "https://eu.api.blizzard.com/data/wow/playable-class/11?namespace=static-12.0.1_65617-eu"
             },
-            "name": "Druid",
+            "name": "Druide",
             "id": 11
         },
         "active_spec": {
             "key": {
                 "href": "https://eu.api.blizzard.com/data/wow/playable-specialization/102?namespace=static-12.0.1_65617-eu"
             },
-            "name": "Balance",
+            "name": "Gleichgewicht",
             "id": 102
         },
         "realm": {
@@ -130,7 +130,7 @@
             },
             "faction": {
                 "type": "ALLIANCE",
-                "name": "Alliance"
+                "name": "Allianz"
             }
         },
         "level": 80,
@@ -189,7 +189,7 @@
                 "key": {
                     "href": "https://eu.api.blizzard.com/data/wow/covenant/3?namespace=static-12.0.1_65617-eu"
                 },
-                "name": "Night Fae",
+                "name": "Nachtfae",
                 "id": 3
             },
             "renown_level": 11,
@@ -229,29 +229,29 @@
         "categories": [
             {
                 "id": 130,
-                "name": "Character",
+                "name": "Charakter",
                 "statistics": [
                     {
                         "id": 14897,
-                        "name": "Item slots equipped with Uncommon items",
+                        "name": "Ausr\u00fcstungspl\u00e4tze belegt mit ungew\u00f6hnlichen Gegenst\u00e4nden",
                         "last_updated_timestamp": 1765910634000,
                         "quantity": 15.0
                     },
                     {
                         "id": 14898,
-                        "name": "Item slots equipped with Rare items",
+                        "name": "Ausr\u00fcstungspl\u00e4tze belegt mit seltenen Gegenst\u00e4nden",
                         "last_updated_timestamp": 1765789620000,
                         "quantity": 5.0
                     },
                     {
                         "id": 14899,
-                        "name": "Item slots equipped with Epic items",
+                        "name": "Ausr\u00fcstungspl\u00e4tze belegt mit epischen Gegenst\u00e4nden",
                         "last_updated_timestamp": 1765788139000,
                         "quantity": 13.0
                     },
                     {
                         "id": 14901,
-                        "name": "Item slots equipped with Heirloom items",
+                        "name": "Ausr\u00fcstungspl\u00e4tze belegt mit Erbst\u00fccken",
                         "last_updated_timestamp": 1765783198000,
                         "quantity": 1.0
                     }
@@ -259,34 +259,34 @@
             },
             {
                 "id": 128,
-                "name": "Kills",
+                "name": "Siege",
                 "sub_categories": [
                     {
                         "id": 135,
-                        "name": "Creatures",
+                        "name": "Kreaturen",
                         "statistics": [
                             {
                                 "id": 107,
-                                "name": "Creatures killed",
+                                "name": "Kreaturen get\u00f6tet",
                                 "last_updated_timestamp": 1771279044000,
                                 "quantity": 1131.0
                             },
                             {
                                 "id": 1337,
-                                "name": "Different creature types killed",
+                                "name": "Unterschiedliche Arten von Kreaturen get\u00f6tet",
                                 "last_updated_timestamp": 1771279044000,
                                 "quantity": 9.0
                             },
                             {
                                 "id": 1336,
-                                "name": "Creature type killed the most",
+                                "name": "Am h\u00e4ufigsten get\u00f6teter Kreaturtyp",
                                 "last_updated_timestamp": 1771279044000,
                                 "description": "Humanoid",
                                 "quantity": 518.0
                             },
                             {
                                 "id": 108,
-                                "name": "Critters killed",
+                                "name": "Kleintiere get\u00f6tet",
                                 "last_updated_timestamp": 1771278967000,
                                 "quantity": 49.0
                             }
@@ -294,17 +294,17 @@
                     },
                     {
                         "id": 137,
-                        "name": "Killing Blows",
+                        "name": "Todesst\u00f6\u00dfe",
                         "statistics": [
                             {
                                 "id": 1487,
-                                "name": "Total Killing Blows",
+                                "name": "Todesst\u00f6\u00dfe insgesamt",
                                 "last_updated_timestamp": 1767035220000,
                                 "quantity": 669.0
                             },
                             {
                                 "id": 1488,
-                                "name": "World Killing Blows",
+                                "name": "Todesst\u00f6\u00dfe weltweit",
                                 "last_updated_timestamp": 1766886268000,
                                 "quantity": 375.0
                             }
@@ -314,13 +314,13 @@
                 "statistics": [
                     {
                         "id": 1197,
-                        "name": "Total kills",
+                        "name": "Siege insgesamt",
                         "last_updated_timestamp": 1771279044000,
                         "quantity": 1120.0
                     },
                     {
                         "id": 1198,
-                        "name": "Total kills that grant experience or honor",
+                        "name": "Siege insgesamt, die Erfahrung oder Ehrenpunkte verleihen",
                         "last_updated_timestamp": 1771279044000,
                         "quantity": 802.0
                     }
@@ -332,31 +332,31 @@
                 "statistics": [
                     {
                         "id": 98,
-                        "name": "Quests completed",
+                        "name": "Quests abgeschlossen",
                         "last_updated_timestamp": 1772097420000,
                         "quantity": 945.0
                     },
                     {
                         "id": 95,
-                        "name": "Average quests completed per day",
+                        "name": "Durchschnittlich abgeschlossene Quests pro Tag",
                         "last_updated_timestamp": 1772097420000,
                         "quantity": 12.945205479452055
                     },
                     {
                         "id": 97,
-                        "name": "Daily quests completed",
+                        "name": "T\u00e4gliche Quests abgeschlossen",
                         "last_updated_timestamp": 1765783326000,
                         "quantity": 1.0
                     },
                     {
                         "id": 759,
-                        "name": "Average daily quests completed per day",
+                        "name": "Durchschnitt der t\u00e4glich abgeschlossenen Quests",
                         "last_updated_timestamp": 1765783326000,
                         "quantity": 0.0136986301369863
                     },
                     {
                         "id": 94,
-                        "name": "Quests abandoned",
+                        "name": "Quests abgebrochen",
                         "last_updated_timestamp": 1772097403000,
                         "quantity": 9.0
                     }
@@ -364,27 +364,27 @@
             },
             {
                 "id": 132,
-                "name": "Skills",
+                "name": "Fertigkeiten",
                 "sub_categories": [
                     {
                         "id": 173,
-                        "name": "Professions",
+                        "name": "Berufe",
                         "statistics": [
                             {
                                 "id": 1527,
-                                "name": "Highest Alchemy skill",
+                                "name": "H\u00f6chste Alchemiefertigkeit",
                                 "last_updated_timestamp": 1772097377000,
                                 "quantity": 300.0
                             },
                             {
                                 "id": 1729,
-                                "name": "Alchemy Recipes learned",
+                                "name": "Erlernte Alchemierezepte",
                                 "last_updated_timestamp": 1772097377000,
                                 "quantity": 111.0
                             },
                             {
                                 "id": 1538,
-                                "name": "Highest Herbalism skill",
+                                "name": "H\u00f6chste Kr\u00e4uterkundefertigkeit",
                                 "last_updated_timestamp": 1772097377000,
                                 "quantity": 212.0
                             }
@@ -394,7 +394,7 @@
                 "statistics": [
                     {
                         "id": 1199,
-                        "name": "Professions learned",
+                        "name": "Erlernte Berufe",
                         "last_updated_timestamp": 1772097377000,
                         "quantity": 2.0
                     }
@@ -402,23 +402,23 @@
             },
             {
                 "id": 134,
-                "name": "Travel",
+                "name": "Reise",
                 "statistics": [
                     {
                         "id": 349,
-                        "name": "Flight paths taken",
+                        "name": "Bereiste Flugrouten",
                         "last_updated_timestamp": 1767035823000,
                         "quantity": 3.0
                     },
                     {
                         "id": 2277,
-                        "name": "Summons accepted",
+                        "name": "Beschw\u00f6rungen angenommen",
                         "last_updated_timestamp": 1765786356000,
                         "quantity": 1.0
                     },
                     {
                         "id": 353,
-                        "name": "Number of times hearthed",
+                        "name": "Anzahl der Nutzungen des Ruhesteins",
                         "last_updated_timestamp": 1769283320000,
                         "quantity": 9.0
                     }
@@ -426,7 +426,7 @@
             },
             {
                 "id": 14807,
-                "name": "Dungeons & Raids",
+                "name": "Dungeons & Schlachtz\u00fcge",
                 "sub_categories": [
                     {
                         "id": 15164,
@@ -434,7 +434,7 @@
                         "statistics": [
                             {
                                 "id": 6989,
-                                "name": "Sha of Anger kills (Kun-Lai Summit)",
+                                "name": "Siege \u00fcber das Sha des Zorns (Kun-Lai-Gipfel)",
                                 "last_updated_timestamp": 1766878830000,
                                 "quantity": 1.0
                             }
@@ -446,133 +446,133 @@
                         "statistics": [
                             {
                                 "id": 10887,
-                                "name": "Odyn defeats (Normal Halls of Valor)",
+                                "name": "Siege \u00fcber Odyn (Normal: Die Hallen der Tapferkeit)",
                                 "last_updated_timestamp": 1765785270000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10899,
-                                "name": "Kur'talos Ravencrest defeats (Normal Black Rook Hold)",
+                                "name": "Siege \u00fcber Kur'talos Rabenkrone (Normal: Die Rabenwehr)",
                                 "last_updated_timestamp": 1765784144000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10912,
-                                "name": "Nythendra kills (Normal Emerald Nightmare)",
+                                "name": "Siege \u00fcber Nythendra (Normal: Der Smaragdgr\u00fcne Alptraum)",
                                 "last_updated_timestamp": 1765786415000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10921,
-                                "name": "Elerethe Renferal kills (Normal Emerald Nightmare)",
+                                "name": "Siege \u00fcber Elerethe Renferal (Normal: Der Smaragdgr\u00fcne Alptraum)",
                                 "last_updated_timestamp": 1765786651000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10925,
-                                "name": "Il'gynoth kills (Normal Emerald Nightmare)",
+                                "name": "Siege \u00fcber Il'gynoth (Normal: Der Smaragdgr\u00fcne Alptraum)",
                                 "last_updated_timestamp": 1765786800000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10916,
-                                "name": "Ursoc kills (Normal Emerald Nightmare)",
+                                "name": "Siege \u00fcber Ursoc (Normal: Der Smaragdgr\u00fcne Alptraum)",
                                 "last_updated_timestamp": 1765786542000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10929,
-                                "name": "Dragons of Nightmare kills (Normal Emerald Nightmare)",
+                                "name": "Siege \u00fcber die Drachen des Alptraums (Normal: Der Smaragdgr\u00fcne Alptraum)",
                                 "last_updated_timestamp": 1765786592000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10933,
-                                "name": "Cenarius redemptions (Normal Emerald Nightmare)",
+                                "name": "Erl\u00f6sungen von Cenarius (Normal: Der Smaragdgr\u00fcne Alptraum)",
                                 "last_updated_timestamp": 1765786854000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10937,
-                                "name": "Xavius kills (Normal Emerald Nightmare)",
+                                "name": "Siege \u00fcber Xavius (Normal: Der Smaragdgr\u00fcne Alptraum)",
                                 "last_updated_timestamp": 1765786972000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 11408,
-                                "name": "Odyn defeats (Normal Trial of Valor)",
+                                "name": "Siege \u00fcber Odyn (Normal: Pr\u00fcfung der Tapferkeit)",
                                 "last_updated_timestamp": 1765787454000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 11412,
-                                "name": "Guarm kills (Normal Trial of Valor)",
+                                "name": "Siege \u00fcber Guarm (Normal: Pr\u00fcfung der Tapferkeit)",
                                 "last_updated_timestamp": 1765787557000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 11416,
-                                "name": "Helya kills (Normal Trial of Valor)",
+                                "name": "Siege \u00fcber Helya (Normal: Pr\u00fcfung der Tapferkeit)",
                                 "last_updated_timestamp": 1765787645000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10941,
-                                "name": "Skorpyron kills (Normal Nighthold)",
+                                "name": "Siege \u00fcber Skorpyron (Normal: Die Nachtfestung)",
                                 "last_updated_timestamp": 1765788097000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10945,
-                                "name": "Chronomatic Anomaly kills (Normal Nighthold)",
+                                "name": "Siege \u00fcber die Chronomatische Anomalie (Normal: Die Nachtfestung)",
                                 "last_updated_timestamp": 1765788225000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10949,
-                                "name": "Trilliax kills (Normal Nighthold)",
+                                "name": "Siege \u00fcber Trilliax (Normal: Die Nachtfestung)",
                                 "last_updated_timestamp": 1765788343000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10953,
-                                "name": "Spellblade Aluriel kills (Normal Nighthold)",
+                                "name": "Siege \u00fcber Aluriel die Zauberklinge (Normal: Die Nachtfestung)",
                                 "last_updated_timestamp": 1765788459000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10957,
-                                "name": "Star Augur Etraeus kills (Normal Nighthold)",
+                                "name": "Siege \u00fcber Sterndeuter Etraeus (Normal: Die Nachtfestung)",
                                 "last_updated_timestamp": 1765788540000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10962,
-                                "name": "High Botanist Tel'arn kills (Normal Nighthold)",
+                                "name": "Siege \u00fcber Hochbotaniker Tel'arn (Normal: Die Nachtfestung)",
                                 "last_updated_timestamp": 1765788659000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10966,
-                                "name": "Tichondrius kills (Normal Nighthold)",
+                                "name": "Siege \u00fcber Tichondrius (Normal: Die Nachtfestung)",
                                 "last_updated_timestamp": 1765788770000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10970,
-                                "name": "Krosus kills (Normal Nighthold)",
+                                "name": "Siege \u00fcber Krosus (Normal: Die Nachtfestung)",
                                 "last_updated_timestamp": 1765788906000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10974,
-                                "name": "Grand Magistrix Elisande kills (Normal Nighthold)",
+                                "name": "Siege \u00fcber Gro\u00dfmagistrix Elisande (Normal: Die Nachtfestung)",
                                 "last_updated_timestamp": 1765789138000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 10978,
-                                "name": "Gul'dan kills (Normal Nighthold)",
+                                "name": "Siege \u00fcber Gul'dan (Normal: Die Nachtfestung)",
                                 "last_updated_timestamp": 1765789340000,
                                 "quantity": 1.0
                             }
@@ -584,61 +584,61 @@
                         "statistics": [
                             {
                                 "id": 14421,
-                                "name": "Shriekwing Kills (Mythic Castle Nathria)",
+                                "name": "Siege \u00fcber Schrillschwinge (Mythisch: Schloss Nathria)",
                                 "last_updated_timestamp": 1767018265000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 14425,
-                                "name": "Huntsman Altimor Kills (Mythic Castle Nathria)",
+                                "name": "Siege \u00fcber J\u00e4ger Altimor (Mythisch: Schloss Nathria)",
                                 "last_updated_timestamp": 1767018407000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 14429,
-                                "name": "Hungering Destroyer Kills (Mythic Castle Nathria)",
+                                "name": "Siege \u00fcber den hungernden Zerst\u00f6rer (Mythisch: Schloss Nathria)",
                                 "last_updated_timestamp": 1767018492000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 14433,
-                                "name": "Artificer Xy'mox Kills (Mythic Castle Nathria)",
+                                "name": "Siege \u00fcber Konstrukteur Xy'mox (Mythisch: Schloss Nathria)",
                                 "last_updated_timestamp": 1767030830000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 14437,
-                                "name": "Sun King's Salvation Kills (Mythic Castle Nathria)",
+                                "name": "Rettung des Sonnenk\u00f6nigs abgeschlossen (Mythisch: Schloss Nathria)",
                                 "last_updated_timestamp": 1767031056000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 14441,
-                                "name": "Lady Inerva Darkvein Kills (Mythic Castle Nathria)",
+                                "name": "Siege \u00fcber Lady Inerva Dunkelader (Mythisch: Schloss Nathria)",
                                 "last_updated_timestamp": 1767021484000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 14445,
-                                "name": "The Council of Blood Kills (Mythic Castle Nathria)",
+                                "name": "Siege \u00fcber den Rat des Blutes (Mythisch: Schloss Nathria)",
                                 "last_updated_timestamp": 1767031401000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 14449,
-                                "name": "Sludgefist Kills (Mythic Castle Nathria)",
+                                "name": "Siege \u00fcber Schlickfaust (Mythisch: Schloss Nathria)",
                                 "last_updated_timestamp": 1767034996000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 14453,
-                                "name": "Stone Legion Generals Kills (Mythic Castle Nathria)",
+                                "name": "Siege \u00fcber die Gener\u00e4le der Steinlegion (Mythisch: Schloss Nathria)",
                                 "last_updated_timestamp": 1767035223000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 14457,
-                                "name": "Sire Denathrius Kills (Mythic Castle Nathria)",
+                                "name": "Siege \u00fcber Graf Denathrius (Mythisch: Schloss Nathria)",
                                 "last_updated_timestamp": 1767035533000,
                                 "quantity": 1.0
                             }
@@ -648,77 +648,77 @@
                 "statistics": [
                     {
                         "id": 932,
-                        "name": "Total 5-player dungeons entered",
+                        "name": "5-Spieler-Dungeons betreten",
                         "last_updated_timestamp": 1771278938000,
                         "quantity": 4.0
                     },
                     {
                         "id": 7245,
-                        "name": "Pandaria raid bosses defeated",
+                        "name": "Schlachtzugsbosse in Pandaria get\u00f6tet",
                         "last_updated_timestamp": 1766878830000,
                         "quantity": 1.0
                     },
                     {
                         "id": 7247,
-                        "name": "Pandaria raid boss defeated the most",
+                        "name": "Am h\u00e4ufigsten get\u00f6teter Schlachtzugsboss in Pandaria",
                         "last_updated_timestamp": 1766878830000,
-                        "description": "Sha of Anger",
+                        "description": "Sha des Zorns",
                         "quantity": 1.0
                     },
                     {
                         "id": 10981,
-                        "name": "Legion dungeons completed (final boss defeated)",
+                        "name": "Dungeons von Legion abgeschlossen (Endgegner get\u00f6tet)",
                         "last_updated_timestamp": 1765784144000,
                         "quantity": 1.0
                     },
                     {
                         "id": 10982,
-                        "name": "Legion dungeon bosses defeated",
+                        "name": "Dungeonbosse von Legion besiegt",
                         "last_updated_timestamp": 1765785202000,
                         "quantity": 8.0
                     },
                     {
                         "id": 10983,
-                        "name": "Legion dungeon boss defeated the most",
+                        "name": "Am h\u00e4ufigsten besiegte Dungeonbosse von Legion",
                         "last_updated_timestamp": 1765785202000,
-                        "description": "Lord Kur'talos Ravencrest",
+                        "description": "Lord Kur'talos Rabenkrone",
                         "quantity": 1.0
                     },
                     {
                         "id": 10984,
-                        "name": "Legion raids completed (final boss defeated)",
+                        "name": "Schlachtz\u00fcge von Legion abgeschlossen (Endgegner get\u00f6tet)",
                         "last_updated_timestamp": 1765789340000,
                         "quantity": 2.0
                     },
                     {
                         "id": 10985,
-                        "name": "Legion raid bosses defeated",
+                        "name": "Schlachtzugbosse von Legion bezwungen",
                         "last_updated_timestamp": 1765789340000,
                         "quantity": 17.0
                     },
                     {
                         "id": 10986,
-                        "name": "Legion raid boss defeated the most",
+                        "name": "Am h\u00e4ufigsten besiegter Schlachtzugboss von Legion",
                         "last_updated_timestamp": 1765789340000,
-                        "description": "High Botanist Tel'arn",
+                        "description": "Hochbotaniker Tel'arn",
                         "quantity": 1.0
                     }
                 ]
             },
             {
                 "id": 15219,
-                "name": "Pet Battles",
+                "name": "Haustierk\u00e4mpfe",
                 "statistics": [
                     {
                         "id": 8278,
-                        "name": "Pet Battles won at max level",
+                        "name": "Haustierk\u00e4mpfe auf der H\u00f6chststufe gewonnen",
                         "last_updated_timestamp": 1767036480000,
                         "quantity": 15.0
                     }
                 ]
             },
             {
-                "name": "World Events",
+                "name": "Weltereignisse",
                 "sub_categories": [
                     {
                         "id": 15562,
@@ -726,13 +726,13 @@
                         "statistics": [
                             {
                                 "id": 60938,
-                                "name": "Demons slain",
+                                "name": "D\u00e4monen get\u00f6tet",
                                 "last_updated_timestamp": 1766886168000,
                                 "quantity": 165.0
                             },
                             {
                                 "id": 61338,
-                                "name": "Bronze gained across Warband",
+                                "name": "Innerhalb der Kriegsmeute erhaltenes Bronze",
                                 "last_updated_timestamp": 1768854360000,
                                 "quantity": 2826889.0
                             }

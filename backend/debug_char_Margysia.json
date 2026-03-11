@@ -45,7 +45,7 @@
                 "id": 14771
             },
             "map": {
-                "name": "Khaz Algar (Surface)",
+                "name": "Khaz Algar (Oberfl\u00e4che)",
                 "id": 2552
             },
             "x": 2727.8425,
@@ -59,7 +59,7 @@
                 "id": 14771
             },
             "map": {
-                "name": "Khaz Algar (Surface)",
+                "name": "Khaz Algar (Oberfl\u00e4che)",
                 "id": 2552
             },
             "x": 2633.37,
@@ -79,7 +79,7 @@
         "name": "Margysia",
         "gender": {
             "type": "FEMALE",
-            "name": "Female"
+            "name": "Weiblich"
         },
         "faction": {
             "type": "HORDE",
@@ -96,14 +96,14 @@
             "key": {
                 "href": "https://eu.api.blizzard.com/data/wow/playable-class/9?namespace=static-12.0.0_65028-eu"
             },
-            "name": "Warlock",
+            "name": "Hexenmeister",
             "id": 9
         },
         "active_spec": {
             "key": {
                 "href": "https://eu.api.blizzard.com/data/wow/playable-specialization/265?namespace=static-12.0.0_65028-eu"
             },
-            "name": "Affliction",
+            "name": "Gebrechen",
             "id": 265
         },
         "realm": {
@@ -176,9 +176,9 @@
             "key": {
                 "href": "https://eu.api.blizzard.com/data/wow/title/140?namespace=static-12.0.0_65028-eu"
             },
-            "name": "the Kingslayer",
+            "name": "der K\u00f6nigsm\u00f6rder",
             "id": 140,
-            "display_string": "{name} the Kingslayer"
+            "display_string": "{name} die K\u00f6nigsm\u00f6rderin"
         },
         "reputations": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/margysia/reputations?namespace=profile-eu"
@@ -219,11 +219,11 @@
         "categories": [
             {
                 "id": 130,
-                "name": "Character",
+                "name": "Charakter",
                 "statistics": [
                     {
                         "id": 14897,
-                        "name": "Item slots equipped with Uncommon items",
+                        "name": "Ausr\u00fcstungspl\u00e4tze belegt mit ungew\u00f6hnlichen Gegenst\u00e4nden",
                         "last_updated_timestamp": 1760299347000,
                         "quantity": 15.0
                     }
@@ -231,27 +231,27 @@
             },
             {
                 "id": 128,
-                "name": "Kills",
+                "name": "Siege",
                 "sub_categories": [
                     {
                         "id": 135,
-                        "name": "Creatures",
+                        "name": "Kreaturen",
                         "statistics": [
                             {
                                 "id": 107,
-                                "name": "Creatures killed",
+                                "name": "Kreaturen get\u00f6tet",
                                 "last_updated_timestamp": 1769288024000,
                                 "quantity": 32.0
                             },
                             {
                                 "id": 1337,
-                                "name": "Different creature types killed",
+                                "name": "Unterschiedliche Arten von Kreaturen get\u00f6tet",
                                 "last_updated_timestamp": 1769288024000,
                                 "quantity": 4.0
                             },
                             {
                                 "id": 1336,
-                                "name": "Creature type killed the most",
+                                "name": "Am h\u00e4ufigsten get\u00f6teter Kreaturtyp",
                                 "last_updated_timestamp": 1769288024000,
                                 "description": "Humanoid",
                                 "quantity": 26.0
@@ -260,11 +260,11 @@
                     },
                     {
                         "id": 137,
-                        "name": "Killing Blows",
+                        "name": "Todesst\u00f6\u00dfe",
                         "statistics": [
                             {
                                 "id": 1487,
-                                "name": "Total Killing Blows",
+                                "name": "Todesst\u00f6\u00dfe insgesamt",
                                 "last_updated_timestamp": 1769288024000,
                                 "quantity": 19.0
                             }
@@ -274,13 +274,13 @@
                 "statistics": [
                     {
                         "id": 1197,
-                        "name": "Total kills",
+                        "name": "Siege insgesamt",
                         "last_updated_timestamp": 1769288024000,
                         "quantity": 32.0
                     },
                     {
                         "id": 1198,
-                        "name": "Total kills that grant experience or honor",
+                        "name": "Siege insgesamt, die Erfahrung oder Ehrenpunkte verleihen",
                         "last_updated_timestamp": 1769288024000,
                         "quantity": 32.0
                     }
@@ -292,19 +292,19 @@
                 "statistics": [
                     {
                         "id": 98,
-                        "name": "Quests completed",
+                        "name": "Quests abgeschlossen",
                         "last_updated_timestamp": 1769287173000,
                         "quantity": 473.0
                     },
                     {
                         "id": 95,
-                        "name": "Average quests completed per day",
+                        "name": "Durchschnittlich abgeschlossene Quests pro Tag",
                         "last_updated_timestamp": 1769287173000,
                         "quantity": 0.0
                     },
                     {
                         "id": 94,
-                        "name": "Quests abandoned",
+                        "name": "Quests abgebrochen",
                         "last_updated_timestamp": 1769254737000,
                         "quantity": 3.0
                     }
@@ -312,27 +312,27 @@
             },
             {
                 "id": 132,
-                "name": "Skills",
+                "name": "Fertigkeiten",
                 "sub_categories": [
                     {
                         "id": 173,
-                        "name": "Professions",
+                        "name": "Berufe",
                         "statistics": [
                             {
                                 "id": 1538,
-                                "name": "Highest Herbalism skill",
+                                "name": "H\u00f6chste Kr\u00e4uterkundefertigkeit",
                                 "last_updated_timestamp": 1769287919000,
                                 "quantity": 2.0
                             },
                             {
                                 "id": 1537,
-                                "name": "Highest Mining skill",
+                                "name": "H\u00f6chste Bergbaufertigkeit",
                                 "last_updated_timestamp": 1769288033000,
                                 "quantity": 3.0
                             },
                             {
                                 "id": 3216,
-                                "name": "Smelting Recipes learned",
+                                "name": "Erlernte Verh\u00fcttungsmethoden",
                                 "last_updated_timestamp": 1769288033000,
                                 "quantity": 6.0
                             }
@@ -342,7 +342,7 @@
                 "statistics": [
                     {
                         "id": 1199,
-                        "name": "Professions learned",
+                        "name": "Erlernte Berufe",
                         "last_updated_timestamp": 1769287753000,
                         "quantity": 2.0
                     }
@@ -350,11 +350,11 @@
             },
             {
                 "id": 134,
-                "name": "Travel",
+                "name": "Reise",
                 "statistics": [
                     {
                         "id": 353,
-                        "name": "Number of times hearthed",
+                        "name": "Anzahl der Nutzungen des Ruhesteins",
                         "last_updated_timestamp": 1769287816000,
                         "quantity": 1.0
                     }
@@ -362,11 +362,11 @@
             },
             {
                 "id": 14807,
-                "name": "Dungeons & Raids",
+                "name": "Dungeons & Schlachtz\u00fcge",
                 "statistics": [
                     {
                         "id": 932,
-                        "name": "Total 5-player dungeons entered",
+                        "name": "5-Spieler-Dungeons betreten",
                         "last_updated_timestamp": 1761290416000,
                         "quantity": 2.0
                     }
@@ -374,18 +374,18 @@
             },
             {
                 "id": 15219,
-                "name": "Pet Battles",
+                "name": "Haustierk\u00e4mpfe",
                 "statistics": [
                     {
                         "id": 8278,
-                        "name": "Pet Battles won at max level",
+                        "name": "Haustierk\u00e4mpfe auf der H\u00f6chststufe gewonnen",
                         "last_updated_timestamp": 1767036480000,
                         "quantity": 15.0
                     }
                 ]
             },
             {
-                "name": "World Events",
+                "name": "Weltereignisse",
                 "sub_categories": [
                     {
                         "id": 15562,
@@ -393,7 +393,7 @@
                         "statistics": [
                             {
                                 "id": 61338,
-                                "name": "Bronze gained across Warband",
+                                "name": "Innerhalb der Kriegsmeute erhaltenes Bronze",
                                 "last_updated_timestamp": 1768854360000,
                                 "quantity": 2826889.0
                             }

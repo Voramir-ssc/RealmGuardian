@@ -41,11 +41,11 @@
         },
         "position": {
             "zone": {
-                "name": "Wingrest Embassy",
+                "name": "Botschaft von Schwingenrast",
                 "id": 13939
             },
             "map": {
-                "name": "Dragon Isles",
+                "name": "Dracheninseln",
                 "id": 2444
             },
             "x": 3481.041,
@@ -55,11 +55,11 @@
         },
         "bind_position": {
             "zone": {
-                "name": "Wingrest Embassy",
+                "name": "Botschaft von Schwingenrast",
                 "id": 13939
             },
             "map": {
-                "name": "Dragon Isles",
+                "name": "Dracheninseln",
                 "id": 2444
             },
             "x": 3474.5088,
@@ -79,7 +79,7 @@
         "name": "Voradoril",
         "gender": {
             "type": "FEMALE",
-            "name": "Female"
+            "name": "Weiblich"
         },
         "faction": {
             "type": "HORDE",
@@ -89,21 +89,21 @@
             "key": {
                 "href": "https://eu.api.blizzard.com/data/wow/playable-race/27?namespace=static-11.2.7_64397-eu"
             },
-            "name": "Nightborne",
+            "name": "Nachtgeborener",
             "id": 27
         },
         "character_class": {
             "key": {
                 "href": "https://eu.api.blizzard.com/data/wow/playable-class/9?namespace=static-11.2.7_64397-eu"
             },
-            "name": "Warlock",
+            "name": "Hexenmeister",
             "id": 9
         },
         "active_spec": {
             "key": {
                 "href": "https://eu.api.blizzard.com/data/wow/playable-specialization/266?namespace=static-11.2.7_64397-eu"
             },
-            "name": "Demonology",
+            "name": "D\u00e4monologie",
             "id": 266
         },
         "realm": {
@@ -178,7 +178,7 @@
             },
             "name": "Professor",
             "id": 150,
-            "display_string": "Professor {name}"
+            "display_string": "Professorin {name}"
         },
         "reputations": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/voradoril/reputations?namespace=profile-eu"
@@ -219,15 +219,15 @@
         "categories": [
             {
                 "id": 130,
-                "name": "Character",
+                "name": "Charakter",
                 "sub_categories": [
                     {
                         "id": 145,
-                        "name": "Consumables",
+                        "name": "Verbrauchsg\u00fcter",
                         "statistics": [
                             {
                                 "id": 812,
-                                "name": "Healthstones used",
+                                "name": "Gesundheitssteine benutzt",
                                 "last_updated_timestamp": 1765830762000,
                                 "quantity": 1.0
                             }
@@ -237,7 +237,7 @@
                 "statistics": [
                     {
                         "id": 14897,
-                        "name": "Item slots equipped with Uncommon items",
+                        "name": "Ausr\u00fcstungspl\u00e4tze belegt mit ungew\u00f6hnlichen Gegenst\u00e4nden",
                         "last_updated_timestamp": 1765664238000,
                         "quantity": 7.0
                     }
@@ -245,34 +245,34 @@
             },
             {
                 "id": 128,
-                "name": "Kills",
+                "name": "Siege",
                 "sub_categories": [
                     {
                         "id": 135,
-                        "name": "Creatures",
+                        "name": "Kreaturen",
                         "statistics": [
                             {
                                 "id": 107,
-                                "name": "Creatures killed",
+                                "name": "Kreaturen get\u00f6tet",
                                 "last_updated_timestamp": 1765833017000,
                                 "quantity": 74.0
                             },
                             {
                                 "id": 1337,
-                                "name": "Different creature types killed",
+                                "name": "Unterschiedliche Arten von Kreaturen get\u00f6tet",
                                 "last_updated_timestamp": 1765833017000,
                                 "quantity": 5.0
                             },
                             {
                                 "id": 1336,
-                                "name": "Creature type killed the most",
+                                "name": "Am h\u00e4ufigsten get\u00f6teter Kreaturtyp",
                                 "last_updated_timestamp": 1765833017000,
-                                "description": "Dragonkin",
+                                "description": "Drachkin",
                                 "quantity": 33.0
                             },
                             {
                                 "id": 108,
-                                "name": "Critters killed",
+                                "name": "Kleintiere get\u00f6tet",
                                 "last_updated_timestamp": 1765832821000,
                                 "quantity": 8.0
                             }
@@ -280,17 +280,17 @@
                     },
                     {
                         "id": 137,
-                        "name": "Killing Blows",
+                        "name": "Todesst\u00f6\u00dfe",
                         "statistics": [
                             {
                                 "id": 1487,
-                                "name": "Total Killing Blows",
+                                "name": "Todesst\u00f6\u00dfe insgesamt",
                                 "last_updated_timestamp": 1765833017000,
                                 "quantity": 59.0
                             },
                             {
                                 "id": 1488,
-                                "name": "World Killing Blows",
+                                "name": "Todesst\u00f6\u00dfe weltweit",
                                 "last_updated_timestamp": 1765828090000,
                                 "quantity": 24.0
                             }
@@ -300,13 +300,13 @@
                 "statistics": [
                     {
                         "id": 1197,
-                        "name": "Total kills",
+                        "name": "Siege insgesamt",
                         "last_updated_timestamp": 1765833017000,
                         "quantity": 82.0
                     },
                     {
                         "id": 1198,
-                        "name": "Total kills that grant experience or honor",
+                        "name": "Siege insgesamt, die Erfahrung oder Ehrenpunkte verleihen",
                         "last_updated_timestamp": 1765833010000,
                         "quantity": 70.0
                     }
@@ -318,13 +318,13 @@
                 "statistics": [
                     {
                         "id": 98,
-                        "name": "Quests completed",
+                        "name": "Quests abgeschlossen",
                         "last_updated_timestamp": 1767178654000,
                         "quantity": 535.0
                     },
                     {
                         "id": 95,
-                        "name": "Average quests completed per day",
+                        "name": "Durchschnittlich abgeschlossene Quests pro Tag",
                         "last_updated_timestamp": 1767178654000,
                         "quantity": 0.0
                     }
@@ -332,21 +332,21 @@
             },
             {
                 "id": 132,
-                "name": "Skills",
+                "name": "Fertigkeiten",
                 "sub_categories": [
                     {
                         "id": 178,
-                        "name": "Secondary Skills",
+                        "name": "Sekund\u00e4re Fertigkeiten",
                         "statistics": [
                             {
                                 "id": 1524,
-                                "name": "Cooking skill",
+                                "name": "Kochfertigkeit",
                                 "last_updated_timestamp": 1767178654000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 1745,
-                                "name": "Cooking Recipes known",
+                                "name": "Bekannte Kochrezepte",
                                 "last_updated_timestamp": 1767178654000,
                                 "quantity": 9.0
                             }
@@ -354,23 +354,23 @@
                     },
                     {
                         "id": 173,
-                        "name": "Professions",
+                        "name": "Berufe",
                         "statistics": [
                             {
                                 "id": 1535,
-                                "name": "Highest Enchanting skill",
+                                "name": "H\u00f6chste Verzauberfertigkeit",
                                 "last_updated_timestamp": 1767178654000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 178,
-                                "name": "Enchanting formulae learned",
+                                "name": "Erlernte Verzauberungsformeln",
                                 "last_updated_timestamp": 1767178654000,
                                 "quantity": 7.0
                             },
                             {
                                 "id": 1538,
-                                "name": "Highest Herbalism skill",
+                                "name": "H\u00f6chste Kr\u00e4uterkundefertigkeit",
                                 "last_updated_timestamp": 1767178654000,
                                 "quantity": 78.0
                             }
@@ -380,7 +380,7 @@
                 "statistics": [
                     {
                         "id": 1199,
-                        "name": "Professions learned",
+                        "name": "Erlernte Berufe",
                         "last_updated_timestamp": 1767178654000,
                         "quantity": 2.0
                     }
@@ -388,17 +388,17 @@
             },
             {
                 "id": 134,
-                "name": "Travel",
+                "name": "Reise",
                 "statistics": [
                     {
                         "id": 349,
-                        "name": "Flight paths taken",
+                        "name": "Bereiste Flugrouten",
                         "last_updated_timestamp": 1765666211000,
                         "quantity": 1.0
                     },
                     {
                         "id": 353,
-                        "name": "Number of times hearthed",
+                        "name": "Anzahl der Nutzungen des Ruhesteins",
                         "last_updated_timestamp": 1765827358000,
                         "quantity": 1.0
                     }
@@ -406,18 +406,18 @@
             },
             {
                 "id": 15219,
-                "name": "Pet Battles",
+                "name": "Haustierk\u00e4mpfe",
                 "statistics": [
                     {
                         "id": 8278,
-                        "name": "Pet Battles won at max level",
+                        "name": "Haustierk\u00e4mpfe auf der H\u00f6chststufe gewonnen",
                         "last_updated_timestamp": 1767036480000,
                         "quantity": 15.0
                     }
                 ]
             },
             {
-                "name": "World Events",
+                "name": "Weltereignisse",
                 "sub_categories": [
                     {
                         "id": 15562,
@@ -425,7 +425,7 @@
                         "statistics": [
                             {
                                 "id": 61338,
-                                "name": "Bronze gained across Warband",
+                                "name": "Innerhalb der Kriegsmeute erhaltenes Bronze",
                                 "last_updated_timestamp": 1766276100000,
                                 "quantity": 2534679.0
                             }

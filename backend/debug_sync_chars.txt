@@ -21,19 +21,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/3?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Hunter",
+      "name": "J\u00e4ger",
       "id": 3
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/5?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Undead",
+      "name": "Untoter",
       "id": 5
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -62,7 +62,7 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/11?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Druid",
+      "name": "Druide",
       "id": 11
     },
     "playable_race": {
@@ -74,7 +74,7 @@ Found 40 characters.
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -103,19 +103,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/6?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Death Knight",
+      "name": "Todesritter",
       "id": 6
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/27?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Nightborne",
+      "name": "Nachtgeborener",
       "id": 27
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -144,19 +144,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/4?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Rogue",
+      "name": "Schurke",
       "id": 4
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Blood Elf",
+      "name": "Blutelf",
       "id": 10
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -192,12 +192,12 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Blood Elf",
+      "name": "Blutelf",
       "id": 10
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -226,19 +226,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/8?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Mage",
+      "name": "Magier",
       "id": 8
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/5?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Undead",
+      "name": "Untoter",
       "id": 5
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -267,19 +267,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/12?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Demon Hunter",
+      "name": "D\u00e4monenj\u00e4ger",
       "id": 12
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Blood Elf",
+      "name": "Blutelf",
       "id": 10
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -308,7 +308,7 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/13?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Evoker",
+      "name": "Rufer",
       "id": 13
     },
     "playable_race": {
@@ -320,7 +320,7 @@ Found 40 characters.
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -349,19 +349,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/10?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Monk",
+      "name": "M\u00f6nch",
       "id": 10
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/5?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Undead",
+      "name": "Untoter",
       "id": 5
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -390,19 +390,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/11?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Druid",
+      "name": "Druide",
       "id": 11
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/28?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Highmountain Tauren",
+      "name": "Hochbergtauren",
       "id": 28
     },
     "gender": {
       "type": "MALE",
-      "name": "Male"
+      "name": "M\u00e4nnlich"
     },
     "faction": {
       "type": "HORDE",
@@ -431,19 +431,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/1?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Warrior",
+      "name": "Krieger",
       "id": 1
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Blood Elf",
+      "name": "Blutelf",
       "id": 10
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -472,7 +472,7 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/9?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Warlock",
+      "name": "Hexenmeister",
       "id": 9
     },
     "playable_race": {
@@ -484,7 +484,7 @@ Found 40 characters.
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -513,19 +513,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/5?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Priest",
+      "name": "Priester",
       "id": 5
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/27?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Nightborne",
+      "name": "Nachtgeborener",
       "id": 27
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -554,7 +554,7 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/7?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Shaman",
+      "name": "Schamane",
       "id": 7
     },
     "playable_race": {
@@ -566,7 +566,7 @@ Found 40 characters.
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -595,19 +595,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/8?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Mage",
+      "name": "Magier",
       "id": 8
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/27?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Nightborne",
+      "name": "Nachtgeborener",
       "id": 27
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -636,19 +636,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/12?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Demon Hunter",
+      "name": "D\u00e4monenj\u00e4ger",
       "id": 12
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Blood Elf",
+      "name": "Blutelf",
       "id": 10
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -677,23 +677,23 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/11?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Druid",
+      "name": "Druide",
       "id": 11
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/4?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Night Elf",
+      "name": "Nachtelf",
       "id": 4
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "ALLIANCE",
-      "name": "Alliance"
+      "name": "Allianz"
     },
     "level": 80
   },
@@ -718,7 +718,7 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/8?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Mage",
+      "name": "Magier",
       "id": 8
     },
     "playable_race": {
@@ -730,7 +730,7 @@ Found 40 characters.
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -759,60 +759,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/11?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Druid",
+      "name": "Druide",
       "id": 11
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/31?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Zandalari Troll",
+      "name": "Zandalaritroll",
       "id": 31
     },
     "gender": {
       "type": "MALE",
-      "name": "Male"
-    },
-    "faction": {
-      "type": "HORDE",
-      "name": "Horde"
-    },
-    "level": 10
-  },
-  {
-    "character": {
-      "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/voramir?namespace=profile-eu"
-    },
-    "protected_character": {
-      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/1618-194947144?namespace=profile-eu"
-    },
-    "name": "Voramir",
-    "id": 194947144,
-    "realm": {
-      "key": {
-        "href": "https://eu.api.blizzard.com/data/wow/realm/1618?namespace=dynamic-eu"
-      },
-      "name": "Die Aldor",
-      "id": 1618,
-      "slug": "die-aldor"
-    },
-    "playable_class": {
-      "key": {
-        "href": "https://eu.api.blizzard.com/data/wow/playable-class/2?namespace=static-12.0.1_65617-eu"
-      },
-      "name": "Paladin",
-      "id": 2
-    },
-    "playable_race": {
-      "key": {
-        "href": "https://eu.api.blizzard.com/data/wow/playable-race/84?namespace=static-12.0.1_65617-eu"
-      },
-      "name": "Earthen",
-      "id": 84
-    },
-    "gender": {
-      "type": "MALE",
-      "name": "Male"
+      "name": "M\u00e4nnlich"
     },
     "faction": {
       "type": "HORDE",
@@ -841,19 +800,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/3?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Hunter",
+      "name": "J\u00e4ger",
       "id": 3
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Blood Elf",
+      "name": "Blutelf",
       "id": 10
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -882,7 +841,7 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/8?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Mage",
+      "name": "Magier",
       "id": 8
     },
     "playable_race": {
@@ -894,7 +853,7 @@ Found 40 characters.
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -930,12 +889,12 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Blood Elf",
+      "name": "Blutelf",
       "id": 10
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -964,7 +923,7 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/4?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Rogue",
+      "name": "Schurke",
       "id": 4
     },
     "playable_race": {
@@ -976,7 +935,7 @@ Found 40 characters.
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -1005,19 +964,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/6?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Death Knight",
+      "name": "Todesritter",
       "id": 6
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/5?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Undead",
+      "name": "Untoter",
       "id": 5
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -1046,19 +1005,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/12?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Demon Hunter",
+      "name": "D\u00e4monenj\u00e4ger",
       "id": 12
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Blood Elf",
+      "name": "Blutelf",
       "id": 10
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -1087,19 +1046,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/9?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Warlock",
+      "name": "Hexenmeister",
       "id": 9
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/27?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Nightborne",
+      "name": "Nachtgeborener",
       "id": 27
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -1128,19 +1087,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/5?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Priest",
+      "name": "Priester",
       "id": 5
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Blood Elf",
+      "name": "Blutelf",
       "id": 10
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -1169,19 +1128,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/1?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Warrior",
+      "name": "Krieger",
       "id": 1
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/84?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Earthen",
+      "name": "Irdener",
       "id": 84
     },
     "gender": {
       "type": "MALE",
-      "name": "Male"
+      "name": "M\u00e4nnlich"
     },
     "faction": {
       "type": "HORDE",
@@ -1210,25 +1169,66 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/7?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Shaman",
+      "name": "Schamane",
       "id": 7
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/84?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Earthen",
+      "name": "Irdener",
       "id": 84
     },
     "gender": {
       "type": "MALE",
-      "name": "Male"
+      "name": "M\u00e4nnlich"
     },
     "faction": {
       "type": "HORDE",
       "name": "Horde"
     },
     "level": 80
+  },
+  {
+    "character": {
+      "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/voramir?namespace=profile-eu"
+    },
+    "protected_character": {
+      "href": "https://eu.api.blizzard.com/profile/user/wow/protected-character/1618-195792745?namespace=profile-eu"
+    },
+    "name": "Voramir",
+    "id": 195792745,
+    "realm": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/realm/1618?namespace=dynamic-eu"
+      },
+      "name": "Die Aldor",
+      "id": 1618,
+      "slug": "die-aldor"
+    },
+    "playable_class": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-class/11?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Druide",
+      "id": 11
+    },
+    "playable_race": {
+      "key": {
+        "href": "https://eu.api.blizzard.com/data/wow/playable-race/91?namespace=static-12.0.1_65617-eu"
+      },
+      "name": "Haranir",
+      "id": 91
+    },
+    "gender": {
+      "type": "MALE",
+      "name": "M\u00e4nnlich"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    },
+    "level": 90
   },
   {
     "character": {
@@ -1251,19 +1251,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/4?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Rogue",
+      "name": "Schurke",
       "id": 4
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/5?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Undead",
+      "name": "Untoter",
       "id": 5
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -1292,7 +1292,7 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/11?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Druid",
+      "name": "Druide",
       "id": 11
     },
     "playable_race": {
@@ -1304,7 +1304,7 @@ Found 40 characters.
     },
     "gender": {
       "type": "MALE",
-      "name": "Male"
+      "name": "M\u00e4nnlich"
     },
     "faction": {
       "type": "HORDE",
@@ -1333,19 +1333,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/8?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Mage",
+      "name": "Magier",
       "id": 8
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/5?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Undead",
+      "name": "Untoter",
       "id": 5
     },
     "gender": {
       "type": "MALE",
-      "name": "Male"
+      "name": "M\u00e4nnlich"
     },
     "faction": {
       "type": "HORDE",
@@ -1374,19 +1374,19 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/4?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Rogue",
+      "name": "Schurke",
       "id": 4
     },
     "playable_race": {
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/5?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Undead",
+      "name": "Untoter",
       "id": 5
     },
     "gender": {
       "type": "MALE",
-      "name": "Male"
+      "name": "M\u00e4nnlich"
     },
     "faction": {
       "type": "HORDE",
@@ -1422,12 +1422,12 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Blood Elf",
+      "name": "Blutelf",
       "id": 10
     },
     "gender": {
       "type": "MALE",
-      "name": "Male"
+      "name": "M\u00e4nnlich"
     },
     "faction": {
       "type": "HORDE",
@@ -1456,7 +1456,7 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/11?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Druid",
+      "name": "Druide",
       "id": 11
     },
     "playable_race": {
@@ -1468,11 +1468,11 @@ Found 40 characters.
     },
     "gender": {
       "type": "MALE",
-      "name": "Male"
+      "name": "M\u00e4nnlich"
     },
     "faction": {
       "type": "ALLIANCE",
-      "name": "Alliance"
+      "name": "Allianz"
     },
     "level": 2
   },
@@ -1497,7 +1497,7 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/11?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Druid",
+      "name": "Druide",
       "id": 11
     },
     "playable_race": {
@@ -1509,7 +1509,7 @@ Found 40 characters.
     },
     "gender": {
       "type": "MALE",
-      "name": "Male"
+      "name": "M\u00e4nnlich"
     },
     "faction": {
       "type": "HORDE",
@@ -1538,7 +1538,7 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/4?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Rogue",
+      "name": "Schurke",
       "id": 4
     },
     "playable_race": {
@@ -1550,7 +1550,7 @@ Found 40 characters.
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -1586,12 +1586,12 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-race/10?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Blood Elf",
+      "name": "Blutelf",
       "id": 10
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",
@@ -1620,7 +1620,7 @@ Found 40 characters.
       "key": {
         "href": "https://eu.api.blizzard.com/data/wow/playable-class/4?namespace=static-12.0.1_65617-eu"
       },
-      "name": "Rogue",
+      "name": "Schurke",
       "id": 4
     },
     "playable_race": {
@@ -1632,7 +1632,7 @@ Found 40 characters.
     },
     "gender": {
       "type": "FEMALE",
-      "name": "Female"
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",

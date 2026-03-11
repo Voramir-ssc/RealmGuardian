@@ -396,6 +396,12 @@ def sync_user_characters(user_token: str):
                     # Filter Ghost Characters (Deleted/Transferred) that return 404
                     if not protected_details and not public_details:
                         print(f"Skipping ghost character {char['name']}")
+                        # Check if this ghost character exists in our database and remove it
+                        db_ghost = new_db.query(models.Character).filter_by(blizzard_id=char['id']).first()
+                        if db_ghost:
+                            print(f"Removing deleted ghost character from database: {db_ghost.name}")
+                            new_db.delete(db_ghost)
+                            new_db.commit()
                         continue
 
                     # Determine Gold
@@ -443,11 +449,17 @@ def sync_user_characters(user_token: str):
                         if raw_professions and 'primaries' in raw_professions:
                             parsed_professions = []
                             for prof in raw_professions['primaries']:
-                                parsed_professions.append({
+                                prof_data = {
                                     "name": prof.get('profession', {}).get('name', 'Unknown'),
-                                    "skill_points": prof.get('tiers', [{}])[0].get('skill_points', 0), # Simplified to first expansion tier
-                                    "max_skill_points": prof.get('tiers', [{}])[0].get('max_skill_points', 0)
-                                })
+                                    "tiers": []
+                                }
+                                for tier in prof.get('tiers', []):
+                                    prof_data["tiers"].append({
+                                        "name": tier.get('tier', {}).get('name', 'Unknown Expansion'),
+                                        "skill_points": tier.get('skill_points', 0),
+                                        "max_skill_points": tier.get('max_skill_points', 0)
+                                    })
+                                parsed_professions.append(prof_data)
                             professions_json = json.dumps(parsed_professions)
                     except Exception as prof_err:
                         print(f"Failed to fetch professions for {char['name']}: {prof_err}")

@@ -45,7 +45,7 @@
                 "id": 14771
             },
             "map": {
-                "name": "Khaz Algar (Surface)",
+                "name": "Khaz Algar (Oberfl\u00e4che)",
                 "id": 2552
             },
             "x": 2672.0376,
@@ -79,7 +79,7 @@
         "name": "Venmara",
         "gender": {
             "type": "FEMALE",
-            "name": "Female"
+            "name": "Weiblich"
         },
         "faction": {
             "type": "HORDE",
@@ -89,21 +89,21 @@
             "key": {
                 "href": "https://eu.api.blizzard.com/data/wow/playable-race/5?namespace=static-12.0.0_65028-eu"
             },
-            "name": "Undead",
+            "name": "Untoter",
             "id": 5
         },
         "character_class": {
             "key": {
                 "href": "https://eu.api.blizzard.com/data/wow/playable-class/10?namespace=static-12.0.0_65028-eu"
             },
-            "name": "Monk",
+            "name": "M\u00f6nch",
             "id": 10
         },
         "active_spec": {
             "key": {
                 "href": "https://eu.api.blizzard.com/data/wow/playable-specialization/268?namespace=static-12.0.0_65028-eu"
             },
-            "name": "Brewmaster",
+            "name": "Braumeister",
             "id": 268
         },
         "realm": {
@@ -176,9 +176,9 @@
             "key": {
                 "href": "https://eu.api.blizzard.com/data/wow/title/512?namespace=static-12.0.0_65028-eu"
             },
-            "name": "the Inquisitive",
+            "name": "der Wissbegierige",
             "id": 512,
-            "display_string": "{name} the Inquisitive"
+            "display_string": "{name} die Wissbegierige"
         },
         "reputations": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/dethecus/venmara/reputations?namespace=profile-eu"
@@ -219,23 +219,23 @@
         "categories": [
             {
                 "id": 130,
-                "name": "Character",
+                "name": "Charakter",
                 "statistics": [
                     {
                         "id": 14897,
-                        "name": "Item slots equipped with Uncommon items",
+                        "name": "Ausr\u00fcstungspl\u00e4tze belegt mit ungew\u00f6hnlichen Gegenst\u00e4nden",
                         "last_updated_timestamp": 1724322557000,
                         "quantity": 16.0
                     },
                     {
                         "id": 14898,
-                        "name": "Item slots equipped with Rare items",
+                        "name": "Ausr\u00fcstungspl\u00e4tze belegt mit seltenen Gegenst\u00e4nden",
                         "last_updated_timestamp": 1751152791000,
                         "quantity": 9.0
                     },
                     {
                         "id": 14899,
-                        "name": "Item slots equipped with Epic items",
+                        "name": "Ausr\u00fcstungspl\u00e4tze belegt mit epischen Gegenst\u00e4nden",
                         "last_updated_timestamp": 1751154167000,
                         "quantity": 3.0
                     }
@@ -243,34 +243,34 @@
             },
             {
                 "id": 128,
-                "name": "Kills",
+                "name": "Siege",
                 "sub_categories": [
                     {
                         "id": 135,
-                        "name": "Creatures",
+                        "name": "Kreaturen",
                         "statistics": [
                             {
                                 "id": 107,
-                                "name": "Creatures killed",
+                                "name": "Kreaturen get\u00f6tet",
                                 "last_updated_timestamp": 1769937425000,
                                 "quantity": 5242.0
                             },
                             {
                                 "id": 1337,
-                                "name": "Different creature types killed",
+                                "name": "Unterschiedliche Arten von Kreaturen get\u00f6tet",
                                 "last_updated_timestamp": 1769937425000,
                                 "quantity": 10.0
                             },
                             {
                                 "id": 1336,
-                                "name": "Creature type killed the most",
+                                "name": "Am h\u00e4ufigsten get\u00f6teter Kreaturtyp",
                                 "last_updated_timestamp": 1769937425000,
                                 "description": "Humanoid",
                                 "quantity": 3209.0
                             },
                             {
                                 "id": 108,
-                                "name": "Critters killed",
+                                "name": "Kleintiere get\u00f6tet",
                                 "last_updated_timestamp": 1751155066000,
                                 "quantity": 89.0
                             }
@@ -278,17 +278,17 @@
                     },
                     {
                         "id": 137,
-                        "name": "Killing Blows",
+                        "name": "Todesst\u00f6\u00dfe",
                         "statistics": [
                             {
                                 "id": 1487,
-                                "name": "Total Killing Blows",
+                                "name": "Todesst\u00f6\u00dfe insgesamt",
                                 "last_updated_timestamp": 1769937425000,
                                 "quantity": 1531.0
                             },
                             {
                                 "id": 1488,
-                                "name": "World Killing Blows",
+                                "name": "Todesst\u00f6\u00dfe weltweit",
                                 "last_updated_timestamp": 1717482915000,
                                 "quantity": 1238.0
                             }
@@ -298,13 +298,13 @@
                 "statistics": [
                     {
                         "id": 1197,
-                        "name": "Total kills",
+                        "name": "Siege insgesamt",
                         "last_updated_timestamp": 1769937425000,
                         "quantity": 94.0
                     },
                     {
                         "id": 1198,
-                        "name": "Total kills that grant experience or honor",
+                        "name": "Siege insgesamt, die Erfahrung oder Ehrenpunkte verleihen",
                         "last_updated_timestamp": 1769937425000,
                         "quantity": 4548.0
                     }
@@ -312,17 +312,17 @@
             },
             {
                 "id": 122,
-                "name": "Deaths",
+                "name": "Tode",
                 "statistics": [
                     {
                         "id": 60,
-                        "name": "Total deaths",
+                        "name": "Tode insgesamt",
                         "last_updated_timestamp": 1719218724000,
                         "quantity": 8.0
                     },
                     {
                         "id": 14787,
-                        "name": "Total deaths in dungeons",
+                        "name": "Tode in Dungeons insgesamt",
                         "last_updated_timestamp": 1719218724000,
                         "quantity": 4.0
                     }
@@ -334,31 +334,31 @@
                 "statistics": [
                     {
                         "id": 98,
-                        "name": "Quests completed",
+                        "name": "Quests abgeschlossen",
                         "last_updated_timestamp": 1769937678000,
                         "quantity": 730.0
                     },
                     {
                         "id": 95,
-                        "name": "Average quests completed per day",
+                        "name": "Durchschnittlich abgeschlossene Quests pro Tag",
                         "last_updated_timestamp": 1769937678000,
                         "quantity": 1.1774193548387097
                     },
                     {
                         "id": 97,
-                        "name": "Daily quests completed",
+                        "name": "T\u00e4gliche Quests abgeschlossen",
                         "last_updated_timestamp": 1719210439000,
                         "quantity": 18.0
                     },
                     {
                         "id": 759,
-                        "name": "Average daily quests completed per day",
+                        "name": "Durchschnitt der t\u00e4glich abgeschlossenen Quests",
                         "last_updated_timestamp": 1719210439000,
                         "quantity": 0.02903225806451613
                     },
                     {
                         "id": 94,
-                        "name": "Quests abandoned",
+                        "name": "Quests abgebrochen",
                         "last_updated_timestamp": 1769936149000,
                         "quantity": 21.0
                     }
@@ -366,17 +366,17 @@
             },
             {
                 "id": 134,
-                "name": "Travel",
+                "name": "Reise",
                 "statistics": [
                     {
                         "id": 349,
-                        "name": "Flight paths taken",
+                        "name": "Bereiste Flugrouten",
                         "last_updated_timestamp": 1751153823000,
                         "quantity": 1.0
                     },
                     {
                         "id": 353,
-                        "name": "Number of times hearthed",
+                        "name": "Anzahl der Nutzungen des Ruhesteins",
                         "last_updated_timestamp": 1751275231000,
                         "quantity": 3.0
                     }
@@ -384,7 +384,7 @@
             },
             {
                 "id": 14807,
-                "name": "Dungeons & Raids",
+                "name": "Dungeons & Schlachtz\u00fcge",
                 "sub_categories": [
                     {
                         "id": 14821,
@@ -392,13 +392,13 @@
                         "statistics": [
                             {
                                 "id": 6786,
-                                "name": "Flameweaver Koegler kills (Scarlet Halls)",
+                                "name": "Siege \u00fcber Flammenwirker Koegler (Scharlachrote Hallen)",
                                 "last_updated_timestamp": 1718894300000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 1093,
-                                "name": "High Inquisitor Whitemane kills (Scarlet Monastery)",
+                                "name": "Siege \u00fcber Hochinquisitorin Wei\u00dfstr\u00e4hne (Das Scharlachrote Kloster)",
                                 "last_updated_timestamp": 1719218086000,
                                 "quantity": 2.0
                             }
@@ -410,187 +410,187 @@
                         "statistics": [
                             {
                                 "id": 6777,
-                                "name": "Yan-Zhu the Uncasked kills (Stormstout Brewery)",
+                                "name": "Siege \u00fcber Yan-Zhu den Dekantierten (Brauerei Sturmbr\u00e4u)",
                                 "last_updated_timestamp": 1719082599000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 6778,
-                                "name": "Xin the Weaponmaster kills (Mogu'shan Palace)",
+                                "name": "Siege \u00fcber Xin den Waffenmeister (Mogu'shanpalast)",
                                 "last_updated_timestamp": 1718782839000,
                                 "quantity": 2.0
                             },
                             {
                                 "id": 6781,
-                                "name": "Taran Zhu redemptions (Shado-Pan Monastery)",
+                                "name": "Siege \u00fcber Taran Zhu (Shado-Pan-Kloster)",
                                 "last_updated_timestamp": 1719219328000,
                                 "quantity": 2.0
                             },
                             {
                                 "id": 6782,
-                                "name": "Taran Zhu redemptions (Heroic Shado-Pan Monastery)",
+                                "name": "Siege \u00fcber Taran Zhu (Shado-Pan-Kloster, Heroisch)",
                                 "last_updated_timestamp": 1718957780000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 6784,
-                                "name": "Flameweaver Koegler kills (Heroic Scarlet Halls)",
+                                "name": "Siege \u00fcber Flammenwirker Koegler (Scharlachrote Hallen, Heroisch)",
                                 "last_updated_timestamp": 1717483511000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 6989,
-                                "name": "Sha of Anger kills (Kun-Lai Summit)",
+                                "name": "Siege \u00fcber das Sha des Zorns (Kun-Lai-Gipfel)",
                                 "last_updated_timestamp": 1716834708000,
                                 "quantity": 2.0
                             },
                             {
                                 "id": 6983,
-                                "name": "Stone Guard kills (LFR Mogu'shan Vaults)",
+                                "name": "Siege \u00fcber die Steinwache (Mogu'shangew\u00f6lbe, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1719209999000,
                                 "quantity": 2.0
                             },
                             {
                                 "id": 6984,
-                                "name": "Feng the Accursed kills (LFR Mogu'shan Vaults)",
+                                "name": "Siege \u00fcber Feng den Verfluchten (Mogu'shangew\u00f6lbe, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1719210035000,
                                 "quantity": 2.0
                             },
                             {
                                 "id": 6985,
-                                "name": "Gara'jal the Spiritbinder kills (LFR Mogu'shan Vaults)",
+                                "name": "Siege \u00fcber Gara'jal den Geisterbinder (Mogu'shangew\u00f6lbe, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1719210109000,
                                 "quantity": 2.0
                             },
                             {
                                 "id": 6986,
-                                "name": "Four Kings kills (LFR Mogu'shan Vaults)",
+                                "name": "Siege \u00fcber die vier K\u00f6nige (Mogu'shangew\u00f6lbe, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1717485180000,
                                 "quantity": 2.0
                             },
                             {
                                 "id": 6987,
-                                "name": "Elegon kills (LFR Mogu'shan Vaults)",
+                                "name": "Siege \u00fcber Elegon (Mogu'shangew\u00f6lbe, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1717485360000,
                                 "quantity": 2.0
                             },
                             {
                                 "id": 6988,
-                                "name": "Will of the Emperor kills (LFR Normal Mogu'shan Vaults)",
+                                "name": "Siege \u00fcber den Willen des Kaisers (Mogu'shangew\u00f6lbe, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1717485524000,
                                 "quantity": 2.0
                             },
                             {
                                 "id": 6991,
-                                "name": "Imperial Vizier Zor'lok kills (LFR Heart of Fear)",
+                                "name": "Siege \u00fcber den kaiserlichen Wesir Zor'lok (Das Herz der Angst, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1718951853000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 6992,
-                                "name": "Blade Lord Ta'yak kills (LFR Heart of Fear)",
+                                "name": "Siege \u00fcber Klingenf\u00fcrst Ta'yak (Das Herz der Angst, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1718951896000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 6993,
-                                "name": "Garalon kills (LFR Heart of Fear)",
+                                "name": "Siege \u00fcber Garalon (Das Herz der Angst, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1718951959000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 6994,
-                                "name": "Wind Lord Mel'jarak kills (LFR Heart of Fear)",
+                                "name": "Siege \u00fcber Windf\u00fcrst Mel'jarak (Das Herz der Angst, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1718608541000,
                                 "quantity": 2.0
                             },
                             {
                                 "id": 6995,
-                                "name": "Amber-Shaper Un'sok kills (LFR Heart of Fear)",
+                                "name": "Siege \u00fcber Bernformer Un'sok (Das Herz der Angst, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1718608687000,
                                 "quantity": 2.0
                             },
                             {
                                 "id": 6996,
-                                "name": "Grand Empress Shek'zeer kills (LFR Heart of Fear)",
+                                "name": "Siege \u00fcber Gro\u00dfkaiserin Shek'zeer (Das Herz der Angst, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1718608742000,
                                 "quantity": 2.0
                             },
                             {
                                 "id": 8158,
-                                "name": "Tortos kills (LFR Throne of Thunder)",
+                                "name": "Siege \u00fcber Tortos (Thron des Donners, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1718952031000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 8163,
-                                "name": "Megaera kills (LFR Throne of Thunder)",
+                                "name": "Siege \u00fcber Megaera (Thron des Donners, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1718952209000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 8168,
-                                "name": "Ji-Kun kills (LFR Throne of Thunder)",
+                                "name": "Siege \u00fcber Ji-Kun (Thron des Donners, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1718952302000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 8188,
-                                "name": "Iron Qon kills (LFR Throne of Thunder)",
+                                "name": "Siege \u00fcber den eisernen Qon (Thron des Donners, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1718894593000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 8193,
-                                "name": "Twin Consorts kills (LFR Throne of Thunder)",
+                                "name": "Siege \u00fcber die Zwillingskonkubinen (Thron des Donners, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1718894653000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 8198,
-                                "name": "Lei Shen kills (LFR Throne of Thunder)",
+                                "name": "Siege \u00fcber Lei Shen (Thron des Donners, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1718894774000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 8574,
-                                "name": "Galakras kills (LFR Siege of Orgrimmar)",
+                                "name": "Siege \u00fcber Galakras (Schlacht um Orgrimmar, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1718617458000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 8580,
-                                "name": "Iron Juggernaut kills (LFR Siege of Orgrimmar)",
+                                "name": "Siege \u00fcber den eisernen Koloss (Schlacht um Orgrimmar, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1718617519000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 8586,
-                                "name": "Dark Shaman kills (LFR Siege of Orgrimmar)",
+                                "name": "Siege \u00fcber die Dunkelschamanen (Schlacht um Orgrimmar, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1718617572000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 8593,
-                                "name": "General Nazgrim kills (LFR Siege of Orgrimmar)",
+                                "name": "Siege \u00fcber General Nazgrim (Schlacht um Orgrimmar, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1718617677000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 8620,
-                                "name": "Siegecrafter Blackfuse kills (LFR Siege of Orgrimmar)",
+                                "name": "Siege \u00fcber Belagerungsingenieur Ru\u00dfschmied (Schlacht um Orgrimmar, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1719217385000,
                                 "quantity": 3.0
                             },
                             {
                                 "id": 8626,
-                                "name": "Paragons of the Klaxxi kills (LFR Siege of Orgrimmar)",
+                                "name": "Siege \u00fcber die Getreuen der Klaxxi (Schlacht um Orgrimmar, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1719217561000,
                                 "quantity": 3.0
                             },
                             {
                                 "id": 8632,
-                                "name": "Garrosh Hellscream (LFR Siege of Orgrimmar)",
+                                "name": "Siege \u00fcber Garrosh H\u00f6llschrei (Schlacht um Orgrimmar, Schlachtzugsbrowser)",
                                 "last_updated_timestamp": 1719217784000,
                                 "quantity": 3.0
                             }
@@ -602,25 +602,25 @@
                         "statistics": [
                             {
                                 "id": 20485,
-                                "name": "Ki'katal the Harvester kills (Normal Ara-Kara, City of Echoes)",
+                                "name": "Siege \u00fcber Ki'katal die Ernterin (Normal: Ara-Kara, Stadt der Echos)",
                                 "last_updated_timestamp": 1751155130000,
                                 "quantity": 2.0
                             },
                             {
                                 "id": 40657,
-                                "name": "Prioress Murrpray kills (Normal Priory of the Sacred Flame)",
+                                "name": "Siege \u00fcber Priorin Murrbet (Normal: Priorat der Heiligen Flamme)",
                                 "last_updated_timestamp": 1751152892000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 40716,
-                                "name": "Voidstone Monstrosity kills (Normal The Rookery)",
+                                "name": "Siege \u00fcber Leerensteinmonstrosit\u00e4t (Normal Die Brutst\u00e4tte)",
                                 "last_updated_timestamp": 1751152382000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 40719,
-                                "name": "Void Speaker Eirich (Normal The Stonevault)",
+                                "name": "Leerensprecher Eirich (Normal Das Steingew\u00f6lbe)",
                                 "last_updated_timestamp": 1751153754000,
                                 "quantity": 1.0
                             }
@@ -630,50 +630,50 @@
                 "statistics": [
                     {
                         "id": 932,
-                        "name": "Total 5-player dungeons entered",
+                        "name": "5-Spieler-Dungeons betreten",
                         "last_updated_timestamp": 1751199936000,
                         "quantity": 30.0
                     },
                     {
                         "id": 934,
-                        "name": "Total 25-player raids entered",
+                        "name": "25-Spieler-Schlachtz\u00fcgen beigetreten",
                         "last_updated_timestamp": 1719209971000,
                         "quantity": 9.0
                     },
                     {
                         "id": 7240,
-                        "name": "Pandaria dungeons completed (final boss defeated)",
+                        "name": "5-Spieler-Dungeons in Pandaria abgeschlossen (Endgegner get\u00f6tet)",
                         "last_updated_timestamp": 1751200569000,
                         "quantity": 15.0
                     },
                     {
                         "id": 7242,
-                        "name": "Pandaria dungeon bosses defeated",
+                        "name": "5-Spieler-Bosse in Pandaria besiegt",
                         "last_updated_timestamp": 1751200569000,
                         "quantity": 28.0
                     },
                     {
                         "id": 7244,
-                        "name": "Pandaria dungeon boss defeated the most",
+                        "name": "Am h\u00e4ufigsten get\u00f6teter Dungeonboss in Pandaria",
                         "last_updated_timestamp": 1751200569000,
-                        "description": "Trial of the King",
+                        "description": "Die Pr\u00fcfung des K\u00f6nigs",
                         "quantity": 6.0
                     },
                     {
                         "id": 7241,
-                        "name": "Pandaria raids completed (final boss defeated)",
+                        "name": "Schlachtz\u00fcge in Pandaria abgeschlossen (Endgegner get\u00f6tet)",
                         "last_updated_timestamp": 1719217784000,
                         "quantity": 8.0
                     },
                     {
                         "id": 7245,
-                        "name": "Pandaria raid bosses defeated",
+                        "name": "Schlachtzugsbosse in Pandaria get\u00f6tet",
                         "last_updated_timestamp": 1719210109000,
                         "quantity": 22.0
                     },
                     {
                         "id": 7247,
-                        "name": "Pandaria raid boss defeated the most",
+                        "name": "Am h\u00e4ufigsten get\u00f6teter Schlachtzugsboss in Pandaria",
                         "last_updated_timestamp": 1719210109000,
                         "description": "Qin-xi",
                         "quantity": 2.0
@@ -682,18 +682,18 @@
             },
             {
                 "id": 15219,
-                "name": "Pet Battles",
+                "name": "Haustierk\u00e4mpfe",
                 "statistics": [
                     {
                         "id": 8278,
-                        "name": "Pet Battles won at max level",
+                        "name": "Haustierk\u00e4mpfe auf der H\u00f6chststufe gewonnen",
                         "last_updated_timestamp": 1767036480000,
                         "quantity": 15.0
                     }
                 ]
             },
             {
-                "name": "World Events",
+                "name": "Weltereignisse",
                 "sub_categories": [
                     {
                         "id": 15562,
@@ -701,7 +701,7 @@
                         "statistics": [
                             {
                                 "id": 61338,
-                                "name": "Bronze gained across Warband",
+                                "name": "Innerhalb der Kriegsmeute erhaltenes Bronze",
                                 "last_updated_timestamp": 1768854360000,
                                 "quantity": 2826889.0
                             }
