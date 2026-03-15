@@ -23,6 +23,7 @@ import CraftingWidget from './components/CraftingWidget';
 
 import CharacterList from './components/CharacterList';
 import Settings from './components/Settings';
+import TaskManager from './components/TaskManager';
 
 function App() {
   const [tokenData, setTokenData] = useState(null);
@@ -163,30 +164,42 @@ function App() {
       )}
 
       {activeTab === 'dashboard' && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Token Card */}
-          {loading ? (
-            <div className="animate-pulse bg-surface h-48 rounded-2xl border border-white/5"></div>
-          ) : (
-            <TokenWidget
-              currentPrice={tokenData?.price || 0}
-              lastUpdated={tokenData?.last_updated || 0}
-              formatted={tokenData?.formatted || "0g"}
-              history={tokenHistory}
-              selectedRange={range}
-              onRangeChange={setRange}
+        <div className="space-y-6">
+          {/* Last Sync Info */}
+          <div className="flex justify-end items-center text-xs text-secondary/50 px-2">
+            Zuletzt synchronisiert: {
+              characters.length > 0
+                ? new Date(Math.max(...characters.map(c => new Date(c.last_updated).getTime()))).toLocaleString('de-DE')
+                : 'Unbekannt'
+            }
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Token Card */}
+            {loading ? (
+              <div className="animate-pulse bg-surface h-48 rounded-2xl border border-white/5"></div>
+            ) : (
+              <TokenWidget
+                currentPrice={tokenData?.price || 0}
+                lastUpdated={tokenData?.last_updated || 0}
+                formatted={tokenData?.formatted || "0g"}
+                history={tokenHistory}
+                selectedRange={range}
+                onRangeChange={setRange}
+              />
+            )}
+
+            {/* Combined Account Gold & History Card */}
+            <GoldOverviewWidget
+              characters={characters}
+              history={accountGoldHistory}
+              loading={charLoading}
             />
-          )}
 
-          {/* Combined Account Gold & History Card */}
-          <GoldOverviewWidget
-            characters={characters}
-            history={accountGoldHistory}
-            loading={charLoading}
-          />
-
-          <div className="md:col-span-2">
-            <WatchlistWidget apiUrl={getApiUrl()} />
+            <div className="md:col-span-2 grid grid-cols-1 xl:grid-cols-2 gap-6">
+              <WatchlistWidget apiUrl={getApiUrl()} />
+              <TaskManager />
+            </div>
           </div>
         </div>
       )}

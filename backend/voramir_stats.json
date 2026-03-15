@@ -1,0 +1,484 @@
+{
+    "_links": {
+        "self": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/voramir/achievements/statistics?namespace=profile-eu"
+        }
+    },
+    "character": {
+        "key": {
+            "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/voramir?namespace=profile-eu"
+        },
+        "name": "Voramir",
+        "id": 195792745,
+        "realm": {
+            "key": {
+                "href": "https://eu.api.blizzard.com/data/wow/realm/1618?namespace=dynamic-eu"
+            },
+            "name": "Die Aldor",
+            "id": 1618,
+            "slug": "die-aldor"
+        }
+    },
+    "categories": [
+        {
+            "id": 130,
+            "name": "Charakter",
+            "statistics": [
+                {
+                    "id": 14897,
+                    "name": "Ausr\u00fcstungspl\u00e4tze belegt mit ungew\u00f6hnlichen Gegenst\u00e4nden",
+                    "last_updated_timestamp": 1772919524000,
+                    "quantity": 15.0
+                },
+                {
+                    "id": 14898,
+                    "name": "Ausr\u00fcstungspl\u00e4tze belegt mit seltenen Gegenst\u00e4nden",
+                    "last_updated_timestamp": 1773140226000,
+                    "quantity": 15.0
+                }
+            ]
+        },
+        {
+            "id": 128,
+            "name": "Siege",
+            "sub_categories": [
+                {
+                    "id": 135,
+                    "name": "Kreaturen",
+                    "statistics": [
+                        {
+                            "id": 107,
+                            "name": "Kreaturen get\u00f6tet",
+                            "last_updated_timestamp": 1773142891000,
+                            "quantity": 3604.0
+                        },
+                        {
+                            "id": 1337,
+                            "name": "Unterschiedliche Arten von Kreaturen get\u00f6tet",
+                            "last_updated_timestamp": 1773142891000,
+                            "quantity": 10.0
+                        },
+                        {
+                            "id": 1336,
+                            "name": "Am h\u00e4ufigsten get\u00f6teter Kreaturtyp",
+                            "last_updated_timestamp": 1773142891000,
+                            "description": "Humanoid",
+                            "quantity": 1598.0
+                        },
+                        {
+                            "id": 108,
+                            "name": "Kleintiere get\u00f6tet",
+                            "last_updated_timestamp": 1773140565000,
+                            "quantity": 229.0
+                        }
+                    ]
+                },
+                {
+                    "id": 137,
+                    "name": "Todesst\u00f6\u00dfe",
+                    "statistics": [
+                        {
+                            "id": 1487,
+                            "name": "Todesst\u00f6\u00dfe insgesamt",
+                            "last_updated_timestamp": 1773142891000,
+                            "quantity": 3047.0
+                        },
+                        {
+                            "id": 1488,
+                            "name": "Todesst\u00f6\u00dfe weltweit",
+                            "last_updated_timestamp": 1773141332000,
+                            "quantity": 1471.0
+                        }
+                    ]
+                }
+            ],
+            "statistics": [
+                {
+                    "id": 1197,
+                    "name": "Siege insgesamt",
+                    "last_updated_timestamp": 1773142891000,
+                    "quantity": 192.0
+                },
+                {
+                    "id": 1198,
+                    "name": "Siege insgesamt, die Erfahrung oder Ehrenpunkte verleihen",
+                    "last_updated_timestamp": 1773142891000,
+                    "quantity": 3169.0
+                }
+            ]
+        },
+        {
+            "id": 122,
+            "name": "Tode",
+            "statistics": [
+                {
+                    "id": 60,
+                    "name": "Tode insgesamt",
+                    "last_updated_timestamp": 1773128148000,
+                    "quantity": 6.0
+                },
+                {
+                    "id": 14787,
+                    "name": "Tode in Dungeons insgesamt",
+                    "last_updated_timestamp": 1773128148000,
+                    "quantity": 2.0
+                },
+                {
+                    "id": 40748,
+                    "name": "Tode in Tiefen insgesamt",
+                    "last_updated_timestamp": 1773125510000,
+                    "quantity": 1.0
+                },
+                {
+                    "id": 1229,
+                    "name": "Von Druiden wiederbelebt",
+                    "last_updated_timestamp": 1773128178000,
+                    "quantity": 1.0
+                }
+            ]
+        },
+        {
+            "id": 133,
+            "name": "Quests",
+            "statistics": [
+                {
+                    "id": 98,
+                    "name": "Quests abgeschlossen",
+                    "last_updated_timestamp": 1773142720000,
+                    "quantity": 1046.0
+                },
+                {
+                    "id": 95,
+                    "name": "Durchschnittlich abgeschlossene Quests pro Tag",
+                    "last_updated_timestamp": 1773142720000,
+                    "quantity": 0.0
+                },
+                {
+                    "id": 94,
+                    "name": "Quests abgebrochen",
+                    "last_updated_timestamp": 1773136933000,
+                    "quantity": 25.0
+                }
+            ]
+        },
+        {
+            "id": 132,
+            "name": "Fertigkeiten",
+            "sub_categories": [
+                {
+                    "id": 178,
+                    "name": "Sekund\u00e4re Fertigkeiten",
+                    "statistics": [
+                        {
+                            "id": 1524,
+                            "name": "Kochfertigkeit",
+                            "last_updated_timestamp": 1773124021000,
+                            "quantity": 1.0
+                        },
+                        {
+                            "id": 1745,
+                            "name": "Bekannte Kochrezepte",
+                            "last_updated_timestamp": 1773124021000,
+                            "quantity": 56.0
+                        },
+                        {
+                            "id": 1519,
+                            "name": "Angelfertigkeit",
+                            "last_updated_timestamp": 1773124021000,
+                            "quantity": 3.0
+                        },
+                        {
+                            "id": 1518,
+                            "name": "Gefangene Fische",
+                            "last_updated_timestamp": 1773138675000,
+                            "quantity": 11.0
+                        },
+                        {
+                            "id": 1456,
+                            "name": "Fische und andere geangelte Dinge",
+                            "last_updated_timestamp": 1773138675000,
+                            "quantity": 23.0
+                        }
+                    ]
+                },
+                {
+                    "id": 173,
+                    "name": "Berufe",
+                    "statistics": [
+                        {
+                            "id": 1527,
+                            "name": "H\u00f6chste Alchemiefertigkeit",
+                            "last_updated_timestamp": 1773124021000,
+                            "quantity": 300.0
+                        },
+                        {
+                            "id": 1729,
+                            "name": "Erlernte Alchemierezepte",
+                            "last_updated_timestamp": 1773132303000,
+                            "quantity": 217.0
+                        },
+                        {
+                            "id": 1538,
+                            "name": "H\u00f6chste Kr\u00e4uterkundefertigkeit",
+                            "last_updated_timestamp": 1773137000000,
+                            "quantity": 92.0
+                        },
+                        {
+                            "id": 16745,
+                            "name": "Handwerksauftr\u00e4ge erf\u00fcllt (insgesamt)",
+                            "last_updated_timestamp": 1773130113000,
+                            "quantity": 9.0
+                        },
+                        {
+                            "id": 16749,
+                            "name": "Handwerksauftr\u00e4ge erf\u00fcllt (Alchemie)",
+                            "last_updated_timestamp": 1773130113000,
+                            "quantity": 9.0
+                        }
+                    ]
+                }
+            ],
+            "statistics": [
+                {
+                    "id": 1199,
+                    "name": "Erlernte Berufe",
+                    "last_updated_timestamp": 1773124021000,
+                    "quantity": 2.0
+                }
+            ]
+        },
+        {
+            "id": 134,
+            "name": "Reise",
+            "statistics": [
+                {
+                    "id": 349,
+                    "name": "Bereiste Flugrouten",
+                    "last_updated_timestamp": 1773137149000,
+                    "quantity": 7.0
+                },
+                {
+                    "id": 353,
+                    "name": "Anzahl der Nutzungen des Ruhesteins",
+                    "last_updated_timestamp": 1773142287000,
+                    "quantity": 8.0
+                }
+            ]
+        },
+        {
+            "id": 15533,
+            "name": "Tiefen",
+            "sub_categories": [
+                {
+                    "id": 15572,
+                    "name": "Midnight",
+                    "statistics": [
+                        {
+                            "id": 61770,
+                            "name": "Atal'Aman abgeschlossen",
+                            "last_updated_timestamp": 1773086674000,
+                            "quantity": 1.0
+                        },
+                        {
+                            "id": 61771,
+                            "name": "Akademischer Aufruhr abgeschlossen",
+                            "last_updated_timestamp": 1773092252000,
+                            "quantity": 1.0
+                        },
+                        {
+                            "id": 61772,
+                            "name": "Grollgrube abgeschlossen",
+                            "last_updated_timestamp": 1773092956000,
+                            "quantity": 1.0
+                        },
+                        {
+                            "id": 61773,
+                            "name": "Kluft der Erinnerung abgeschlossen",
+                            "last_updated_timestamp": 1773132031000,
+                            "quantity": 1.0
+                        },
+                        {
+                            "id": 61774,
+                            "name": "Schattenenklave abgeschlossen",
+                            "last_updated_timestamp": 1773125890000,
+                            "quantity": 2.0
+                        },
+                        {
+                            "id": 61775,
+                            "name": "Gruften der Zwielichtklinge abgeschlossen",
+                            "last_updated_timestamp": 1773048277000,
+                            "quantity": 1.0
+                        },
+                        {
+                            "id": 61791,
+                            "name": "Am h\u00e4ufigsten abgeschlossene Tiefe von Midnight",
+                            "last_updated_timestamp": 1773132031000,
+                            "description": "Die Schattenenklave",
+                            "quantity": 2.0
+                        }
+                    ]
+                }
+            ],
+            "statistics": [
+                {
+                    "id": 40759,
+                    "name": "Gef\u00e4hrtenstufen erhalten",
+                    "last_updated_timestamp": 1773142263000,
+                    "quantity": 7.0
+                },
+                {
+                    "id": 40861,
+                    "name": "Verlegte Kuriosit\u00e4ten gepl\u00fcndert",
+                    "last_updated_timestamp": 1773131881000,
+                    "quantity": 5.0
+                },
+                {
+                    "id": 40766,
+                    "name": "Tiefen der Stufe 1 abgeschlossen",
+                    "last_updated_timestamp": 1773132031000,
+                    "quantity": 7.0
+                },
+                {
+                    "id": 40734,
+                    "name": "Abgeschlossene Tiefen insgesamt",
+                    "last_updated_timestamp": 1773132031000,
+                    "quantity": 7.0
+                }
+            ]
+        },
+        {
+            "id": 14807,
+            "name": "Dungeons & Schlachtz\u00fcge",
+            "sub_categories": [
+                {
+                    "id": 14823,
+                    "name": "Wrath of the Lich King",
+                    "statistics": [
+                        {
+                            "id": 4639,
+                            "name": "Siege \u00fcber Lord Mark'gar (Eiskrone, 10 Spieler)",
+                            "last_updated_timestamp": 1773090027000,
+                            "quantity": 1.0
+                        }
+                    ]
+                },
+                {
+                    "id": 15469,
+                    "name": "Dragonflight",
+                    "statistics": [
+                        {
+                            "id": 16092,
+                            "name": "Siege \u00fcber Balakar Khan (Normal: Der Angriff der Nokhud)",
+                            "last_updated_timestamp": 1772824397000,
+                            "quantity": 2.0
+                        }
+                    ]
+                },
+                {
+                    "id": 15520,
+                    "name": "The War Within",
+                    "statistics": [
+                        {
+                            "id": 40711,
+                            "name": "Siege \u00fcber Rasha'nan (Normal Die Morgenbringer)",
+                            "last_updated_timestamp": 1772923687000,
+                            "quantity": 1.0
+                        }
+                    ]
+                },
+                {
+                    "id": 15542,
+                    "name": "Midnight",
+                    "statistics": [
+                        {
+                            "id": 61650,
+                            "name": "Siege \u00fcber Nalorakk (Nalorakks Bau, Normal)",
+                            "last_updated_timestamp": 1773140045000,
+                            "quantity": 1.0
+                        },
+                        {
+                            "id": 61653,
+                            "name": "Siege \u00fcber Rak'tul, Gef\u00e4\u00df der Seelen (Maisarakavernen, Normal)",
+                            "last_updated_timestamp": 1773086283000,
+                            "quantity": 2.0
+                        },
+                        {
+                            "id": 61659,
+                            "name": "Siege \u00fcber Ziekket (Das blendende Tal, Normal)",
+                            "last_updated_timestamp": 1773128476000,
+                            "quantity": 1.0
+                        }
+                    ]
+                }
+            ],
+            "statistics": [
+                {
+                    "id": 932,
+                    "name": "5-Spieler-Dungeons betreten",
+                    "last_updated_timestamp": 1773138248000,
+                    "quantity": 10.0
+                },
+                {
+                    "id": 933,
+                    "name": "10-Spieler-Schlachtz\u00fcgen beigetreten",
+                    "last_updated_timestamp": 1773089919000,
+                    "quantity": 1.0
+                },
+                {
+                    "id": 1770,
+                    "name": "10-Spieler-Bosse in Wrath of the Lich King get\u00f6tet",
+                    "last_updated_timestamp": 1773090027000,
+                    "quantity": 1.0
+                },
+                {
+                    "id": 1772,
+                    "name": "Am h\u00e4ufigsten get\u00f6teter 10-Spieler-Boss in Wrath of the Lich King",
+                    "last_updated_timestamp": 1773090027000,
+                    "description": "Lord Mark'gar",
+                    "quantity": 1.0
+                }
+            ]
+        },
+        {
+            "id": 15219,
+            "name": "Haustierk\u00e4mpfe",
+            "statistics": [
+                {
+                    "id": 338,
+                    "name": "Anzahl der besessenen Haustiere",
+                    "last_updated_timestamp": 1773136704000,
+                    "quantity": 1.0
+                },
+                {
+                    "id": 8278,
+                    "name": "Haustierk\u00e4mpfe auf der H\u00f6chststufe gewonnen",
+                    "last_updated_timestamp": 1767036480000,
+                    "quantity": 15.0
+                }
+            ]
+        },
+        {
+            "name": "Weltereignisse",
+            "sub_categories": [
+                {
+                    "id": 15562,
+                    "name": "Legion: Remix",
+                    "statistics": [
+                        {
+                            "id": 60938,
+                            "name": "D\u00e4monen get\u00f6tet",
+                            "last_updated_timestamp": 1772927682000,
+                            "quantity": 102.0
+                        },
+                        {
+                            "id": 61338,
+                            "name": "Innerhalb der Kriegsmeute erhaltenes Bronze",
+                            "last_updated_timestamp": 1768854360000,
+                            "quantity": 2826889.0
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

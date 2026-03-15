@@ -1221,8 +1221,8 @@ Found 40 characters.
       "id": 91
     },
     "gender": {
-      "type": "MALE",
-      "name": "M\u00e4nnlich"
+      "type": "FEMALE",
+      "name": "Weiblich"
     },
     "faction": {
       "type": "HORDE",

@@ -14,11 +14,19 @@ DO NOT BREAK THIS BASE FUNCTIONALITY.
 """
 
 from fastapi import FastAPI, Depends, HTTPException, Request, BackgroundTasks
+from pydantic import BaseModel
 import pydantic
 from sqlalchemy.orm import Session
 import sqlalchemy
 from fastapi.middleware.cors import CORSMiddleware
 import json
+
+class TaskCreate(BaseModel):
+    title: str
+    type: str # 'daily', 'weekly', 'monthly', 'manual'
+
+class TaskUpdate(BaseModel):
+    is_completed: bool
 import models
 from database import engine, get_db, SessionLocal
 from config import config
@@ -136,6 +144,64 @@ async def lifespan(app: FastAPI):
     yield
     # Shutdown logic if needed
 
+def check_and_reset_tasks(db: Session):
+    """
+    Checks all completed tasks and resets them if their respective reset condition is met.
+    - Daily: Resets every day at 08:00 UTC
+    - Weekly: Resets every Wednesday at 08:00 UTC (European standard reset)
+    - Monthly: Resets on the 1st of every month at 08:00 UTC
+    """
+    now = datetime.utcnow()
+    tasks = db.query(models.UserTask).filter(models.UserTask.is_completed == True).all()
+    count = 0
+    
+    for task in tasks:
+        if not task.last_completed_at:
+            continue
+            
+        completed_date = task.last_completed_at
+        should_reset = False
+        
+        # Calculate start of current daily/weekly/monthly period
+        # Dailies (reset at 8 AM UTC each day)
+        if task.type == 'daily':
+            current_reset = now.replace(hour=8, minute=0, second=0, microsecond=0)
+            if now < current_reset:
+                current_reset -= timedelta(days=1)
+            if completed_date < current_reset:
+                should_reset = True
+                
+        # Weeklies (reset at 8 AM UTC each Wednesday)
+        elif task.type == 'weekly':
+            # 0=Monday, 1=Tuesday, 2=Wednesday...
+            days_since_wednesday = (now.weekday() - 2) % 7
+            current_reset = now.replace(hour=8, minute=0, second=0, microsecond=0) - timedelta(days=days_since_wednesday)
+            # If it's wednesday but before 8 AM, the reset was last week
+            if now.weekday() == 2 and now.hour < 8:
+                current_reset -= timedelta(days=7)
+            if completed_date < current_reset:
+                should_reset = True
+                
+        # Monthlies (reset at 8 AM UTC on the 1st of the month)
+        elif task.type == 'monthly':
+            current_reset = now.replace(day=1, hour=8, minute=0, second=0, microsecond=0)
+            if now < current_reset: # Rare edge case if it's the 1st but before 8am
+                # go to previous month
+                last_month = (now.month - 1) or 12
+                year = now.year if last_month != 12 else now.year - 1
+                current_reset = current_reset.replace(year=year, month=last_month)
+            if completed_date < current_reset:
+                should_reset = True
+                
+        if should_reset:
+            task.is_completed = False
+            task.last_completed_at = None
+            count += 1
+            
+    if count > 0:
+        db.commit()
+        print(f"Automatically reset {count} tasks.")
+
 async def scheduler():
     """
     Background Scheduler: Runs in an infinite loop while the server is alive.
@@ -145,6 +211,10 @@ async def scheduler():
         try:
             # Create a new session for the background task
             db = next(get_db())
+            
+            # Reset Tasks
+            check_and_reset_tasks(db)
+            
             await update_token_price(db)
             await update_commodity_prices(db)
 
@@ -468,6 +538,27 @@ def sync_user_characters(user_token: str):
                     # Note: Blizzard has completely removed 'Total time played' from the external Web API.
                     # This information is now only available via the in-game Lua API (/played).
                     
+                    # Parse Delves statistics
+                    delves_completed = 0
+                    delves_max_tier = 0
+                    if stats and 'categories' in stats:
+                        for cat in stats['categories']:
+                            for s in cat.get('statistics', []):
+                                sid = s.get('id')
+                                quant = int(s.get('quantity', 0))
+                                if sid == 40734:
+                                    delves_completed = quant
+                                # Infer max tier from name e.g. "Tiefen der Stufe 1 abgeschlossen"
+                                name_lower = s.get('name', '').lower()
+                                if 'stufe' in name_lower or 'tier' in name_lower or 'level' in name_lower:
+                                    if 'tiefe' in name_lower or 'delve' in name_lower:
+                                        import re
+                                        match = re.search(r'(?:stufe|tier|level)\s*(\d+)', name_lower)
+                                        if match and quant > 0:
+                                            tier = int(match.group(1))
+                                            if tier > delves_max_tier:
+                                                delves_max_tier = tier
+                    
                     # Update DB
                     # Lookup by Blizzard ID (unique), NOT database ID
                     db_char = new_db.query(models.Character).filter_by(blizzard_id=char['id']).first()
@@ -483,6 +574,8 @@ def sync_user_characters(user_token: str):
                             professions=professions_json,
                             gold=int(gold) if gold is not None else 0,
                             played_time=int(played_time),
+                            delves_completed=delves_completed,
+                            delves_max_tier=delves_max_tier,
                             last_updated=timestamp
                         )
                         if 'playable_class' in char:
@@ -495,13 +588,15 @@ def sync_user_characters(user_token: str):
                         db_char.name = char['name']
                         db_char.realm = char['realm']['name']
                         db_char.level = char['level']
-                        print(f"Updating existing character {char['name']} with ilvl {item_level} & professions")
+                        print(f"Updating existing character {char['name']} with ilvl {item_level} & delves {delves_max_tier}")
                         db_char.item_level = item_level
                         db_char.equipment = equipment_json
                         db_char.professions = professions_json
                         if gold is not None:
                             db_char.gold = int(gold)
                         db_char.played_time = int(played_time)
+                        db_char.delves_completed = delves_completed
+                        db_char.delves_max_tier = delves_max_tier
                         db_char.last_updated = timestamp
                     
                     new_db.commit()
@@ -920,6 +1015,53 @@ def delete_recipe(id: int, db: Session = Depends(get_db)):
     db.delete(recipe)
     db.commit()
     return {"message": "Recipe deleted"}
+
+# --- Task Management Endpoints ---
+@app.get('/api/user/tasks')
+def get_user_tasks(db: Session = Depends(get_db)):
+    """Retrieves all user tasks, ordered by type and creation date."""
+    tasks = db.query(models.UserTask).order_by(models.UserTask.type, models.UserTask.created_at.desc()).all()
+    return {"tasks": tasks}
+
+@app.post('/api/user/tasks')
+def create_user_task(task: TaskCreate, db: Session = Depends(get_db)):
+    """Creates a new user task."""
+    db_task = models.UserTask(
+        title=task.title,
+        type=task.type
+    )
+    db.add(db_task)
+    db.commit()
+    db.refresh(db_task)
+    return db_task
+
+@app.put('/api/user/tasks/{task_id}')
+def update_user_task(task_id: int, task_update: TaskUpdate, db: Session = Depends(get_db)):
+    """Updates a task's completion status."""
+    db_task = db.query(models.UserTask).filter(models.UserTask.id == task_id).first()
+    if not db_task:
+        raise HTTPException(status_code=404, detail="Task not found")
+        
+    db_task.is_completed = task_update.is_completed
+    if task_update.is_completed:
+        db_task.last_completed_at = datetime.utcnow()
+    else:
+        db_task.last_completed_at = None
+        
+    db.commit()
+    db.refresh(db_task)
+    return db_task
+
+@app.delete('/api/user/tasks/{task_id}')
+def delete_user_task(task_id: int, db: Session = Depends(get_db)):
+    """Deletes a user task."""
+    db_task = db.query(models.UserTask).filter(models.UserTask.id == task_id).first()
+    if not db_task:
+        raise HTTPException(status_code=404, detail="Task not found")
+    db.delete(db_task)
+    db.commit()
+    return {"message": "Task deleted"}
+
 
 if __name__ == "__main__":
     import uvicorn

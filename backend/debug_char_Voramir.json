@@ -13,7 +13,7 @@
         },
         "id": 195792745,
         "name": "Voramir",
-        "money": 2639857809,
+        "money": 2929286612,
         "character": {
             "key": {
                 "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/voramir?namespace=profile-eu"
@@ -30,28 +30,28 @@
             }
         },
         "protected_stats": {
-            "total_number_deaths": 6,
-            "total_gold_gained": 3480440756,
-            "total_gold_lost": 840592947,
-            "total_item_value_gained": 63809634,
-            "level_number_deaths": 0,
-            "level_gold_gained": 10426203,
-            "level_gold_lost": 354662,
-            "level_item_value_gained": 2104043
+            "total_number_deaths": 7,
+            "total_gold_gained": 3772928219,
+            "total_gold_lost": 843651607,
+            "total_item_value_gained": 75135065,
+            "level_number_deaths": 1,
+            "level_gold_gained": 302913666,
+            "level_gold_lost": 3413322,
+            "level_item_value_gained": 13429474
         },
         "position": {
             "zone": {
-                "name": "Tal der Nebel",
-                "id": 15936
+                "name": "Der Basar",
+                "id": 16079
             },
             "map": {
-                "name": "Harandar",
-                "id": 2694
+                "name": "Die \u00d6stlichen K\u00f6nigreiche",
+                "id": 0
             },
-            "x": -224.26305,
-            "y": -1117.2778,
-            "z": 832.37384,
-            "facing": 4.451623
+            "x": 8460.941,
+            "y": -4864.5303,
+            "z": 50.724937,
+            "facing": 1.3758725
         },
         "bind_position": {
             "zone": {
@@ -78,8 +78,8 @@
         "id": 195792745,
         "name": "Voramir",
         "gender": {
-            "type": "MALE",
-            "name": "M\u00e4nnlich"
+            "type": "FEMALE",
+            "name": "Weiblich"
         },
         "faction": {
             "type": "HORDE",
@@ -101,10 +101,10 @@
         },
         "active_spec": {
             "key": {
-                "href": "https://eu.api.blizzard.com/data/wow/playable-specialization/104?namespace=static-12.0.1_65617-eu"
+                "href": "https://eu.api.blizzard.com/data/wow/playable-specialization/103?namespace=static-12.0.1_65617-eu"
             },
-            "name": "W\u00e4chter",
-            "id": 104
+            "name": "Wildheit",
+            "id": 103
         },
         "realm": {
             "key": {
@@ -135,7 +135,7 @@
         },
         "level": 90,
         "experience": 0,
-        "achievement_points": 21075,
+        "achievement_points": 21215,
         "achievements": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/voramir/achievements?namespace=profile-eu"
         },
@@ -151,9 +151,9 @@
         "media": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/voramir/character-media?namespace=profile-eu"
         },
-        "last_login_timestamp": 1773142956000,
-        "average_item_level": 185,
-        "equipped_item_level": 185,
+        "last_login_timestamp": 1773534749000,
+        "average_item_level": 217,
+        "equipped_item_level": 217,
         "specializations": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/voramir/specializations?namespace=profile-eu"
         },
@@ -178,7 +178,7 @@
             },
             "name": "Meister der Lehren",
             "id": 93,
-            "display_string": "Meister der Lehren {name}"
+            "display_string": "Meisterin der Lehren {name}"
         },
         "reputations": {
             "href": "https://eu.api.blizzard.com/profile/wow/character/die-aldor/voramir/reputations?namespace=profile-eu"
@@ -232,6 +232,18 @@
                         "name": "Ausr\u00fcstungspl\u00e4tze belegt mit seltenen Gegenst\u00e4nden",
                         "last_updated_timestamp": 1773140226000,
                         "quantity": 15.0
+                    },
+                    {
+                        "id": 14899,
+                        "name": "Ausr\u00fcstungspl\u00e4tze belegt mit epischen Gegenst\u00e4nden",
+                        "last_updated_timestamp": 1773526991000,
+                        "quantity": 1.0
+                    },
+                    {
+                        "id": 62292,
+                        "name": "Morgenlichtwappen des Abenteurers verdient",
+                        "last_updated_timestamp": 1773532251000,
+                        "quantity": 105.0
                     }
                 ]
             },
@@ -246,27 +258,27 @@
                             {
                                 "id": 107,
                                 "name": "Kreaturen get\u00f6tet",
-                                "last_updated_timestamp": 1773142891000,
-                                "quantity": 3604.0
+                                "last_updated_timestamp": 1773534490000,
+                                "quantity": 4237.0
                             },
                             {
                                 "id": 1337,
                                 "name": "Unterschiedliche Arten von Kreaturen get\u00f6tet",
-                                "last_updated_timestamp": 1773142891000,
+                                "last_updated_timestamp": 1773534490000,
                                 "quantity": 10.0
                             },
                             {
                                 "id": 1336,
                                 "name": "Am h\u00e4ufigsten get\u00f6teter Kreaturtyp",
-                                "last_updated_timestamp": 1773142891000,
+                                "last_updated_timestamp": 1773534490000,
                                 "description": "Humanoid",
-                                "quantity": 1598.0
+                                "quantity": 1828.0
                             },
                             {
                                 "id": 108,
                                 "name": "Kleintiere get\u00f6tet",
-                                "last_updated_timestamp": 1773140565000,
-                                "quantity": 229.0
+                                "last_updated_timestamp": 1773534489000,
+                                "quantity": 273.0
                             }
                         ]
                     },
@@ -277,14 +289,14 @@
                             {
                                 "id": 1487,
                                 "name": "Todesst\u00f6\u00dfe insgesamt",
-                                "last_updated_timestamp": 1773142891000,
-                                "quantity": 3047.0
+                                "last_updated_timestamp": 1773534598000,
+                                "quantity": 3670.0
                             },
                             {
                                 "id": 1488,
                                 "name": "Todesst\u00f6\u00dfe weltweit",
-                                "last_updated_timestamp": 1773141332000,
-                                "quantity": 1471.0
+                                "last_updated_timestamp": 1773529354000,
+                                "quantity": 1597.0
                             }
                         ]
                     }
@@ -293,14 +305,14 @@
                     {
                         "id": 1197,
                         "name": "Siege insgesamt",
-                        "last_updated_timestamp": 1773142891000,
-                        "quantity": 192.0
+                        "last_updated_timestamp": 1773534598000,
+                        "quantity": 175.0
                     },
                     {
                         "id": 1198,
                         "name": "Siege insgesamt, die Erfahrung oder Ehrenpunkte verleihen",
-                        "last_updated_timestamp": 1773142891000,
-                        "quantity": 3169.0
+                        "last_updated_timestamp": 1773534598000,
+                        "quantity": 4086.0
                     }
                 ]
             },
@@ -311,8 +323,8 @@
                     {
                         "id": 60,
                         "name": "Tode insgesamt",
-                        "last_updated_timestamp": 1773128148000,
-                        "quantity": 6.0
+                        "last_updated_timestamp": 1773309178000,
+                        "quantity": 7.0
                     },
                     {
                         "id": 14787,
@@ -341,20 +353,32 @@
                     {
                         "id": 98,
                         "name": "Quests abgeschlossen",
-                        "last_updated_timestamp": 1773142720000,
-                        "quantity": 1046.0
+                        "last_updated_timestamp": 1773534652000,
+                        "quantity": 1188.0
                     },
                     {
                         "id": 95,
                         "name": "Durchschnittlich abgeschlossene Quests pro Tag",
-                        "last_updated_timestamp": 1773142720000,
+                        "last_updated_timestamp": 1773534652000,
+                        "quantity": 0.0
+                    },
+                    {
+                        "id": 97,
+                        "name": "T\u00e4gliche Quests abgeschlossen",
+                        "last_updated_timestamp": 1773525999000,
+                        "quantity": 1.0
+                    },
+                    {
+                        "id": 759,
+                        "name": "Durchschnitt der t\u00e4glich abgeschlossenen Quests",
+                        "last_updated_timestamp": 1773525999000,
                         "quantity": 0.0
                     },
                     {
                         "id": 94,
                         "name": "Quests abgebrochen",
-                        "last_updated_timestamp": 1773136933000,
-                        "quantity": 25.0
+                        "last_updated_timestamp": 1773530284000,
+                        "quantity": 26.0
                     }
                 ]
             },
@@ -369,19 +393,19 @@
                             {
                                 "id": 1524,
                                 "name": "Kochfertigkeit",
-                                "last_updated_timestamp": 1773124021000,
+                                "last_updated_timestamp": 1773522966000,
                                 "quantity": 1.0
                             },
                             {
                                 "id": 1745,
                                 "name": "Bekannte Kochrezepte",
-                                "last_updated_timestamp": 1773124021000,
+                                "last_updated_timestamp": 1773522966000,
                                 "quantity": 56.0
                             },
                             {
                                 "id": 1519,
                                 "name": "Angelfertigkeit",
-                                "last_updated_timestamp": 1773124021000,
+                                "last_updated_timestamp": 1773522966000,
                                 "quantity": 3.0
                             },
                             {
@@ -393,8 +417,8 @@
                             {
                                 "id": 1456,
                                 "name": "Fische und andere geangelte Dinge",
-                                "last_updated_timestamp": 1773138675000,
-                                "quantity": 23.0
+                                "last_updated_timestamp": 1773533670000,
+                                "quantity": 24.0
                             }
                         ]
                     },
@@ -405,32 +429,32 @@
                             {
                                 "id": 1527,
                                 "name": "H\u00f6chste Alchemiefertigkeit",
-                                "last_updated_timestamp": 1773124021000,
+                                "last_updated_timestamp": 1773522966000,
                                 "quantity": 300.0
                             },
                             {
                                 "id": 1729,
                                 "name": "Erlernte Alchemierezepte",
-                                "last_updated_timestamp": 1773132303000,
-                                "quantity": 217.0
+                                "last_updated_timestamp": 1773525107000,
+                                "quantity": 222.0
                             },
                             {
                                 "id": 1538,
                                 "name": "H\u00f6chste Kr\u00e4uterkundefertigkeit",
-                                "last_updated_timestamp": 1773137000000,
-                                "quantity": 92.0
+                                "last_updated_timestamp": 1773522966000,
+                                "quantity": 97.0
                             },
                             {
                                 "id": 16745,
                                 "name": "Handwerksauftr\u00e4ge erf\u00fcllt (insgesamt)",
-                                "last_updated_timestamp": 1773130113000,
-                                "quantity": 9.0
+                                "last_updated_timestamp": 1773530460000,
+                                "quantity": 19.0
                             },
                             {
                                 "id": 16749,
                                 "name": "Handwerksauftr\u00e4ge erf\u00fcllt (Alchemie)",
-                                "last_updated_timestamp": 1773130113000,
-                                "quantity": 9.0
+                                "last_updated_timestamp": 1773530460000,
+                                "quantity": 19.0
                             }
                         ]
                     }
@@ -439,7 +463,7 @@
                     {
                         "id": 1199,
                         "name": "Erlernte Berufe",
-                        "last_updated_timestamp": 1773124021000,
+                        "last_updated_timestamp": 1773522966000,
                         "quantity": 2.0
                     }
                 ]
@@ -457,8 +481,8 @@
                     {
                         "id": 353,
                         "name": "Anzahl der Nutzungen des Ruhesteins",
-                        "last_updated_timestamp": 1773142287000,
-                        "quantity": 8.0
+                        "last_updated_timestamp": 1773534704000,
+                        "quantity": 10.0
                     }
                 ]
             },
@@ -594,10 +618,22 @@
                                 "quantity": 1.0
                             },
                             {
+                                "id": 61215,
+                                "name": "Siege \u00fcber Degentrius (Terrasse der Magister, Normal)",
+                                "last_updated_timestamp": 1773259552000,
+                                "quantity": 1.0
+                            },
+                            {
                                 "id": 61653,
                                 "name": "Siege \u00fcber Rak'tul, Gef\u00e4\u00df der Seelen (Maisarakavernen, Normal)",
                                 "last_updated_timestamp": 1773086283000,
                                 "quantity": 2.0
+                            },
+                            {
+                                "id": 61656,
+                                "name": "Siege \u00fcber Lothraxion (Nexuspunkt Xenas, Normal)",
+                                "last_updated_timestamp": 1773331617000,
+                                "quantity": 1.0
                             },
                             {
                                 "id": 61659,
@@ -612,8 +648,8 @@
                     {
                         "id": 932,
                         "name": "5-Spieler-Dungeons betreten",
-                        "last_updated_timestamp": 1773138248000,
-                        "quantity": 10.0
+                        "last_updated_timestamp": 1773329896000,
+                        "quantity": 12.0
                     },
                     {
                         "id": 933,
@@ -640,12 +676,6 @@
                 "id": 15219,
                 "name": "Haustierk\u00e4mpfe",
                 "statistics": [
-                    {
-                        "id": 338,
-                        "name": "Anzahl der besessenen Haustiere",
-                        "last_updated_timestamp": 1773136704000,
-                        "quantity": 1.0
-                    },
                     {
                         "id": 8278,
                         "name": "Haustierk\u00e4mpfe auf der H\u00f6chststufe gewonnen",

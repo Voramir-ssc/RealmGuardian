@@ -3,7 +3,7 @@ models.py
 Defines the SQLAlchemy ORM models representing the database schema.
 Includes models for WoW Tokens, Characters, Tracked Items, and Price History.
 """
-from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey
+from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey, Boolean
 from sqlalchemy.orm import relationship
 from database import Base
 import datetime
@@ -53,8 +53,20 @@ class Character(Base):
     professions = Column(String, nullable=True) # Will store compressed JSON for professions
     gold = Column(Integer, default=0) # Stored in copper
     played_time = Column(Integer, default=0) # Seconds
+    delves_completed = Column(Integer, default=0)
+    delves_max_tier = Column(Integer, default=0)
     icon_url = Column(String, nullable=True)
     last_updated = Column(DateTime, default=datetime.datetime.utcnow)
+
+class UserTask(Base):
+    __tablename__ = "user_tasks"
+
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String, nullable=False)
+    type = Column(String, nullable=False) # 'daily', 'weekly', 'monthly', 'manual'
+    is_completed = Column(Boolean, default=False)
+    last_completed_at = Column(DateTime, nullable=True)
+    created_at = Column(DateTime, default=datetime.datetime.utcnow)
 
 class AccountGoldHistory(Base):
     __tablename__ = "account_gold_history"

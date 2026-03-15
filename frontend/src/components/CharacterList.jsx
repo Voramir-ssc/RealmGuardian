@@ -230,6 +230,21 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                                             <tr className="bg-black/20">
                                                 <td colSpan="6" className="py-4 px-6 border-l-4 border-[#148eff]/50">
 
+                                                    {/* Delves Section */}
+                                                    <div className="mb-4">
+                                                        <div className="mb-2 text-xs uppercase tracking-wider text-secondary font-medium">Tiefen (Delves)</div>
+                                                        <div className="flex gap-4">
+                                                            <div className="bg-surface border border-white/5 rounded-xl p-3 flex flex-col justify-center min-w-[120px]">
+                                                                <span className="text-secondary/50 text-[10px] uppercase tracking-wider font-semibold mb-1">Höchste Stufe</span>
+                                                                <span className="text-xl font-bold text-white">{char.delves_max_tier || '-'}</span>
+                                                            </div>
+                                                            <div className="bg-surface border border-white/5 rounded-xl p-3 flex flex-col justify-center min-w-[120px]">
+                                                                <span className="text-secondary/50 text-[10px] uppercase tracking-wider font-semibold mb-1">Abgeschlossen</span>
+                                                                <span className="text-xl font-bold text-white">{char.delves_completed || '-'}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                     {/* Professions Section */}
                                                     <div className="mb-4">
                                                         <div className="mb-2 text-xs uppercase tracking-wider text-secondary font-medium">Berufe</div>
