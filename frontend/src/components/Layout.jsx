@@ -7,7 +7,7 @@
 import React from 'react';
 import { LayoutDashboard, Coins, Settings, Hammer } from 'lucide-react';
 
-const Layout = ({ children, activeTab, onTabChange }) => {
+const Layout = ({ children, activeTab, onTabChange, theme = 'dark', setTheme = () => {} }) => {
     const getTabTitle = (tab) => {
         switch (tab) {
             case 'dashboard': return 'Dashboard';
@@ -18,8 +18,10 @@ const Layout = ({ children, activeTab, onTabChange }) => {
         }
     };
 
+    const themeClass = theme === 'dark' ? '' : `theme-${theme}`;
+
     return (
-        <div className="flex h-screen bg-background text-primary overflow-hidden">
+        <div className={`flex h-screen bg-background text-primary overflow-hidden theme-transition ${themeClass}`}>
             {/* Sidebar */}
             <aside className="w-16 md:w-64 bg-surface border-r border-white/5 flex flex-col transition-all duration-300">
                 <div className="p-4 flex items-center justify-center md:justify-start gap-3 border-b border-white/5 h-16">
@@ -64,6 +66,28 @@ const Layout = ({ children, activeTab, onTabChange }) => {
                 <header className="h-16 border-b border-white/5 flex items-center justify-between px-6 bg-surface/50 backdrop-blur-sm z-10">
                     <h1 className="text-xl font-medium text-white/90">{getTabTitle(activeTab)}</h1>
                     <div className="flex items-center gap-4">
+                        {/* Theme Quick Selector */}
+                        <div className="flex items-center gap-2 mr-2 bg-black/20 rounded-full px-3 py-1.5 border border-white/5">
+                            <span className="text-[10px] text-secondary font-semibold uppercase tracking-wider mr-1 hidden sm:inline">Design:</span>
+                            {[
+                                { id: 'dark', color: 'bg-cyan-400', label: 'Standard Dark' },
+                                { id: 'druid', color: 'bg-orange-500', label: 'Druide (Lenmera)' },
+                                { id: 'horde', color: 'bg-red-600', label: 'Horde' },
+                                { id: 'alliance', color: 'bg-yellow-500', label: 'Allianz' }
+                            ].map((t) => (
+                                <button
+                                    key={t.id}
+                                    onClick={() => setTheme(t.id)}
+                                    title={t.label}
+                                    className={`w-3.5 h-3.5 rounded-full transition-all duration-300 ${t.color} cursor-pointer relative hover:scale-125 ${
+                                        theme === t.id 
+                                            ? 'ring-2 ring-white ring-offset-2 ring-offset-black scale-110 shadow-[0_0_10px_rgba(255,255,255,0.4)]' 
+                                            : 'opacity-60 hover:opacity-100'
+                                    }`}
+                                />
+                            ))}
+                        </div>
+
                         <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/5">
                             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                             <span className="text-xs text-secondary font-mono">SYSTEM BEREIT</span>

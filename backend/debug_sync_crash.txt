@@ -1,6 +1,0 @@
-'NoneType' object has no attribute 'get_account_profile'
-Traceback (most recent call last):
-  File "C:\Users\Stefan\Desktop\GitRepositories\RealmGuardian\backend\main.py", line 348, in sync_user_characters
-    profile = blizzard_client.get_account_profile(user_token)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'NoneType' object has no attribute 'get_account_profile'

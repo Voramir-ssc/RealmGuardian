@@ -9,6 +9,54 @@
   --color-accent-glow: rgba(0, 206, 209, 0.5);
 }
 
+/* Custom UI Themes based on CSS variables */
+.theme-druid {
+  --color-background: #0c180e; /* Tiefes Waldgrün */
+  --color-surface: #142417; /* Dunkles Laubgrün */
+  --color-primary: #f0e6d2; /* Edles Pergament */
+  --color-secondary: #a3b899; /* Milde Salbeifarbe */
+  --color-accent: #ff8c00; /* Herbstliches Orange */
+  --color-accent-glow: rgba(255, 140, 0, 0.4);
+}
+
+.theme-horde {
+  --color-background: #140808; /* Dunkle Asche */
+  --color-surface: #220e0e; /* Dunkles Rostrot */
+  --color-primary: #f5e6e6; /* Helles Staubgrau */
+  --color-secondary: #c5a3a3; /* Milder Blut-Ton */
+  --color-accent: #b30f0f; /* Horde-Rot */
+  --color-accent-glow: rgba(179, 15, 15, 0.4);
+}
+
+.theme-alliance {
+  --color-background: #070e1b; /* Tiefes Nachtblau */
+  --color-surface: #0c1830; /* Königsblau */
+  --color-primary: #e6f0fa; /* Helles Blauweiß */
+  --color-secondary: #a3c2e6; /* Silberblau */
+  --color-accent: #f5b041; /* Allianz-Gold */
+  --color-accent-glow: rgba(245, 176, 65, 0.4);
+}
+
+/* Smooth theme transition for color-based properties */
+.theme-transition,
+.theme-transition * {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, text-decoration-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Shimmer animation for progress bars */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s infinite linear;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

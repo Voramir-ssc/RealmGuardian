@@ -14,3 +14,4 @@ backend/config.json
 venv/  
 node_modules/  
 frontend/node_modules/  
+backend/debug_*

@@ -39,6 +39,13 @@ function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [isSyncing, setIsSyncing] = useState(false);
 
+  // Theme State
+  const [theme, setTheme] = useState(() => localStorage.getItem('rg_theme') || 'dark');
+
+  useEffect(() => {
+    localStorage.setItem('rg_theme', theme);
+  }, [theme]);
+
   // Use relative path for API, handled by Vite proxy in dev (or Nginx in prod)
   // This allows remote access (e.g. from 100.x.x.x) to work, as the browser talks to Vite, 
   // and Vite talks to the local backend.
@@ -156,7 +163,7 @@ function App() {
   const characters = characterData?.characters || [];
 
   return (
-    <Layout activeTab={activeTab} onTabChange={setActiveTab}>
+    <Layout activeTab={activeTab} onTabChange={setActiveTab} theme={theme} setTheme={setTheme}>
       {error && (
         <div className="bg-red-500/10 border border-red-500/50 text-red-500 p-4 rounded-xl mb-6">
           Fehler beim Laden der Daten: {error}. Bitte überpfrüfen, ob das Backend unter {import.meta.env.VITE_API_URL || `${window.location.hostname}:8000`} erreichbar ist.
@@ -194,6 +201,7 @@ function App() {
               characters={characters}
               history={accountGoldHistory}
               loading={charLoading}
+              tokenPrice={tokenData?.price || 0}
             />
 
             <div className="md:col-span-2 grid grid-cols-1 xl:grid-cols-2 gap-6">
@@ -221,6 +229,8 @@ function App() {
           onLogin={handleLogin}
           characters={characters}
           loading={charLoading || isSyncing}
+          theme={theme}
+          setTheme={setTheme}
         />
       )}
     </Layout>

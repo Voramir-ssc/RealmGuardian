@@ -7,7 +7,7 @@
 import React from 'react';
 import { Shield, RefreshCw, LogOut } from 'lucide-react';
 
-const Settings = ({ onLogin, characters, loading }) => {
+const Settings = ({ onLogin, characters, loading, theme = 'dark', setTheme = () => {} }) => {
     return (
         <div className="max-w-2xl mx-auto space-y-6">
             <div className="bg-surface border border-white/5 rounded-2xl p-6">
@@ -62,19 +62,45 @@ const Settings = ({ onLogin, characters, loading }) => {
                 </div>
             </div>
 
-            <div className="bg-surface border border-white/5 rounded-2xl p-6 opacity-50 pointer-events-none grayscale">
+            <div className="bg-surface border border-white/5 rounded-2xl p-6">
                 <h2 className="text-xl font-medium text-white mb-4">Anwendungseinstellungen</h2>
-                <div className="space-y-4">
-                    <div className="flex justify-between items-center p-3 bg-surface-dark rounded-lg border border-white/5">
-                        <span className="text-secondary">Dunkelmodus</span>
-                        <div className="w-10 h-5 bg-primary/20 rounded-full relative"><div className="absolute right-1 top-1 w-3 h-3 bg-primary rounded-full" /></div>
+                <div className="space-y-6">
+                    <div>
+                        <label className="block text-sm text-secondary mb-3">Aktives UI-Design-Theme</label>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            {[
+                                { id: 'dark', name: 'Standard Dark', desc: 'Futuristisches Cyan/Dunkelblau' },
+                                { id: 'druid', name: 'Druide (Lenmera)', desc: 'Tiefes Waldgrün & warmes Orange' },
+                                { id: 'horde', name: 'Horde', desc: 'Dunkle Asche & martialisches Rot' },
+                                { id: 'alliance', name: 'Allianz', desc: 'Königsblau & goldenes Gelb' }
+                            ].map((t) => (
+                                <button
+                                    key={t.id}
+                                    onClick={() => setTheme(t.id)}
+                                    className={`p-4 rounded-xl border text-left transition-all cursor-pointer ${
+                                        theme === t.id
+                                            ? 'bg-accent/10 border-accent text-white shadow-lg shadow-accent/5'
+                                            : 'bg-black/20 border-white/5 text-secondary hover:bg-black/35 hover:text-white'
+                                    }`}
+                                >
+                                    <div className="font-semibold text-sm flex items-center justify-between">
+                                        <span>{t.name}</span>
+                                        {theme === t.id && <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />}
+                                    </div>
+                                    <div className="text-xs opacity-60 mt-1">{t.desc}</div>
+                                </button>
+                            ))}
+                        </div>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-surface-dark rounded-lg border border-white/5">
-                        <span className="text-secondary">Benachrichtigungen</span>
+
+                    <div className="flex justify-between items-center p-3 bg-black/20 rounded-xl border border-white/5 opacity-40 pointer-events-none">
+                        <div>
+                            <span className="text-secondary block text-sm">System-Benachrichtigungen</span>
+                            <span className="text-[10px] text-secondary/50">Benachrichtigungen für Delve-Resets und volle Kassen</span>
+                        </div>
                         <div className="w-10 h-5 bg-white/10 rounded-full relative"><div className="absolute left-1 top-1 w-3 h-3 bg-white/50 rounded-full" /></div>
                     </div>
                 </div>
-                <p className="text-center text-xs text-secondary/30 mt-4">Demnächst verfügbar</p>
             </div>
         </div>
     );

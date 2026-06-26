@@ -13,7 +13,7 @@ else:
     token = row[0]
     client = BlizzardAPI(config.config.client_id, config.config.client_secret, config.config.region)
     # Fetch Voramir Die Aldor professions
-    prof = client.get_character_professions(token, "die-aldor", "voramir")
+    prof = client.get_character_professions(token, "die-aldor", "lenmera")
     if prof:
         for p in prof.get('primaries', []):
             print(f"Profession: {p.get('profession', {}).get('name')}")

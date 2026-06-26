@@ -5,9 +5,26 @@
  * Includes character-specific details such as realm, level, gold, and total playtime.
  */
 import React, { useState } from 'react';
-import { RefreshCw, Shield, ChevronDown, ChevronUp } from 'lucide-react';
+import { RefreshCw, Shield, ChevronDown, ChevronUp, AlertTriangle, Award } from 'lucide-react';
+
+const classHexColors = {
+    'Death Knight': '#C41E3A', 'Todesritter': '#C41E3A',
+    'Demon Hunter': '#A330C9', 'Dämonenjäger': '#A330C9',
+    'Druid': '#FF7C0A', 'Druide': '#FF7C0A',
+    'Evoker': '#33937F', 'Rufer': '#33937F',
+    'Hunter': '#AAD372', 'Jäger': '#AAD372',
+    'Mage': '#3FC7EB', 'Magier': '#3FC7EB',
+    'Monk': '#00FF98', 'Mönch': '#00FF98',
+    'Paladin': '#F48CBA',
+    'Priest': '#FFFFFF', 'Priester': '#FFFFFF',
+    'Rogue': '#FFF468', 'Schurke': '#FFF468',
+    'Shaman': '#0070DE', 'Schamane': '#0070DE',
+    'Warlock': '#8788EE', 'Hexenmeister': '#8788EE',
+    'Warrior': '#C69B6D', 'Krieger': '#C69B6D',
+};
 
 const CharacterList = ({ characters, loading, onSync, onLogin }) => {
+
     const [expandedCharId, setExpandedCharId] = useState(null);
 
     const toggleExpand = (id) => {
@@ -17,18 +34,30 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
     const getClassColor = (className) => {
         const colors = {
             'Death Knight': 'text-[#C41E3A]',
+            'Todesritter': 'text-[#C41E3A]',
             'Demon Hunter': 'text-[#A330C9]',
+            'Dämonenjäger': 'text-[#A330C9]',
             'Druid': 'text-[#FF7C0A]',
+            'Druide': 'text-[#FF7C0A]',
             'Evoker': 'text-[#33937F]',
+            'Rufer': 'text-[#33937F]',
             'Hunter': 'text-[#AAD372]',
+            'Jäger': 'text-[#AAD372]',
             'Mage': 'text-[#3FC7EB]',
+            'Magier': 'text-[#3FC7EB]',
             'Monk': 'text-[#00FF98]',
+            'Mönch': 'text-[#00FF98]',
             'Paladin': 'text-[#F48CBA]',
             'Priest': 'text-[#FFFFFF]',
+            'Priester': 'text-[#FFFFFF]',
             'Rogue': 'text-[#FFF468]',
+            'Schurke': 'text-[#FFF468]',
             'Shaman': 'text-[#0070DE]',
+            'Schamane': 'text-[#0070DE]',
             'Warlock': 'text-[#8788EE]',
+            'Hexenmeister': 'text-[#8788EE]',
             'Warrior': 'text-[#C69B6D]',
+            'Krieger': 'text-[#C69B6D]',
         };
         return colors[className] || 'text-white';
     };
@@ -46,12 +75,12 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
         return colors[quality] || 'text-gray-400';
     };
 
-    // Sort characters: Pin Voramir on Die Aldor to the top.
+    // Sort characters: Pin Lenmera (Druid) on Die Aldor to the top.
     const sortedCharacters = [...characters].sort((a, b) => {
-        const isAVoramir = a.name.toLowerCase() === 'voramir' && a.realm.toLowerCase() === 'die aldor';
-        const isBVoramir = b.name.toLowerCase() === 'voramir' && b.realm.toLowerCase() === 'die aldor';
-        if (isAVoramir && !isBVoramir) return -1;
-        if (!isAVoramir && isBVoramir) return 1;
+        const isALenmeraDruid = a.name.toLowerCase() === 'lenmera' && a.realm.toLowerCase() === 'die aldor' && (a.class_name === 'Druid' || a.class_name === 'Druide');
+        const isBLenmeraDruid = b.name.toLowerCase() === 'lenmera' && b.realm.toLowerCase() === 'die aldor' && (b.class_name === 'Druid' || b.class_name === 'Druide');
+        if (isALenmeraDruid && !isBLenmeraDruid) return -1;
+        if (!isALenmeraDruid && isBLenmeraDruid) return 1;
         // Fallback to existing order (typically level desc, which is done by the backend)
         return 0;
     });
@@ -97,9 +126,10 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
         const skillPoints = currentTier.skill_points || 0;
         const maxSkillPoints = currentTier.max_skill_points || 0;
         const percentage = maxSkillPoints ? Math.min(100, (skillPoints / maxSkillPoints) * 100) : 0;
+        const isMaxed = maxSkillPoints > 0 && skillPoints === maxSkillPoints;
 
         return (
-            <div className="p-3 rounded-lg bg-surface border border-white/5 flex flex-col gap-2">
+            <div className={`p-3 rounded-lg bg-surface border flex flex-col gap-2 transition-all duration-500 ${isMaxed ? 'border-yellow-500/30 shadow-lg shadow-yellow-500/5 bg-gradient-to-br from-surface to-yellow-500/[0.02]' : 'border-white/5'}`}>
                 <div className="flex justify-between items-start">
                     <div className="flex flex-col">
                         <span className="text-sm font-medium text-white">{profession.name}</span>
@@ -119,11 +149,16 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                             <span className="text-[10px] text-secondary/50 mt-0.5">{sortedTiers[0].name}</span>
                         )}
                     </div>
-                    <span className="text-secondary/80 text-xs pt-0.5">{skillPoints} / {maxSkillPoints}</span>
+                    <div className="flex items-center gap-1.5 pt-0.5">
+                        {isMaxed && <Award className="w-3.5 h-3.5 text-yellow-500 animate-bounce" title="Berufsstufe maximiert!" />}
+                        <span className={`text-xs font-medium ${isMaxed ? 'text-yellow-500 font-semibold' : 'text-secondary/80'}`}>
+                            {skillPoints} / {maxSkillPoints}
+                        </span>
+                    </div>
                 </div>
                 <div className="w-full bg-black/40 h-1.5 rounded-full overflow-hidden mt-1">
                     <div
-                        className="bg-[#148eff] h-full rounded-full transition-all duration-1000"
+                        className={`h-full rounded-full transition-all duration-1000 ${isMaxed ? 'bg-gradient-to-r from-amber-400 to-yellow-400 shadow-[0_0_8px_rgba(245,158,11,0.5)] animate-pulse' : 'bg-[#148eff]'}`}
                         style={{ width: `${percentage}%` }}
                     />
                 </div>
@@ -188,10 +223,56 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                                     console.error("Failed to parse professions JSON", e);
                                 }
 
+                                const renderSlot = (slotType, slotLabel) => {
+                                    const item = equipment.find(i => i.slot === slotType);
+                                    const isExcluded = slotType === 'TABARD' || slotType === 'SHIRT';
+                                    const isUpgradeCandidate = !isExcluded && char.item_level && item && item.level && item.level < char.item_level - 15;
+                                    const diff = item ? char.item_level - item.level : 0;
+
+                                    if (!item) {
+                                        return (
+                                            <div className="flex items-center gap-2 text-xs p-1.5 rounded bg-black/35 border border-white/5 opacity-35 select-none">
+                                                <div className="w-8 h-8 rounded border border-dashed border-white/10 flex items-center justify-center text-[10px] font-bold text-secondary/30 bg-black/20 shrink-0">
+                                                    Ø
+                                                </div>
+                                                <div className="flex flex-col truncate">
+                                                    <span className="text-secondary/50 truncate font-semibold text-[10px]">{slotLabel}</span>
+                                                    <span className="text-secondary/30 text-[8px] uppercase">Leer</span>
+                                                </div>
+                                            </div>
+                                        );
+                                    }
+
+                                    return (
+                                        <div className={`flex justify-between items-center text-xs p-1.5 rounded bg-surface border transition-colors ${isUpgradeCandidate ? 'border-red-500/30 hover:border-red-500/50 bg-red-950/10' : 'border-white/5 hover:border-white/10'}`}>
+                                            <div className="flex items-center gap-2 truncate pr-2">
+                                                <div className="w-8 h-8 rounded border border-white/10 flex items-center justify-center text-[9px] font-bold text-white/40 bg-black/40 shrink-0 select-none uppercase">
+                                                    {slotType.slice(0, 2)}
+                                                </div>
+                                                <div className="flex flex-col truncate">
+                                                    <div className="flex items-center gap-1">
+                                                        {isUpgradeCandidate && (
+                                                            <AlertTriangle className="w-3.5 h-3.5 text-red-500 shrink-0" title={`Schwachstelle: ${diff} iLvl unter Durchschnitt`} />
+                                                        )}
+                                                        <span className={`font-semibold text-[11px] ${getItemQualityColor(item.quality)} truncate`} title={item.name}>{item.name}</span>
+                                                    </div>
+                                                    <span className="text-secondary/50 text-[8px] uppercase font-bold">{slotLabel}</span>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-col items-end shrink-0">
+                                                <span className="text-[#ff8000] font-bold text-xs">{item.level}</span>
+                                                {isUpgradeCandidate && (
+                                                    <span className="text-[9px] text-red-400 font-bold">-{diff}</span>
+                                                )}
+                                            </div>
+                                        </div>
+                                    );
+                                };
+
                                 return (
                                     <React.Fragment key={char.id}>
                                         <tr
-                                            className={`group hover:bg-white/5 transition-colors cursor-pointer ${char.name.toLowerCase() === 'voramir' && char.realm.toLowerCase() === 'die aldor' ? 'bg-white/[0.02]' : ''}`}
+                                            className={`group hover:bg-white/5 transition-colors cursor-pointer ${char.name.toLowerCase() === 'lenmera' && char.realm.toLowerCase() === 'die aldor' && (char.class_name === 'Druid' || char.class_name === 'Druide') ? 'bg-white/[0.02]' : ''}`}
                                             onClick={() => toggleExpand(char.id)}
                                         >
                                             <td className="py-3 text-secondary/50 pl-2">
@@ -209,7 +290,7 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                                                     <div>
                                                         <div className={`font-medium text-sm ${getClassColor(char.class_name)}`}>
                                                             {char.name}
-                                                            {char.name.toLowerCase() === 'voramir' && char.realm.toLowerCase() === 'die aldor' && (
+                                                            {char.name.toLowerCase() === 'lenmera' && char.realm.toLowerCase() === 'die aldor' && (char.class_name === 'Druid' || char.class_name === 'Druide') && (
                                                                 <span className="ml-2 text-[10px] bg-yellow-500/20 text-yellow-500 px-1.5 py-0.5 rounded-full uppercase tracking-wider font-bold">Main</span>
                                                             )}
                                                         </div>
@@ -228,22 +309,7 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
                                         {/* Dropdown Row */}
                                         {isExpanded && (
                                             <tr className="bg-black/20">
-                                                <td colSpan="6" className="py-4 px-6 border-l-4 border-[#148eff]/50">
-
-                                                    {/* Delves Section */}
-                                                    <div className="mb-4">
-                                                        <div className="mb-2 text-xs uppercase tracking-wider text-secondary font-medium">Tiefen (Delves)</div>
-                                                        <div className="flex gap-4">
-                                                            <div className="bg-surface border border-white/5 rounded-xl p-3 flex flex-col justify-center min-w-[120px]">
-                                                                <span className="text-secondary/50 text-[10px] uppercase tracking-wider font-semibold mb-1">Höchste Stufe</span>
-                                                                <span className="text-xl font-bold text-white">{char.delves_max_tier || '-'}</span>
-                                                            </div>
-                                                            <div className="bg-surface border border-white/5 rounded-xl p-3 flex flex-col justify-center min-w-[120px]">
-                                                                <span className="text-secondary/50 text-[10px] uppercase tracking-wider font-semibold mb-1">Abgeschlossen</span>
-                                                                <span className="text-xl font-bold text-white">{char.delves_completed || '-'}</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                <td colSpan="6" className="py-4 px-6 border-l-4 border-[#148eff]/50 text-left">
 
                                                     {/* Professions Section */}
                                                     <div className="mb-4">
@@ -263,20 +329,60 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
 
                                                     {/* Equipment Section */}
                                                     <div>
-                                                        <div className="mb-2 text-xs uppercase tracking-wider text-secondary font-medium">Angelegte Ausrüstung ({equipment.length})</div>
+                                                        <div className="mb-4 text-xs uppercase tracking-wider text-secondary font-medium">Angelegte Ausrüstung ({equipment.length})</div>
                                                         {equipment.length > 0 ? (
-                                                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-                                                                {equipment.map((item, idx) => (
-                                                                    <div key={idx} className="flex justify-between items-center text-xs p-2 rounded bg-surface border border-white/5 hover:border-white/10 transition-colors">
-                                                                        <div className="flex flex-col truncate pr-2">
-                                                                            <span className={`font-medium ${getItemQualityColor(item.quality)} truncate`}>{item.name}</span>
-                                                                            <span className="text-secondary/50 text-[10px] uppercase">
-                                                                                {item.slot ? item.slot.replace(/_/g, ' ') : 'Unbekannter Platz'}
-                                                                            </span>
-                                                                        </div>
-                                                                        <span className="text-[#ff8000] font-bold shrink-0">{item.level}</span>
+                                                            <div className="bg-black/10 border border-white/5 rounded-xl p-4">
+                                                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
+                                                                    
+                                                                    {/* Left Column */}
+                                                                    <div className="flex flex-col gap-2">
+                                                                        {renderSlot('HEAD', 'Kopf')}
+                                                                        {renderSlot('NECK', 'Hals')}
+                                                                        {renderSlot('SHOULDER', 'Schultern')}
+                                                                        {renderSlot('BACK', 'Rücken')}
+                                                                        {renderSlot('CHEST', 'Brust')}
+                                                                        {renderSlot('WRIST', 'Handgelenke')}
                                                                     </div>
-                                                                ))}
+                                                                    
+                                                                    {/* Middle Column (Character Doll) */}
+                                                                    <div className="flex flex-col justify-between items-center bg-black/40 rounded-xl border border-white/5 p-6 min-h-[280px] relative overflow-hidden group/doll">
+                                                                        <div className="absolute top-0 left-0 w-full h-full opacity-5 bg-gradient-to-t from-transparent to-white pointer-events-none" />
+                                                                        <div className="absolute -top-12 -left-12 w-32 h-32 rounded-full filter blur-2xl opacity-10 bg-current pointer-events-none" style={{ color: classHexColors[char.class_name] || '#ffffff' }} />
+                                                                        
+                                                                        <div className="text-center z-10 mt-4">
+                                                                            <span className="text-[10px] text-secondary/50 uppercase tracking-widest font-bold">Gegenstandsstufe</span>
+                                                                            <div className="text-5xl font-extrabold text-[#ff8000] tracking-tight drop-shadow-[0_0_12px_rgba(255,128,0,0.3)] mt-2">
+                                                                                {char.item_level || '-'}
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div className="text-center z-10 w-full mt-auto mb-2">
+                                                                            <h4 className={`text-base font-bold truncate ${getClassColor(char.class_name)}`}>{char.name}</h4>
+                                                                            <span className="text-xs text-white/50">{char.class_name} ({char.level})</span>
+                                                                            <div className="text-[10px] text-secondary/40 uppercase mt-1 truncate">{char.realm}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    {/* Right Column */}
+                                                                    <div className="flex flex-col gap-2">
+                                                                        {renderSlot('HANDS', 'Hände')}
+                                                                        {renderSlot('WAIST', 'Taille')}
+                                                                        {renderSlot('LEGS', 'Beine')}
+                                                                        {renderSlot('FEET', 'Füße')}
+                                                                        {renderSlot('FINGER_1', 'Finger 1')}
+                                                                        {renderSlot('FINGER_2', 'Finger 2')}
+                                                                        {renderSlot('TRINKET_1', 'Schmuck 1')}
+                                                                        {renderSlot('TRINKET_2', 'Schmuck 2')}
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                {/* Bottom Row */}
+                                                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 mt-4 pt-4 border-t border-white/5">
+                                                                    {renderSlot('MAIN_HAND', 'Waffenhand')}
+                                                                    {renderSlot('OFF_HAND', 'Nebenhand')}
+                                                                    {renderSlot('SHIRT', 'Hemd')}
+                                                                    {renderSlot('TABARD', 'Wappenrock')}
+                                                                </div>
                                                             </div>
                                                         ) : (
                                                             <div className="text-sm text-secondary/50 italic py-2">
