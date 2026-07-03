@@ -20,10 +20,10 @@ import TokenWidget from './components/TokenWidget';
 import GoldOverviewWidget from './components/GoldOverviewWidget';
 import WatchlistWidget from './components/WatchlistWidget';
 import CraftingWidget from './components/CraftingWidget';
+import AnalyticsWidget from './components/AnalyticsWidget';
 
 import CharacterList from './components/CharacterList';
 import Settings from './components/Settings';
-import TaskManager from './components/TaskManager';
 
 function App() {
   const [tokenData, setTokenData] = useState(null);
@@ -205,8 +205,8 @@ function App() {
             />
 
             <div className="md:col-span-2 grid grid-cols-1 xl:grid-cols-2 gap-6">
+              <AnalyticsWidget apiUrl={getApiUrl()} />
               <WatchlistWidget apiUrl={getApiUrl()} />
-              <TaskManager />
             </div>
           </div>
         </div>

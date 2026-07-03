@@ -1,13 +1,15 @@
 # RealmGuardian
 
-![Version](https://img.shields.io/badge/version-v.0.5.2-blue.svg)
+![Version](https://img.shields.io/badge/version-v.0.6.0-blue.svg)
 
 RealmGuardian is a comprehensive web dashboard and background service designed to track your World of Warcraft economy. It integrates directly with the official Blizzard Battle.net API to fetch WoW Token prices, commodity market prices, and synchronized character wealth data across your entire account.
 
-## Current Working Status (v.0.5.2)
+## Current Working Status (v.0.6.0)
+- ✅ **New:** Analytics Module for intelligent market scanning (Liquidity Score & Profitability).
+- ✅ **New:** Interactive 14-day historical price graphs directly in the dashboard.
 - ✅ Battle.net OAuth2 login flow is fully operational and correctly handles SSO redirects.
 - ✅ Character Background Sync reliably imports character rosters and gold sums (filters unavailable/ghost characters).
-- ✅ Live tracking for WoW Token prices.
+- ✅ Live tracking for WoW Token prices with dynamic charting.
 - ✅ Custom auction house commodity price history tracking.
 - ✅ Item Level (iLvl) & Equipment visibility parsing.
 - ✅ Professions (Berufe) extraction & skill progression UI.

@@ -28,6 +28,7 @@ class TaskCreate(BaseModel):
 class TaskUpdate(BaseModel):
     is_completed: bool
 import models
+import analytics
 from database import engine, get_db, SessionLocal
 from config import config
 from blizzard_api import BlizzardAPI
@@ -285,6 +286,11 @@ def get_latest_token(db: Session = Depends(get_db)):
         "last_updated": latest.last_updated_timestamp,
         "formatted": f"{latest.price / 10000:,.0f}g"
     }
+
+@app.get("/api/analysis/glyphs")
+def get_glyph_analysis(db: Session = Depends(get_db)):
+    results = analytics.calculate_liquidity_score(db)
+    return results
 
 @app.get("/api/token/history")
 def get_token_history(range: str = "24h", db: Session = Depends(get_db)):

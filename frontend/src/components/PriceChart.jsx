@@ -26,7 +26,7 @@ const PriceChart = ({ data, selectedRange, color = "#00ced1", currencySymbol = "
                         minTickGap={60}
                     />
                     <YAxis
-                        domain={['auto', 'auto']}
+                        domain={['dataMin', 'dataMax']}
                         stroke="#ffffff33"
                         tick={{ fill: '#ffffff66', fontSize: 10 }}
                         tickLine={false}
@@ -36,7 +36,7 @@ const PriceChart = ({ data, selectedRange, color = "#00ced1", currencySymbol = "
                             if (value >= 1000) return `${(value / 1000).toFixed(1)}k`;
                             return value.toFixed(0);
                         }}
-                        width={35}
+                        width={40}
                     />
                     <Tooltip
                         contentStyle={{ backgroundColor: '#1a1b1e', borderColor: '#ffffff1a', borderRadius: '8px', color: '#fff' }}

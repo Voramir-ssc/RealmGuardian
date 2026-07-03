@@ -296,7 +296,7 @@ export default function CraftingWidget({ apiUrl }) {
                                 <div key={recipe.id} className="bg-white/5 rounded-xl border border-white/10 overflow-hidden flex flex-col group relative">
                                     <button
                                         onClick={() => deleteRecipe(recipe.id)}
-                                        className="absolute top-3 right-3 p-1.5 bg-black/40 hover:bg-red-500/20 text-white/40 hover:text-red-400 rounded-lg transition-colors z-10 opacity-0 group-hover:opacity-100 disabled:opacity-50"
+                                        className="absolute top-3 right-3 p-1.5 bg-black/40 hover:bg-red-500/20 text-white/40 hover:text-red-400 rounded-lg transition-colors z-10 disabled:opacity-50"
                                         disabled={isLoading}
                                     >
                                         <Trash2 className="w-4 h-4" />

@@ -51,6 +51,7 @@ class Character(Base):
     item_level = Column(Integer, default=0)
     equipment = Column(String, nullable=True) # Will store compressed JSON
     professions = Column(String, nullable=True) # Will store compressed JSON for professions
+    reputations = Column(String, nullable=True) # Will store JSON of factions and renown
     gold = Column(Integer, default=0) # Stored in copper
     played_time = Column(Integer, default=0) # Seconds
     delves_completed = Column(Integer, default=0)
