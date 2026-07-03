@@ -92,29 +92,41 @@ async def update_commodity_prices(db: Session):
     for tracked items, and saves them to the price history table.
     """
     try:
-        print("Updating Commodity Prices...")
+        print("Updating Commodity and Realm Prices...")
         tracked_items = db.query(models.TrackedItem).all()
         if not tracked_items:
-            print("No tracked items. Skipping commodity update.")
-            return
-
-        # Fetch snapshot
-        snapshot = blizzard_client.get_commodity_price_snapshot()
-        if not snapshot or 'auctions' not in snapshot:
+            print("No tracked items. Skipping update.")
             return
 
         tracked_ids = {item.item_id for item in tracked_items}
         min_prices = {} 
 
-        print(f"Processing {len(snapshot['auctions'])} auctions for {len(tracked_ids)} tracked items...")
-        
-        for auction in snapshot['auctions']:
-            item_id = auction['item']['id']
-            if item_id in tracked_ids:
-                price = auction.get('unit_price', auction.get('buyout', 0))
-                if price > 0:
-                    if item_id not in min_prices or price < min_prices[item_id]:
-                        min_prices[item_id] = price
+        # Fetch Commodity snapshot
+        c_snapshot = blizzard_client.get_commodity_price_snapshot()
+        if c_snapshot and 'auctions' in c_snapshot:
+            c_auctions = c_snapshot['auctions']
+            print(f"Processing {len(c_auctions)} commodity auctions...")
+            for auction in c_auctions:
+                item_id = auction['item']['id']
+                if item_id in tracked_ids:
+                    price = auction.get('unit_price', auction.get('buyout', 0))
+                    if price > 0:
+                        if item_id not in min_prices or price < min_prices[item_id]:
+                            min_prices[item_id] = price
+
+        # Fetch Realm snapshot
+        home_realm_id = getattr(config, 'home_realm_id', '1618')
+        r_snapshot = blizzard_client.get_realm_auctions_snapshot(home_realm_id)
+        if r_snapshot and 'auctions' in r_snapshot:
+            r_auctions = r_snapshot['auctions']
+            print(f"Processing {len(r_auctions)} realm auctions for realm {home_realm_id}...")
+            for auction in r_auctions:
+                item_id = auction['item']['id']
+                if item_id in tracked_ids:
+                    price = auction.get('unit_price', auction.get('buyout', 0))
+                    if price > 0:
+                        if item_id not in min_prices or price < min_prices[item_id]:
+                            min_prices[item_id] = price
         
         new_entries = []
         timestamp = datetime.utcnow()

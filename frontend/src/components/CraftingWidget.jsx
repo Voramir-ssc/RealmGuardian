@@ -101,6 +101,7 @@ export default function CraftingWidget({ apiUrl }) {
     const [recipes, setRecipes] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [activeTab, setActiveTab] = useState('profit');
+    const [sortOrder, setSortOrder] = useState('margin-desc');
 
     // LocalStorage states for shopping list
     const [plannedQuantities, setPlannedQuantities] = useState(() => {
@@ -232,6 +233,17 @@ export default function CraftingWidget({ apiUrl }) {
     const consolidatedList = getConsolidatedReagents();
     const plannedRecipeList = recipes.filter(r => (plannedQuantities[r.id] || 0) > 0);
 
+    const sortedRecipes = [...recipes].sort((a, b) => {
+        if (sortOrder === 'margin-desc') {
+            return b.profit - a.profit;
+        } else if (sortOrder === 'margin-asc') {
+            return a.profit - b.profit;
+        } else if (sortOrder === 'name-asc') {
+            return a.name.localeCompare(b.name);
+        }
+        return 0;
+    });
+
     return (
         <div className="bg-surface rounded-2xl border border-white/5 overflow-hidden flex flex-col h-full">
             {/* Header */}
@@ -241,9 +253,18 @@ export default function CraftingWidget({ apiUrl }) {
                     <p className="text-sm text-white/50">Marge verfolgen und Materialien planen.</p>
                 </div>
 
-                {/* Add Recipe Bar */}
+                {/* Add Recipe Bar and Sort */}
                 {activeTab === 'profit' && (
-                    <div className="flex gap-2 w-full md:w-auto relative">
+                    <div className="flex gap-2 w-full md:w-auto relative items-center">
+                        <select
+                            value={sortOrder}
+                            onChange={(e) => setSortOrder(e.target.value)}
+                            className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#148eff]/50 transition-colors"
+                        >
+                            <option value="margin-desc" className="bg-[#1a1c23]">Höchste Marge</option>
+                            <option value="margin-asc" className="bg-[#1a1c23]">Niedrigste Marge</option>
+                            <option value="name-asc" className="bg-[#1a1c23]">Name (A-Z)</option>
+                        </select>
                         <div className="relative flex-1 md:w-72">
                             <ItemSearchAsync
                                 apiUrl={apiUrl}
@@ -292,7 +313,7 @@ export default function CraftingWidget({ apiUrl }) {
                         </div>
                     ) : (
                         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                            {recipes.map(recipe => (
+                            {sortedRecipes.map(recipe => (
                                 <div key={recipe.id} className="bg-white/5 rounded-xl border border-white/10 overflow-hidden flex flex-col group relative">
                                     <button
                                         onClick={() => deleteRecipe(recipe.id)}

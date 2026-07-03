@@ -73,6 +73,16 @@ class BlizzardAPI:
             return response.json()
         return None
 
+    def get_realm_auctions_snapshot(self, connected_realm_id):
+        token = self.get_token()
+        url = f"https://{self.region}.api.blizzard.com/data/wow/connected-realm/{connected_realm_id}/auctions?namespace=dynamic-{self.region}&locale=de_DE"
+        headers = {"Authorization": f"Bearer {token}"}
+        
+        response = requests.get(url, headers=headers)
+        if response.status_code == 200:
+            return response.json()
+        return None
+
     def search_items_by_name(self, query):
         token = self.get_token()
         # Using name.de_DE to search by German name
