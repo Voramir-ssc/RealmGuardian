@@ -100,6 +100,7 @@ async def update_commodity_prices(db: Session):
 
         tracked_ids = {item.item_id for item in tracked_items}
         min_prices = {} 
+        total_quantities = {}
 
         # Fetch Commodity snapshot
         c_snapshot = blizzard_client.get_commodity_price_snapshot()
@@ -110,6 +111,12 @@ async def update_commodity_prices(db: Session):
                 item_id = auction['item']['id']
                 if item_id in tracked_ids:
                     price = auction.get('unit_price', auction.get('buyout', 0))
+                    qty = auction.get('quantity', 1)
+                    
+                    if item_id not in total_quantities:
+                        total_quantities[item_id] = 0
+                    total_quantities[item_id] += qty
+
                     if price > 0:
                         if item_id not in min_prices or price < min_prices[item_id]:
                             min_prices[item_id] = price
@@ -124,6 +131,12 @@ async def update_commodity_prices(db: Session):
                 item_id = auction['item']['id']
                 if item_id in tracked_ids:
                     price = auction.get('unit_price', auction.get('buyout', 0))
+                    qty = auction.get('quantity', 1)
+                    
+                    if item_id not in total_quantities:
+                        total_quantities[item_id] = 0
+                    total_quantities[item_id] += qty
+
                     if price > 0:
                         if item_id not in min_prices or price < min_prices[item_id]:
                             min_prices[item_id] = price
@@ -136,9 +149,10 @@ async def update_commodity_prices(db: Session):
                 new_entries.append(models.ItemPriceHistory(
                     item_id=item.id,
                     buyout=min_prices[item.item_id],
+                    quantity=total_quantities.get(item.item_id, 1),
                     timestamp=timestamp
                 ))
-                print(f"Updated {item.name}: {min_prices[item.item_id] / 10000}g")
+                print(f"Updated {item.name}: {min_prices[item.item_id] / 10000}g (Qty: {total_quantities.get(item.item_id, 1)})")
         
         if new_entries:
             db.add_all(new_entries)
