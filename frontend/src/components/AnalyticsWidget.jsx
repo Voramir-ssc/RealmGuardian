@@ -89,8 +89,8 @@ const AnalyticsWidget = ({ apiUrl }) => {
                         onChange={(e) => setSortOrder(e.target.value)}
                         className="bg-white/5 border border-white/10 rounded-lg px-2 py-1 text-xs text-secondary focus:outline-none focus:border-accent/50 transition-colors"
                     >
-                        <option value="score-desc" className="bg-[#1a1c23]">Nach Score</option>
                         <option value="profit-desc" className="bg-[#1a1c23]">Höchster Gewinn</option>
+                        <option value="score-desc" className="bg-[#1a1c23]">Nach Score</option>
                         <option value="sales-desc" className="bg-[#1a1c23]">Meiste Verkäufe</option>
                         <option value="name-asc" className="bg-[#1a1c23]">Name (A-Z)</option>
                     </select>
