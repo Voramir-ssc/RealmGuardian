@@ -116,6 +116,13 @@ export default function CraftingWidget({ apiUrl }) {
 
     useEffect(() => {
         fetchRecipes();
+        
+        // Auto-refresh every 5 minutes (300,000 ms)
+        const interval = setInterval(() => {
+            fetchRecipes();
+        }, 300000);
+        
+        return () => clearInterval(interval);
     }, [apiUrl]);
 
     const fetchRecipes = async () => {

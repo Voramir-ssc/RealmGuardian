@@ -6,11 +6,20 @@ const AnalyticsWidget = ({ apiUrl }) => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [expandedItem, setExpandedItem] = useState(null);
+    const [sortOrder, setSortOrder] = useState('profit-desc');
     const [historyData, setHistoryData] = useState([]);
     const [historyLoading, setHistoryLoading] = useState(false);
 
     useEffect(() => {
         fetchAnalytics();
+        
+        // Auto-refresh every 5 minutes (300,000 ms)
+        // 5 minutes is ideal because the background task runs hourly, so 5 mins guarantees we catch the new hourly update quickly without spamming the API.
+        const interval = setInterval(() => {
+            fetchAnalytics();
+        }, 300000);
+        
+        return () => clearInterval(interval);
     }, []);
 
     const fetchAnalytics = async () => {
@@ -57,6 +66,14 @@ const AnalyticsWidget = ({ apiUrl }) => {
         }
     };
 
+    const sortedItems = [...items].sort((a, b) => {
+        if (sortOrder === 'score-desc') return b.liquidity_score - a.liquidity_score;
+        if (sortOrder === 'profit-desc') return b.profit - a.profit;
+        if (sortOrder === 'sales-desc') return b.sell_through_rate_24h - a.sell_through_rate_24h;
+        if (sortOrder === 'name-asc') return a.name.localeCompare(b.name);
+        return 0;
+    });
+
     return (
         <div className="bg-surface border border-white/5 rounded-2xl p-6 relative overflow-hidden flex flex-col h-full">
             <div className="flex justify-between items-center mb-6">
@@ -66,13 +83,25 @@ const AnalyticsWidget = ({ apiUrl }) => {
                     </div>
                     <h3 className="text-secondary font-medium tracking-wider">Top Liquidity Items</h3>
                 </div>
-                <button 
-                    onClick={fetchAnalytics}
-                    className="p-2 text-secondary hover:text-white transition-colors rounded-lg hover:bg-white/5"
-                    disabled={loading}
-                >
-                    <RefreshCw size={16} className={loading ? "animate-spin" : ""} />
-                </button>
+                <div className="flex items-center gap-2">
+                    <select
+                        value={sortOrder}
+                        onChange={(e) => setSortOrder(e.target.value)}
+                        className="bg-white/5 border border-white/10 rounded-lg px-2 py-1 text-xs text-secondary focus:outline-none focus:border-accent/50 transition-colors"
+                    >
+                        <option value="score-desc" className="bg-[#1a1c23]">Nach Score</option>
+                        <option value="profit-desc" className="bg-[#1a1c23]">Höchster Gewinn</option>
+                        <option value="sales-desc" className="bg-[#1a1c23]">Meiste Verkäufe</option>
+                        <option value="name-asc" className="bg-[#1a1c23]">Name (A-Z)</option>
+                    </select>
+                    <button 
+                        onClick={fetchAnalytics}
+                        className="p-2 text-secondary hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                        disabled={loading}
+                    >
+                        <RefreshCw size={16} className={loading ? "animate-spin" : ""} />
+                    </button>
+                </div>
             </div>
 
             {loading ? (
@@ -85,7 +114,7 @@ const AnalyticsWidget = ({ apiUrl }) => {
                 </div>
             ) : (
                 <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-3">
-                    {items.map(item => (
+                    {sortedItems.map(item => (
                         <div key={item.item_id} className="bg-white/5 rounded-xl border border-white/5 overflow-hidden transition-all duration-300">
                             <div 
                                 className="p-4 flex items-center justify-between cursor-pointer hover:bg-white/[0.07] transition-colors"
