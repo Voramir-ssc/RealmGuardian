@@ -1,17 +1,12 @@
 @echo off
-echo Starting RealmGuardian...
+echo ===================================================
+echo   Starting RealmGuardian (Hardened Background Mode)
+echo ===================================================
 
-cd %~dp0
-set "PATH=C:\Program Files\Python311;C:\Program Files\Python311\Scripts;C:\Program Files\nodejs;%PATH%"
+cd /d "%~dp0"
+call service\start_services.bat
 
-:: Environment configured via PATH above
-
-:: Start Backend
-start "RG Backend" cmd /k "cd backend && venv\Scripts\activate && uvicorn main:app --reload --host 0.0.0.0 --port 8000"
-
-:: Start Frontend
-start "RG Frontend" cmd /k "cd frontend && npm run dev"
-
-echo Services started.
-echo Backend: http://localhost:8000
-echo Frontend: http://localhost:5173
+echo.
+echo RealmGuardian is running in hardened background mode.
+echo No CMD windows will stay open or be affected by other scripts.
+echo Automatic recovery daemon is active.
