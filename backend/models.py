@@ -106,3 +106,14 @@ class UserAccessToken(Base):
     id = Column(Integer, primary_key=True, index=True)
     access_token = Column(String, nullable=False)
     expires_at = Column(Integer, nullable=False)
+
+class WeeklyReportSnapshot(Base):
+    __tablename__ = "weekly_report_snapshots"
+
+    id = Column(Integer, primary_key=True, index=True)
+    timestamp = Column(DateTime, default=datetime.datetime.utcnow)
+    total_gold = Column(Integer, default=0) # copper
+    wow_token_price = Column(Integer, default=0) # copper
+    main_char_ilvl = Column(Integer, default=0)
+    main_char_professions = Column(String, nullable=True) # JSON string of professions
+

@@ -38,6 +38,8 @@ from datetime import datetime, timedelta
 from contextlib import asynccontextmanager
 import backup
 import auto_restore
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from discord_report import send_weekly_report
 
 # Attempt auto-restore before SQLAlchemy tries to bind/create tables
 auto_restore.check_and_restore()
@@ -166,10 +168,19 @@ async def lifespan(app: FastAPI):
     FastAPI Lifespan Manager: Starts the background scheduler as soon as the API starts,
     and cleans up resources when the API stops.
     """
+    # APScheduler for Discord Weekly Reports
+    cron_scheduler = AsyncIOScheduler()
+    # Wednesday 20:00 (day_of_week=2)
+    cron_scheduler.add_job(send_weekly_report, 'cron', day_of_week='wed', hour=20, minute=0)
+    # Saturday 20:00 (day_of_week=5)
+    cron_scheduler.add_job(send_weekly_report, 'cron', day_of_week='sat', hour=20, minute=0)
+    cron_scheduler.start()
+
     # Startup: Start background task loop
     asyncio.create_task(scheduler())
     yield
     # Shutdown logic if needed
+    cron_scheduler.shutdown()
 
 def check_and_reset_tasks(db: Session):
     """
@@ -755,6 +766,16 @@ def trigger_backup():
         return {'status': 'success', 'message': 'Backup created'}
     else:
         raise HTTPException(status_code=500, detail='Backup failed')
+
+@app.post('/api/report/trigger')
+def trigger_manual_report():
+    """ Triggers the Discord Weekly Report manually for testing """
+    try:
+        import threading
+        threading.Thread(target=send_weekly_report).start()
+        return {"status": "success", "message": "Manual report triggered in background"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 # --- Item Tracking Endpoints ---

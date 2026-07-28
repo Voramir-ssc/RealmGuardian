@@ -17,6 +17,8 @@ class Config:
         self.client_secret = os.getenv("BLIZZARD_CLIENT_SECRET", "")
         self.region = os.getenv("BLIZZARD_REGION", "eu")
         self.home_realm_id = os.getenv("BLIZZARD_HOME_REALM_ID", "1618") # Default to Die Aldor
+        self.discord_webhook_url = os.getenv("DISCORD_WEBHOOK_URL", "")
+        self.main_character = {"name": "Lenmera", "realm": "Die Aldor"}
         self.load()
 
     def load(self):
@@ -27,13 +29,17 @@ class Config:
                 self.client_secret = data.get("client_secret", self.client_secret)
                 self.region = data.get("region", self.region)
                 self.home_realm_id = data.get("home_realm_id", self.home_realm_id)
+                self.discord_webhook_url = data.get("discord_webhook_url", self.discord_webhook_url)
+                self.main_character = data.get("main_character", self.main_character)
 
     def save(self):
         data = {
             "client_id": self.client_id,
             "client_secret": self.client_secret,
             "region": self.region,
-            "home_realm_id": self.home_realm_id
+            "home_realm_id": self.home_realm_id,
+            "discord_webhook_url": self.discord_webhook_url,
+            "main_character": self.main_character
         }
         with open(CONFIG_FILE, "w") as f:
             json.dump(data, f, indent=4)
