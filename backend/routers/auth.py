@@ -4,7 +4,6 @@ from sqlalchemy.orm import Session
 import time
 import models
 from dependencies import get_db, get_blizzard_client
-from config import config
 from background_tasks import sync_user_characters
 
 router = APIRouter(prefix="/api/auth", tags=["Auth"])

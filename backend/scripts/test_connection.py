@@ -1,3 +1,4 @@
+import sys
 from config import config
 from blizzard_api import BlizzardAPI
 print("Teste Konfiguration...")
