@@ -252,7 +252,7 @@ export default function CraftingWidget({ apiUrl }) {
     });
 
     return (
-        <div className="bg-surface rounded-2xl border border-white/5 overflow-hidden flex flex-col h-full">
+        <div className="glass-panel overflow-hidden flex flex-col h-full">
             {/* Header */}
             <div className="p-6 border-b border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-gradient-to-br from-white/[0.01] to-transparent">
                 <div>

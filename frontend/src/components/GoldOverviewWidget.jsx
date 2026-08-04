@@ -127,7 +127,7 @@ const GoldOverviewWidget = ({ characters = [], history = [], loading, tokenPrice
     const remainingGold = isGoalActive ? Math.max(targetGold - currentGold, 0) : 0;
 
     return (
-        <div className="bg-surface border border-white/5 rounded-2xl p-6 relative overflow-hidden group hover:border-yellow-500/30 transition-all duration-300 flex flex-col justify-between">
+        <div className="glass-panel p-6 relative overflow-hidden group flex flex-col justify-between">
             <div className="flex justify-between items-start mb-2 relative z-10 w-full gap-4 flex-col sm:flex-row">
                 <div className="flex-1 w-full">
                     <h3 className="text-secondary text-sm font-medium uppercase tracking-wider mb-1">Gesamtvermögen</h3>

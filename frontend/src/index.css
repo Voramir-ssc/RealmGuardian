@@ -1,12 +1,13 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
 @theme {
-  --color-background: #0a0a0a;
-  --color-surface: #121212;
+  --color-background: #050505; /* Deeper background for glassmorphism */
+  --color-surface: #111111;
   --color-primary: #ffffff;
   --color-secondary: #a1a1aa;
-  --color-accent: #00ced1;
-  --color-accent-glow: rgba(0, 206, 209, 0.5);
+  --color-accent: #FFD700; /* Gold */
+  --color-accent-glow: rgba(255, 215, 0, 0.4);
 }
 
 /* Custom UI Themes based on CSS variables */
@@ -58,7 +59,7 @@
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Outfit', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 

@@ -23,7 +23,7 @@ const Layout = ({ children, activeTab, onTabChange, theme = 'dark', setTheme = (
     return (
         <div className={`flex h-screen bg-background text-primary overflow-hidden theme-transition ${themeClass}`}>
             {/* Sidebar */}
-            <aside className="w-16 md:w-64 bg-surface border-r border-white/5 flex flex-col transition-all duration-300">
+            <aside className="glass-nav w-16 md:w-64 flex flex-col transition-all duration-300 z-20 shadow-2xl">
                 <div className="p-4 flex items-center justify-center md:justify-start gap-3 border-b border-white/5 h-16">
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-purple-600 flex items-center justify-center shadow-[0_0_15px_rgba(0,206,209,0.3)]">
                         <span className="font-bold text-white text-xs">RG</span>
@@ -67,7 +67,7 @@ const Layout = ({ children, activeTab, onTabChange, theme = 'dark', setTheme = (
                     <h1 className="text-xl font-medium text-white/90">{getTabTitle(activeTab)}</h1>
                     <div className="flex items-center gap-4">
                         {/* Theme Quick Selector */}
-                        <div className="flex items-center gap-2 mr-2 bg-black/20 rounded-full px-3 py-1.5 border border-white/5">
+                        <div className="flex items-center gap-2 mr-2 bg-black/40 rounded-full px-3 py-1.5 border border-white/10 shadow-inner">
                             <span className="text-[10px] text-secondary font-semibold uppercase tracking-wider mr-1 hidden sm:inline">Design:</span>
                             {[
                                 { id: 'dark', color: 'bg-cyan-400', label: 'Standard Dark' },
@@ -114,12 +114,8 @@ const Layout = ({ children, activeTab, onTabChange, theme = 'dark', setTheme = (
 const NavItem = ({ icon, label, active = false, onClick }) => (
     <button
         onClick={onClick}
-        className={`
-    w-full flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-200 group
-    ${active
-                ? 'bg-accent/10 text-accent border border-accent/20'
-                : 'text-secondary hover:bg-white/5 hover:text-white'}
-  `}>
+        className={`nav-item w-full flex items-center gap-3 px-3 py-3 group ${active ? 'active' : 'text-secondary'}`}
+    >
         <div className={`${active ? 'text-accent' : 'text-secondary group-hover:text-white'}`}>
             {icon}
         </div>

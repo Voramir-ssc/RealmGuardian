@@ -168,7 +168,7 @@ const WatchlistWidget = ({ apiUrl: propApiUrl }) => {
     ];
 
     return (
-        <div className="bg-surface border border-white/5 rounded-2xl p-6 md:col-span-2">
+        <div className="glass-panel p-6 md:col-span-2">
             <div className="flex justify-between items-center mb-6">
                 <h3 className="text-secondary text-sm font-medium uppercase tracking-wider">Beobachtungsliste</h3>
                 <span className="text-xs text-secondary/50">Regionale Preise</span>

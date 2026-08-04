@@ -75,7 +75,7 @@ const AnalyticsWidget = ({ apiUrl }) => {
     });
 
     return (
-        <div className="bg-surface border border-white/5 rounded-2xl p-6 relative overflow-hidden flex flex-col h-full">
+        <div className="glass-panel p-6 relative overflow-hidden flex flex-col h-full">
             <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center gap-3">
                     <div className="p-2 bg-accent/20 rounded-lg text-accent">

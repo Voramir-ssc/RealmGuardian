@@ -105,7 +105,7 @@ const TaskManager = () => {
     };
 
     return (
-        <div className="bg-surface border border-white/5 rounded-2xl overflow-hidden shadow-lg h-full flex flex-col">
+        <div className="glass-panel overflow-hidden shadow-lg h-full flex flex-col">
             <div className="p-6 pb-4 border-b border-white/5 bg-gradient-to-r from-background/50 to-transparent">
                 <div className="flex items-center justify-between">
                     <h3 className="text-lg font-bold text-white flex items-center gap-2">

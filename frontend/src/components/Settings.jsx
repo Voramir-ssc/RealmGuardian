@@ -10,7 +10,7 @@ import { Shield, RefreshCw, LogOut } from 'lucide-react';
 const Settings = ({ onLogin, characters, loading, theme = 'dark', setTheme = () => {} }) => {
     return (
         <div className="max-w-2xl mx-auto space-y-6">
-            <div className="bg-surface border border-white/5 rounded-2xl p-6">
+            <div className="glass-panel p-6">
                 <h2 className="text-xl font-medium text-white mb-4 flex items-center gap-2">
                     <Shield size={20} className="text-primary" />
                     Battle.net Integration
@@ -62,7 +62,7 @@ const Settings = ({ onLogin, characters, loading, theme = 'dark', setTheme = () 
                 </div>
             </div>
 
-            <div className="bg-surface border border-white/5 rounded-2xl p-6">
+            <div className="glass-panel p-6">
                 <h2 className="text-xl font-medium text-white mb-4">Anwendungseinstellungen</h2>
                 <div className="space-y-6">
                     <div>

@@ -71,7 +71,7 @@ def send_weekly_report():
         # 4. Main Character Data
         main_name = config.main_character.get("name", "Lenmera")
         main_realm = config.main_character.get("realm", "Die Aldor")
-        main_char = db.query(models.Character).filter_by(name=main_name, realm=main_realm).first()
+        main_char = db.query(models.Character).filter_by(name=main_name, realm=main_realm).order_by(models.Character.level.desc()).first()
         
         ilvl_delta_str = ""
         professions_delta_str = ""
@@ -82,6 +82,10 @@ def send_weekly_report():
             ilvl_diff = main_char.item_level - (last_snapshot.main_char_ilvl or 0)
             if ilvl_diff > 0:
                 ilvl_delta_str = f" (+{ilvl_diff})"
+            elif ilvl_diff < 0:
+                ilvl_delta_str = f" ({ilvl_diff})"
+            else:
+                ilvl_delta_str = " (unverändert)"
                 
             # Professions
             if last_snapshot.main_char_professions and current_professions:
@@ -157,11 +161,25 @@ def send_weekly_report():
             if professions_delta_str:
                 main_val += f"\n**⚒️ Berufe-Fortschritt:**\n{professions_delta_str}"
                 
-            embed["fields"].append({
-                "name": f"⭐ Hauptcharakter: {main_char.name}",
-                "value": main_val,
-                "inline": False
-            })
+            if len(main_val) <= 1024:
+                embed["fields"].append({
+                    "name": f"⭐ Hauptcharakter: {main_char.name}",
+                    "value": main_val,
+                    "inline": False
+                })
+            else:
+                chunks = [main_val[i:i+1024] for i in range(0, len(main_val), 1024)]
+                embed["fields"].append({
+                    "name": f"⭐ Hauptcharakter: {main_char.name}",
+                    "value": chunks[0],
+                    "inline": False
+                })
+                for chunk in chunks[1:]:
+                    embed["fields"].append({
+                        "name": "⭐ (Fortsetzung)",
+                        "value": chunk,
+                        "inline": False
+                    })
         else:
             embed["fields"].append({
                 "name": "⭐ Hauptcharakter",

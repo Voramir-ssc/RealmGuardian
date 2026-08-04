@@ -167,7 +167,7 @@ const CharacterList = ({ characters, loading, onSync, onLogin }) => {
     };
 
     return (
-        <div className="bg-surface border border-white/5 rounded-2xl p-6">
+        <div className="glass-panel p-6">
             <div className="flex justify-between items-center mb-6">
                 <h3 className="text-xl font-medium text-white">Deine Charaktere</h3>
             </div>

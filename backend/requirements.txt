@@ -3,4 +3,3 @@ uvicorn
 sqlalchemy
 requests
 python-dotenv
-apscheduler

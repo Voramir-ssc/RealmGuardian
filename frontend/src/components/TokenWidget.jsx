@@ -28,7 +28,7 @@ const TokenWidget = ({ formatted, history, selectedRange, onRangeChange }) => {
     ];
 
     return (
-        <div className="bg-surface border border-white/5 rounded-2xl p-6 relative overflow-hidden group hover:border-accent/30 transition-all duration-300">
+        <div className="glass-panel p-6 relative overflow-hidden group">
             <div className="flex justify-between items-start mb-4 relative z-10">
                 <div>
                     <h3 className="text-secondary text-sm font-medium uppercase tracking-wider">WoW-Marke</h3>
