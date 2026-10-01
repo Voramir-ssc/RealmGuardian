@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 import models
 import analytics
 from dependencies import get_db
+from config import config
 
 router = APIRouter(prefix="/api", tags=["Dashboard"])
 
@@ -22,7 +23,19 @@ def get_user_characters(db: Session = Depends(get_db)):
     Retrieves the list of locally synced characters for the dashboard and calculates
     the total combined gold across all characters.
     """
-    chars = db.query(models.Character).order_by(models.Character.level.desc()).all()
+    chars = db.query(models.Character).all()
+    
+    main_name = config.main_character.get("name", "")
+    main_realm = config.main_character.get("realm", "")
+    
+    def sort_key(c):
+        is_main = (c.name.lower() == main_name.lower() and c.realm.lower() == main_realm.lower())
+        # Sort main first (False < True, so not is_main puts main at top)
+        # Then sort by level descending, then by item_level descending
+        return (not is_main, -(c.level or 0), -(c.item_level or 0))
+        
+    chars.sort(key=sort_key)
+
     total_gold = sum(c.gold for c in chars)
     return {
         "total_gold": total_gold,
