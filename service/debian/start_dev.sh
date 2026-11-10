@@ -37,3 +37,4 @@ echo "Druecke [STRG+C] zum Beenden beider Dienste."
 
 trap "kill $BACKEND_PID $FRONTEND_PID 2>/dev/null; exit 0" SIGINT SIGTERM
 wait
+

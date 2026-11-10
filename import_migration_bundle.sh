@@ -40,3 +40,4 @@ echo "[ERFOLG] Datenbank und Konfiguration wurden erfolgreich importiert!"
 echo "Dateien in backend/:"
 ls -lh backend/realmguardian.db backend/config.json 2>/dev/null || true
 echo ""
+

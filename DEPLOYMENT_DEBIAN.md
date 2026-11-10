@@ -122,3 +122,4 @@ Soll Antigravity folgendes ausführen:
    - Wenn ja: `docker compose up -d --build` ausführen und Healthcheck `http://localhost:8000/` prüfen.
    - Wenn nein: `python3-venv` & `npm` prüfen und `service/debian/start_dev.sh` starten.
 3. Die NPM-, Homarr- und Uptime-Kuma-Parameter ausgeben und bestätigen, dass Helgris Schmiede wieder einsatzbereit ist!
+
