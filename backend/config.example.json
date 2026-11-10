@@ -1,0 +1,11 @@
+{
+    "client_id": "YOUR_BLIZZARD_CLIENT_ID",
+    "client_secret": "YOUR_BLIZZARD_CLIENT_SECRET",
+    "region": "eu",
+    "home_realm_id": "1618",
+    "discord_webhook_url": "YOUR_DISCORD_WEBHOOK_URL",
+    "main_character": {
+        "name": "Lenmera",
+        "realm": "Die Aldor"
+    }
+}

@@ -24,11 +24,15 @@ RealmGuardian is a comprehensive web dashboard and background service designed t
 - `service/`: Windows background service installation scripts (`install_autostart_task.bat`, `start_services.bat`).
 
 ## Setup & Running
-1. To run normally in dev mode: execute `run.bat` or `run_interactive.bat`.
-2. To run as a background service:
+1. To run normally in dev mode on Windows: execute `run.bat` or `run_interactive.bat`.
+2. To run as a background service on Windows:
    - Navigate to the `service` folder.
    - Run `install_autostart_task.bat` as Administrator.
    - Use `start_services.bat` and `stop_services.bat` to control the daemon.
+3. **Debian / Linux / Docker Deployment:**
+   - Detailed instructions for server migration (`SSC-LXNode` / Debian) can be found in [DEPLOYMENT_DEBIAN.md](DEPLOYMENT_DEBIAN.md).
+   - Bundled Docker Compose stack with proxy-net support included (`docker-compose.yml`).
+
 
 ---
 

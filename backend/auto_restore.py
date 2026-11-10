@@ -5,7 +5,7 @@ import glob
 
 DB_FILE = "realmguardian.db"
 LOG_FILE = "backend.log"
-BACKUP_DIR = r"O:\Meine Ablage\001_SSCloud\001_Unterlagen\004_Heimnetzwerk\RealmGuardBacklog"
+BACKUP_DIR = os.getenv("BACKUP_PATH", r"O:\Meine Ablage\001_SSCloud\001_Unterlagen\004_Heimnetzwerk\RealmGuardBacklog")
 
 def is_db_empty():
     if not os.path.exists(DB_FILE):

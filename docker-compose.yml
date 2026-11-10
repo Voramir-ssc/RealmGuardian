@@ -1,0 +1,33 @@
+services:
+  realmguardian-backend:
+    container_name: realmguardian-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ./backend/realmguardian.db:/app/realmguardian.db
+      - ./backend/config.json:/app/config.json
+    environment:
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "8000:8000"
+    networks:
+      - proxy-net
+
+  realmguardian-frontend:
+    container_name: realmguardian-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - realmguardian-backend
+    ports:
+      - "5173:80"
+    networks:
+      - proxy-net
+
+networks:
+  proxy-net:
+    external: true
