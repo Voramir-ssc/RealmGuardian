@@ -3,8 +3,8 @@ import os
 import shutil
 import glob
 
-DB_FILE = "realmguardian.db"
-LOG_FILE = "backend.log"
+DB_FILE = os.getenv("DB_FILE", "realmguardian.db")
+LOG_FILE = os.getenv("LOG_FILE", "backend.log")
 BACKUP_DIR = os.getenv("BACKUP_PATH", r"O:\Meine Ablage\001_SSCloud\001_Unterlagen\004_Heimnetzwerk\RealmGuardBacklog")
 
 def is_db_empty():

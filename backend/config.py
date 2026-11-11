@@ -25,10 +25,10 @@ class Config:
         if os.path.exists(CONFIG_FILE):
             with open(CONFIG_FILE, "r") as f:
                 data = json.load(f)
-                self.client_id = data.get("client_id", self.client_id)
-                self.client_secret = data.get("client_secret", self.client_secret)
+                self.client_id = data.get("client_id") or data.get("blizzard_client_id") or self.client_id
+                self.client_secret = data.get("client_secret") or data.get("blizzard_client_secret") or self.client_secret
                 self.region = data.get("region", self.region)
-                self.home_realm_id = data.get("home_realm_id", self.home_realm_id)
+                self.home_realm_id = str(data.get("home_realm_id", self.home_realm_id))
                 self.discord_webhook_url = data.get("discord_webhook_url", self.discord_webhook_url)
                 self.main_character = data.get("main_character", self.main_character)
 

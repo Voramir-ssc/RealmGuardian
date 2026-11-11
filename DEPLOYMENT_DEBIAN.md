@@ -1,7 +1,8 @@
-# 🛡️ RealmGuardian – Debian Umzugs- & Deployment-Leitfaden
-> **Zielsystem:** Debian / Proxmox LXC (`SSC-LXNode` – `10.10.10.224`)  
-> **Domain:** `http://realmguardian.ssc.slan`  
-> **Anweisung für Antigravity & Meister:** Diese Anleitung dient als verbindlicher Fahrplan für die Wiederinbetriebnahme nach dem Server-Umzug.
+# 🛡️ RealmGuardian – Homelab Deployment-Leitfaden (SSC-LXCore & SSC-LXNode)
+> **Host (Compute & Storage):** `SSC-LXCore` – `10.10.10.220` (Compose: `/opt/docker/compose/realmguardian`, AppData: `/opt/docker/appdata/realmguardian`)  
+> **Ingress & Proxy:** `SSC-LXNode` – `10.10.10.224` (Nginx Proxy Manager & AdGuard Home)  
+> **Domain:** `https://realmguardian.ssc.slan`  
+> **Anweisung für Antigravity & Meister:** Diese Dokumentation beschreibt die aktive Konfiguration und den unterbrechungsfreien Weiterbetrieb inkl. Backup-Rotation.
 
 ---
 

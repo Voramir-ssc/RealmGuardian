@@ -6,14 +6,18 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     volumes:
-      - ./backend/realmguardian.db:/app/realmguardian.db
-      - ./backend/config.json:/app/config.json
+      - /opt/docker/appdata/realmguardian/realmguardian.db:/app/realmguardian.db
+      - /opt/docker/appdata/realmguardian/config.json:/app/config.json
+      - /opt/docker/appdata/realmguardian/backups:/app/backups
+      - /opt/docker/appdata/realmguardian/backend.log:/app/backend.log
     environment:
       - PYTHONUNBUFFERED=1
+      - BACKUP_PATH=/app/backups
+      - TZ=Europe/Berlin
     ports:
       - "8000:8000"
     networks:
-      - proxy-net
+      - core-net
 
   realmguardian-frontend:
     container_name: realmguardian-frontend
@@ -26,9 +30,8 @@ services:
     ports:
       - "5173:80"
     networks:
-      - proxy-net
+      - core-net
 
 networks:
-  proxy-net:
+  core-net:
     external: true
-
