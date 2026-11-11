@@ -103,9 +103,8 @@ function App() {
 
   const handleLogin = () => {
     console.log("LOGIN BUTTON CLICKED. Redirecting...", activeTab);
-    // Force absolute URL to ensure we hit the backend and not the frontend router
-    // This allows login to work on the local network by using the detected hostname
-    window.location.href = `http://${window.location.hostname}:8000/api/auth/login?tab=${activeTab}`;
+    // Use relative path so it routes cleanly through the frontend/NPM proxy on standard port
+    window.location.href = `/api/auth/login?tab=${activeTab}`;
   };
 
   useEffect(() => {
